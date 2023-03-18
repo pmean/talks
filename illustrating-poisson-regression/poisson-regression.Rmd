@@ -1,0 +1,28 @@
+---
+title: "Illustrating Poisson regression"
+author: "Steve Simon"
+date: "Created 2021-08-14"
+output: powerpoint_presentation
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo=TRUE)
+```
+
+### Datasets
+
+Bacterial soap. A designed experiment where a student evaluated four different types of bacterial soap. You can find [a description][bac1] and [the data][bac2] in tab delimited form.
+
+Achim Zeileis, Christian Kleiber, Simon Jackman. Regression Models for Count Data in R. Vignette. Available in [pdf format][vig1]
+
+Poisson Regression | R Data Analysis Examples. Available in [html format][ucl1].
+
+
+[bac1]: https://dasl.datadescription.com/datafile/baterial-soap/
+[bac2]: https://dasl.datadescription.com/download/data/3561
+
+[vig1]: https://cran.r-project.org/web/packages/pscl/vignettes/countreg.pdf
+
+[ucl1]: https://stats.idre.ucla.edu/r/dae/poisson-regression/
+
+https://sphweb.bumc.bu.edu/otlt/mph-modules/ep/ep713_association/ep713_association3.html
