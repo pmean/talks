@@ -1,0 +1,218 @@
+---
+title: "The Neighborhood Housing Conditions Survey, https://github.com/pmean/talks/nhcs"
+author: "Steve Simon"
+date: "Created 2023-04-12"
+output:
+  powerpoint_presentation:
+    reference_doc: wide-screen-template.pptx
+---
+
+### Overview
+
++ Neighborhood Housing Conditions Survey (NHCS)
+  + Windshield survey
+  + Visible at street level
+
+<div class="notes">
+
+The CEI Neighborhood Housing Conditions Survey (NHCS) is a windshield survey of residential parcels. The parcel geography and other relevant information was provided by the City of Kansas City, Missouri. The conditions surveyed are those that are visible from the street on which a parcel is addressed. Parcels that are non-residential, both in structure type and use type, are noted as such and no additional information is collected, other than whether or not there is a visible address. The original form of the survey was developed by Ed Linnebur of the Kansas City Neighborhood Alliance, prior to the application of the initial KCMo survey in 2000-01. Detailed documentation for that survey is available in the Final Report for the City of Kansas City Missouri Contract No. 1999-032. That survey was primarily conducted on paper. In subsequent years, data collection was programmed on hand-held PDAs. 
+
+</div>
+
+### NHCS
+
++ Classification data
+  + Structure type,
+  + Use type, 
+  + Residential type, 
+  + Structure profile, and 
+  + Visible address
++ Conditions data
+  + Structure
+  + Grounds
+  + Infrastructure
+
+<div class="notes">
+
+The housing survey collects two types of data. It collecting information that classifies the type of structure, its use, whether it is residential, the profile of the structure, and the visible address. It also collects data on 15 housing conditions, groups into conditions about the structure itself, the grounds, and the infrastructure.
+
+The first type is classification data. The second type is conditions data. Classification data includes structure type, use type, residential type, structure profile, and visible address. For all parcels other than those that are classified as non-residential in both structure type and use type, conditions data is collected. This report will discuss each of the 15 surveyed conditions both individually, and grouped into three general categories of conditions. The groupings and their component elements are listed in Table I-1: 
+
+
+
+</div>
+
+### NHCS Structure
+
++ Roof 
++ Foundation/walls 
++ Windows/doors 
++ Porch 
++ Exterior Paint 
+
+<div class="notes">
+
+The condition of each of these elements is rated on a scale of 1 to 5, with 5 corresponding to the best condition and 1 corresponding to the worst condition. The specific meaning of each condition number for each of the above elements is contained in the Reference Guide.  For parcels with no structure (vacant lots, parking lots, parks) there is only data for the Grounds and Infrastructure conditions. 
+
+</div>
+
+### NHCS Grounds 
+
++ Private sidewalk/drive 
++ Lawn/shrubs 
++ Nuisance vehicles 
++ Litter 
++ Open storage 
+
+### NHCS Infrastructure 
+
++ Public sidewalk 
++ Curb 
++ Street lighting 
++ Catch basin 
++ Street 
+
+### Condition ratings
+
++ Likert scale (1-5)
+  + 1, Severely deteriorated
+  + 2, Seriously deteriorated
+  + 3, Substandard
+  + 4, Good
+  + 5, Excellent
++ Missing value codes  
+  + 6, not applicable
+  + 7, unable to rate
+
+<div class="notes">
+
+The condition ratings range from 1 to 5 on Likert scale with lower scores indicating more deterioration. A code of 6 is a missing value code for locations where a condition rating is not applicable. A code of 7 is a second missing value code for conditions that could not be rated because of visibility issues.
+
+</div>
+
+### Example Structure/roof
+
+1. Severely Deteriorated. There are holes visible through roof sheathing. Rafters are sagging or collapsed. Soffits and fascia boards are missing or display severe rot and deterioration.
+
+<div class="notes">
+
+Let's look at the details for one of the fifteen conditions, the structure/roof. The lowest rating, 1, represent severe deterioration. It would be marked by visible holes, sagging rafters, or severe rot and deterioration of the soffits.
+
+</div>
+
+### Example Structure/roof
+
+2. Seriously Deteriorated. There are no holes present. The roof has sagging rafters, but sagging is not severe. Roofing shingles are extremely deteriorated. More than five shingles are currently missing on the front exposure of the roof. It appears some sheathing needs to be replaced. Soffits and fascia boards display moderate rot and deterioration.
+
+<div class="notes">
+
+The next rating, 2, represent serious deterioration. No holes, but some sagging of the rafters, but not too severe. It would also be indicated by missing or extremely deteriorated roofing shingles or also by moderate rot and deterioration of the soffits and fascia boards
+
+</div>
+
+### Example Structure/roof
+
+3. Substandard. There are no holes or sagging. Roofing shingles are deteriorated and should be removed before new shingles are installed. Less than five shingles are missing on the entire roof. Soffits and fascia boards display slight rot deterioration.
+
+<div class="notes">
+
+A rating of 3 represents substandard conditions. No holes or sagging, a small number of missing shingles, or slight rot in soffits and fascia boards.
+
+</div>
+
+
+### Example Structure/roof
+
+4. Good. Roof shingles show slight wear. (discoloration can be seen from street, or faded color do to loss of rock). There are no holes or sagging rafters. Soffits and fascia boards may need painting, but there is no rot or deterioration.
+
+<div class="notes">
+
+A rating of 4 represents slight wear and discoloration.
+
+</div>
+
+
+### Example Structure/roof
+
+5. Excellent. Roofing shingles show no wear. Soffits and fascia boards display no rot nor deterioration and are adequately installed.
+
+<div class="notes">
+
+A rating of 5 is the best rating. No wear, no rot, no deterioriation.
+
+</div>
+
+### Example Structure/roof
+
+6. Not applicable. Characteristic does not apply to rated parcel (e.g., roof rating for parcels with no structure).
+
+<div class="notes">
+
+If there is no structure on the parcel, there is no roof to be rated. This is assigned a code of 6 and this is not used in the overall assessment of housing conditions.
+
+</div>
+
+### Example Structure/roof
+
+7. Un-ratable. Characteristic applies to rated parcel, but rating could not be determined (e.g., roof rating for structures with flat roofs, or where line of sight to roof is obscured by trees).
+
+<div class="notes">
+
+There's one more case to consider. Sometimes, you cannot provide a rating because the roof is flat or obscured by trees. This is assigned a code of 7 and this is not used in the overall assessment of housing quality.
+
+</div>
+
+
+### Training
+
++ Classroom session with visual aids
++ Group discussion of a test block
++ Individual survey of two test blocks
+  + Trainee ratings compared with expert
+
+<div class="notes">
+
+The training starts with a classroom session with visual aids. Then the trainees are taken to a test block, chosen for its representativeness of various levels of deterioration. The trainees join in a group discussion with the instructor on the ratings for individual parcels on this test block.
+
+Then the trainees examine two more test blocks individually. Their ratings are compared to those of the instructor and if the average deviation in rating is within plus or minus one, the trainees are certified and able to conduct surveys on their own.
+
+</div>
+
+After a classroom session with visual aids, the surveyors are taken into the field and asked to rate a “rating block” chosen earlier by the training personnel for its representativity. All surveyors discuss ratings and arrive at a consensus. 
+
+After the day of training, surveyors are sent out in teams of two to survey test blocks. Surveyors are certified if the results of their surveys of the test blocks agreed with the results of the trainers. If the results do not fall within our quality control guidelines (see below), further training takes place. Surveyors are “certified” to go into the field independently once they have passed quality control standards. 
+
+Once certified, the surveyors conduct surveys in teams of two.  Each surveyor has a PDA, paper maps of the area to be surveyed, and a one page summary of the ratings guide. The one page summary is called the descriptors guide.  A PDA user’s guide is also provided. 
+
+</div>
+
+### Quality Control 
+
+<div class="notes">
+
+The following quality control procedures are performed. Two blocks with a minimum of 20 residential parcels per block are randomly selected from the survey data for each survey team. These parcels are then inspected by the survey developer/trainer to provide a set of standard results for each parcel. For categorical variables (visible address, structure type, use type, residential type, and structure profile) a direct a comparison is made. For ratings variables, an overall average difference per rating is calculated. This is calculated by taking the absolute value of the difference between the original surveyor rating and the standard rating for each parcel and summing over the total number of parcels surveyed, then dividing that value by the total number of parcels surveyed. In cases where the surveyor rates an item as unrateable (a value of 6) and the standard rating was anything other than unrateable, or vice versa, the rating is not counted in the average. An average difference under one is considered passing, and means that overall the ratings fall within the range of -1 to +1 from the standard rating. Any average difference greater than one is considered as failing. 
+
+</div>
+
+### Who uses the NCHS
+
+<div class="notes">
+
+First, parcel level mapping of residential property conditions is of real interest in its own right, to several major urban and community development constituencies. Conventional CDCs whose principle activity is the development of affordable housing in low-income neighborhoods, city urban planners, neighborhood residents themselves, and a variety of private sector interests including developers, real estate agencies, mortgage bankers, construction contractors, and insurance companies, just to name the most obvious, all have a keen interest in the collection and mapping of residential conditions data.
+
+The second (arguably even more) important feature of the GPLAN project is that it establishes a methodological framework for geographic community modeling with virtually unlimited potential. The development of a parcel-level geographic database allows the collection and representation of social and economic data at the finest possible level of “social resolution,” i.e., the houshold.5 Higher level social “geographies” (e.g. “blocks” or “neighborhoods” or “communities”) are (more or less) easily added to the household/institution/enterprise-level model. This, of course, includes the conventional social geographies such as low-level census geography (blocks, block groups and tracts), zip codes, school districts, voting districts, cities, counties, and MSAs.6 The database functions of GIS allow the linkage of virtually unlimited datasets to whatever levels of geography for which they may be relevant and available. The implicit role of space and spatial relationships in the study of community development is rendered integral, explicit, and amenable to formal analysis.
+
+</div>
+
+### Areas covered by the NHCS
+
+![Figure 1. Map of NHCS locations](NHCS_FullExtent.jpg)
+
+<div class="notes">
+
+This map shows where the NHCS has been used up to 2014. The survey has been largely inactive since then due to budget problems, but we are using the survey again in the current grant we have received from HUD.
+
+Those of you who know and love Kansas City will notice two important features of this map. First, we have done surveys on both sides of the state line. Second, we have done survey both north and south of the Missouri river.
+
+</div>
+
