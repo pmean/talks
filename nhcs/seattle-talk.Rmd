@@ -27,6 +27,19 @@ The CEI Neighborhood Housing Conditions Survey (NHCS) is a windshield survey of 
   + Residential type, 
   + Structure profile, and 
   + Visible address
+
+<div class="notes">
+
+The housing survey collects two types of data. It collecting information that classifies the type of structure, its use, whether it is residential, the profile of the structure, and the visible address. It also collects data on 15 housing conditions, groups into conditions about the structure itself, the grounds, and the infrastructure.
+
+The first type is classification data. The second type is conditions data. Classification data includes structure type, use type, residential type, structure profile, and visible address. For all parcels other than those that are classified as non-residential in both structure type and use type, conditions data is collected. This report will discuss each of the 15 surveyed conditions both individually, and grouped into three general categories of conditions. The groupings and their component elements are listed in Table I-1: 
+
+
+
+</div>
+
+### NHCS
+
 + Conditions data
   + Structure
   + Grounds
@@ -178,13 +191,6 @@ Then the trainees examine two more test blocks individually. Their ratings are c
 
 </div>
 
-After a classroom session with visual aids, the surveyors are taken into the field and asked to rate a “rating block” chosen earlier by the training personnel for its representativity. All surveyors discuss ratings and arrive at a consensus. 
-
-After the day of training, surveyors are sent out in teams of two to survey test blocks. Surveyors are certified if the results of their surveys of the test blocks agreed with the results of the trainers. If the results do not fall within our quality control guidelines (see below), further training takes place. Surveyors are “certified” to go into the field independently once they have passed quality control standards. 
-
-Once certified, the surveyors conduct surveys in teams of two.  Each surveyor has a PDA, paper maps of the area to be surveyed, and a one page summary of the ratings guide. The one page summary is called the descriptors guide.  A PDA user’s guide is also provided. 
-
-</div>
 
 ### Quality Control 
 
@@ -216,3 +222,58 @@ Those of you who know and love Kansas City will notice two important features of
 
 </div>
 
+### Advantages of using NHCS
+
+### Linking NHCS data with acute asthma visits
+
+![Figure 2. Dr. Natalie Kane](natalie-kane-square.png)
+
+<div class="notes">
+
+I worked for quite a few years at Children's Mercy Hospital and did some great work with various departments at the hospital including the Department of Asthma and Allergy. That group knew that it made no sense to treat serious asthma problems at the hospital and then return the child to an environment that would just create the same problem over and over again. So they set up a program more than two decades ago to help families with home remediation because fixing the environment was the best way to help their asthma patients.
+
+I'm no longer with Children's Mercy, but I still collaborate with them on various research studies.
+
+This is a picture of Natalie Kane. She currently workks at Children's Mercy, but I knew her from her work on a dissertation that she successfully defended in 2020. She linked the NCHS data with medical records of asthma visits at Children's Mercy Hospital and additional geographic markers of pollution to establish a link between disparities in home environment and rates of acute pediatric asthma care encounters.
+
+</div>
+
+### Linking NHCS data with elevated blood lead levels
+
+![Figure 3. Dr. Neal Wilson](neal-wilson-square.png)
+
+<div class="notes">
+
+Here's a picture of Dr. Neal Wilson. Like Natalie Kane, he took NHCS data and linked it to medical records, this time with blood testing data from the Kansas City, Missouri Department of Health. He showed a strong association between housing conditions and elevated blood lead levels in children. He successfully defended his dissertation on this topic in 2021 and has continued his work in this area with the 
+
+</div>
+
+### Housing data using just era of construction
+
+![Figure 4. Housing data coded by era of construction](housing-map-1.png)
+
+### Housing data incorporating NHCS data
+
+![Figure 5. Housing data coded using NHCS data](housing-map-2.png)
+
+### New NHCS surveys
+
+![Figure 6. Map of current NHCS surveys](new-nhcs-surveys.png)
+
+### Acknowledgements
+
++ Children's Mercy Hospital
+  + Ryan Allenbrand, Healthy Home Program Manager
+  + Elizabeth Friedman, Medical Director of Environmental Health
+  + Kevin Kennedy, Environmental Health Program Director
++ Kansas City, Missouri Department of Health
+  + Amy Roberts, Director, Childhood Lead Poisoning Prevention Program
+
+### Acknowledgements
+
++ University of Missouri-Kansas City
+  + Matthew Applebury, Satya Golla, Chinedu Isoh, Mounika Reddy Jakkidi, Brian Matlock, Nomuunzul Munkhjargal, Lori Reierson, Matthew Robinson, Vishal Vejendla, graduate students
+  + Doug Bowles, Past Director, Center for Economic Information (retired)
+  + Taki Manolakos, Past Director, Center for Economic Information
+  + Ricardo Moniz, Education Program Coordinator for Biomedical and Health Informatics
+  + Neal Wilson, Deputy Director, Center for Economic Information
