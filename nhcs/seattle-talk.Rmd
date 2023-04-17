@@ -1,6 +1,6 @@
 ---
-title: "The Neighborhood Housing Conditions Survey, https://github.com/pmean/talks/nhcs"
-author: "Steve Simon"
+title: "The Neighborhood Housing Conditions Survey"
+author: "Steve Simon, https://github.com/pmean/talks/tree/master/nhcs "
 output:
   powerpoint_presentation:
     reference_doc: wide-screen-template.pptx
@@ -17,6 +17,7 @@ Presented at the Program Managers Conference in Seattle, WA on 2023-04-17
 + PhD in Statistics
 + Faculty member
   + Department of Biomedical and Health Informatics
+  + University of Missouri-Kansas City (UMKC)
   + Informal consultant with Center for Economic Information (CEI)
   
 <div class="notes">
@@ -416,7 +417,7 @@ We are currently surveying about 6,000 housing units in six neighborhoods in the
   + Training data for deep learning models
   + Replication in other communities
 + Want to learn more?
-  + https://github.com/pmean/talks/nhcs
+  + https://github.com/pmean/talks/tree/master/nhcs 
   + simons@umkc.edu
 
 <div class="notes">
