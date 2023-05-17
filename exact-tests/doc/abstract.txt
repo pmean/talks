@@ -1,0 +1,5 @@
+From an email sent to Karen Grace-Martin on 2023-05-12.
+
+"Exact and randomization tests"
+
+Exact and randomization tests are simple from a conceptual level and need fewer assumptions than traditional parametric tests. They do require substantial computing power, but nothing that can't be handled by the computer you have today. This talk will orient you towards the general philosophy behind exact and randomization tests and show applications to the two by two table, the comparison of two means (unpaired and paired), and the correlation of two variables. You will also learn about the limitations of these tests, so you can decide when to use or not use them.

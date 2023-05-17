@@ -122,7 +122,8 @@ Let's start with a historical overview.
 
 If the lady had no ability to tell whether the milk was added first and was effectively picking at random, the probability would be
 
-$\frac{4}{8} \times \frac{3}{7}  \times \frac{2}{6} \times \frac{1}{5} = \frac{1}{70}$
++ $\frac{4}{8} \times \frac{3}{7}  \times \frac{2}{6} \times \frac{1}{5} = \frac{1}{70}$
+  + Note: the probability changes over time!
 
 <div class="notes">
 

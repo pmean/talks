@@ -1,0 +1,50 @@
+---
+title: "Beginning with Quarto"
+author: "Steve Simon"
+format: pptx
+editor: visual
+---
+
+### what is Quarto?
+
+-   Markup language
+    -   Weave documentation, code, output
+    -   Literate programming
+-   Based on pandoc
+
+::: notes
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+:::
+
+### Differences from R Markdown?
+
+-   Will run without R installed
+-   Supports multiple rendering options
+    -   knitr
+    -   Jupyter
+    -   Observable
+
+::: notes
+:::
+
+### Similarities to R Markdown: Math
+
+-   Latex code: Place
+    -   Y_i=\beta\_0+\beta\_1 X_i + \epsilon\_i
+    -   inside two dollar signs (\$) to get
+    -   $Y_i=\beta_0+\beta_1 X_i + \epsilon_i$
+
+::: notes
+:::
+
+### Program chunks
+
+```{r, echo=TRUE}
+#| label: chunk-1
+#| echo: TRUE
+rnorm(10)
+```
+
+::: notes
+Program chunks behave similarly. A new feature in both Rmarkdown and Quarto is the placement of chunk information inside the chunk itself using the hashtag vertical bar.
+:::

@@ -1,0 +1,16 @@
+---
+title: "Test html document"
+author: "Steve Simon"
+format: html
+editor: visual
+---
+
+
+You can add options to executable code like this
+
+```{r}
+#| echo: true
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
