@@ -5,29 +5,51 @@ format: pptx
 editor: visual
 ---
 
-### what is Quarto?
+### What is Quarto?
 
 -   Markup language
     -   Weave documentation, code, output
     -   Literate programming
--   Based on pandoc
 
 ::: notes
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+Quarto is a markup language. That means that it uses simple text tags and codes. Quarto allows you to weave documentation, code, and output into a single file.
+
+This allows you to reach an ideal known as literate programming. Literate programming is a style of programming first defined by Donald Knuth in 1984. It uses explanations about how a program works in natural language with short snippets of code in between that can all be compiled and run as a single unit.
+
+https://en.wikipedia.org/wiki/Literate_programming
 :::
 
-### Differences from R Markdown?
+### Built upon pandoc
 
--   Will run without R installed
+-   Open source standard
+-   Creates multiple formats
+    - Word, pdf, html
+    - Powerpoint, reveal.js, beamer
+    - Blogs, static websites
+    - Books (bookdown)
+-   Extensible using lua filters
+
+::: notes
+Quarto uses pandoc, an open source system for translating among different documentation formats. Quarto uses Pandoc to create Word documents, pdf files, web pages (html). It can also produce presentations using Powerpoint, reveal.js, and beamer. With additional packages it can produce blogs, website, and even entire books.
+
+You can extend and modify the quarto system using lua filters. Lua filters take intermediate output in the pandoc system, abstract syntax tree  (ast) files, and makes modifications at that stage. This allows you to make global changes to how output from pandoc is displayed.
+:::
+
+### Differences from earlier markup languages
+
+-   Will run without R or Python installed
 -   Supports multiple rendering options
     -   knitr
     -   Jupyter
     -   Observable
 
 ::: notes
+The biggest distinction between quarto and earlier markup languages: Rmarkdown and JUpyter is that quarto does not require you to have R or Python installed before you use it. So you can start with quarto without having to commit to an underlying program ahead of time.
+
+Quarto supports multiple rendering options, including knitr, an R based system, or Jupyter, a Python based system, or Observable, a Javascript based system.
 :::
 
-### Similarities to R Markdown: Math
+### Similarities to earlier markdown systems: Math
 
 -   Latex code: Place
     -   Y_i=\beta\_0+\beta\_1 X_i + \epsilon\_i
@@ -35,13 +57,32 @@ Quarto enables you to weave together content and executable code into a finished
     -   $Y_i=\beta_0+\beta_1 X_i + \epsilon_i$
 
 ::: notes
+Quarto allows you to place math equations using Latex code 
 :::
+
+### Multi-column layout
 
 ### Program chunks
 
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
+
+::: notes
+You can place text and images in multiple columns. 
+:::
+
 ```{r, echo=TRUE}
 #| label: chunk-1
-#| echo: TRUE
+#| echo: true
 rnorm(10)
 ```
 
