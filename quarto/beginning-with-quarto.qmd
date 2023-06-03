@@ -23,16 +23,16 @@ https://en.wikipedia.org/wiki/Literate_programming
 
 -   Open source standard
 -   Creates multiple formats
-    - Word, pdf, html
-    - Powerpoint, reveal.js, beamer
-    - Blogs, static websites
-    - Books (bookdown)
+    -   Word, pdf, html
+    -   Powerpoint, reveal.js, beamer
+    -   Blogs, static websites
+    -   Books (bookdown)
 -   Extensible using lua filters
 
 ::: notes
 Quarto uses pandoc, an open source system for translating among different documentation formats. Quarto uses Pandoc to create Word documents, pdf files, web pages (html). It can also produce presentations using Powerpoint, reveal.js, and beamer. With additional packages it can produce blogs, website, and even entire books.
 
-You can extend and modify the quarto system using lua filters. Lua filters take intermediate output in the pandoc system, abstract syntax tree  (ast) files, and makes modifications at that stage. This allows you to make global changes to how output from pandoc is displayed.
+You can extend and modify the quarto system using lua filters. Lua filters take intermediate output in the pandoc system, abstract syntax tree (ast) files, and makes modifications at that stage. This allows you to make global changes to how output from pandoc is displayed.
 :::
 
 ### Differences from earlier markup languages
@@ -57,15 +57,14 @@ Quarto supports multiple rendering options, including knitr, an R based system, 
     -   $Y_i=\beta_0+\beta_1 X_i + \epsilon_i$
 
 ::: notes
-Quarto allows you to place math equations using Latex code 
+Quarto allows you to place math equations using Latex code
 :::
 
 ### Multi-column layout
 
 ### Program chunks
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="40%"}
 Left column
 :::
@@ -73,11 +72,10 @@ Left column
 ::: {.column width="60%"}
 Right column
 :::
-
-::::
+:::
 
 ::: notes
-You can place text and images in multiple columns. 
+You can place text and images in multiple columns.
 :::
 
 ```{r, echo=TRUE}
@@ -89,3 +87,9 @@ rnorm(10)
 ::: notes
 Program chunks behave similarly. A new feature in both Rmarkdown and Quarto is the placement of chunk information inside the chunk itself using the hashtag vertical bar.
 :::
+
+### Notes from SDSS 2023
+
+-   Unifies and extends the R Markdown ecosystem
+    -   consistent implementation of features
+        -   tabsets

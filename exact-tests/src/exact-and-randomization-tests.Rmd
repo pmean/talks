@@ -123,10 +123,181 @@ Let's start with a historical overview.
 If the lady had no ability to tell whether the milk was added first and was effectively picking at random, the probability would be
 
 + $\frac{4}{8} \times \frac{3}{7}  \times \frac{2}{6} \times \frac{1}{5} = \frac{1}{70}$
-  + Note: the probability changes over time!
+  + Note: the probability is NOT $\left(\frac{1}{2}\right)^4$
 
 <div class="notes">
 
 
 
 </div>
+
+### An alternate result
+
+![Figure 6. An alternate result with one miss](../images/tea-result-2.png)
+
+### How likely is three correct results?
+
+$\frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} + \frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} +...$
+
+Too messy! Use the hypergeometric distribution. Note: this is NOT a binomial distribution.
+
+<div class="notes">
+
+
+
+</div>
+
+### Balls in an urn analogy
+
+```{}
+
+ |    W           |
+ |       B        |
+ |  B        B    |
+ |          W     |
+ |     W       B  |
+ |        W       |
+ __________________
+
+```
+
+<div class="notes">
+
+Most of the discussion of these functions describe the hypergeometric distribution as an abstract problem of drawing balls from an urn. So think of the eight cups of tea as an urn with eight balls, four white and four black. The white balls represent correctly identifying the cup of tea as having the milk added first. The black balls represent mistakes in identification. So what is the probability of getting 3 white balls after drawing 4 balls without replacement?
+
+</div>
+
+### Use the hypergeometric distribution
+
++ SAS: PDF('HYPER', 3, 8, 4, 4)
++ R: dhyper(3, 4, 4, 4)
++ Stata: dis hypergeometricp(8, 4, 4, 3)
++ SPSS: PDF.HYPER(3, 8, 4, 4)
+
+<div class="notes">
+
+The functions to calculate hypergeometric probabilities vary from package to package. SAS uses a PDF function (short for Probability Density Function) with the 'HYPER' argument. R uses the dhyper function. Stata uses dis hypergeometricp. SPSS uses the PDF.HYPER function.
+
+All of these packages arrange the numeric arguments differently.
+
+</div>
+
+### Use the hypergeometric distribution
+
++ W=# of white balls in the urn
++ B=# of black balls in the urn
++ N=W+B=# of balls total in the urn
++ d=# of balls drawn from the urn
++ x=# of drawn balls that are white
+  + SAS: PDF('HYPER', x, N, W, d)
+  + R: dhyper(x, W, B, d)
+  + Stata: dis hypergeometricp(N, W, d, x)
+  + SPSS: PDF.HYPER(x, N, W, D)
+  
+<div class="notes">
+
+Notice that R asks you to specify the number of white balls and the number of black balls. The other packages ask you to specify the number of white balls and the total number of balls, The order that you specify these values in is also inconsistent from package to package.
+
+I show this to emphasize that if you plan to calculate hypergeometric probabilities, read the manual closely. It also helps to first do some simple calculations like an urn with 4 white and 4 black balls. Compare what the statistical package tells you with what you calculated by hand.
+
+Fortunately, you don't need to resort to the hypergeometric probabilities.
+
+</div>
+
+### Fisher's Exact Test in SPSS (1/4)
+
+![Figure 7. SPSS Dialog box](../images/spss-data.png)
+
+### Fisher's Exact Test in SPSS (2/4)
+
+![Figure 7. SPSS Dialog box](../images/spss-dialog-box-1.png)
+
+### Fisher's Exact Test in SPSS (3/4)
+
+![Figure 7. SPSS Dialog box](../images/spss-dialog-box-2.png)
+
+### Fisher's Exact Test in SPSS (4/4)
+
+![Figure 7. SPSS output box](../images/spss-output.png)
+
+### Fisher's Exact Test in R (1/2)
+
+```{}
+labs <- c(
+  "Milk first",
+  "Tea first")
+guess <- c(1, 2, 1, 2, 2, 2, 1, 1) 
+truth <- c(2, 2, 1, 2, 2, 1, 1, 1)
+fisher.test(
+  factor(guess, labels=labs), 
+  factor(truth, labels=labs))
+```
+
+### Fisher's Exact Test in R (2/2)
+
+```{}
+p-value = 0.4857
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+   0.2117329 621.9337505
+sample estimates:
+odds ratio 
+  6.408309 
+```
+
+### Fisher's Exact Test in Stata
+
+```{}
+. tabulate guess truth, exact
+
+           Fisher's exact =                 0.486
+   1-sided Fisher's exact =                 0.243
+```
+
+### Mann-Whitney U
+
+```{}
+1,2,3  1,2,4  1,2,5  1,2,6  1,2,7
+1,3,4  1,3,5  1,3,6  1,3,7  1,4,5
+1,4,6  1,4,7  1,5,6  1,5,7  1,6,7
+2,3,4  2,3,5  2,3,6  2,3,7  2,4,5
+2,4,6  2,4,7  2,5,6  2,5,7  2,6,7
+3,4,5  3,4,6  3,4,7  3,5,6  3,5,7
+3,6,7  4,5,6  4,5,7  4,6,7  5,6,7
+```
+
+### Mann-Whitney U
+
+```{}
+
+
+
+
+                            2,6,7
+                            3,5,7
+3,6,7  4,5,6  4,5,7  4,6,7  5,6,7
+```
+
+### Mann-Whitney U
+
+```{}
+1,2,3  1,2,4  1,2,5  1,2,6
+1,3,4  1,3,5
+
+2,3,4
+
+
+
+```
+
+
+### Randomization test
+
+![Figure x. 25 permutations](../images/randomization1.gif)
+### Randomization test
+
+![Figure x. 25 permutations](../images/randomization2.gif)
+
+### Randomization test
+
+![Figure x. 25 permutations](../images/randomization3.gif)
