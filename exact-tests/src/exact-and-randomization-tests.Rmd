@@ -66,7 +66,7 @@ It's not possible to cover every possible application of exact and randomization
 First, I will provide a historical overview, with an example derived in 1931, when Statistics was still in its infancy.
 </div>
 
-### 1. Historical origins
+### Historical origins of Fisher's Exact Test
 
 ![Figure 1. Ronald A. Fisher](../images/Ronald_Aylmer_Fisher_1952.jpg)
 
@@ -76,7 +76,7 @@ Let's start with a historical overview.
 
 </div>
 
-### The lady tasting tea
+### The lady tasting tea, tea plus milk
 
 ![Figure 2. Tea with milk added](../images/tea-plus-milk.png)
 
@@ -86,7 +86,7 @@ Let's start with a historical overview.
 
 </div>
 
-### If you change the order?
+### Milk plus tea, can you tell the difference?
 
 ![Figure 3. Milk with tea added](../images/milk-plus-tea.png)
 
@@ -96,7 +96,7 @@ Let's start with a historical overview.
 
 </div>
 
-### The experiment
+### The experiment to test the claim
 
 ![Figure 4. A randomized experiment](../images/tea-experiment.png)
 
@@ -106,7 +106,7 @@ Let's start with a historical overview.
 
 </div>
 
-### The result
+### The result of the experiment
 
 ![Figure 5. Result of the randomized experiment](../images/tea-result.png)
 
@@ -129,7 +129,7 @@ If the lady had no ability to tell whether the milk was added first and was effe
 
 </div>
 
-### Break #2
+### Break #1
 
 What have you learned?
 + Simple application of Fisher's Exact test
@@ -175,32 +175,21 @@ Most of the discussion of these functions describe the hypergeometric distributi
 
 ### Use the hypergeometric distribution
 
-+ SAS: PDF('HYPER', 3, 8, 4, 4)
-+ R: dhyper(3, 4, 4, 4)
-+ Stata: dis hypergeometricp(8, 4, 4, 3)
-+ SPSS: PDF.HYPER(3, 8, 4, 4)
-
++ w=# of white balls in the urn
++ b=# of black balls in the urn
++ n=w+b=# of balls total in the urn
++ d=# of balls drawn from the urn
++ x=# of drawn balls that are white
+  + SAS: PDF('HYPER', x, n, w, d)
+  + R: dhyper(x, w, b, d)
+  + Stata: dis hypergeometricp(n, w, d, x)
+  + SPSS: PDF.HYPER(x, n, w, d)
+  
 <div class="notes">
 
 The functions to calculate hypergeometric probabilities vary from package to package. SAS uses a PDF function (short for Probability Density Function) with the 'HYPER' argument. R uses the dhyper function. Stata uses dis hypergeometricp. SPSS uses the PDF.HYPER function.
 
 All of these packages arrange the numeric arguments differently.
-
-</div>
-
-### Use the hypergeometric distribution
-
-+ W=# of white balls in the urn
-+ B=# of black balls in the urn
-+ N=W+B=# of balls total in the urn
-+ d=# of balls drawn from the urn
-+ x=# of drawn balls that are white
-  + SAS: PDF('HYPER', x, N, W, d)
-  + R: dhyper(x, W, B, d)
-  + Stata: dis hypergeometricp(N, W, d, x)
-  + SPSS: PDF.HYPER(x, N, W, D)
-  
-<div class="notes">
 
 Notice that R asks you to specify the number of white balls and the number of black balls. The other packages ask you to specify the number of white balls and the total number of balls, The order that you specify these values in is also inconsistent from package to package.
 
@@ -218,29 +207,33 @@ What have you learned?
 What is coming next?
 + Using SPSS and Stata
 
-### Fisher's Exact Test in SPSS (1/4)
+### SPSS data for Fisher's Exact Test
 
 ![Figure 7. SPSS Dialog box](../images/spss-data.png)
 
-### Fisher's Exact Test in SPSS (2/4)
+### SPSS dialog boxes for Fisher's Exact Test (1/2)
 
 ![Figure 7. SPSS Dialog box](../images/spss-dialog-box-1.png)
 
-### Fisher's Exact Test in SPSS (3/4)
+### SPSS dialog boxes for Fisher's Exact Test (2/2)
 
 ![Figure 7. SPSS Dialog box](../images/spss-dialog-box-2.png)
 
-### Fisher's Exact Test in SPSS (4/4)
+### SPSS output for Fisher's Exact Test
 
 ![Figure 7. SPSS output box](../images/spss-output.png)
 
-### Fisher's Exact Test in Stata
+### Stata data for Fisher's Exact Test
+
+![Figure 7. Stata data](../images/stata-data.png)
+
+### Stata code and output for Fisher's Exact Test
 
 ```{}
 . tabulate guess truth, exact
 
-           Fisher's exact =                 0.486
-   1-sided Fisher's exact =                 0.243
+        Fisher's exact = 0.486
+1-sided Fisher's exact = 0.243
 ```
 
 ### Break #3
@@ -251,7 +244,7 @@ What have you learned?
 What's coming next?
 + Details on the p-value computation
 
-### Details on the p-value computation (1/5)
+### Recall the definition of a p-value
 
 p-value=P[sample results or more extreme| H0]
 
@@ -259,8 +252,8 @@ What does "more extreme" mean?
 
 ### Details on the p-value computation (2/5)
 
-List all possible 2 by 2 tables
-
++ List all possible 2 by 2 tables
+  + Restricted to common marginal totals
 ```{}
   ? ? | 4
   ? ? | 4
@@ -268,7 +261,7 @@ List all possible 2 by 2 tables
   4 4 | 8
 ```
 
-### Details on the p-value computation (3/5)
+### There are five tables with the same marginal totals
 
 ```{}
  4  0    3  1    2  2    1  3    0  4
@@ -277,7 +270,7 @@ List all possible 2 by 2 tables
 0.014   0.229   0.514   0.229   0.014
 ```
 
-### Details on the p-value computation (4/5)
+### Tables that are more extreme (1/2)
 
 For a one-sided p-value
 
@@ -290,7 +283,7 @@ For a one-sided p-value
 p-value = 0.243
 ```
 
-### Details on the p-value computation (5/5)
+### More extreme for a two-sided test (2/2)
 
 For a two sided p-value
 
@@ -317,7 +310,7 @@ What's coming next?
 + Tabulate all possible R by C tables
   + Fixed row and column totals
   
-### Fisher-Freeman-Halton test in R (1/2)
+### R code for Fisher-Freeman-Halton test
 
 ```{}
 > v <- c(4, 0, 0, 0, 4, 0, 0, 0, 4)
@@ -329,7 +322,7 @@ What's coming next?
 [3,]    0    0    4
 ```
 
-### Fisher-Freeman-Halton test in R (1/2)
+### R output for Fisher-Freeman-Halton test in R
 
 ```{}
 > fisher.test(m)
@@ -394,7 +387,7 @@ p-value = 7/35 = 0.20
 
 ### 
 
-### Calculation for a two-sided test
+### More extreme rankings for a two-sided test
 
 ```{}
 1,2,3  1,2,4  1,2,5  1,2,6
@@ -408,20 +401,9 @@ p-value = 7/35 = 0.20
 
 p-value = 14/35 = 0.40
 
-### Mann-Whitney test in SAS
+### SAS code for Mann-Whitney test in SAS
 
 ```{}
-data a;
-  input grp $ x;
-datalines;
-T 14
-T 23
-T 37
-C 12
-C 13
-C 15
-C 25
-run;
 proc npar1way wilcoxon;
   class grp;
   var x;
@@ -429,6 +411,13 @@ proc npar1way wilcoxon;
 run;
 ```
 
+### SAS output for Mann-Whitney test (1/2)
+
+![Figure x. SAS output](../images/sas-output-1.png)
+
+### SAS output for Mann-Whitney test (2/2)
+
+![Figure x. SAS output](../images/sas-output-2.png)
 
 ### Randomization test
 
@@ -442,27 +431,7 @@ run;
 
 ![Figure x. 25 permutations](../images/randomization3.gif)
 
-### Fisher's Exact Test in R (1/2)
+### When should you use exact or randomization tests?
 
-```{}
-labs <- c(
-  "Milk first",
-  "Tea first")
-guess <- c(1, 2, 1, 2, 2, 2, 1, 1) 
-truth <- c(2, 2, 1, 2, 2, 1, 1, 1)
-fisher.test(
-  factor(guess, labels=labs), 
-  factor(truth, labels=labs))
-```
 
-### Fisher's Exact Test in R (2/2)
-
-```{}
-p-value = 0.4857
-alternative hypothesis: true odds ratio is not equal to 1
-95 percent confidence interval:
-   0.2117329 621.9337505
-sample estimates:
-odds ratio 
-  6.408309 
-```
+### Conclusion
