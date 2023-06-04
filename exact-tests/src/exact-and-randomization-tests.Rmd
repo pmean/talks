@@ -667,42 +667,80 @@ If you find a setting where you want an exact test, but you can't find one in yo
 
 <div class="notes">
 
+Once you understand how exact tests work, randomization tests represent a fairly simple generalization.
 
+With larger data sets, it may not be too easy to list every possible outcome. So what you do is to randomly sample from the list of all possible outcomes. Find the proportion of randomly sampled outcomes that are as extreme or more extreme than the result that you actually observed in the data. If many of the randomly sampled outcomes are more extreme than your observed result, then maybe your observed result is not all that extreme. It seems reasonable in this case to accept the null hypothesis. If only a few randomly sampled results are more extreme that your observed result, then something odd is going on. Your observed result is much farther out than you would expect and you should reject the null hypothesis. The proportion as extreme or more extreme represents an estimated p-value.
 
 </div>
 
 ### Titanic data
 
 ```{}
- 	    Alive	 Dead	 Total
-Female	308	  154	   462
-Male	  142	  709	   851
-Total	  450	  863  1,313
+ 	       Alive	      Dead	   Total
+Female	308	(67%)  154 (33%)	   462
+Male	  142 (17%)  709 (83%)	   851
+Total	  450	(34%)  863 (66%)   1,313
 
 Average age
-  Alive 29.4
-  Dead  31.1
+  Alive   29.4
+  Dead    31.1
+  Overall 30.4
 ```
+
+<div class="notes">
+
+There is an interesting dataset on mortality that I use in a lot of my classes. The data has results for individuals aboard the Titanic. The Titanic was a large passenger ship, the largest one of its time actually. It was so large that it was reputed to be unsinkable. But on its maiden voyage, it struck an iceberg in the North Atlantic Ocean and sunk.
+
+We actually have a lot of information about the passengers on the Titanic. We know whether they lived or died, whether they traveled in first, second, or third class, and whether they were male or female. For most, but not all of the passengers, we know their ages.
+
+Now the Titanic sunk in 1912, and that was an age where they really believed in "women and children first." Today, all us old guys would mow over the women and children to get to the lifeboats first. But you can see from the tables on this slide that it really was different. Overall, the survival rate was 34%, but if you looked just at the men, the survival rate was half that.
+
+Now the average ages might not be telling the full story, but the average age of all passengers was 30.4 years, but it was a bit younger among the survivors, 29.4 years on average.
+
+</div>
 
 ### Titanic data
 
 ```{r, eval=FALSE}
-randomized_number_male_survivors <- rep(NA, 10000)
+randomized_proportion_male_survivors <- rep(NA, 10000)
 randomized_average_age_survivors <- rep(NA, 10000)
 for (i in 1:10000) {
-  randomized_male_survivors[i] <- sum(sample(t$Sex, 450)=="male")
+  randomized_proportion_male_survivors[i] <- sum(sample(t$Sex, 450)=="male")/851
   randomized_average_age_survivors[i] <- mean(sample(t$Age, 450), na.rm=TRUE)
 }
 ```
+
+<div class="notes">
+
+Now, let's try an experiment. What would have happened if the Titanic crew assigned the 450 spots on the lifeboats randomly. Would the survival probability of men be closer to the overall survival probability? Would the average age among survivors be closer to the overall average age?
+
+It certainly would, but the more important question is how much variation would there be if you randomly assigned the 450 lifeboat spots.
+
+The R code is a bit terse, but you need to set up a vector with 10,000 empty spots for the survival proportion among men and another 10,000 empty spots for the average age of survivors.
+
+Then you use the sample function to randomly pick 450 survivors. The number of males among those 450 randomly selected survivors divided by 851, the total number of men on the ship is the survival probability.
+
+</div>
 
 ### Titanic data
 
 ![Figure x. Histogram of randomized counts of male survivors](../images/titanic-males.png)
 
+<div class="notes">
+
+
+
+</div>
+
 ### Titanic data
 
 ![Figure x. Histogram of randomized average ages of survivors](../images/titanic-ages.png)
 
+<div class="notes">
+
+
+
+</div>
 
 ### Break #6
 

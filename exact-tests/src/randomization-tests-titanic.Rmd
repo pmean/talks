@@ -9,10 +9,12 @@ knit: (function(inputFile, encoding) {
 ---
 
 ```{r}
-t <- read.table(file="../data/titanic.txt", header=TRUE)
-head(t)
-table(t$Sex, t$Survived)
-tapply(t$Age, t$Survived, mean, na.rm=TRUE)
+ti <- read.table(file="../data/titanic.txt", header=TRUE)
+head(ti)
+table(ti$Sex, ti$Survived)
+prop.table(table(ti$Sex, ti$Survived), margin=1)
+tapply(ti$Age, ti$Survived, mean, na.rm=TRUE)
+mean(ti$Age, na.rm=TRUE)
 ```
 
 ```{r}
