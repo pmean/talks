@@ -11,10 +11,14 @@ knit: (function(inputFile, encoding) {
 ```{r}
 ti <- read.table(file="../data/titanic.txt", header=TRUE)
 head(ti)
-table(ti$Sex, ti$Survived)
-prop.table(table(ti$Sex, ti$Survived), margin=1)
-tapply(ti$Age, ti$Survived, mean, na.rm=TRUE)
-mean(ti$Age, na.rm=TRUE)
+counts <- table(ti$Sex, ti$Survived)
+counts
+props <- prop.table(table(ti$Sex, ti$Survived), margin=1)
+props
+gmeans <- tapply(ti$Age, ti$Survived, mean, na.rm=TRUE)
+gmeans
+omean <- mean(ti$Age, na.rm=TRUE)
+omean
 ```
 
 ```{r}
@@ -38,10 +42,14 @@ mean(
 quantile(
   randomized_proportion_male_survivors, 
   probs=c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1))
+```
+
+```{r}
 mean(
   randomized_average_age_survivors)
 quantile(
   randomized_average_age_survivors, 
   probs=c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1))
+sum(randomized_average_age_survivors<gmeans[2])/n
 ```
 

@@ -145,9 +145,11 @@ Now notice that the probability is not 1/2 raised to the fourth power. The proba
 ### Break #1
 
 What have you learned?
+
 + Simple application of Fisher's Exact test
 
 What is coming next?
+
 + The hypergeometric distribution
 
 Any questions?
@@ -164,7 +166,9 @@ To make things interesting, let's propose a different result. Suppose the Bristo
 
 ### How likely is three correct results?
 
-$\frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} \ \ + \ \ \frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} \ \ +\ \ ...$
+$\frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} \ \ + \ \ \frac{4}{8} \times \frac{4}{7}  \times \frac{3}{6} \times \frac{2}{5} \ \ +$
+
+$\frac{4}{8} \times \frac{3}{7}  \times \frac{4}{6} \times \frac{2}{5} \ \ + \ \ \frac{4}{8} \times \frac{3}{7}  \times \frac{2}{6} \times \frac{4}{5} \ \ \ \ $
 
 Too messy! Use the hypergeometric distribution. Note: this is NOT a binomial distribution.
 
@@ -219,6 +223,15 @@ The formula for hypergeometric probabilities uses combinatorics. Say that you wa
 
 </div>
 
+### Calculation for 3 correct guesses
+
+$$\frac{{4 \choose 3} {4 \choose 1}}{8 \choose 4}=\frac{\frac{4!}{3!1!} \frac{4!}{1!3!}}{\frac{8!}{4!4!}}=$$
+
+$$\ $$
+
+$$\frac{\frac{24}{6\times1} \frac{24}{1\times6}}{\frac{40320}{24\times24}} = \frac{16}{70}$$
+
+
 ### Functions for computing hypergeometric probabilities
 
 + SAS: PDF('HYPER', w0, n1, w1, n0)
@@ -242,10 +255,14 @@ Fortunately, while it helps to understand that Fisher's Exact Test relies on  hy
 ### Break #2
 
 What have you learned?
+
 + The hypergeometric distribution
 
 What is coming next?
+
 + Using SPSS and Stata
+
+Any questions?
 
 <div class="notes">
 
@@ -257,13 +274,21 @@ What is coming next?
 
 ![Figure 7. SPSS Dialog box](../images/spss-data.png)
 
+<div class="notes">
+
+Here is the data layout in SPSS for the lady tasting tea example. I am showing the case where there are three and not four correct guesses.
+
+</div>
+
 ### SPSS dialog boxes for Fisher's Exact Test (1/2)
 
 ![Figure 8. SPSS Dialog box](../images/spss-dialog-box-1.png)
 
 <div class="notes">
 
+There are two dialog boxes you need to look at for the crosstabs in SPSS (selected by choosing Analyze, Descriptive Statistics, Crosstabs from the menu).
 
+First you have to ask for the Chi-square test, even though you don't want it.
 
 </div>
 
@@ -273,7 +298,7 @@ What is coming next?
 
 <div class="notes">
 
-
+Then you have to click on the Exact button and ask for an exact test. Note that the Monte Carlo option, will produce a randomization test for this table. We'll discuss randomization tests a bit later. 
 
 </div>
 
@@ -287,7 +312,9 @@ What is coming next?
 
 <div class="notes">
 
+It may be a bit hard to read, but SPSS (bless those programmers) decided to throw in a bunch of different p-values. It's one of the irritating things about SPSS. In a concern not to leave anything out (a noble concern, I must admit), they err on the side of presenting too much information. It doesn't bother me, because I am used to looking through a whole page of output to find the one number I am interested in. But SPSS does not allow you to prevent display of the extra p-values.
 
+The one p-value you are looking for is the Exact (1-sided) column and the Fisher's Exact Test row. The p-value is 0.243. So if the lady tasting tea only got three cups correctly identified as milk first, you'd have to accept the null hypothesis and admit that getting three out of four correct is a fairly common event for someone who is just guessing randomly.
 
 </div>
 
@@ -302,7 +329,7 @@ What is coming next?
 
 <div class="notes">
 
-
+The Stata command for Fisher's exact test uses tabulate with an exact option. The output is much simpler, though I did edit away a few details to make this fit easily on a single slide.
 
 </div>
 
@@ -324,17 +351,21 @@ fisher.test(guess, truth)
 
 <div class="notes">
 
-
+I won't show the output, but Fisher's Exact Test is just as easy in SAS and R.
 
 </div>
 
 ### Break #3
 
 What have you learned?
+
 + Using SPSS and Stata
 
-What's coming next?
+What is coming next?
+
 + Details on the p-value computation
+
+Any questions?
 
 ### Recall the definition of a p-value
 
@@ -344,7 +375,7 @@ What does "more extreme" mean?
 
 <div class="notes">
 
-
+I just wanted to spend a bit of time talking about the actual computation of the p-value, because it is a bit trickier when you are not right on the edge.
 
 </div>
 
@@ -361,7 +392,9 @@ What does "more extreme" mean?
 
 <div class="notes">
 
+The first step in getting a p-value is to list all the possible tables that you could get that have the same row and column totals as the data you observed.
 
+While it make sense in this example, fixing both the row and colum totlas is a bit controversial in other settings.
 
 </div>
 
@@ -376,7 +409,7 @@ What does "more extreme" mean?
 
 <div class="notes">
 
-
+You can list the tables on a single slide. There are five of them, starting with a table with all four milk first cups being identified correctly (and by implication all four tea first cups identified correctly) and ending with the worst possible result, everything completely wrong.
 
 </div>
 
@@ -395,7 +428,7 @@ p-value = 0.243
 
 <div class="notes">
 
-
+Now if you observed three correct guesses, the p-value would include the probability for that table (0.229) plus the probability for the one table more extreme (all four correct) which has a probability of 0.014. Add these two probabilities together to get a p-value of 0.243.
 
 </div>
 
@@ -414,17 +447,39 @@ p-value = 0.486
 
 <div class="notes">
 
-
+While a two-sided test makes no sense in this setting, there are times when you prefer to use a two-sided Fisher's Exact test. To get that, count the tables on the opposite side. Now there is a symmetry here that makes things easy but there are times where the probabilities are skewed and don't match up on the opposite side. In that case, the more extreme tables are those where the probability under the null hypothesis is equal to or smaller than the probability of the observed table.
 
 </div>
+
+### Computing a two-sided p-value for the asymmetric case
+
+```{}
+ 4  0    3  1    2  2    1  3
+ 0  3    1  2    2  1    3  0
+ 
+0.029   0.343   0.514   0.114
+```
+
+p-value for 3 correct is 0.343 + 0.029 + 0.114 = 0.486.
+
+<div class="notes">
+
+Suppose one of the cups spilled on the way out and the lady had to identify which four of the seven cups had milk added first. The probabilities are asymmetric, and the two-sided p-value associated with getting three out of four correct would add to the observed table probability of 0.343 the two smaller probabilities, 0.029 and 0.114, to get a p-value of 0.486. The only case considered less extreme than 3 correct is getting 2 correct.
+
+</div>
+
 
 ### Break #4
 
 What have you learned?
+
 + Details on the p-value computation
 
-What's coming next?
+What is coming next?
+
 + More exact tests
+
+Any questions?
 
 ### Fisher-Freeman-Halton test
 
@@ -660,6 +715,16 @@ If you find a setting where you want an exact test, but you can't find one in yo
 
 ### Break #5
 
+What have you learned
+
++ More exact tests
+
+What is coming next
+
++ Randomization tests
+
+Any questions?
+
 ### Randomization tests
 
 + Impractical to list all possible outcomes
@@ -744,21 +809,191 @@ Then you use the sample function to randomly pick 450 survivors. The number of m
 
 ### Break #6
 
+What have you learned
+
++ Randomization tests
+
+What is coming next
+
++ A practical example
+
+### A practical example
+
+```{}
+Old therapy: -1 -1 -1  0  0  0  0  0
+New therapy:  0  1  1  1  2  2  2  2  2  2  3  3
+
+-1 = slight decline
+ 0 = no change
+ 1 = slight improvement
+ 2 = moderate improvement
+ 3 = large improvement
+ 
+Average
+  Old therapy: -0.38
+  New therapy:  1.75
+  Difference:   2.13
+```
+
+<div class="notes">
+
+I received some data from a project where the outcome measure was the degree of improvement after a treatment, with values of -1 (slight decline), 0 (no change), 1 (slight improvement), 2 (moderate improvement), and 3 (large improvement). The two treatments had quite different results. The old therapy had eight patients, three of whom showed a slight decline and five of whom showed no change. Among the twelve patients in the new therapy, one showed no change, three showed a slight improvement, six showed moderate improvement, and two showed a large improvement. There are several approaches that you could try with this data.
+
+A simple t-test would be suspect because of the small sample size and the decidedly non-normal distributions.
+
+A nonparametric test would be tricky because of the large number of ties.
+
+But there is clearly a big difference between the old and the new treatments. This is an example of the intra-ocular trauma test, a difference so obvious that it hits you right between the eyes.
+
+I decided to try a randomization test. Imagine that the labels that identified the eight old treatment and twelve new treatment patients got lost and you randomly assigned them. That would create pure noise. Do it again and you get more noise. Repeat this enough times and you get an estimate of how much variation you'd see if the two groups were comparable. If, as I suspected, the actual result (a difference of 2.13 units in the means) was well outside the variation estimated by the randomization algorithm, you'd have pretty strong evidence that the difference seen in the data would be very unlikely to arise if there were no difference between the two therapies. 
+
+Now some of you might quibble about using means here, but I could have just as easily used a median.
+
+</div>
+
 ### Randomization test
 
 ![Figure 14. 7 permutations](../images/randomization1.gif)
+
+<div class="notes">
+
+The top line here shows the original data. There are dark blue numbers on a light blue background for the old therapy and red numbers on a yellow background for the new therapy.
+
+Now let's shuffle things seven times. Notice that some of the red new therapy numbers have migrated to the left and some of the blue old therapy numbers have migrated to the right. The difference in means is -0.58 for the first shuffling and 0.88 for the second shuffling. Quite a bit of variation right off the bat, but still not at all close to the 2.13 unit difference seen in the original sample.
+
+</div>
 
 ### Randomization test
 
 ![Figure 15. 9 more permutations](../images/randomization2.gif)
 
+<div class="notes">
+
+Let's do nine more shufflings. We see a 1.29 unit difference, but again this falls far short of the actual data 
+
+</div>
+
 ### Randomization test
 
 ![Figure 16. 9 more permutations](../images/randomization3.gif)
 
-### Break 
+<div class="notes">
+
+Nine more shufflings and we are still nowhere close to 2.13.
+
+Now to be honest, you'd need to do this at least a thousand times. Maybe ten thousand if your computer is up for the challenge. But if you did, the proportion of cases where you'd see a mean difference of 2.13 is going to be almost, if not exactly, zero.
+
+Notice that the non-normality and the large number of ties is not at issue here. The only really serious assumption you need to make here is independence from one patient to another. Now lack of independence in a medical trial does happen, such as with infectious diseases, but most of the time you don't have to worry about the independence assumption.
+
+</div>
+
+### Break #7
+
+What have you learned.
+
++ A practical example of the randomization test
+
+What is coming next
+
++ When should you use exact and randomization tests?
+
+Questions?
 
 ### When should you use exact or randomization tests?
 
++ Fisher's Exact test
+  + Lots of guidance
++ Other exact or randomization tests
+  + No so much guidance
+  
+### When should you use Fisher's Exact Test?
+
++ Your alternative is the Pearson Chi-squared test
+
+$$T = \Sigma \frac{(O_{ij}-E_{ij})^2}{E_{ij}}$$
+
++ Under $H_0$, T is approximately $\chi^2(1)$
+  + Poor approximation if $E_{ij}$ is small.
+
+<div class="notes">
+
+The most commonly used test for measuring association in a two by two table is the Chi-squared statistic. You compute the expected count Eij for each cell in the table under an assumption of no association (or independence) and look for the deviation from the observed counts.
+
+This is approximately distributed as a Chi-squared distribution, but the approximation is poor if one or more of the expected counts is small. How small is open to debate. Some people say anything less than 5 is trouble. Others are a bit more permissive and will still use the Chi-squared approximation even with expected counts as small as 1.
+
+Note that a small value for the observed count is not troublesome. Sometimes you can even tolerate a zero in a two by two table if all the other numbers are quite big.
+
+So some people use the expected count less than 5 as a rationale for when to switch to Fisher's Exact test.
+
+To be honest, I tend to switch to Fisher's Exact test anytime there is even a hint of trouble, such as a low observed count in one of the cells of the two by two table. 
+
+My thought is that Fisher's Exact Test is easy enough to compute and it removes any lingering doubt about whether the Chi-squared distribution is a good approximation.
+
+</div>
+
+### Criticisms of Fisher's Exact Test
+
++ Too conservative
++ Fixed row and column totals are unrealistic.
+
+<div class="notes">
+
+There are some criticisms of Fisher's Exact Test. It is a point for debate, but some experts claim that Fisher's Exact Test is too conservative. This relates in part to the discrete nature of the test. In the lady tasting tea example, the p-value for four correct is 1/70 or 0.014 but for three correct, it jumps to 17/70 or 0.243. What is happening is that you can't use an alpha level of 0.05, but you are forced to use an alpha level at 0.014. This leads to a loss in power compared to tests that actually have an alpha level equal to 0.05. That's the theory, anyway, but from a practical perspective, any test of counts using a total sample size of 8 will have difficulty finding an alpha level equal to 0.05.
+
+A more common criticsm of Fisher's Exact test is that the restriction of 2 by 2 tables only to those with the same marginal totals is unrealistic, at times. In the lady tasting tea, such a restriction makes sense because the experiment did not allow for different marginal totals. There were exactly 4 of each type of tea and the request to pick four was implicit. If the number of milk first and tea first cups would be allowed to vary, you shouldn't use an approach that fixes both the row and column totals.
+
+In some settings, it is more realistic to assume that the row totals are fixed and the column totals are random. On the Titanic, there were a fixed number of men and women, but the deaths of 450 people was not fixed. 
+
+There are variations on Fisher's Exact test that look at a broader number of tables than just those with fixed row and column totals. These tests are also controversial. So there's no easy way out.
+
+</div>
+
+### When should you use other exact/randomization tests?
+
++ Concern about small sample sizes
++ Concern about distributional assumptions
++ As a safety/sensitivity check
+
+<div class="notes">
+
+The guidance for other exact/randomization tests is a bit less clear. Often exact tests are used when there are concerns about small sample sizes, because the small sample sizes allow for easy enumeration of all possible outcomes. You might also consider exact or randomization tests when you are concerned about distributional assumptions. The last practical example, where there were only five possible values and a fair amount of skewness to the data is a good example of when an exact or randomization test might bail you out of having to make iffy assumptions.
+
+Often the exact and randomization tests are a safety valve. If you run the traditional test, which may rely on the Central Limit Theorem or another approximation, why not check whether the approximation is good by calculating an additional test using exact or randomization principles. This could be considered as a sensitivity check, and would help silence those who might criticize the more traditional approaches.
+
+</div>
+
+### Criticisms of other exact/randomization tests?
+
++ No easy way to get confidence intervals
++ No easy extension to more complex settings
+  + Risk adjustment
+  + Longitudinal/hierarchical models
++ Sometimes too computationally difficult
+  + Inadequate computer speed and capacity
+  + Difficulty in programming
+
+<div class="notes">
+
+A big problem with exact and randomization tests is that there is no easy way to compute confidence intervals. You can do it, but the programming complexity and the computational demands skyrocket.
+
+While these approaches are fine for simple settings, there are often no easy adjustments for more complex settings like risk adjustment or the use of longitudinal or hierarchical data.
+
+Also, there is some concern about the computational difficulty. This comes in two flavors. First, your computer might not have enough speed and capacity to list all the possible outcomes for some settings. Second, you yourself may need to do a bit of programming to set up an exact or randomization test.
+
+For what it's worth, the programming skills required for randomization tests is often much simpler than for exact tests. You need to know how to loop and how to draw random samples and not much more.
+
+</div>
 
 ### Conclusion
+
+What have you learned?
+
++ Fisher's Exact Test (the lady tasting tea)
++ Fisher-Freeman-Halton test
++ Mann-Whitney test
++ Randomization tests
+  + Titanic data
+  + Practical example
++ When to use/not use exact and randomization tests
+
+Questions?
