@@ -11,10 +11,14 @@ knit: (function(inputFile, encoding) {
 ```{r}
 ti <- read.table(file="../data/titanic.txt", header=TRUE)
 head(ti)
-table(ti$Sex, ti$Survived)
-prop.table(table(ti$Sex, ti$Survived), margin=1)
-tapply(ti$Age, ti$Survived, mean, na.rm=TRUE)
-mean(ti$Age, na.rm=TRUE)
+counts <- table(ti$Sex, ti$Survived)
+counts
+props <- prop.table(table(ti$Sex, ti$Survived), margin=1)
+props
+gmeans <- tapply(ti$Age, ti$Survived, mean, na.rm=TRUE)
+gmeans
+omean <- mean(ti$Age, na.rm=TRUE)
+omean
 ```
 
 ```{r}
@@ -25,11 +29,33 @@ for (i in 1:n) {
   randomized_proportion_male_survivors[i] <- sum(sample(ti$Sex, 450)=="male")/851
   randomized_average_age_survivors[i] <- mean(sample(ti$Age, 450), na.rm=TRUE)
 }
-hist(randomized_proportion_male_survivors, main=" ")
+```
+
+```{r}
+mean(
+  randomized_average_age_survivors)
+quantile(
+  randomized_average_age_survivors, 
+  probs=c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1))
+p_value <- sum(randomized_average_age_survivors<gmeans[2])/n
+```
+
+```{r}
+hist(
+  randomized_proportion_male_survivors, 
+  xlim=c(0.15, 0.40),
+  ylim=c(0, 2000),
+  main=" ")
+segments(0.167, 2000, 0.17, 0, length=0.1, col="red")
+arrows(0.167, 2000, 0.157, 2000, length=0.1, col="red")
+text(0.15, 2000, "0", col="red")
 ```
 
 ```{r}
 hist(randomized_average_age_survivors, main=" ")
+segments(29.4, 2500, 29.4, 0, length=0.1, col="red")
+arrows(29.4, 2500, 28.4, 2500, length=0.1, col="red")
+text(27.9, 2500, round(p_value, 3), col="red")
 ```
 
 ```{r}
@@ -37,11 +63,6 @@ mean(
   randomized_proportion_male_survivors)
 quantile(
   randomized_proportion_male_survivors, 
-  probs=c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1))
-mean(
-  randomized_average_age_survivors)
-quantile(
-  randomized_average_age_survivors, 
   probs=c(0, 0.05, 0.25, 0.5, 0.75, 0.95, 1))
 ```
 
