@@ -1,0 +1,45 @@
+---
+title: "Clinical statistics for non-statisticians: Day two"
+author: "Steve Simon"
+format: pptx
+editor: visual
+---
+
+### Outline of the three day course
+
+-   Day one: Numerical summaries and data visualization
+-   Day two: Hypothesis testing and sampling
+-   Day three: Statistical tests to compare treatment to a control and regression models
+
+My goal: help you to become a better consumer of statistics
+
+::: {.notes}
+Speaker notes
+:::
+
+### Day two topics
+
+-   Hypothesis testing
+    -   What does a p-value tell you
+    -   Why you might prefer a confidence interval
+    -   What sample size do you need
+    -   How does a Bayesian data analysis differ
+    -   What should you do if you do not have a hypothesis to test
+
+::: {.notes}
+Speaker notes
+:::
+
+### Day two topics (continued)
+
+-   Sampling
+    -   What do you gain with a random sample
+    -   When might you prefer a non-random sample
+    -   When should you use randomization or blinding
+    -   What are the benefits of matching
+    -   How can you ensure that your sampling approach is ethical
+
+::: {.notes}
+Speaker notes
+:::
+

@@ -1,0 +1,41 @@
+---
+title: "Clinical statistics for non-statisticians: Day three"
+author: "Steve Simon"
+format: pptx
+editor: visual
+---
+
+### Outline of the three day course
+
+-   Day one: Numerical summaries and data visualization
+-   Day two: Hypothesis testing and sampling
+-   Day three: Statistical tests to compare treatment to a control and regression models
+
+My goal: help you to become a better consumer of statistics
+
+::: {.notes}
+Speaker notes
+:::
+
+### Day three topics
+
+-   Statistical tests to compare a treatment to a control
+    -   What tests should you use for continuous outcomes?
+    -   What tests should you use for categorical outcomes?
+    -   When should you use nonparametric tests?
+
+::: {.notes}
+Speaker notes
+:::
+
+### Day three topics (continued)
+
+-   Regression models
+    -   How does a regression model quantify trends
+    -   How does logistic regression differ from linear regression
+    -   What is a confounding variable 
+    -   How should you control for or adjust for confounding
+
+::: {.notes}
+Speaker notes
+:::

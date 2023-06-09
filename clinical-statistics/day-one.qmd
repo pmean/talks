@@ -1,5 +1,5 @@
 ---
-title: "Day one"
+title: "Clinical statistics for non-statisticians: Day one"
 author: "Steve Simon"
 format: pptx
 editor: visual
@@ -14,7 +14,7 @@ editor: visual
     -   I did not learn how to drive until I was 29 years old
     -   My highest chess rating was 1802, but I am not that good any more.
 
-::: notes
+::: {.notes}
 Speaker notes
 
 I want to learn a bit about all of you, and I'm going to do this in a statistical way. Tell me three numbers about yourself. These could be something simple, like the number of children you have or something exotic like the height of the highest mountain you have climbed.
@@ -34,7 +34,7 @@ Here are three numbers about me.
 -   Website with over 2,000 pages
 -   Many invitations to talk at conferences
 
-::: notes
+::: {.notes}
 I have a PhD in Statistics from the University of Iowa. I have always had a strong interest in the computational side of Statistics. My dissertation was 150 pages, and 100 of those pages were computer generated graphs.
 
 I am currently a full professor at the University of Missouri-Kansas City in the Department of Biomedical and Health Informatics. I also do statistical consulting on a part-time basis.
@@ -54,7 +54,8 @@ I love to talk about Statistics and have given many presentations at regional, n
 
 My goal: help you to become a better consumer of statistics
 
-::: notes
+::: {.notes}
+Speaker notes
 :::
 
 ### Day one topics
@@ -65,7 +66,8 @@ My goal: help you to become a better consumer of statistics
     -   How should you display percentages
     -   Why should you round liberally
 
-::: notes
+::: {.notes}
+Speaker notes
 :::
 
 ### Day one topics (continued)
@@ -77,7 +79,8 @@ My goal: help you to become a better consumer of statistics
     -   How do you illustrate trends and patterns
     -   What are some common mistakes in the choice of colors
 
-::: notes
+::: {.notes}
+Speaker notes
 :::
 
 ### First great controvesy: mean versus median
@@ -89,23 +92,152 @@ My goal: help you to become a better consumer of statistics
     -   Sort the data, choose the middle value(s)
     -   Example
 
+::: {.notes}
+Speaker notes
+:::
+
+### Bacterial count before and after A/C upgrade
+
+```         
+Room Number Before  After
+        121   11.8   10.1
+        125    7.1    3.8
+        163    8.2    7.2
+        218   10.1   10.5
+        233   10.8    8.3
+        264   14     12
+        324   14.6   12.1
+        325   14     13.7
+```
+
+::: {.notes}
+Speaker notes
+:::
+
+### Mean bacteria count
+
+```{r}
+suppressMessages(suppressWarnings(library(glue)))
+bacteria_0 <- c(
+  11.8,
+  7.1,
+  8.2,
+  10.1,
+  10.8,
+  14,
+  14.6,
+  14)
+  
+bacteria_1 <- c(
+  10.1,
+  3.8,
+  7.2,
+  10.5,
+  8.3,
+  12,
+  12.1,
+  13.7)
+adds_0 <- paste0(bacteria_0, collapse="+") 
+sum_0 <- sum(bacteria_0)
+mean_0 <- mean(bacteria_0)
+sort_0 <- sort(bacteria_0)
+sort_0 <- sprintf("%2.1f", sort_0)
+sort_0[4:5] <- paste(sort_0[4:5], sort_0[4:5])
+sort_0 <- paste0(sort_0, collapse="\n")
+
+adds_1 <- paste0(bacteria_1, collapse="+") 
+sum_1 <- sum(bacteria_1)
+mean_1 <- mean(bacteria_1)
+sort_1 <- sort(bacteria_1)
+sort_1 <- sprintf("%2.1f", sort_1)
+sort_1[4:5] <- paste(sort_1[4:5], sort_1[4:5])
+sort_1 <- paste0(sort_1, collapse="\n")
+```
+
+::: {.notes}
+Speaker notes
+:::
+
+### Before mean = `r mean_0`
+
+```         
+`r adds_0` = `r sum_0`
+
+`r sum_0` / 8 = `r mean_0`
+```
+
+::: {.notes}
+Speaker notes
+:::
+
+### After mean = `r mean_1`
+
+```         
+`r adds_1` = `r sum_1`
+
+`r sum_1` / 8 = `r mean_1`
+```
+
+::: {.notes}
+Speaker notes
+:::
+
+### Before median = `r median(bacteria_0)`
+
+```         
+`r sort_0`
+```
+
+::: {.notes}
+Speaker notes
+:::
+
+### After median = `r median(bacteria_1)`
+
+```         
+`r sort_1`
+```
+
+### Next slide
+
+Hypothesis testing • What does a p-value tell you • Why you might prefer a confidence interval • What sample size do you need • How does a Bayesian data analysis differ • What should you do if you do not have a hypothesis to test
+
+::: {.notes}
+Speaker notes
+:::
+
+### Next slide
+
+Sampling • What do you gain with a random sample • When might you prefer a non-random sample • When should you use randomization or blinding • What are the benefits of matching • How can you ensure that your sampling approach is ethical
+
+::: {.notes}
+Speaker notes
+:::
+
+### Next slide
+
+Statistical tests to compare a treatment to a control • What tests should you use for continuous outcomes? • What tests should you use for categorical outcomes? • When should you use nonparametric tests?
+
+::: {.notes}
+Speaker notes
+:::
+
+### Next slide
+
+Regression models • How does a regression model quantify trends • How does logistic regression differ from linear regression • What is a confounding variable • How should you control for or adjust for confounding
+
+::: {.notes}
+Speaker notes
+:::
+
 ### Choosing between the mean and median
-    
+
 -   When do you use the mean?
     -   When totals are important
 -   When do you use the median
     -   When outliers/skewness might distort your conclusions
-    
-### Bacterial count before and after A/C upgrade
 
-```{}
-Room Number	Before	After
-       121    11.8   10.1
-       125     7.1    3.8
-       163     8.2    7.2
-       218    10.1   10.5
-       233    10.8    8.3
-       264    14     12
-       324    14.6   12.1
-       325  	14     13.7
-```
+::: {.notes}
+Speaker notes
+:::
+
