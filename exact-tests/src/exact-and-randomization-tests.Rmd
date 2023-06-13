@@ -58,7 +58,19 @@ You don't want to rely on
 + underlying distributional assumptions
 + the Central Limit Theorem
 
-Note: Rndomization are also commonly called permutation tests. I use the two terms interchangeably. 
+Note: Randomization tests are also commonly called permutation tests. I use the two terms interchangeably. 
+
+<div class="notes">
+
+Before I show some examples, I want to mention when you might consider using an exact test or a randomization test.
+
+These tests have fewer assumptions than more traditional tests. In particular, you don't have to rely on an underlying normal distribution. 
+
+Now for larger sample sizes, you can get some relief from a distributional assumption thanks to the Central Limit Theorem and some related theories related to asymptotic distributions. But there really is no magic number for the Central Limit Theorem. It isn't like you can say that anytime your sample size is larger than 30 you are safe. Extreme skewness or outliers could still trip you up even for sample sizes much larger than 30.
+
+So if you don't want to rely on normal distributions and you don't trust the Central Limit Theorem, then you might consider exact tests or randomization tests.
+
+</div>
 
 ### Outline of topics
 
@@ -152,7 +164,7 @@ Now notice that the probability is not 1/2 raised to the fourth power. The proba
 
 What have you learned?
 
-+ Simple application of Fisher's Exact test
++ Simple application of Fisher's Exact Test
 
 What is coming next?
 
@@ -271,6 +283,12 @@ $$\ $$
 
 $$\frac{\frac{24}{6\times1} \times \frac{24}{1\times6}}{\frac{40320}{24\times24}} = \frac{16}{70}$$
 
+<div class="notes">
+
+The calculations are not too difficult. 4 choose 3 is 4 factorial divided by 1 factorial and 3 factorial. 4 choose 1 is 4 factorial divided by 3 factorial and 1 factorial. The denominator, 8 choose 4 is 8 factorial divided by 4 factorial times 4 factorial. Work these out to get a numerator of 16 and a denominator of 70.
+
+</div>
+  
 
 ### Functions for computing hypergeometric probabilities
 
@@ -304,12 +322,6 @@ What is coming next?
 + Using SPSS and Stata
 
 Any questions?
-
-<div class="notes">
-
-
-
-</div>
 
 ### SPSS data for Fisher's Exact Test
 
@@ -378,11 +390,11 @@ Here's the layout for Stata, similar to how you lay out the data in SPSS.
 
 <div class="notes">
 
-The Stata command for Fisher's exact test uses tabulate with an exact option. The output is much simpler, though I did edit away a few details to make this fit easily on a single slide.
+The Stata command for Fisher's Exact Test uses tabulate with an exact option. The output is much simpler, though I did edit away a few details to make this fit easily on a single slide.
 
 </div>
 
-### SAS and R code for Fisher's Exact test
+### SAS and R code for Fisher's Exact Test
 
 In SAS,
 
@@ -507,9 +519,9 @@ While a two-sided test makes no sense in this setting, there are times when you 
  
  1/35   12/35   18/35    4/35
 0.029   0.343   0.514   0.114
-```
 
 p-value for 3 correct is 0.343 + 0.029 + 0.114 = 0.486.
+```
 
 <div class="notes">
 
@@ -532,13 +544,13 @@ Any questions?
 
 ### Fisher-Freeman-Halton test
 
-+ Generalization of Fisher's Exact test
++ Generalization of Fisher's Exact Test
 + Tabulate all possible R by C tables
   + Fixed row and column totals
   
 <div class="notes">
 
-
+The Fisher-Freeman-Halton test is an extension of Fisher's Exact Test to table bigger than 2 by 2. It works for any table with R rows and C columns as long as both R and C are 2 or greater. This means that you like every possible R by C table with the same row and column totals as your sample results.
 
 </div>
 
@@ -556,7 +568,9 @@ Any questions?
 
 <div class="notes">
 
+The R code works fairly easily. In this example, I am thinking about an extension of the Lady Tasting Tea example where Muriel Bristol had to choose correctly between 4 cups of tea prepared one way, another 4 cups prepared a second way and a third set of 4 cups prepared a third way. 
 
+The matrix I created here represents the case where Muriel Bristol nailed it on all thee types of tea preparation.
 
 </div>
 
@@ -574,7 +588,9 @@ alternative hypothesis: two.sided
 
 <div class="notes">
 
+The same fisher.test function that you use for Fisher's Exact test can handle data from a larger table, in this case a three by three table.
 
+The chances that Muriel Bristol, guessing randomly, could perfectly identify among all twelve cups and three preparations methods is very small, less than two chances in ten thousand.
 
 </div>
 
@@ -586,7 +602,7 @@ alternative hypothesis: two.sided
 
 <div class="notes">
 
-
+This is a fairly recent development, but all the software that I am familiar with handles the Fisher-Freeman-Halton test, and using precisely the sampe code as you used for Fisher's Exact Test for 2 by 2 tables.
 
 </div>
 
@@ -601,7 +617,15 @@ C: 12, 13, 15, 25
 
 <div class="notes">
 
+Let's look at another example. This is data that I just made up on the spot. Three patients are in the treatment group and they got pretty high values: 14, 23, and 37.
 
+The four control patients had relatively smaller values. But there is some overlap.
+
+The data is a bit skewed and the sample size small, so a t-test might not be the best choice. 
+
+A good alternative is the Mann-Whitney U test, sometimes called the Wilcoxon-Mann-Whitney test.
+
+This is a well known nonparametric test, but I want to point out that it is also an exact test.
 
 </div>
 
@@ -614,7 +638,7 @@ C:  1,  2,  4,  6
 
 <div class="notes">
 
-
+To compute the Mann-Whitney test statistic, first rank the values. The treatment group had the third, fifth, and seventh largest values. The control group has the two smallest values, as well as the fourth and sixth largest values.
 
 </div>
 
@@ -629,7 +653,7 @@ How likely is this result under the null hypothesis?
 
 <div class="notes">
 
-
+Add up the ranks for the treatment and control groups. Actually, just one group is fine. Let's focus on the treatment group. The ranks of 3, 5, and 7 add up to 15. It's a bit higher than you might expect, but is it enough of an increase so that you could rule out sampling error.
 
 </div>
 
@@ -647,7 +671,9 @@ How likely is this result under the null hypothesis?
 
 <div class="notes">
 
+The trick to the Mann-Whitney U test (and most other non-parametric tests) is that under the null hypothesis, all rank orderings of the data are equally likely. So on this slide, I listed the 35 different possible rank orderings that you could get from 1, 2, 3 which happens only when the three treatment group values are smaller than any of the control values to 5, 6, 7 whic happnes only when the three treatment values are all larger than any of the control values.
 
+Each of these rankings gets a probability of 1/35.
 
 </div>
 
@@ -667,7 +693,9 @@ p-value = 7/35 = 0.20
 
 <div class="notes">
 
+The value of 15 is a bit high, but there are 7 values that are as extreme or more extreme than a sum of 15. This starts with 2, 6, 7, which also has a sum of 15 to 5, 6, 7, which has a sum of 18.
 
+The probability of getting a sum of 15 or more extreme (meaning higher) is 7/35 or 20%.
 
 </div>
 
@@ -705,7 +733,7 @@ run;
 
 <div class="notes">
 
-
+SAS will compute an exact Mann-Whitney test for you, as long as you know that the test is also known as the Wilcoxon test.
 
 </div>
 
@@ -715,7 +743,7 @@ run;
 
 <div class="notes">
 
-
+Here's part of the output from SAS. The sum of scores for the treatment group is 15 compared to the sum for the controls of 13. It might be easier to compare the means. The average rank is 5 for the treatment group and 3.25 for the control group.
 
 </div>
 
@@ -725,15 +753,15 @@ run;
 
 <div class="notes">
 
-
+The exact one sided p-value is 0.2 and the exact two-sided p-value is 0.4.
 
 </div>
 
 ### R, Stata, and SPSS
 
-+ R: wilcox.test
-+ Stata: ranksum
-+ SPSS: Analyze, Nonparametric tests, Independent Samples
++ R: `wilcox.test`
++ Stata: `ranksum`
++ SPSS: `Analyze, Nonparametric tests, Independent Samples`
 
 <div class="notes">
 
@@ -820,11 +848,13 @@ Now the average ages might not be telling the full story, but the average age of
 ### R code for the Titanic data
 
 ```{}
-randomized_proportion_male_survivors <- rep(NA, 10000)
-randomized_average_age_survivors <- rep(NA, 10000)
+prop_male_survivors <- rep(NA, 10000)
+avg_age_survivors <- rep(NA, 10000)
 for (i in 1:10000) {
-  randomized_proportion_male_survivors[i] <- sum(sample(t$Sex, 450)=="male")/851
-  randomized_average_age_survivors[i] <- mean(sample(t$Age, 450), na.rm=TRUE)
+  prop_male_survivors[i] <-
+    sum(sample(t$Sex, 450)=="male")/851
+  avg_age_survivors[i] <- 
+    mean(sample(t$Age, 450), na.rm=TRUE)
 }
 ```
 
@@ -840,23 +870,27 @@ Then you use the sample function to randomly pick 450 survivors. The number of m
 
 </div>
 
-### Randomization results for Titanic data
+### Randomization results for proportion of male survivors
 
 ![Figure x. Histogram of randomized counts of male survivors](../images/titanic-males.png)
 
 <div class="notes">
 
+This shows the histogram of the proportion of male survivors. It is centered around the overall survival proportion of 0.34, but it does extend out a bit, maybe down to 0.30 and up to 0.38. But it comes nowhere close to the actual male survival proportion of 0.17.
 
+Bottom line: if men and women were randomly assigned to life boats, there's no way that you see a male survival rate as small as 17%. This supports the hypothesis that women had an edge over men in surviving the collision with an iceberg in the cold North Atlantic Ocean.
 
 </div>
 
-### Titanic data
+### Randomization results for average age of survivors
 
 ![Figure x. Histogram of randomized average ages of survivors](../images/titanic-ages.png)
 
 <div class="notes">
 
+The age data is a different story. The randomized ages are centered around the overall average age of survivors, 30.4. But the variation in the randomized ages easily extends as low as 28 and as high as 33. The proportion of randomized average ages that are as extreme or more extreme than the observed sample mean of 29.4 is about 7.6%. Suggestive, perhaps, of a favorable survival probabily for younger passengers, but not statistically significant.
 
+Now, there are some caveats here. The model did not look at children directly, and failed to factor in the effect on survival for those passengers who were 60 or older. A more careful examination of the data is in order, but it will have to wait until they do a sequel to the Titanic movie.
 
 </div>
 
@@ -912,56 +946,61 @@ Average
 
 <div class="notes">
 
+The mean for the old therapy is -0.38 which is much smaller than the overall mean of 0.84.
+
 
 </div>
 
 ### Randomize
 
 ```{r, comment=""}
-x <- x <- rep(-1:3,c(3, 6, 3, 5, 2))
+x <- x <- rep(-1:3, c(3, 6, 3, 5, 2))
 for (i in 1:9) {
   r <- sample(x, 8)
   m <- round(mean(r), 2)
   r <- ifelse(r<0, r, paste0(" ", r))
   cat(
-    paste(paste(r, collapse=" ")," mean = ", m))
+    paste(
+      paste(r, collapse=" "),
+      " Old mean = ", m))
   cat("\n")
 }
 ```
 
-### Randomization test
-
-![Figure 14. 7 permutations](../images/randomization1.gif)
-
 <div class="notes">
 
-The top line here shows the original data. There are dark blue numbers on a light blue background for the old therapy and red numbers on a yellow background for the new therapy.
+To do a randomization test here, you randomly allocate 8 of the 20 total observations to the old therapy allocate the remaining 12 to the new therapy.
 
-Now let's shuffle things seven times. Notice that some of the red new therapy numbers have migrated to the left and some of the blue old therapy numbers have migrated to the right. The difference in means is -0.58 for the first shuffling and 0.88 for the second shuffling. Quite a bit of variation right off the bat, but still not at all close to the 2.13 unit difference seen in the original sample.
+There's an important short cut, though when you are using two groups. The overall mean, 0.84, doesn't change when you randomly allocate 8 to the old therapy and 12 to the new therapy. So rather than comparing the old therapy mean to the new therapy mean, compare it to the overall mean.
 
-</div>
+If you randomly sample 8 observations from all 20, then the expected value is going to equal the overall mean. But how often does the randomly sampled 8 observations have a mean that is as small as what we observed in the data (-0.38)? Not too often, just looking at the first eight observations.
 
-### Randomization test
-
-![Figure 15. 9 more permutations](../images/randomization2.gif)
-
-<div class="notes">
-
-Let's do nine more shufflings. We see a 1.29 unit difference, but again this falls far short of the actual data 
-
-</div>
-
-### Randomization test
-
-![Figure 16. 9 more permutations](../images/randomization3.gif)
-
-<div class="notes">
-
-Nine more shufflings and we are still nowhere close to 2.13.
-
-Now to be honest, you'd need to do this at least a thousand times. Maybe ten thousand if your computer is up for the challenge. But if you did, the proportion of cases where you'd see a mean difference of 2.13 is going to be almost, if not exactly, zero.
+I show the results eight times because that is all that I could fit on a single slide. But to be honest, you'd need to do this at least a thousand times. Maybe ten thousand if your computer is up for the challenge.
 
 Notice that the non-normality and the large number of ties is not at issue here. The only really serious assumption you need to make here is independence from one patient to another. Now lack of independence in a medical trial does happen, such as with infectious diseases, but most of the time you don't have to worry about the independence assumption.
+
+</div>
+
+### Programming a randomization test
+
++ Can you get it directly (without programming)?
++ If not,
+  + R: `for` and `sample`.
+  + SAS: `do` and `ranperm` in IML.
+  + Stata: `ritest`.
+  + SPSS: not recommended (maybe with Python add-on?)
+
+<div class="notes">
+
+I don't want to get into all the details about how I programmed this randomization test, but it is not too difficult. 
+
+I should warn you that you should look first for something that you can access directly in your software package. But you will find, at times, that you might have to write a bit of code. If you do, you need a bit of familiarity with how to loop and how to take samples.
+
+In R, the for loop and the sample function work pretty well together. You can do this particular randomization test with less than a dozen lines of code.
+
+In SAS, there is a ranperm function, but this is best used inside proc iml. Looping inside a data step is very tricky.
+
+In Stata, there is an ritest, a user contributed program by Simon Hess. I have not used it, but there is extensive guidance on the web.
 
 </div>
 
@@ -979,10 +1018,16 @@ Questions?
 
 ### When should you use exact or randomization tests?
 
-+ Fisher's Exact test
++ Fisher's Exact Test
   + Lots of guidance
 + Other exact or randomization tests
   + No so much guidance
+  
+<div class="notes">
+
+When should you use exact tests? Well, there is a lot of guidance for the use of Fisher's Exact, a bit less for other exact tests and for randomization tests.
+
+</div>
   
 ### When should you use Fisher's Exact Test?
 
@@ -1062,7 +1107,7 @@ For what it's worth, the programming skills required for randomization tests is 
 
 </div>
 
-### Exact versus randomized tests
+### Exact versus randomization tests
 
 + Use exact test if
   + it is pre-programmed, and
@@ -1070,7 +1115,41 @@ For what it's worth, the programming skills required for randomization tests is 
 + Use randomization test if
   + you have to program it yourself, or
   + sample size is large
-  
+
+<div class="notes">
+
+If you can easily get an exact test, grab it. It gives you an exact p-value while the randomization test gives you an approximate p-value. Admitedly, the approximation is pretty good if you repeat the randomization a thousand times or more. But there is some comfort in having a p-value that doesn't change when you change the seed for your random number generator.
+
+If you are lucky, your exact test already exists in your software. Writing code that lists every single possible outcome and assigning probabilities to each of these outcomes is not fun. So if you are in a setting complicated enough that you can't find a good exact test, the code for a randomization test is quite a bit easier.
+
+The size of your sample also is a consideration. Exact tests work well for small or moderate sample sizes. Back when I first learned about exact tests, any sample size bigger than a few dozen was out of reach for most exact tests. Now, maybe it would take several hundred or even several thousand variables before an exact test becomes prohibitive from a computational perspective. Try it on your computer and see.
+
+</div>
+
+### Randomization tests versus bootstrap
+
++ Bootstrap = repeated sample WITH replacement
++ Randomization = repeated samples WITHOUT replacement.
++ Advantages of bootstrap
+  + Very easy confidence intervals
+  + Applicable to descriptive statistics
++ Advantages of randomization test
+  + Simplicity
++ Neither extends easily to complex settings.
+
+<div class="notes">
+
+I gave a talk earlier about bootstrapping. The bootstrap represents repeated sampling with replacement. This is quite different than randomization tests which use repeated sampling without replacement.
+
+The bootstrap has one big advantage. Confidence intervals come out very easily with the bootstrap. The randomization test is designed only to compute p-values, and it takes a lot of work to get a confidence interval associated with a randomization test. You can do it, but it takes a lot more work. What you have to do is find all values of your parameter that produce a two-sided p-value larger than 0.05.
+
+A randomization test only applies to settings where you have a research hypothesis. In contrast, the bootstrap can provide interesting results where there is no particular research hypothesis.
+
+The randomization test is simpler to program than a bootstrap. Not that the randomization test is perfectly easy, mind you, but it does take a bit less effort than the bootstrap.
+
+Neither randomization tests nor the bootstrap extend easily to complex settings like longitudinal data or risk adjustments. You can actually do some of this, but it is not easy and there are a lot of perilous pitfalls if you are not careful.
+
+</div>
 
 ### Conclusion
 

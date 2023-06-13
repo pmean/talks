@@ -337,7 +337,6 @@ In the present data the mean of a set of values contributing to a measurement wa
 ::: notes
 Speaker notes
 :::
-<<<<<<< HEAD
 =======
 
 ## Chen 2019, PMID: 31806195
@@ -401,4 +400,3 @@ Image taken from Amazon website.
 ## How companies learn your secrets
 
 https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html
->>>>>>> 3a58675b4d5c31f13fb981a2ac7ed07beffb0450
