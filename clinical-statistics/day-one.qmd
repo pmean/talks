@@ -14,7 +14,7 @@ editor: visual
     -   I did not learn how to drive until I was 29 years old
     -   My highest chess rating was 1802, but I am not that good any more.
 
-::: {.notes}
+::: notes
 Speaker notes
 
 I want to learn a bit about all of you, and I'm going to do this in a statistical way. Tell me three numbers about yourself. These could be something simple, like the number of children you have or something exotic like the height of the highest mountain you have climbed.
@@ -34,7 +34,7 @@ Here are three numbers about me.
 -   Website with over 2,000 pages
 -   Many invitations to talk at conferences
 
-::: {.notes}
+::: notes
 I have a PhD in Statistics from the University of Iowa. I have always had a strong interest in the computational side of Statistics. My dissertation was 150 pages, and 100 of those pages were computer generated graphs.
 
 I am currently a full professor at the University of Missouri-Kansas City in the Department of Biomedical and Health Informatics. I also do statistical consulting on a part-time basis.
@@ -54,7 +54,7 @@ I love to talk about Statistics and have given many presentations at regional, n
 
 My goal: help you to become a better consumer of statistics
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -66,7 +66,7 @@ Speaker notes
     -   How should you display percentages
     -   Why should you round liberally
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -79,7 +79,7 @@ Speaker notes
     -   How do you illustrate trends and patterns
     -   What are some common mistakes in the choice of colors
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -92,7 +92,7 @@ Speaker notes
     -   Sort the data, choose the middle value(s)
     -   Example
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -110,7 +110,7 @@ Room Number Before  After
         325   14     13.7
 ```
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -154,7 +154,7 @@ sort_1[4:5] <- paste(sort_1[4:5], sort_1[4:5])
 sort_1 <- paste0(sort_1, collapse="\n")
 ```
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -166,7 +166,7 @@ Speaker notes
 `r sum_0` / 8 = `r mean_0`
 ```
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -178,7 +178,7 @@ Speaker notes
 `r sum_1` / 8 = `r mean_1`
 ```
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -188,7 +188,7 @@ Speaker notes
 `r sort_0`
 ```
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -202,7 +202,7 @@ Speaker notes
 
 Hypothesis testing • What does a p-value tell you • Why you might prefer a confidence interval • What sample size do you need • How does a Bayesian data analysis differ • What should you do if you do not have a hypothesis to test
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -210,7 +210,7 @@ Speaker notes
 
 Sampling • What do you gain with a random sample • When might you prefer a non-random sample • When should you use randomization or blinding • What are the benefits of matching • How can you ensure that your sampling approach is ethical
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -218,7 +218,7 @@ Speaker notes
 
 Statistical tests to compare a treatment to a control • What tests should you use for continuous outcomes? • What tests should you use for categorical outcomes? • When should you use nonparametric tests?
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -226,7 +226,7 @@ Speaker notes
 
 Regression models • How does a regression model quantify trends • How does logistic regression differ from linear regression • What is a confounding variable • How should you control for or adjust for confounding
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -237,7 +237,6 @@ Speaker notes
 -   When do you use the median
     -   When outliers/skewness might distort your conclusions
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
-
