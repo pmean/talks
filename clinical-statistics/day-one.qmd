@@ -1,11 +1,126 @@
 ---
 title: "Clinical statistics for non-statisticians: Day one"
 author: "Steve Simon"
-format: pptx
+format: 
+  revealjs:
+    embed-resources: true
 editor: visual
 ---
 
-### Introduction
+```{r}
+suppressMessages(suppressWarnings(library(glue)))
+suppressMessages(suppressWarnings(library(magrittr)))
+suppressMessages(suppressWarnings(library(tidyverse)))
+room <- c(
+  121,
+  125,
+  163,
+  218,
+  233,
+  264,
+  324,
+  325)
+bacteria_0 <- c(
+  11.8,
+  7.1,
+  8.2,
+  10.1,
+  10.8,
+  14,
+  14.6,
+  14)
+  
+bacteria_1 <- c(
+  10.1,
+  3.8,
+  7.2,
+  10.5,
+  8.3,
+  12,
+  12.1,
+  13.7)
+adds_0 <- paste0(bacteria_0, collapse=" + ") 
+sum_0 <- sum(bacteria_0)
+mean_0 <- mean(bacteria_0)
+sort_0 <- sort(bacteria_0)
+sort_0 <- sprintf("%2.1f", sort_0)
+sort_0[4:5] <- paste(sort_0[4:5], sort_0[4:5])
+sort_0 <- paste0(sort_0, collapse="\n \n")
+
+adds_1 <- paste0(bacteria_1, collapse=" + ") 
+sum_1 <- sum(bacteria_1)
+mean_1 <- mean(bacteria_1)
+sort_1 <- sort(bacteria_1)
+sort_1 <- sprintf("%2.1f", sort_1)
+sort_1[4:5] <- paste(sort_1[4:5], sort_1[4:5])
+sort_1 <- paste0(sort_1, collapse="\n \n")
+
+space <- function(x) {
+  x1 <- rep("", 15)
+  x1[2*(1:8)-1] <- x
+  return(x1)
+}
+
+sq <- function(x) {
+  paste0(x, collapse="\n")
+}
+
+step1 <- function(x) {
+  x1 <- sprintf("%4.1f", x)
+  room %>%
+    paste(x1, sep="  ")
+}
+
+step2 <- function(x) {
+  o <- order(x)
+  x1 <- sprintf("%4.1f", x[o])
+  room[o] %>%
+    paste(x1, sep="  ") %>%
+    space
+}
+
+step3 <- function(x) {
+  o <- order(x)
+  x2 <- rep("", 8)
+  x2[4:5] <- x[o][4:5]
+  step1(x) %>%
+    paste(space(x2), sep="  ")
+}
+
+step4 <- function(x) {
+  o <- order(x)
+  x1 <- x[o]
+  x4 <- step3(x)
+  x4[8] <- glue("    ({x1[4]} + {x1[5]}) / 2")
+  return(x4)
+}
+```
+
+## Test
+
+```{}
+`r sq(step1(bacteria_0))`
+```
+
+## Test
+
+```{}
+`r sq(step2(bacteria_0))`
+```
+
+## Test
+
+```{}
+`r sq(step3(bacteria_0))`
+```
+
+## Test
+
+```{}
+`r sq(step4(bacteria_0)) `
+```
+
+## Introduction
 
 -   Tell us three interesting numbers about yourself
 -   Examples
@@ -22,9 +137,9 @@ I want to learn a bit about all of you, and I'm going to do this in a statistica
 Here are three numbers about me.
 :::
 
-### Your turn
+## Your turn
 
-#### A bit more about myself
+## A bit more about myself
 
 -   PhD in Statistics in 1982 from the University of Iowa
 -   Currently full professor
@@ -46,7 +161,7 @@ I started a website in 1998, writing about data analysis, research ethics, and e
 I love to talk about Statistics and have given many presentations at regional, national, and international conferences. This ranges from short 15 minute talks to day long short courses.
 :::
 
-### Outline of the three day course
+## Outline of the three day course
 
 -   Day one: Numerical summaries and data visualization
 -   Day two: Hypothesis testing and sampling
@@ -58,7 +173,7 @@ My goal: help you to become a better consumer of statistics
 Speaker notes
 :::
 
-### Day one topics
+## Day one topics
 
 -   Numerical summaries
     -   When should you present the mean versus the median
@@ -70,7 +185,7 @@ Speaker notes
 Speaker notes
 :::
 
-### Day one topics (continued)
+## Day one topics (continued)
 
 -   Data visualization
     -   How should you display continuous data
@@ -83,7 +198,7 @@ Speaker notes
 Speaker notes
 :::
 
-### First great controvesy: mean versus median
+## First great controvesy: mean versus median
 
 -   Mean
     -   Add up all the values, divide by the sample size
@@ -96,71 +211,35 @@ Speaker notes
 Speaker notes
 :::
 
-### Bacterial count before and after A/C upgrade
-
-```         
-Room Number Before  After
-        121   11.8   10.1
-        125    7.1    3.8
-        163    8.2    7.2
-        218   10.1   10.5
-        233   10.8    8.3
-        264   14     12
-        324   14.6   12.1
-        325   14     13.7
-```
-
-::: notes
-Speaker notes
-:::
-
-### Mean bacteria count
+## Bacteria before and after A/C upgrade
 
 ```{r}
-suppressMessages(suppressWarnings(library(glue)))
-bacteria_0 <- c(
-  11.8,
-  7.1,
-  8.2,
-  10.1,
-  10.8,
-  14,
-  14.6,
-  14)
-  
-bacteria_1 <- c(
-  10.1,
-  3.8,
-  7.2,
-  10.5,
-  8.3,
-  12,
-  12.1,
-  13.7)
-adds_0 <- paste0(bacteria_0, collapse="+") 
-sum_0 <- sum(bacteria_0)
-mean_0 <- mean(bacteria_0)
-sort_0 <- sort(bacteria_0)
-sort_0 <- sprintf("%2.1f", sort_0)
-sort_0[4:5] <- paste(sort_0[4:5], sort_0[4:5])
-sort_0 <- paste0(sort_0, collapse="\n")
+# Testing
+```
 
-adds_1 <- paste0(bacteria_1, collapse="+") 
-sum_1 <- sum(bacteria_1)
-mean_1 <- mean(bacteria_1)
-sort_1 <- sort(bacteria_1)
-sort_1 <- sprintf("%2.1f", sort_1)
-sort_1[4:5] <- paste(sort_1[4:5], sort_1[4:5])
-sort_1 <- paste0(sort_1, collapse="\n")
+```         
+Room Before  After Change
+ 121   11.8   10.1   -1.7
+ 125    7.1    3.8   -3.3
+ 163    8.2    7.2   -1.0
+ 218   10.1   10.5    0.4
+ 233   10.8    8.3   -2.5
+ 264   14     12     -2.0
+ 324   14.6   12.1   -2.5
+ 325   14     13.7   -0.3  
 ```
 
 ::: notes
 Speaker notes
 :::
 
-### Before mean = `r mean_0`
+## Before mean = `r round(mean_0, 1)`
 
-```         
+```{r}
+# Testing
+```
+
+```
 `r adds_0` = `r sum_0`
 
 `r sum_0` / 8 = `r mean_0`
@@ -170,7 +249,7 @@ Speaker notes
 Speaker notes
 :::
 
-### After mean = `r mean_1`
+## After mean = `r round(mean_1, 1)`
 
 ```         
 `r adds_1` = `r sum_1`
@@ -182,7 +261,11 @@ Speaker notes
 Speaker notes
 :::
 
-### Before median = `r median(bacteria_0)`
+## Before median = `r median(bacteria_0)`
+
+```{r}
+# Testing
+```
 
 ```         
 `r sort_0`
@@ -192,51 +275,130 @@ Speaker notes
 Speaker notes
 :::
 
-### After median = `r median(bacteria_1)`
+## After median = `r median(bacteria_1)`
 
 ```         
 `r sort_1`
 ```
 
-### Next slide
+## Choosing between the mean and median
 
-Hypothesis testing • What does a p-value tell you • Why you might prefer a confidence interval • What sample size do you need • How does a Bayesian data analysis differ • What should you do if you do not have a hypothesis to test
-
-::: notes
-Speaker notes
-:::
-
-### Next slide
-
-Sampling • What do you gain with a random sample • When might you prefer a non-random sample • When should you use randomization or blinding • What are the benefits of matching • How can you ensure that your sampling approach is ethical
-
-::: notes
-Speaker notes
-:::
-
-### Next slide
-
-Statistical tests to compare a treatment to a control • What tests should you use for continuous outcomes? • What tests should you use for categorical outcomes? • When should you use nonparametric tests?
-
-::: notes
-Speaker notes
-:::
-
-### Next slide
-
-Regression models • How does a regression model quantify trends • How does logistic regression differ from linear regression • What is a confounding variable • How should you control for or adjust for confounding
-
-::: notes
-Speaker notes
-:::
-
-### Choosing between the mean and median
+```{r}
+# Testing
+```
 
 -   When do you use the mean?
     -   When totals are important
 -   When do you use the median
     -   When outliers/skewness might distort your conclusions
+-   Often, either is fine
 
 ::: notes
 Speaker notes
 :::
+
+## Gould 1985
+
+![Gould 1985](gould-1985.png){#fig-gould-1985 fig-align="left"}
+
+::: notes
+Speaker notes
+
+Stephn Jay Gould was a famous Evolutionary Biologist. He was a prolific writer with 20 books and 300 essays. Much of his writing was for academic researchers, but just as much was for the general public.
+
+One of his most famous essays was "The Median Isn't the Message". The title is a take-off of a quote by Marshall McLuhan, "The medium is the message" which itself has an interesting history that you should investigate on your own.
+
+The Gould essay was written in 1985 for Discover Magazine. It has been reprinted many times, and you can easily find the full text with a simple Google search.
+
+The image shown here is taken from phoenix5.org, an informational site for patients with prostate cancer.
+:::
+
+## Bridge 2001, PMID: 11405531
+
+![Bridge and McKenzie 2001](bridge-2001.png){#fig-bridge-2001 fig-align="left"}
+
+
+::: notes
+Speaker notes
+:::
+
+## Bridge 2001, PMID: 11405531 (continued)
+
+The measurement of airway resistance by the interrupter technique (Rint) needs standardization. Should measurements be made be during the expiratory or inspiratory phase of tidal breathing? **In reported studies, the measurement of Rint has been calculated as the median or mean of a small number of values, is there an important difference?**
+
+::: notes
+Speaker notes
+:::
+
+## Bridge 2001, PMID: 11405531 (continued)
+
+In the present data the mean of a set of values contributing to a measurement was not significantly different from the median. **However, the use of the median has been recommended since it is less affected by possible outlying values such as might be included by fully automated equipment.**
+
+::: notes
+Speaker notes
+:::
+<<<<<<< HEAD
+=======
+
+## Chen 2019, PMID: 31806195
+
+![Chen et al 2019](chen-2019.png){#fig-chen-2019 fig-align="left"}
+
+::: {.notes}
+Speaker notes
+:::
+
+## Chen 2019, PMID: 31806195 (continued)
+
+Background: The prices of newly approved cancer drugs have risen over the past decades. **A key policy question is whether the clinical gains offered by these drugs in treating specific cancer indications justify the price increases.**
+
+::: {.notes}
+Speaker notes
+:::
+
+## Chen 2019, PMID: 31806195 (continued)
+
+Results: We found that between 1995 and 2012, price increases outstripped median survival gains, a finding consistent with previous literature. **Nevertheless, price per mean life-year gained increased at a considerably slower rate, suggesting that new drugs have been more effective in achieving longer-term survival.** Between 2013 and 2017, price increases reflected equally large gains in median and mean survival, resulting in a flat profile for benefit-adjusted launch prices in recent years.
+
+::: {.notes}
+Speaker notes
+:::
+
+## Gould 2006
+
+![Gould 2006](gould-2006.jpg){#fig-gould-2006 fig-align="left"}
+
+::: {.notes}
+Speaker notes
+
+This cover is taken from the Amazon website.
+:::
+
+## Best 2012
+
+![Best 2012](best-2012.jpg){#fig-best-2012 fig-align="left"}
+
+::: {.notes}
+Speaker notes
+
+First edition, 2001. Second edition, 2012.
+
+Image taken from Amazon website.
+:::
+
+## O'Neil 2016
+
+![O'Neil 2016](oneil-2016.jpg){#fig-oneil-2016 fig-align="left"}
+
+::: {.notes}
+Speaker notes
+
+First edition, 2016.
+
+Image taken from Amazon website.
+:::
+
+## How companies learn your secrets
+
+https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html
+>>>>>>> 3a58675b4d5c31f13fb981a2ac7ed07beffb0450
