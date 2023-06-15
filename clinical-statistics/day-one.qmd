@@ -2,11 +2,33 @@
 title: "Clinical statistics for non-statisticians: Day one"
 author: "Steve Simon"
 format: 
-  pptx:
+  revealjs:
     slide-number: true
     embed-resources: true
 editor: visual
 ---
+
+## Start with a bad joke
+
+Two statistics are sitting in a bar. One turns to the other and asks, "So, how do you like married life."
+
+The other statistic responds ...
+
+[Put your reaction ("Ha ha", "Groan", etc.) in the chat box.]
+
+::: notes
+Before I begin anything important, I like to start with a silly joke. Now on Zoom, I often miss student reactions. So when I say something funny, I want you to type "Ha ha" or "Smile" or "LMFAO". The acronym LMFAO means laughing my something ... I forget how the rest of it goes.
+
+Now if the joke is corny, like a really really bad pun, it's okay to put "Groan". The only thing bad is if I tell a joke and get no reaction at all.
+
+I'll be sneaking in some jokes throughout the talk and I really want a reaction from you, good or bad. If I don't get any reaction to a bad pun, your "pun"ishment will be more bad puns.
+
+So here's the joke. It has been floating around on the Internet for quite a while, and I can't find the person who gets credit for this. But here goes.
+
+[Read joke and finish with] "It's okay but you lose a degree of freedom."
+
+Okay, I'm waiting for reactions.
+
 
 ## Introduction
 
@@ -91,7 +113,6 @@ Speaker notes
 -   Counts are the most common statistic
     -   Counts are error prone
     -   Counts require a solid operational definition
-    
 
 ::: notes
 Speaker notes
@@ -105,7 +126,7 @@ But counts can be tricky. The counting process is error prone and requires a sol
 
 Count the number of occurrences of the letter "e".
 
-```{}
+```         
 A quality control  program is easiest
 to implement from the top down. 
 Make sure that you understand the 
@@ -122,7 +143,7 @@ Speaker notes
 
 Here's an exercise I want you to do. Just count the number of occurrences of the letter "e". Once you have your answer, type it in the chat box.
 
-[Pause here]
+\[Pause here\]
 
 The numbers are different because of two things. First, it is easy to make mistakes. Did anyone notice the repetition of the word "the" at the end of the third line and the beginning of the fourth. It would be easy to miss that and count one less "e".
 
@@ -133,7 +154,7 @@ Did you count the e's in the quotes itself or also on the slide instructions and
 
 ## Counting sperm
 
-![Image of a haemocytometer](sperm-count.png){#fig-who-2021 fig-align="left"} 
+![Image of a haemocytometer](sperm-count.png){#fig-who-2021 fig-align="left"}
 
 ::: notes
 Speaker notes
@@ -163,7 +184,7 @@ Speaker notes
 
 ## Percentages dividing by row totals
 
-![Row percentages](titanic-row-percents.png){#fig-column-percents fig-align="left"}
+![Row percentages](titanic-row-percents.png){fig-align="left"}
 
 ::: notes
 Speaker notes
@@ -171,7 +192,7 @@ Speaker notes
 
 ## Percentages divided by grand total
 
-![Cell percentages](titanic-cell-percents.png){#fig-column-percents fig-align="left"}
+![Cell percentages](titanic-cell-percents.png){fig-align="left"}
 
 ::: notes
 Speaker notes
@@ -179,13 +200,13 @@ Speaker notes
 
 ## My recommendations
 
-+ Treatment or exposure as rows
-+ Outcome as columns
-+ Usually report row percentages
-  + Female mortality rate: 33%
-  + Male mortality rate: 83%
-+ But sometimes column percentages 
-  + Survivors: 68% female, 32% male
+-   Treatment or exposure as rows
+-   Outcome as columns
+-   Usually report row percentages
+    -   Female mortality rate: 33%
+    -   Male mortality rate: 83%
+-   But sometimes column percentages
+    -   Survivors: 68% female, 32% male
 
 ::: notes
 Speaker notes
@@ -193,12 +214,11 @@ Speaker notes
 
 ## Some rationale for these choices
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
 My way
 
-```{}
+```         
                Survived
                No          Yes
 Sex Female     33% (154)   67% (308)
@@ -209,15 +229,14 @@ Sex Female     33% (154)   67% (308)
 ::: {.column width="50%"}
 Not my way
 
-```{}
+```         
                Sex
                Female      Male
 Survived  No   33% (154)   83% (863)
           Yes  67% (308)   17% (142)
 ```
 :::
-
-::::
+:::
 
 ::: notes
 Speaker notes
@@ -225,15 +244,13 @@ Speaker notes
 Now, I believe it is important to think carefully about which is your rows and which is your columns. Here's the layout that I recommend on the left and the layout that I don't recommend on the right. The key comparison is among survival rates, 67% for females and only 17% for males. When you orient my way with the treatment/exposure (Sex) as rows and the outcome (Survived) as the columns, the numbers 67% and 17% are very close to one another. In the alternate layout the numbers you are most interested in comparing are not as close together.
 
 Now this is not an absolute rule. Sometimes I'll switch things up. But about 90% of the time, I find that the layout with the treatment or exposure as the rows and the outcome as the columns, the table just looks better.
-
 :::
 
 ## On your own
 
 Calculate row and column percentages for the following tables. Interpret your results.
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
 ![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass fig-align="left"}
 :::
@@ -241,8 +258,7 @@ Calculate row and column percentages for the following tables. Interpret your re
 ::: {.column width="50%"}
 ![Titanic child counts](titanic-child-counts.png){#fig-titanic-child fig-align="left"}
 :::
-
-::::
+:::
 
 ::: notes
 Speaker notes
@@ -254,17 +270,66 @@ Put your percentages in a table using a word processing program or text editor s
 Be sure to interpret these numbers. Come back together again in about 10 minutes.
 :::
 
-## First great controvesy: mean versus median
+## The mean (average)
 
--   Mean
-    -   Add up all the values, divide by the sample size
-    -   Example
--   Median
-    -   Sort the data, choose the middle value(s)
-    -   Example
+![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean fig-align="left"}
 
 ::: notes
 Speaker notes
+
+Here's a cartoon image of Professor Mean. I know this looks like it was drawn by a professional artist, but it was actually drawn by me. Really!
+
+Professor Mean is my alter ego on the Internet. For those who don't get the inside joke, I point out that Professor Mean is not just your average professor.
+
+I will use the terms mean and average interchangeably througout this talk.
+:::
+
+## The median
+
+![Road with a median strip](road-median.jpg){#fig-road-median fig-align="left"}
+
+::: notes
+Speaker notes
+
+This is an image of a traffic median. This is a strip of land, typically raised from the road surface, that splits the road in half.
+
+In Statistics, the median is the data value that splits the data in half. Half of the data is smaller than the median and half of the data is larger than the median.
+:::
+
+
+
+## Calculation of the mean and median
+
+-   Mean
+    -   Add up all the values, divide by the sample size
+-   Median
+    -   Sort the data
+        -   Select the middle value if n is odd
+        -   go halfway between the two middle values if n is even
+
+::: notes
+Speaker notes
+
+You already know how to compute the average. Add up all the values and divide by the sample size.
+
+The median is also simple. Sort the data and choose the "middle" value. If n is odd, there is one value that is right in the middle. With five data values, the median is the third value of the sorted list. The first and second values are smaller and the fourth and fifth values are larger.
+
+With an even number, there are two middle values. Go halfway between them. If you have eight data values, the midpoint between the fourth and fifth values splits the data in half. The first through fourth values in the sorted list are smaller and the fifth through eighth values are larger.
+:::
+
+## Formal mathematical definitions
+
+-   Mean
+    -   $\bar{X}=\frac{1}{n}\Sigma X_i$
+-   Median
+    -   Sorted values $X_{[1]},X_{[2]},...,X_{[n]}$
+        -   $X_{[(n+1)/2]}$ if n is odd,
+        -   $(X_{[n/2]}+X_{[n/2+1]})/2$ if n is even
+
+::: notes
+Speaker notes
+
+Here are the mathematical formulas for the mean and median. I know some people hate formulas, but I love them. With a few symbols and Greek letters, you can express really deep and beautiful ideas. Well these formulas aren't all that deep.
 :::
 
 ## Bacteria before and after A/C upgrade
@@ -279,6 +344,9 @@ suppressMessages(
 suppressMessages(
   suppressWarnings(
     library(tidyverse)))
+```
+
+```{r}
 room <- c(
   121,
   125,
@@ -288,6 +356,9 @@ room <- c(
   264,
   324,
   325)
+```
+
+```{r}
 bacteria_0 <- c(
   11.8,
   7.1,
@@ -297,7 +368,9 @@ bacteria_0 <- c(
   14,
   14.6,
   14)
+```
   
+```{r}  
 bacteria_1 <- c(
   10.1,
   3.8,
@@ -307,7 +380,6 @@ bacteria_1 <- c(
   12,
   12.1,
   13.7)
-
 ```
 
 ```         
@@ -333,8 +405,6 @@ Speaker notes
     -   Divide by the sample size
 -   Median
     -   Sort the data
-    -   Select the middle value
-        -   go halfway between the two middle values
 
 ::: notes
 Speaker notes
@@ -444,10 +514,10 @@ The first thing you do is sort the data from the lowest bacteria count to the hi
 ## Before remediation median (3/4)
 
 ```{r}
-step3 <- function(x) {
+step3 <- function(x, div=4:5) {
   o <- order(x)
   y <- rep("", 8)
-  y[4:5] <- x[o][4:5]
+  y[div] <- x[o][div]
   step2(x) %>%
     paste(space(y), sep="  ")
 }
@@ -466,15 +536,15 @@ Then pick out the middle value. If you have an even number of data points, there
 ## Before remediation median (4/4)
 
 ```{r}
-step4 <- function(x) {
+step4 <- function(x, div=4:5) {
   o <- order(x)
   x1 <- x[o]
-  x4 <- step3(x)
+  x4 <- step3(x, div)
   blanks <- paste0(rep(" ", 18), collapse="")
-  x4[8] <- glue(
+  x4[2*div[1]] <- glue(
     "{blanks}",
-    "({x1[4]} + {x1[5]}) / 2",
-    " = {(x1[4]+x1[5])/2}")
+    "({x1[div[1]]} + {x1[div[2]]}) / 2",
+    " = {(x1[div[1]]+x1[div[2]])/2}")
   return(x4)
 }
 ```
@@ -634,48 +704,246 @@ Results: We found that between 1995 and 2012, price increases outstripped median
 Speaker notes
 :::
 
-## Gould 2006
+## Percentiles
 
-![Gould 2006](gould-2006.jpg){#fig-gould-2006 fig-align="left"}
+```{r}
+data.frame(x=rpois(2000, 20)) %>%
+  mutate(cut=quantile(x, probs=0.75)) %>%
+  mutate(y=1+as.numeric(x<=cut)) %>%
+  ggplot(aes(x, fill=factor(y))) +
+    scale_fill_manual(values=c("white", "gray")) +
+    theme(legend.position="none") +
+    xlab(" ") +
+    ylab(" ") +
+    geom_bar(color="black", width=1) -> bar1
+ggsave("illustrate-percentiles.png")
+```
 
-::: notes
-Speaker notes
-
-This cover is taken from the Amazon website.
-:::
-
-## Best 2012
-
-![Best 2012](best-2012.jpg){#fig-best-2012 fig-align="left"}
-
-::: notes
-Speaker notes
-
-First edition, 2001. Second edition, 2012.
-
-Image taken from Amazon website.
-:::
-
-## O'Neil 2016
-
-![O'Neil 2016](oneil-2016.jpg){#fig-oneil-2016 fig-align="left"}
+![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles fig-align="left"}
 
 ::: notes
 Speaker notes
 
-First edition, 2016.
+I want to mention percentiles briefly. A percentile is a value that splits the data so that a certain percentage is smaller and a certain percentage is larger.
 
-Image taken from Amazon website.
+The 75th percentile, for example will be above 75% of the data and below 25% of the data. This graph illustrates the 75th percentile for some arbitrary data. THe gray bars represent about 75% of the data and the white bars represent about 25% of the data.
+
+I use a few weasel words like "roughly" and "about" because you can't always get a perfect split. But you can usually come close.
 :::
 
-## How companies learn your secrets
+## Computing percentiles
 
-https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html
+-   Many formulas
+    -   Differences are not worth fighting over
+-   My preference (pth quantile)
+    -   Sort the data
+    -   Calculate p*(n+1)
+    -   Is it a whole number?
+        -   Yes: Select that value, otherwise
+        -   No: Go halfway between
+        -   Special cases: p(n+1) < 1 or > n
+        
+::: notes
+Speaker notes
 
-## Machine Bias
+There are close to a dozen different ways to compute a percentile, but the differences between the values selected are small and not worth fussing about.
 
-https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+Here is my preference for choosing the pth quantile (remember that for quantiles, you range between 0 and 1, not between 0 and 100).
 
-## Bias in Algorithms
+Calculate the quantity p*(n+1). If that value is a whole number, great! You just select that value. If it is a fractional value, round up and down and go halfway between. 
 
-https://fra.europa.eu/sites/default/files/fra_uploads/fra-2022-bias-in-algorithms_en.pdf
+Once in a while, you'll get an extreme case, where p(n+1) is less than 1 or greater than n. Just use a bit of common sense.
+
+If you have nine values and p(n+1) is 9.2, you can't go halfway between the 9th and 10th observations. There is no 10th observation. So just choose the 9th or largest value.
+
+Likewise if p(n+1) is 0.8, you can't go halfway between the zeroth and first observation. There is no zeroth observation. Just choose the first or smallest value.
+:::
+
+## Some examples of percentile calculations
+
+-   Example for n=39
+    -   For 5th percentile, p(n+1)=2 -> 2nd smallest value
+    -   For 4th percentile, p(n+1)=1.6 -> halfway between two smallest values
+    -   For 2nd percentile, p(n+1)=0.8 -> smallest value
+    
+::: notes
+Speaker notes
+
+Suppose you have 39 observations. For the 5th percentile or the 0.05 quantile, p(n+1) equals 2. Lucky you. The second smallest observation is the 5th percentile. For the 4th percentile or the 0.04 quantile, you get p(n+1) equal to 1.6. Go halfway between 1, the smallest value, and 2, the second smallest value.
+
+The 2nd percentile represents one of the special cases. You calculate p(n+1) and get 0.8. You can't go halfway between 0 and 1, so just choose the smallest value.
+:::
+
+## Some terminology
+
+-   Percentile: goes from 0% to 100%
+-   Quantile: goes from 0.0 to 1.0
+    -   90th percentile = 0.9 quantile
+-   Quartiles: 25th, 50th, and 75th percentiles
+    -   Lower quartile: 25th percentile
+    -   Upper quartile: 75th percentile
+
+::: notes
+Speaker notes
+
+A percentile always refers to a percentage. So it has to be between 0% and 100%. Sometimes, you may see references to a quantile. A quantile is a percentile, but is expressed as a proportion rather than a percent. A quantile goes from 0.0 to 1.0. The 25th percentile and the 0.25 quantile are the same thing.
+
+You might see the term "quartiles". These are the 25th, 50th, and 75th percentiles. These three values split the data into quarters.
+
+If you see "lower quartile", it means the 25th percentile. Likewise, "upper quartile" means the 75th percentile.
+
+Let me be try to be careful about terminology here. But, sometimes I will mess up and use "percentile" when I mean "quantile".
+:::
+
+## Before remediation upper quartile (1/4)
+
+```         
+`r sq(step1(bacteria_0))`
+```
+
+::: notes
+Speaker notes
+
+Here is the data for bacteria counts before remediation. Let's calculate the upper quartile, also known as the 0.75 quantile or the 75th percentile.
+:::
+
+## Before remediation upper quartile (2/4)
+
+```         
+`r sq(step2(bacteria_0))`
+```
+
+::: notes
+Speaker notes
+
+Just like before, you sort the data.
+:::
+
+## Before remediation upper quartile (3/4)
+
+```         
+`r sq(step3(bacteria_0, div=6:7))`
+```
+
+::: notes
+Speaker notes
+
+With n=8, you get p(n+1) = 6.75. So pick out the sixth and seventh values.
+:::
+
+## Before remediation upper quartile (4/4)
+
+```         
+`r sq(step4(bacteria_0, div=6:7)) `
+```
+
+::: notes
+Speaker notes
+
+Go halfway between these values.
+:::
+
+
+## After remediation upper quartile (1/4)
+
+```         
+`r sq(step1(bacteria_1))`
+```
+
+::: notes
+Speaker notes
+
+Here are the same calculations the upper quartile of bacteria counts after remediation.
+:::
+
+## After remediation upper quartile (2/4)
+
+```         
+`r sq(step2(bacteria_1))`
+```
+
+::: notes
+Speaker notes
+
+Just like before, you sort the data.
+:::
+
+## After remediation upper quartile (3/4)
+
+```         
+`r sq(step3(bacteria_1, div=6:7))`
+```
+
+::: notes
+Speaker notes
+
+Then pick out the sixth and seventh values.
+:::
+
+## After remediation upper quartile (4/4)
+
+```         
+`r sq(step4(bacteria_1, div=6:7)) `
+```
+
+::: notes
+Speaker notes
+
+Go halfway between these values.
+:::
+
+## When you should use percentiles
+
+-   Characterize variation
+    -   Middle 50% of the data
+-   Exposure issues
+    -   Not enough to control median exposure level 
+-   Quantify extremes
+    -   What does "upper class" mean?
+-   Quality control
+    -   Almost all products must meet a minimum standard
+
+::: notes
+Speaker notes
+
+There are many reasons why you might be interested in percentiles rather than the mean or median. Actually, the median is a percentile, the 50th percentile, but what I mean is percentiles other than 50%.
+
+One important use of percentiles is looking at the middle 50% of the data. This is the data between the lower quartile (25th percentile) and the upper quartile (75th percentile). Is the middle 50% of the data bunched tightly together or spread widely apart?
+
+Percentiles are also important in the study of exposures. If you work in an environment where the median worker has a safe level of exposure, you could easily end up with 20%, 30% or more of the workers dying from unsafe exposures. It is important to insure that not just the median, but a very high percentile like the 99th percentile of exposure levels is at a safe level.
+
+Percentiles also help to define extreme groups. You can, for example, define the term upper class as anyone earning more than the 90th percentile of income.
+
+Percentiles also can help with quality control. If you make a claim about a product, you want to make sure that that claim is not valid at a median level but at a much higher level. You don't sell 500 mg bottles of liquid Tylenol is your factory is churning out a median fill level of 500 mg. Half of your customers would be cheated. Instead you insure that the 98th percentile coming out of the factory floor is at least 500 mg. You lose a bit of money because most bottles contain more than 500 mg, but the cost of an irate customer is worth more than the cost of 50 overfilled bottles.
+:::
+
+## Standard deviation
+
+$$S = \sqrt{\frac{1}{n-1}\Sigma(X_i-\bar{X})^2}$$
+
+At least one alternative formulas.
+
+::: notes
+Speaker notes
+
+The standard deviation is a commonly used measure of how spread out the data is. The formula is a bit messy, but if you look carefully at it, you will see that it is a measure of how far each individual value is from the overall mean.
+
+Now, maybe you've seen or used a different formula. Don't worry about it. In a short course like this, I won't ask you to calculate anything as tedious as a standard deviation. Let the computer do all of the work.
+:::
+
+## Why is the standard deviation important
+
+-   Measures noise
+    -   Too much noise, hard to detect signals
+-   Measures heterogeneity
+    -   Too little heterogeneity, hard to generalize
+    
+::: notes
+Speaker notes
+
+The standard deviation can be thought of as a measure of noise or a measure of heterogeneity. In general, but not always, noise is bad. Consider measuring a patient's glucose level, to see if you have early evidence of diabetes. Your glucose level varies a lot during the day based on whether you skipped breakfast or decided to get a mid-afternoon Snickers bar. Your glucose level is noisy. A high level might or might not mean trouble. A low value might or might not mean you are safe. The large standard deviation of your measures of blood glucose indicates noise. 
+
+That's why you are asked to take an overnight fast before testing your blood glucose level. Controlling your diet by not eating anything after midnight provides a more consistent measure of blood glucose. It has a smaller standard deviation and a high or low value is more helpful in diagnosis.
+
+The standard deviation can also be thought of as a measure of heterogeneity. Heterogeneity is also bad sometimes, but there are times when you want a fair amount of heterogeneity.
+:::
