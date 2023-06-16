@@ -13,7 +13,7 @@ editor: visual
 
 My goal: help you to become a better consumer of statistics
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -24,7 +24,7 @@ Speaker notes
     -   What tests should you use for categorical outcomes?
     -   When should you use nonparametric tests?
 
-::: {.notes}
+::: notes
 Speaker notes
 :::
 
@@ -33,9 +33,9 @@ Speaker notes
 -   Regression models
     -   How does a regression model quantify trends
     -   How does logistic regression differ from linear regression
-    -   What is a confounding variable 
+    -   What is a confounding variable
     -   How should you control for or adjust for confounding
 
-::: {.notes}
+::: notes
 Speaker notes
 :::

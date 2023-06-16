@@ -1008,7 +1008,7 @@ Speaker notes
 Much variation in the real world follows a bell shaped curve, alternately called a normal distribution. You can assess whether you have a bell shaped curve using a histogram. Look for values in the middle being most common. The frequencies should taper off slowly as you moved away from the middle. The histogram should have symmetry. The left side of the histogram should be roughly equivalent to the right side of the histogram.
 :::
 
-## Not a bell shaped curve
+## Not a bell shaped curve (1/4)
 
 ```{r}
 x <- c(rnorm(1200, 4, 1.5), rnorm(800, 10, 1.5))
@@ -1030,7 +1030,7 @@ Speaker notes
 Here's a histogram that shows a bimodal distribution. The frequencies are not highest in the center of the data. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve
+## Not a bell shaped curve (2/4)
 
 ```{r}
 data.frame(x=rpois(2000, 5)) %>%
@@ -1050,7 +1050,7 @@ Speaker notes
 Here's a histogram that shows a skewed or asymmetric distribution. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve
+## Not a bell shaped curve (3/4)
 
 ```{r}
 data.frame(x=round(runif(2000, 0, 15))) %>%
@@ -1070,7 +1070,7 @@ Speaker notes
 Here's a histogram that shows a symmetric distibution, but the frequencies do not taper off as you move away from the center. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve
+## Not a bell shaped curve (4/4)
 
 ```{r}
 x <- rt(1000, 2)
@@ -1138,5 +1138,83 @@ ggsave("one-s-histogram.png")
 Speaker notes
 
 This shows the bell shaped curve with the data within one standard deviation of the mean highlighted in gray. Roughly 68% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
+:::
+
+## Plus or minus two standard deviations
+
+```{r}
+x <- round(x)
+y <- (x<4) + (x > 16)
+data.frame(x=round(x)) %>%
+  ggplot(aes(x, fill=factor(y))) +
+    theme(legend.position="none") +
+    xlab(" ") +
+    ylab(" ") +
+    scale_fill_manual(values=c("gray", "white")) +
+    geom_bar(color="black", width=1) -> two_s_histogram
+ggsave("two-s-histogram.png")
+```
+
+![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
+
+::: notes
+Speaker notes
+
+This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
+:::
+
+## Plus or minus three standard deviations
+
+```{r}
+x <- round(x)
+y <- (x<1) + (x > 19)
+data.frame(x=round(x)) %>%
+  ggplot(aes(x, fill=factor(y))) +
+    theme(legend.position="none") +
+    xlab(" ") +
+    ylab(" ") +
+    scale_fill_manual(values=c("gray", "white")) +
+    geom_bar(color="black", width=1) -> three_s_histogram
+ggsave("three-s-histogram.png")
+```
+
+![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
+
+::: notes
+Speaker notes
+
+This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
+:::
+
+## Lin 2022, PMID: 36126916
+
+![Lin et al 2022](lin-2022.png){#fig-lin-2022 fig-align="left"}
+
+::: notes
+Speaker notes
+:::
+
+## Lin et al 2022 patient ages
+
+![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
+
+::: notes
+Speaker notes
+:::
+
+## Lin et al 2022 Charlson Comorbidity Index
+
+![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
+
+::: notes
+Speaker notes
+:::
+
+## Lin et al 2022 PHQ-2 scores
+
+![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
+
+::: notes
+Speaker notes
 :::
 
