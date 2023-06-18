@@ -8,7 +8,23 @@ format:
 editor: visual
 ---
 
-### Outline of the three day course
+## Re-introduce yourself
+
+Here's one more interesting number about myself
+
+-   51: I started running when I was 51.
+
+Tell us one more interesting number about yourself.
+
+::: notes
+Speaker notes
+
+I had adopted a young boy from Russia a few years earlier and I could not keep up with him. A game of tag would leave me winded after only a few minutes. So I started running every other day. I was not very fast, but I built up endurance, so I could run for almost an hour without needing to take a break.
+
+Lately, I have been a bit too busy, but I still try to run in organized races. Mostly 5 kilometer races, but I have done a few 10 kilometer races. I am not quite up to running a half marathon yet, but it is on my list of things to do before I die.
+:::
+
+## Outline of the three day course
 
 -   Day one: Numerical summaries and data visualization
 -   Day two: Hypothesis testing and sampling
@@ -18,9 +34,11 @@ My goal: help you to become a better consumer of statistics
 
 ::: notes
 Speaker notes
+
+Just a reminder of where you are. Day one, you learned about numerical summaries and data visualization. Today, you will see information about hypothesis testing and sampling.
 :::
 
-### Day two topics
+## Day two topics
 
 -   Hypothesis testing
     -   What does a p-value tell you
@@ -31,9 +49,11 @@ Speaker notes
 
 ::: notes
 Speaker notes
+
+Here are more details about what you will see on hypothesis testing...
 :::
 
-### Day two topics (continued)
+## Day two topics (continued)
 
 -   Sampling
     -   What do you gain with a random sample
@@ -44,18 +64,9 @@ Speaker notes
 
 ::: notes
 Speaker notes
+
+...and what you will see on sampling.
 :::
-
-## Introduction
-
-P-values and confidence intervals are the fundamental tools used in most inferential data analyses. They are possibly the most commonly reported statistics in the medical literature. Unfortunately, both p-values and confidence intervals are subject to frequent misinterpretations.
-
-In this webinar, you will review the interpretation of p-values and confidence intervals, and see an alternative approach based on Bayesian data analysis.
-
-In this seminar, you will learn how to:
--   interpret p-values and confidence intervals; 
--   explain the difference between informative and diffuse priors;
--   interpret statistics from a posterior distribution.
 
 ## Bad quiz question
 
@@ -90,10 +101,32 @@ Bayes rule.
 -   p-values. 
 -   I do not know the answer. 
 
+## Sampling question
+
+## P-values
+
+-   Most commonly reported statistic
+    -   Also sharply criticized
+    -   Requires a research hypothesis
+-   Two alternatives
+    -   Confidence intervals
+    -   Bayesian analysis
+-   What do do when no research hypothess
+
+::: notes
+Speaker notes
+
+P-values are a fundamental tools used in most research papers, but they are coming under increasing attack in the research community. P-values are an inferential tool and require a research hypothesis. data analyses. They are possibly the most commonly reported statistics in the medical literature. Two alternatives are confidence intervals and Bayesian data analysis.
+
+Much research is not inferential and does not have a formal research hypothesis. It is a mistake to force these studies into a hypothesis testing framework. I will cover what you should do when you do not have a formal research hypothesis.
+
+First, you need to remember some basic definitions from your Statistics 101 class.
+:::
+
 ## What is a population?
 
 -   Population: the group you wish to generalize your research results to.
--   Usually defined in terms of
+-   Usually people, defined in terms of
     -   Demography,
     -   Geography,
     -   Occupation,
@@ -102,15 +135,63 @@ Bayes rule.
     -   Diagnosis,
     -   Or some combination of the above.
 
+::: notes
+Speaker notes
+
+A population is a group that you have an interest in. You want to get a better understanding of this group, so you conduct a research study and wish to generalize the results of that study to the population.
+
+In clinical research, a population is almost always a group of people. There are a few exceptions. Sometimes you want to characterize inanimate objects, such as a group of hospitals or a group of medical devices. But let's keep the focus on people for now. 
+
+A population of people is defined in terms of certain characteristics. Usually it is a combination of these characteristics.
+:::
+
 ## Example of a population
 
 An example of a population would be all infants born in the state of Missouri during the 1995 calendar year who have one or more visits to the Emergency room during their first year of life. 
 
+::: notes
+Speaker notes
+
+Here is an example of a population. It has many of the characteristics described on the previous slide: demography (infants), geography (born in Missouri), time (born in calendar year 1995, during first year of life) and care requirements (one or more ER visits).
+
+Most times the population is so large that it is difficult to get data on all the individuals of that population.
+
+Here, we actually did have access to the data on all 29,637 infants, but most times you would not be so fortunate.
+:::
+
 ## What is a sample?
 
 -   Sample: subset of a population.
--   Random sample: every item in the population has the same probability of being in the sample.
--   Biased sample: some items in the population have a decreased probability of being in the sample.
+-   Random sample: every person has the same probability of being in the sample.
+-   Biased sample: Some people have a decreased probability of being in the sample.
+    -   Always ask "who was left out?"
+
+::: notes
+Speaker notes
+
+A sample is a subset of a population. Because that population of infants was so large, you decided to collect data on a smaller group, a sample of 100 infants, say.
+
+Statistics, according to one definition is the use of data from samples to make inferences about populations. That may be a bit too narrow a definition, but it does characterize quite a bit of what we statisticians do.
+
+A random sample is a special type of sample. It is chosen in a way to insure that every person in the sample has the same probability of being in the sample.
+
+In contrast a biased sample is one where some people in the population have a decreased chance of being in the sample. Often in a biased sample some people in the population are totally excluded.
+
+## An example of a biased sample
+
+A research wants to characterize illicit drug use in teenagers. She distributes a questionnaire to students attending a local public high school (in the U.S. high school is grades 9-12, which is mostly students from ages 14 to 18.)
+
+Explain how this sample is biased. Who has a decreased or even zero probability of being selected.
+
+*Type your ideas in the chat box.*
+
+::: notes
+Speaker notes.
+
+Here is a scenario where a researcher selects a biased sample. I should note here that this is an example specific to the United States. In Italy, you might talk about a survey distributed to the scuola secondaria di secondo grado.
+
+[Stop and get student responses.]
+:::
 
 ## What is a Type I error?
 
@@ -234,9 +315,14 @@ This is P(H). For simplicity, we multiplied each probability by 1000 and rounded
 
 ![Table of superiority posterior probabilities](posterior-superiority.png){#fig-posterior-equality fig-align="left"}
 
+## What do you gain with a random sample
 
+## When might you prefer a non-random sample
 
+## When should you use randomization or blinding
 
+## What are the benefits of matching
 
+## How can you ensure that your sampling approach is ethical
 
-
+## Repeat quiz questions

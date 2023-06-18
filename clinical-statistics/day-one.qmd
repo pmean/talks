@@ -34,15 +34,15 @@ Okay, I'm waiting for reactions.
 
 -   Tell us one interesting number about yourself
 -   Examples
-    -   I have traveled to eight countries outside the United States
+    -   8: I have traveled to eight countries outside the United States
         -   (Canada, Italy, China, France, Russia, England, Holland, and Iceland)
-    -   I did not learn how to drive until I was 29 years old
-    -   My highest chess rating was 1802, but I am not that good any more.
+    -   29: I did not learn how to drive until I was 29 years old
+    -   1802: My highest chess rating was 1802, but I am not that good any more.
 
 ::: notes
 Speaker notes
 
-I want to learn a bit about all of you, and I'm going to do this in a statistical way. Tell me three numbers about yourself. These could be something simple, like the number of children you have or something exotic like the height of the highest mountain you have climbed.
+I want to learn a bit about all of you, and I'm going to do this in a statistical way. Tell me one interesting number about yourself. It could be something simple, like the number of children you have or something exotic like the height of the highest mountain you have climbed.
 
 Here are three numbers about me.
 :::
@@ -107,6 +107,8 @@ Speaker notes
 ::: notes
 Speaker notes
 :::
+
+## Quiz questions
 
 ## Counting and proportions
 
@@ -664,6 +666,56 @@ In the present data the mean of a set of values contributing to a measurement wa
 Speaker notes
 :::
 
+## Tosato 2021, PMID: 34352201
+
+![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021 fig-align="left"}
+
+::: notes
+Speaker notes
+:::
+
+## Tosato 2021, PMID: 34352201 (continued)
+
+Symptom persistence weeks after laboratory-confirmed severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) clearance is a relatively common long-term complication of Coronavirus disease 2019 (COVID-19). Little is known about this phenomenon in older adults. The present study aimed at determining the prevalence of persistent symptoms among older COVID-19 survivors and identifying symptom patterns.
+
+::: notes
+Speaker notes
+:::
+
+## Tosato 2021, PMID: 34352201 (continued)
+
+The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (38.4%) were women. The average time elapsed from hospital discharge was 76.8 ± 20.3 days (range 25-109 days).
+
+::: notes
+Speaker notes
+:::
+
+## Ielapi 2021, PMID: 34968328 
+
+![Tosato et al 2021](ielapi-2021.png){#fig-tosato-2021 fig-align="left"}
+
+## Ielapi 2021, PMID: 34968328 (continued)
+
+Background. Insomnia is one of the major health problems related with a decrease in quality of life (QOL) and also in poor functioning in night-shift nurses, that also may negatively affect patients’ care. The aim of this study is to evaluate the prevalence of insomnia in night shift nurses.
+
+## Ielapi 2021, PMID: 34968328 (continued)
+
+Excerpt from Table 1.
+
+Data reported as mean ± standard deviation or median [Q1-Q3] 
+
+```{}
+Overall (n = 2′355)
+Age, years	40.4 ± 10.3
+Months of work 168 [72–300]
+Night shifts per month, number	6.3 ± 1.4
+Time to reach workplace, minutes	45 [45–65]
+Rest time, minutes	180 [4–240]
+Rest in the afternoon, minutes	30 [0–120]
+Number of coffees, mean	2.5 ± 1.5
+Number of coffees during night shift, mean	1.4 ± 1.1
+```
+
 ## Chen 2019, PMID: 31806195
 
 ![Chen et al 2019](chen-2019.png){#fig-chen-2019 fig-align="left"}
@@ -1202,3 +1254,32 @@ Speaker notes
 Speaker notes
 :::
 
+## Visualization
+
+## Proportions
+
+## Bar chart
+
+## Error bars
+
+## Box plot
+
+## Histogram
+
+## Plot all the data
+
+## Rug plot
+
+## Which visualization to choose?
+
+## Tables versus graphs
+
+## How should you display continuous data
+
+## How should you display categorical data
+
+## How do you illustrate trends and patterns
+
+## What are some common mistakes in the choice of colors
+
+## Repeat quiz questions
