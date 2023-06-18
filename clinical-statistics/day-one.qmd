@@ -398,22 +398,6 @@ Room Before  After Change
 Speaker notes
 :::
 
-## Calculation of the mean and median
-
--   Mean
-    -   Add up all the values
-    -   Divide by the sample size
--   Median
-    -   Sort the data
-
-::: notes
-Speaker notes
-
-The calculation of the mean and median are fairly simple. For the mean, you just add up all the values and divide by the sample size.
-
-For the median, you sort the data and choose the middle value. If the sample size is odd, there will be one middle value. If it is even, there will be two middle values. Just split the difference and go halfway between the two middle values.
-:::
-
 ## Before remediation mean
 
 ```{r}
