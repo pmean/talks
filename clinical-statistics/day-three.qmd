@@ -1,7 +1,10 @@
 ---
 title: "Clinical statistics for non-statisticians: Day three"
 author: "Steve Simon"
-format: pptx
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
 editor: visual
 ---
 

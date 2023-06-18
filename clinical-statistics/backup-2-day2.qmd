@@ -1,10 +1,7 @@
 ---
 title: "Clinical statistics for non-statisticians: Day two"
 author: "Steve Simon"
-format: 
-  revealjs:
-    slide-number: true
-    embed-resources: true
+format: revealjs
 editor: visual
 ---
 
@@ -187,7 +184,6 @@ Here are some of the subjective beliefs that I use in my work:
 Second, the use of a range of prior distributions can help resolve controversies involving conflicting beliefs. For example, an important research question is whether a research finding should "close the book" to further research. If data indicates a negative result, and this result is negative even using an optimistic prior probability, then all researchers, even those with the most optimistic hopes for the therapy, should move on. 
 
 Third, while Bayesian data analysis allows you to incorporate subjective opinions into your prior probability, it does not require you to incorporate subjectivity. Many Bayesian data analyses use what it called a diffuse or non-informative prior distribution. This is a prior distribution that is neither optimistic nor pessimistic, but spreads the probability more or less evenly across all hypotheses. 
-
 ## ECMO prior
 
 Here's a simple example of a diffuse prior that Dr. Albert used for the ECMO versus conventional therapy example. Let's assume that the true survival rate could be either 0, 10%, 20%, ..., 100% in the ECMO group and similarly for the conventional therapy group. This is not an optimal assumption, but it isn't terrible either, and it allows us to see some of the calculations in action. 
@@ -196,47 +192,6 @@ With 11 probabilities for ECMO and 11 probabilities for conventional therapy, we
 
 This is P(H). For simplicity, we multiplied each probability by 1000 and rounded. 
 
-## Layout the ECMO and control probabilities
-
-![Empty table for prior probabilities](prior-shell.png){#fig-prior-shell fig-align="left"}
-
-## Place part of the probability on the diagonal
-
-![Table with diagonal priors](prior-diagonal.png){#fig-prior-diagonal fig-align="left"}
-
-## Place part of the probabilty below the diagonal
-
-![Table with lower triangle of prior probabilities](prior-lower.png){#fig-prior-lower fig-align="left"}
-
-![Table with upper triangle of prior probabilities](prior-upper.png){#fig-prior-upper fig-align="left"}
-
 ## Prior table
 
-![Complete table of prior probabilities](prior.png){#fig-prior fig-align="left"}
-
-## Calculate likelihood for each ECMO/control probability
-
-![Table of likelihoods](likelihood.png){#fig-likelihood fig-align="left"}
-
-## Multiply prior and likelihood
-
-![Product of prior and likelihood](product.png){#fig-product fig-align="left"}
-
-## Divide by sum to get posterior
-
-![Table of prior probabilities](posterior.png){#fig-posterior fig-align="left"}
-
-## Posterior probability of equality
-
-![Table of prior probabilities](posterior-equality.png){#fig-posterior-equality fig-align="left"}
-
-## Posterior probability of 20% or greater superiority
-
-![Table of superiority posterior probabilities](posterior-superiority.png){#fig-posterior-equality fig-align="left"}
-
-
-
-
-
-
-
+![Table of prior probabilities](prior.png){#fig-prior fig-align="left"}
