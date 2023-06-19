@@ -6,11 +6,28 @@ format:
     slide-number: true
     embed-resources: true
     hash-type: number
+    showNotes: 'separate-page'
 editor: visual
 knitr:
   opts_chunk: 
     fig-align: "left"
 ---
+
+## One warning
+
+-   Lots of real world analogies, but
+    -   May be too specific to U.S.A.
+    -   Please ask about anything obscure
+
+::: notes
+Let me start off with a brief warning. I like to draw analogies a lot in my talks to various cultural references, such as books, television shows, or movies. I do this because it enlivens what sometimes can be a tedious topic. But I have to apologize if some of my cultural references may be too specific to the United States. Let me give an example.
+
+There is a series, Ted Lasso, about a football coach, United States football, I mean. He is asked to coach a soccer team in England, soccer being the sport that the rest of the world calls football. Now I know that people outside the U.S.A. watch Ted Lasso. But part of the humor in that series is when Ted starts telling stories that have a point to them, and everyone stares at in befuddlement because the only people who understand that point Ted is trying to make have been living in the United States their entire lives. As an example, Ted wears a t-shirt on one show that says "Arthur Joes GAtes Stack barbecue." It's actually a joke that only those of us who live in Kansas City can laugh at. Look it up on the Internet if you are curious.
+
+There's a stereotype of people in the United States that they think the world revolves around them. It's a stereotype that is not true for all of us, but it is true for many, including me. I try to fight that tendency, but it's not always easy.
+
+The point is, that I will try to be inclusive of those of you joining from outside the United States, but if I include a cultural reference that you are unfamiliar with, please don't hesitate to ask me to explain it. It will be interesting to see what analogies translate to other countries.
+:::
 
 ## Start with a bad joke
 
@@ -21,7 +38,9 @@ The other statistic responds ...
 *Put your reaction ("Ha ha", "Groan", etc.) in the chat box.*
 
 ::: notes
-Before I begin anything important, I like to start with a silly joke. Now on Zoom, I often miss student reactions. So when I say something funny, I want you to type "Ha ha" or "Smile" or "LMFAO". The acronym LMFAO means laughing my something ... I forget how the rest of it goes.
+One more thing before I begin anything important. I like to start my talks with a silly joke. It always relates to something I am going to say later.
+
+Now on Zoom, I often miss student reactions. So when I say something funny, I want you to type "Ha ha" or "Smile" or "LMFAO". The acronym LMFAO means laughing my something ... I forget how the rest of it goes.
 
 Now if the joke is corny, like a really really bad pun, it's okay to put "Groan". The only thing bad is if I tell a joke and get no reaction at all.
 
@@ -29,7 +48,7 @@ I'll be sneaking in some jokes throughout the talk and I really want a reaction 
 
 So here's the joke. It has been floating around on the Internet for quite a while, and I can't find the person who gets credit for this. But here goes.
 
-[Read joke and finish with] "It's okay but you lose a degree of freedom."
+READ JOKE AND FINISH WITH "It's okay but you lose a degree of freedom."
 
 Okay, I'm waiting for reactions.
 :::
@@ -44,14 +63,16 @@ Okay, I'm waiting for reactions.
     -   1802: My highest chess rating was 1802, but I am not that good any more.
 
 ::: notes
-Speaker notes
-
 I want to learn a bit about all of you, and I'm going to do this in a statistical way. Tell me one interesting number about yourself. It could be something simple, like the number of children you have or something exotic like the height of the highest mountain you have climbed.
 
 Here are three numbers about me.
 :::
 
 ## Your turn
+
+::: notes
+I want each of you to share an interesting number about yourself.
+:::
 
 ## A bit more about myself
 
@@ -64,6 +85,8 @@ Here are three numbers about me.
 -   Many invitations to talk at conferences
 
 ::: notes
+I like to share my background. It's not because I am conceited, though I am indeed quite conceited. The real reason is to establish what I know and why I am qualified to teach this class.
+
 I have a PhD in Statistics from the University of Iowa. I have always had a strong interest in the computational side of Statistics. My dissertation was 150 pages, and 100 of those pages were computer generated graphs.
 
 I am currently a full professor at the University of Missouri-Kansas City in the Department of Biomedical and Health Informatics. I also do statistical consulting on a part-time basis.
@@ -84,8 +107,6 @@ I love to talk about Statistics and have given many presentations at regional, n
 My goal: help you to become a better consumer of statistics
 
 ::: notes
-Speaker notes
-
 This course will cover three days. Here are the topics for each day
 :::
 
@@ -98,8 +119,6 @@ This course will cover three days. Here are the topics for each day
     -   Why should you round liberally
 
 ::: notes
-Speaker notes
-
 Today, you will learn about numerical summaries.
 :::
 
@@ -113,8 +132,6 @@ Today, you will learn about numerical summaries.
     -   What are some common mistakes in the choice of colors
 
 ::: notes
-Speaker notes
-
 You will also learn a little bit about data visualization.
 :::
 
@@ -127,9 +144,7 @@ You will also learn a little bit about data visualization.
     -   Counts require a solid operational definition
 
 ::: notes
-Speaker notes
-
-Let's start with the simplest statistic of all a simple count. This is probably the most common statistic produced.
+Let's start with the simplest statistic of all a simple count. This is a very common statistic.
 
 But counts can be tricky. The counting process is error prone and requires a solid operational definition.
 :::
@@ -151,8 +166,6 @@ quality control.
 ```
 
 ::: notes
-Speaker notes
-
 Here's an exercise I want you to do. Just count the number of occurrences of the letter "e". Once you have your answer, type it in the chat box.
 
 PAUSE HERE.
@@ -166,11 +179,9 @@ Did you count the e's in the quotes itself or also on the slide instructions and
 
 ## 
 
-![Image of a haemocytometer](sperm-count.png){#fig-who-2021}
+![Image of a haemocytometer](sperm-count.png){#fig-who-2021 fig-align="left"}
 
 ::: notes
-Speaker notes
-
 This image is take from the WHO laboratory manual for the examination and processing of human semen, published in 2021. It shows a haemocytometer, an instrument used for counting the number of cells. To get a proper count, you need to include any cells inside the four by four grid of large squares in the middle of this micrograph. But what does "inside" mean? Should you count only those cells entirely inside the four by four grid. Or should you include cells that are partially inside the grid?
 
 One rule is to count cells if the head of the sperm cell touches the top or right side of a square, but not if it touches the bottom or left side of the square. And don't count a sperm cell if only the tail is inside the square.
@@ -180,14 +191,12 @@ That's not the only way you can do this, but just make sure that whatever conven
 
 ## 
 
-![Titanic data: counts of survival by gender](titanic-counts.png){#fig-counts}
+![Titanic data: counts of survival by gender](titanic-counts.png){#fig-counts fig-align="left"}
 
 ::: notes
-Speaker notes
+Here is some count data from an interesting data set. It shows who survived and who did not on the passenger ship, Titanic.
 
-Here is some count data from an interesting data set. It shows who survived and who did not on the passenger ship, Titanic. 
-
-The Titanic was an enormous ship. It was bigger than any passenger ship ever built at the time. It was so large that they thought it was unsinkable. But in its first voyage across the Atlantic Ocean, it struck an iceberg and sunk. 
+The Titanic was an enormous ship. It was bigger than any passenger ship ever built at the time. It was so large that they thought it was unsinkable. But in its first voyage across the Atlantic Ocean, it struck an iceberg and sunk.
 
 They kept records on everyone on the ship: sex, age, and passenger class. There were 462 women on the ship. 308 of them survived, including Kate Winslet. The men did not fare as well. This was in a time when they really believed in the saying "Women and children first". If this happened today, I'd push past all the ladies and the little kids and jump in that life boat first.
 
@@ -203,8 +212,6 @@ Anyway, you might want to examine mortality trends more closely by computing per
 ![Titanic data with column percentages](titanic-column-percents.png){#fig-column-percents}
 
 ::: notes
-Speaker notes
-
 Here are the percentages computed by dividing by the column totals. Divide the 308 surviving females by the total number of survivors, 450, to get 68%. Divide the 142 surviving males by 450 to get 32%. So those lifeboats were mostly, but not entirely, filled with women.
 
 These are called column percents. They add up to 100% within each column: 18% + 82% = 100% and 68% + 32% = 100%.
@@ -212,12 +219,10 @@ These are called column percents. They add up to 100% within each column: 18% + 
 
 ## 
 
-![Titanic data with row percentages](titanic-row-percents.png){#fig-row-percents}
+![Titanic data with row percentages](titanic-row-percents.png){#fig-row-percents fig-align="left"}
 
 ::: notes
-Speaker notes
-
-You could also divide by the row totals. Divide the 308 surviving women by the total number of women, 462, to get a survival rate of 67%. Divide the 142 surviving men by the total number of men, 851, to get 17%. 
+You could also divide by the row totals. Divide the 308 surviving women by the total number of women, 462, to get a survival rate of 67%. Divide the 142 surviving men by the total number of men, 851, to get 17%.
 
 !7%! This shows how poorly the men fared on the Titanic. If you were female, you might have died, but more likely than not you did survive. For the men, not such good news. Most of them died. Only a small fraction survived.
 
@@ -226,18 +231,16 @@ This is called the row percentages. These percentages add up to 100 within each 
 
 ## Percentages divided by grand total
 
-![Titanic data with cell percentages](titanic-cell-percents.png){#fig-cell-percents}
+![Titanic data with cell percentages](titanic-cell-percents.png){#fig-cell-percents fig-align="left"}
 
 ::: notes
-Speaker notes
-
 You could also divide all the numbers by the grand total of 1,313. The 308 female survivors represented a bit less than 24% of all the passengers that set sail from England.
 
 The 142 male survivors represented a bit less than 11% of all the survivors.
 
 These are called the cell percentages. They add up to 100% across the entire table: 12% + 54% + 24% + 11% = 101%. Close enough!
 
-Which makes the most sense? It depends on your perspective. If you want to test the hypothesis that male passengers on the Titanic had a much smaller risk of dying, then the row percentages make the most sense. 
+Which makes the most sense? It depends on your perspective. If you want to test the hypothesis that male passengers on the Titanic had a much smaller risk of dying, then the row percentages make the most sense.
 
 But from the perspective of the Carpathia, the ship that rescued the survivors, the column percents make the most sense. They had to make room on their ship for 450 passengers, 68% who were female and 32% who were male. I bet that the lines for the women's bathrooms on the Carpathia were really long.
 :::
@@ -253,13 +256,11 @@ But from the perspective of the Carpathia, the ship that rescued the survivors, 
     -   Survivors: 68% female, 32% male
 
 ::: notes
-Speaker notes
-
 I have some general guidelines that I use. They don't always work, but they work most of the time.
 
 If you have a variable that represents a treatment or exposure, try using that as the rows of the table. If you have a variable that represents an outcome, try using that as the columns of the table. Sometimes, there are no clearly identified treatment variables and no clearly identified outcome variables. But try to categorize them this way, if you can.
 
-With a table lined up with the treatments as the rows and the outcomes are the variables, calculate the row percentages. 
+With a table lined up with the treatments as the rows and the outcomes are the variables, calculate the row percentages.
 
 In the Titanic data, survival is clearly an outcome. So arrange the table like I did with sex as the rows and survival as the columns and compare the two survival rates: a healthy 67% for females and a feeble 17% for males.
 
@@ -293,8 +294,6 @@ Survived  No   33% (154)   83% (863)
 :::
 
 ::: notes
-Speaker notes
-
 Now, I believe it is important to think carefully about which is your rows and which is your columns. Here's the layout that I recommend on the left and the layout that I don't recommend on the right. The key comparison is among survival rates, 67% for females and only 17% for males. When you orient my way with the treatment/exposure (Sex) as rows and the outcome (Survived) as the columns, the numbers 67% and 17% are very close to one another. In the alternate layout the numbers you are most interested in comparing are not as close together.
 
 Now this is not an absolute rule. Sometimes I'll switch things up. But about 90% of the time, I find that the layout with the treatment or exposure as the rows and the outcome as the columns, the table just looks better.
@@ -303,13 +302,12 @@ Now this is not an absolute rule. Sometimes I'll switch things up. But about 90%
 ## Break
 
 -   What have you just learned?
--   What is coming next
+    -   Displaying percentages
+-   What is coming next?
     -   Practice exercise
     -   Calculation of the mean and median
 
 ::: notes
-Speaker notes
-
 Let me pause here for a second. Are there any questions?
 :::
 
@@ -319,17 +317,15 @@ Calculate row and column percentages for the following tables. Interpret your re
 
 ::: columns
 ::: {.column width="50%"}
-![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass}
+![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass fig-align="left"}
 :::
 
 ::: {.column width="50%"}
-![Titanic child counts](titanic-child-counts.png){#fig-titanic-child}
+![Titanic child counts](titanic-child-counts.png){#fig-titanic-child fig-align="left"}
 :::
 :::
 
 ::: notes
-Speaker notes
-
 Now try to report both column and row percents for one of these two tables. Breakout room #1 work on the passenger class table and breakout room #2 work on the child data.
 
 Put your percentages in a table using a word processing program or text editor so you can share your results with the group.
@@ -339,11 +335,9 @@ Be sure to interpret these numbers. Come back together again in about 10 minutes
 
 ## 
 
-![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean}
+![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a cartoon image of Professor Mean. I know this looks like it was drawn by a professional artist, but it was actually drawn by me. Really!
 
 Professor Mean is my alter ego on the Internet. For those who don't get the inside joke, I point out that Professor Mean is not just your average professor.
@@ -353,17 +347,13 @@ I will use the terms mean and average interchangeably througout this talk.
 
 ## 
 
-![Road with a median strip](road-median.jpg){#fig-road-median}
+![Road with a median strip](road-median.jpg){#fig-road-median fig-align="left"}
 
 ::: notes
-Speaker notes
-
 This is an image of a traffic median. This is a strip of land, typically raised from the road surface, that splits the road in half.
 
 In Statistics, the median is the data value that splits the data in half. Half of the data is smaller than the median and half of the data is larger than the median.
 :::
-
-
 
 ## Calculation of the mean and median
 
@@ -375,8 +365,6 @@ In Statistics, the median is the data value that splits the data in half. Half o
         -   go halfway between the two middle values if n is even
 
 ::: notes
-Speaker notes
-
 You already know how to compute the average. Add up all the values and divide by the sample size.
 
 The median is also simple. Sort the data and choose the "middle" value. If n is odd, there is one value that is right in the middle. With five data values, the median is the third value of the sorted list. The first and second values are smaller and the fourth and fifth values are larger.
@@ -394,8 +382,6 @@ With an even number, there are two middle values. Go halfway between them. If yo
         -   $(X_{[n/2]}+X_{[n/2+1]})/2$ if n is even
 
 ::: notes
-Speaker notes
-
 Here are the mathematical formulas for the mean and median. I know some people hate formulas, but I love them. With a few symbols and Greek letters, you can express really deep and beautiful ideas. Well these formulas aren't all that deep.
 :::
 
@@ -436,8 +422,8 @@ bacteria_0 <- c(
   14.6,
   14)
 ```
-  
-```{r}  
+
+```{r}
 bacteria_1 <- c(
   10.1,
   3.8,
@@ -462,7 +448,6 @@ Room Before  After Change
 ```
 
 ::: notes
-Speaker notes
 :::
 
 ## Before remediation mean
@@ -482,8 +467,6 @@ Round to `r round(mean_0, 1)`
 ```
 
 ::: notes
-Speaker notes
-
 Here's the data for bacterial counts before remediation. If you add the eight values up, you get `r sum_0`. Divide this by eight to get `r mean_0`. Always round liberally when you are talking about the mean.
 :::
 
@@ -504,8 +487,6 @@ Round to `r round(mean_1, 1)`
 ```
 
 ::: notes
-Speaker notes
-
 Here are the same calculations for the bacterial counts after remediation.
 :::
 
@@ -535,8 +516,6 @@ step1 <- function(x) {
 ```
 
 ::: notes
-Speaker notes
-
 Here is the data for bacteria counts before remediation. Notice that the data is arranged by room number.
 :::
 
@@ -557,8 +536,6 @@ step2 <- function(x) {
 ```
 
 ::: notes
-Speaker notes
-
 The first thing you do is sort the data from the lowest bacteria count to the highest bacteria count.
 
 The data was arranged by toom number, but now it is arranged by bacterial count.
@@ -581,8 +558,6 @@ step3 <- function(x, div=4:5) {
 ```
 
 ::: notes
-Speaker notes
-
 Then pick out the middle value. If you have an even number of data points, there will be two middle values.
 
 In this data set, the two middle values are the fourth and fifth largest values out of eight.
@@ -609,8 +584,6 @@ step4 <- function(x, div=4:5) {
 ```
 
 ::: notes
-Speaker notes
-
 If there are two middle values, just average them.
 :::
 
@@ -621,8 +594,6 @@ If there are two middle values, just average them.
 ```
 
 ::: notes
-Speaker notes
-
 Here is the data for bacteria counts after remediation.
 :::
 
@@ -633,8 +604,6 @@ Here is the data for bacteria counts after remediation.
 ```
 
 ::: notes
-Speaker notes
-
 Just like before, you sort the data.
 :::
 
@@ -645,8 +614,6 @@ Just like before, you sort the data.
 ```
 
 ::: notes
-Speaker notes
-
 Then pick out the middle value. Here again, there are two middle values.
 :::
 
@@ -657,33 +624,20 @@ Then pick out the middle value. Here again, there are two middle values.
 ```
 
 ::: notes
-Speaker notes
-
 Just average the two middle values.
 :::
 
-## Choosing between the mean and median
-
--   When do you use the mean?
-    -   When totals are important
--   When do you use the median
-    -   When outliers/skewness might distort your conclusions
--   Often, either is fine
-
 ::: notes
-Speaker notes
 :::
 
 ## Break
 
 -   What have you just learned?
     -   Calculation of the mean and median
--   What is coming next
+-   What is coming next?
     -   Criticisms of the mean and median
 
 ::: notes
-Speaker notes
-
 Let me pause here for a second. Are there any questions?
 :::
 
@@ -708,13 +662,75 @@ This is a big problem in a larger context than just the mean or median. There ar
 
 ## Use of the mean for ordinal data
 
-## 
-
-![Excerpt from Gould 1985 publication](gould-1985.png){#fig-gould-1985}
+-   Stevens scales of measurement (controversial!)
+    -   Nominal
+    -   Ordinal
+    -   Interval
+    -   Ratio
+-   Addition/subtraction not allowed for ordinal data
+    -   Mean of ordinal data is meaningless
 
 ::: notes
-Speaker notes
+A psychologist, Stanley Smith Stevens divided the entire universe of data into four categories: nominal, ordinal, interval, ratio. I won't review the definitions for all of these, but ordinal data is categorical data where there is a natural ordering of categories. An important limitation to ordinal data, but where the spacing between successive units is not consistent.
 
+The belief among many (but not all) researchers, is that
+:::
+
+## An example of ordinal data.
+
+-   "Do you agree or disagree with the following statements"
+    -   "I believe that knowledge of Statistics is important for my job."
+        -   1 = Strongly disagree,
+        -   2 = Disagree
+        -   3 = Neutral
+        -   4 = Agree
+        -   5 = Strongly agree
+
+::: notes
+An example of ordinal data is the Likert scale. This takes various forms, but often it is used with group of questions on a questionnaire that reads something like
+
+"Do you agree or disagree with the following statements"
+
+You are asked to respond 1=Strongly disagree, 2=Disagree, 3=Neutral, 4=Agree, 5=Strongly agree.
+
+Now I'm sure everyone today is going to choose 5. But assigning numbers 1, 2, 3, 4, and 5 to categories of strongly disagree, disagree, neutral, agree, and strongly agree may falsely imply that a jump from 3 (neutral) to 4 (agree) is about the same amount of improvement as a jump from 4 (agree) to 5 (strongly agree). That's probably not the case.
+
+You can't really average ordinal data, some people say because that implies that two responses of "Agree" are the same as one response of "Neutral" along with a response of "Strongly agree".
+
+Do you want everyone to be at least somewhat on your side or do you want to have a smaller number of very enthusiastic supporters.
+
+If you believe that two 4's are not the same as a 3 and a 5, then you can't average.
+
+Now I beg to disagree here, but I am part of a minority opinion. I think that if at the start of this class, your average rating was 3.2 and after I finish the lecture, your average rating climbs to 4.4, that I have done my job well.
+
+If it only jumps to 3.6, then I have still done well, but not as much as that jump to 4.4.
+:::
+
+## Another example of ordinal data, course grades
+
+-   A = 4
+-   B = 3
+-   C = 2
+-   D = 1
+-   F = 0
+
+::: notes
+Another example of ordinal data is grades assigned to students. Now everyone in this class is getting an A, but in other classes I teach I might assign different grades. You can attach a number to each of these grades, 4 for A, 3 for B, 2 for C, 1 for D, and 0 for F.
+
+These numbers seem to imply that a student with two B's is as smart as a student with an A and a C.
+
+It raises an interesting story. A colleague of mine told me that he would never hire anyone with a single F on their transcript. An F is a red flag, he felt. So he would not want to assign a value of 0 to F, because that implies that the difference between an F and a D is equivalent to the difference between a B and and A. He's want to assign a value like negative one million to an F so that the average would be pulled way down for a single F, no matter what the other grades would be.
+
+Now I would never be so harsh, but there is really nothing wrong with his perspective. And I would certainly treat a student with three A's and one F differently from a student with two A's and two C's even though mathematically, both average out to 3.0.
+
+Now, in spite of all the obvious problems with equivalence between different grades, most of us still accept a grade point average as a meaningful indicator of how well a student did in school.
+:::
+
+## 
+
+![Excerpt from Gould 1985 publication](gould-1985.png){#fig-gould-1985 fig-align="left"}
+
+::: notes
 Stephen Jay Gould was a famous Evolutionary Biologist. He was a prolific writer with 20 books and 300 essays. Much of his writing was for academic researchers, but just as much was for the general public.
 
 One of his most famous essays was "The Median Isn't the Message". The title is a take-off of a quote by Marshall McLuhan, "The medium is the message" which itself has an interesting history that you should investigate on your own.
@@ -724,12 +740,28 @@ The Gould essay was written in 1985 for Discover Magazine. It has been reprinted
 The image shown here is taken from phoenix5.org, an informational site for patients with prostate cancer.
 :::
 
-## Bridge 2001, PMID: 11405531
+## Choosing between the mean and median
 
-![Bridge and McKenzie 2001](bridge-2001.png){#fig-bridge-2001}
+-   Often a source of controversy
+-   When do you use the mean?
+    -   When totals are important
+-   When do you use the median
+    -   When outliers/skewness might distort your conclusions
+-   Often, either is fine
+
+### notes
+
+While there is some consensus on when to use the mean versus the median, the choice is not always obvious. Controversies often arise over this issue.
+
+Here are some general guidelines.
+
+The mean allows extrapolation to totals. This is often important in the analysis of the economic effects of illness. :::
+
+## 
+
+![Exceprt from Bridge and McKenzie 2001, PMID: 11405531](bridge-2001.png){#fig-bridge-2001 fig-align="left"}
 
 ::: notes
-Speaker notes
 :::
 
 ## Bridge 2001, PMID: 11405531 (continued)
@@ -737,7 +769,6 @@ Speaker notes
 The measurement of airway resistance by the interrupter technique (Rint) needs standardization. Should measurements be made be during the expiratory or inspiratory phase of tidal breathing? **In reported studies, the measurement of Rint has been calculated as the median or mean of a small number of values, is there an important difference?**
 
 ::: notes
-Speaker notes
 :::
 
 ## Bridge 2001, PMID: 11405531 (continued)
@@ -745,65 +776,13 @@ Speaker notes
 In the present data the mean of a set of values contributing to a measurement was not significantly different from the median. **However, the use of the median has been recommended since it is less affected by possible outlying values such as might be included by fully automated equipment.**
 
 ::: notes
-Speaker notes
 :::
-
-## Tosato 2021, PMID: 34352201
-
-![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021}
-
-::: notes
-Speaker notes
-:::
-
-## Tosato 2021, PMID: 34352201 (continued)
-
-Symptom persistence weeks after laboratory-confirmed severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) clearance is a relatively common long-term complication of Coronavirus disease 2019 (COVID-19). Little is known about this phenomenon in older adults. The present study aimed at determining the prevalence of persistent symptoms among older COVID-19 survivors and identifying symptom patterns.
-
-::: notes
-Speaker notes
-:::
-
-## Tosato 2021, PMID: 34352201 (continued)
-
-The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (38.4%) were women. The average time elapsed from hospital discharge was 76.8 ± 20.3 days (range 25-109 days).
-
-::: notes
-Speaker notes
-:::
-
-## Ielapi 2021, PMID: 34968328 
-
-![Tosato et al 2021](ielapi-2021.png){#fig-tosato-2021}
-
-## Ielapi 2021, PMID: 34968328 (continued)
-
-Background. Insomnia is one of the major health problems related with a decrease in quality of life (QOL) and also in poor functioning in night-shift nurses, that also may negatively affect patients’ care. The aim of this study is to evaluate the prevalence of insomnia in night shift nurses.
-
-## Ielapi 2021, PMID: 34968328 (continued)
-
-Excerpt from Table 1.
-
-Data reported as mean ± standard deviation or median [Q1-Q3] 
-
-```{}
-Overall (n = 2′355)
-Age, years	40.4 ± 10.3
-Months of work 168 [72–300]
-Night shifts per month, number	6.3 ± 1.4
-Time to reach workplace, minutes	45 [45–65]
-Rest time, minutes	180 [4–240]
-Rest in the afternoon, minutes	30 [0–120]
-Number of coffees, mean	2.5 ± 1.5
-Number of coffees during night shift, mean	1.4 ± 1.1
-```
 
 ## Chen 2019, PMID: 31806195
 
-![Chen et al 2019](chen-2019.png){#fig-chen-2019}
+![Chen et al 2019](chen-2019.png){#fig-chen-2019 fig-align="left"}
 
 ::: notes
-Speaker notes
 :::
 
 ## Chen 2019, PMID: 31806195 (continued)
@@ -811,7 +790,6 @@ Speaker notes
 Background: The prices of newly approved cancer drugs have risen over the past decades. **A key policy question is whether the clinical gains offered by these drugs in treating specific cancer indications justify the price increases.**
 
 ::: notes
-Speaker notes
 :::
 
 ## Chen 2019, PMID: 31806195 (continued)
@@ -819,7 +797,17 @@ Speaker notes
 Results: We found that between 1995 and 2012, price increases outstripped median survival gains, a finding consistent with previous literature. **Nevertheless, price per mean life-year gained increased at a considerably slower rate, suggesting that new drugs have been more effective in achieving longer-term survival.** Between 2013 and 2017, price increases reflected equally large gains in median and mean survival, resulting in a flat profile for benefit-adjusted launch prices in recent years.
 
 ::: notes
-Speaker notes
+:::
+
+## Break
+
+-   What have you just learned?
+    -   Criticisms of the mean and median
+-   What is coming next?
+    -   Computing percentiles
+
+::: notes
+Let me pause here for a second. Are there any questions?
 :::
 
 ## Percentiles
@@ -837,11 +825,9 @@ data.frame(x=rpois(2000, 20)) %>%
 ggsave("illustrate-percentiles.png")
 ```
 
-![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles}
+![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles fig-align="left"}
 
 ::: notes
-Speaker notes
-
 I want to mention percentiles briefly. A percentile is a value that splits the data so that a certain percentage is smaller and a certain percentage is larger.
 
 The 75th percentile, for example will be above 75% of the data and below 25% of the data. This graph illustrates the 75th percentile for some arbitrary data. THe gray bars represent about 75% of the data and the white bars represent about 25% of the data.
@@ -855,20 +841,18 @@ I use a few weasel words like "roughly" and "about" because you can't always get
     -   Differences are not worth fighting over
 -   My preference (pth quantile)
     -   Sort the data
-    -   Calculate p*(n+1)
+    -   Calculate p\*(n+1)
     -   Is it a whole number?
         -   Yes: Select that value, otherwise
         -   No: Go halfway between
-        -   Special cases: p(n+1) < 1 or > n
-        
-::: notes
-Speaker notes
+        -   Special cases: p(n+1) \< 1 or \> n
 
+::: notes
 There are close to a dozen different ways to compute a percentile, but the differences between the values selected are small and not worth fussing about.
 
 Here is my preference for choosing the pth quantile (remember that for quantiles, you range between 0 and 1, not between 0 and 100).
 
-Calculate the quantity p*(n+1). If that value is a whole number, great! You just select that value. If it is a fractional value, round up and down and go halfway between. 
+Calculate the quantity p\*(n+1). If that value is a whole number, great! You just select that value. If it is a fractional value, round up and down and go halfway between.
 
 Once in a while, you'll get an extreme case, where p(n+1) is less than 1 or greater than n. Just use a bit of common sense.
 
@@ -880,13 +864,11 @@ Likewise if p(n+1) is 0.8, you can't go halfway between the zeroth and first obs
 ## Some examples of percentile calculations
 
 -   Example for n=39
-    -   For 5th percentile, p(n+1)=2 -> 2nd smallest value
-    -   For 4th percentile, p(n+1)=1.6 -> halfway between two smallest values
-    -   For 2nd percentile, p(n+1)=0.8 -> smallest value
-    
-::: notes
-Speaker notes
+    -   For 5th percentile, p(n+1)=2 -\> 2nd smallest value
+    -   For 4th percentile, p(n+1)=1.6 -\> halfway between two smallest values
+    -   For 2nd percentile, p(n+1)=0.8 -\> smallest value
 
+::: notes
 Suppose you have 39 observations. For the 5th percentile or the 0.05 quantile, p(n+1) equals 2. Lucky you. The second smallest observation is the 5th percentile. For the 4th percentile or the 0.04 quantile, you get p(n+1) equal to 1.6. Go halfway between 1, the smallest value, and 2, the second smallest value.
 
 The 2nd percentile represents one of the special cases. You calculate p(n+1) and get 0.8. You can't go halfway between 0 and 1, so just choose the smallest value.
@@ -902,8 +884,6 @@ The 2nd percentile represents one of the special cases. You calculate p(n+1) and
     -   Upper quartile: 75th percentile
 
 ::: notes
-Speaker notes
-
 A percentile always refers to a percentage. So it has to be between 0% and 100%. Sometimes, you may see references to a quantile. A quantile is a percentile, but is expressed as a proportion rather than a percent. A quantile goes from 0.0 to 1.0. The 25th percentile and the 0.25 quantile are the same thing.
 
 You might see the term "quartiles". These are the 25th, 50th, and 75th percentiles. These three values split the data into quarters.
@@ -920,8 +900,6 @@ Let me be try to be careful about terminology here. But, sometimes I will mess u
 ```
 
 ::: notes
-Speaker notes
-
 Here is the data for bacteria counts before remediation. Let's calculate the upper quartile, also known as the 0.75 quantile or the 75th percentile.
 :::
 
@@ -932,8 +910,6 @@ Here is the data for bacteria counts before remediation. Let's calculate the upp
 ```
 
 ::: notes
-Speaker notes
-
 Just like before, you sort the data.
 :::
 
@@ -944,8 +920,6 @@ Just like before, you sort the data.
 ```
 
 ::: notes
-Speaker notes
-
 With n=8, you get p(n+1) = 6.75. So pick out the sixth and seventh values.
 :::
 
@@ -956,11 +930,8 @@ With n=8, you get p(n+1) = 6.75. So pick out the sixth and seventh values.
 ```
 
 ::: notes
-Speaker notes
-
 Go halfway between these values.
 :::
-
 
 ## After remediation upper quartile (1/4)
 
@@ -969,8 +940,6 @@ Go halfway between these values.
 ```
 
 ::: notes
-Speaker notes
-
 Here are the same calculations the upper quartile of bacteria counts after remediation.
 :::
 
@@ -981,8 +950,6 @@ Here are the same calculations the upper quartile of bacteria counts after remed
 ```
 
 ::: notes
-Speaker notes
-
 Just like before, you sort the data.
 :::
 
@@ -993,8 +960,6 @@ Just like before, you sort the data.
 ```
 
 ::: notes
-Speaker notes
-
 Then pick out the sixth and seventh values.
 :::
 
@@ -1005,8 +970,6 @@ Then pick out the sixth and seventh values.
 ```
 
 ::: notes
-Speaker notes
-
 Go halfway between these values.
 :::
 
@@ -1015,15 +978,13 @@ Go halfway between these values.
 -   Characterize variation
     -   Middle 50% of the data
 -   Exposure issues
-    -   Not enough to control median exposure level 
+    -   Not enough to control median exposure level
 -   Quantify extremes
     -   What does "upper class" mean?
 -   Quality control
     -   Almost all products must meet a minimum standard
 
 ::: notes
-Speaker notes
-
 There are many reasons why you might be interested in percentiles rather than the mean or median. Actually, the median is a percentile, the 50th percentile, but what I mean is percentiles other than 50%.
 
 One important use of percentiles is looking at the middle 50% of the data. This is the data between the lower quartile (25th percentile) and the upper quartile (75th percentile). Is the middle 50% of the data bunched tightly together or spread widely apart?
@@ -1035,6 +996,17 @@ Percentiles also help to define extreme groups. You can, for example, define the
 Percentiles also can help with quality control. If you make a claim about a product, you want to make sure that that claim is not valid at a median level but at a much higher level. You don't sell 500 mg bottles of liquid Tylenol is your factory is churning out a median fill level of 500 mg. Half of your customers would be cheated. Instead you insure that the 98th percentile coming out of the factory floor is at least 500 mg. You lose a bit of money because most bottles contain more than 500 mg, but the cost of an irate customer is worth more than the cost of 50 overfilled bottles.
 :::
 
+## Break
+
+-   What have you just learned?
+    -   Computing percentiles
+-   What is coming next?
+    -   Computing the standard deviation
+
+::: notes
+Let me pause here for a second. Are there any questions?
+:::
+
 ## Standard deviation
 
 $$S = \sqrt{\frac{1}{n-1}\Sigma(X_i-\bar{X})^2}$$
@@ -1042,8 +1014,6 @@ $$S = \sqrt{\frac{1}{n-1}\Sigma(X_i-\bar{X})^2}$$
 At least one alternative formulas.
 
 ::: notes
-Speaker notes
-
 The standard deviation is a commonly used measure of how spread out the data is. The formula is a bit messy, but if you look carefully at it, you will see that it is a measure of how far each individual value is from the overall mean.
 
 Now, maybe you've seen or used a different formula. Don't worry about it. In a short course like this, I won't ask you to calculate anything as tedious as a standard deviation. Let the computer do all of the work.
@@ -1062,11 +1032,9 @@ Now, maybe you've seen or used a different formula. Don't worry about it. In a s
     -   Too much risk can create a financial burden
 
 ::: notes
-Speaker notes
-
 I want to discuss measures of variation now. Variation gets at the heart and soul of clinical statistics. A large portion of statistical analysis involves characterizing variation.
 
-Variation can be thought of as a measure of noise. In general, but not always, noise is bad. Consider measuring a patient's glucose level, to see if you have early evidence of diabetes. Your glucose level varies a lot during the day based on whether you skipped breakfast or decided to get a mid-afternoon Snickers bar. Your glucose level is noisy. A high level might or might not mean trouble. A low value might or might not mean you are safe. The large standard deviation of your measures of blood glucose indicates noise. 
+Variation can be thought of as a measure of noise. In general, but not always, noise is bad. Consider measuring a patient's glucose level, to see if you have early evidence of diabetes. Your glucose level varies a lot during the day based on whether you skipped breakfast or decided to get a mid-afternoon Snickers bar. Your glucose level is noisy. A high level might or might not mean trouble. A low value might or might not mean you are safe. The large standard deviation of your measures of blood glucose indicates noise.
 
 That's why you are asked to take an overnight fast before testing your blood glucose level. Controlling your diet by not eating anything after midnight provides a more consistent measure of blood glucose. It has a smaller standard deviation and a high or low value is more helpful in diagnosis.
 
@@ -1089,8 +1057,6 @@ Variation can also be equated to risk. If you invest in a new drug, paying milli
     -   Pragmatic trials
 
 ::: notes
-Speaker notes
-
 It is a bit of a generalization, but most researchers try to avoid variation in early studies. By early studies, I mean studies of therapies that have not yet been extensively tested in a broad range of settings. Less variation means that there is a greater chance to detect signals. You remove variation by using very strict entry criteria on who can get into the study. You remove variation by tightly controlling what the patient is allowed to do (e.g., no concommitant medications). You remove variation by tightly standardizing the delivery of the intervention and the assessment of the outcome. You reduce variation by removing patients who deviate from the research protocol requirements.
 
 These are known as proof of concept trials. If a new therapy cannot succeed even under the tight controls, there is no point in studying it futher. But success in a tightly controlled environment does not guarantee success in the real world.
@@ -1105,8 +1071,6 @@ $$S = \sqrt{\frac{1}{n-1}\Sigma(X_i-\bar{X})^2}$$
 At least one alternative formulas.
 
 ::: notes
-Speaker notes
-
 The standard deviation is a commonly used measure of how spread out the data is. The formula is a bit messy, but if you look carefully at it, you will see that it is a measure of how far each individual value is from the overall mean.
 
 Now, maybe you've seen or used a different formula. Don't worry about it. In a short course like this, I won't ask you to calculate anything as tedious as a standard deviation. Let the computer do all of the work.
@@ -1120,9 +1084,7 @@ Now, maybe you've seen or used a different formula. Don't worry about it. In a s
     -   Symmetry on either side
 -   A bell shaped curve = better characterization of variation
 
-::: notes    
-Speaker notes
-
+::: notes
 Much variation in the real world follows a bell shaped curve, alternately called a normal distribution. You can assess whether you have a bell shaped curve using a histogram. Look for values in the middle being most common. The frequencies should taper off slowly as you moved away from the middle. The histogram should have symmetry. The left side of the histogram should be roughly equivalent to the right side of the histogram.
 :::
 
@@ -1140,11 +1102,9 @@ data.frame(x) %>%
 ggsave("bimodal-histogram.png")
 ```
 
-![Bimodal histogram](bimodal-histogram.png){#fig-bimodal-histogram}
+![Bimodal histogram](bimodal-histogram.png){#fig-bimodal-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a histogram that shows a bimodal distribution. The frequencies are not highest in the center of the data. This is not a bell shaped curve.
 :::
 
@@ -1160,11 +1120,9 @@ data.frame(x=rpois(2000, 5)) %>%
 ggsave("skewed-histogram.png")
 ```
 
-![Skewed histogram](skewed-histogram.png){#fig-skewed-histogram}
+![Skewed histogram](skewed-histogram.png){#fig-skewed-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a histogram that shows a skewed or asymmetric distribution. This is not a bell shaped curve.
 :::
 
@@ -1180,11 +1138,9 @@ data.frame(x=round(runif(2000, 0, 15))) %>%
 ggsave("uniform-histogram.png")
 ```
 
-![Uniform histogram](uniform-histogram.png){#fig-uniform-histogram}
+![Uniform histogram](uniform-histogram.png){#fig-uniform-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a histogram that shows a symmetric distibution, but the frequencies do not taper off as you move away from the center. This is not a bell shaped curve.
 :::
 
@@ -1204,11 +1160,9 @@ data.frame(x=round(x)) %>%
 ggsave("heavy-tailed-histogram.png")
 ```
 
-![Heavy-tailed histogram](heavy-tailed-histogram.png){#fig-heavy-tailed-histogram}
+![Heavy-tailed histogram](heavy-tailed-histogram.png){#fig-heavy-tailed-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a histogram that shows a symmetric distibution, but the frequencies taper off at first, but then flatten out. This is called a heavy tailed distribution and it tends to produce outliers, extreme values, on both sides. This is not a bell shaped curve.
 :::
 
@@ -1227,11 +1181,9 @@ data.frame(x=round(x)) %>%
 ggsave("normal-histogram.png")
 ```
 
-![Bell-shaped histogram](normal-histogram.png){#fig-normal-histogram}
+![Bell-shaped histogram](normal-histogram.png){#fig-normal-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a histogram that shows a symmetric distribution, with the most frequent values in the center and frequencies that taper off on either side. This is a bell shaped curve.
 :::
 
@@ -1250,11 +1202,9 @@ data.frame(x=round(x)) %>%
 ggsave("one-s-histogram.png")
 ```
 
-![Percentage within one s](one-s-histogram.png){#fig-one-s-histogram}
+![Percentage within one s](one-s-histogram.png){#fig-one-s-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 This shows the bell shaped curve with the data within one standard deviation of the mean highlighted in gray. Roughly 68% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
@@ -1273,11 +1223,9 @@ data.frame(x=round(x)) %>%
 ggsave("two-s-histogram.png")
 ```
 
-![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram}
+![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
@@ -1296,51 +1244,121 @@ data.frame(x=round(x)) %>%
 ggsave("three-s-histogram.png")
 ```
 
-![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram}
+![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
 
 ::: notes
-Speaker notes
-
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
 ## Lin 2022, PMID: 36126916
 
-![Lin et al 2022](lin-2022.png){#fig-lin-2022}
+![Lin et al 2022](lin-2022.png){#fig-lin-2022 fig-align="left"}
 
 ::: notes
-Speaker notes
 :::
 
 ## Lin et al 2022 patient ages
 
-![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages}
+![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
 
 ::: notes
-Speaker notes
 :::
 
 ## Lin et al 2022 Charlson Comorbidity Index
 
-![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci}
+![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
 
 ::: notes
-Speaker notes
 :::
 
 ## Lin et al 2022 PHQ-2 scores
 
-![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq}
+![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
 
 ::: notes
-Speaker notes
+:::
+
+## Tosato 2021, PMID: 34352201
+
+![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021 fig-align="left"}
+
+::: notes
+:::
+
+## Tosato 2021, PMID: 34352201 (continued)
+
+Symptom persistence weeks after laboratory-confirmed severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) clearance is a relatively common long-term complication of Coronavirus disease 2019 (COVID-19). Little is known about this phenomenon in older adults. The present study aimed at determining the prevalence of persistent symptoms among older COVID-19 survivors and identifying symptom patterns.
+
+::: notes
+:::
+
+## Tosato 2021, PMID: 34352201 (continued)
+
+The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (38.4%) were women. The average time elapsed from hospital discharge was 76.8 ± 20.3 days (range 25-109 days).
+
+::: notes
+:::
+
+## Ielapi 2021, PMID: 34968328
+
+![Ielapi et al 2021](ielapi-2021.png){#fig-ielapi-2021 fig-align="left"}
+
+## Ielapi 2021, PMID: 34968328 (continued)
+
+Background. Insomnia is one of the major health problems related with a decrease in quality of life (QOL) and also in poor functioning in night-shift nurses, that also may negatively affect patients' care. The aim of this study is to evaluate the prevalence of insomnia in night shift nurses.
+
+## Ielapi 2021, PMID: 34968328 (continued)
+
+Excerpt from Table 1.
+
+Data reported as mean ± standard deviation or median \[Q1-Q3\]
+
+```         
+Overall (n = 2′355)
+Age, years  40.4 ± 10.3
+Months of work 168 [72–300]
+Night shifts per month, number  6.3 ± 1.4
+Time to reach workplace, minutes    45 [45–65]
+Rest time, minutes  180 [4–240]
+Rest in the afternoon, minutes  30 [0–120]
+Number of coffees, mean 2.5 ± 1.5
+Number of coffees during night shift, mean  1.4 ± 1.1
+```
+
+## Break
+
+-   What have you just learned?
+    -   Computing the standard deviation
+-   What is coming next?
+    -   Visualization
+    
+::: notes
+Let me pause here for a second. Are there any questions?
 :::
 
 ## Visualization
 
-## Proportions
+-   Categorical data
+    -   Pie charts
+    -   Bar charts
+-   Continuous data
+    -   Bar charts
+    -   Error bars
+    -   Boxplot
+    -   Histogram
+    -   Plot all the data
+    
+::: notes
+There are many ways to visualize data. Your choices depend on the type of data you are trying to visualize. If all your variables are categorical, the plots that you are most likely to see are pie charts and bar charts.
 
-## Bar chart
+For continuous data, you might see bar charts (with or without error bars), boxplots, or histograms. All of these summarize the data, but often plotting all the individual data values is your best choice.
+:::
+
+## Pie charts for proportions
+
+## Bar charts for proportions
+
+## Bar charts for continuous data
 
 ## Error bars
 
@@ -1370,123 +1388,115 @@ http://blog.pmean.com/rainbows/
 
 ## Primary colors
 
-![Color combinations](primary-colors.jpg){#fig-primary-colors}
+![Color combinations](primary-colors.jpg){#fig-primary-colors fig-align="left"}
 
 ## The RGB color system
 
-+ #rrggbb format
+-   #rrggbb format
 
-  + #000000 is pure black
-  + #FFFFFF is pure white
-  + #FF0000 is pure red
-  + #00FF00 is pure green
-  + #0000FF is pure blue
-+ You can mix and match to get 16,777,216 colors
-  + #800080 is purple, #FF69B4 is pink, #40E0D0 is turquoise
+    -   #000000 is pure black
+    -   #FFFFFF is pure white
+    -   #FF0000 is pure red
+    -   #00FF00 is pure green
+    -   #0000FF is pure blue
 
-## Color combinations: yellow
+-   You can mix and match to get 16,777,216 colors
 
-![Red plus green](red-plus-green.png){#fig-red-plus-green}
-![Red plus blue](red-plus-blue.png){#fig-red-plus-blue}
+    -   #800080 is purple, #FF69B4 is pink, #40E0D0 is turquoise
 
-## Color combinations: magenta
+## 
 
-![Green plus blue](green-plus-blue.png){#fig-red-plus-green}
+![Red plus green equals yellow](red-plus-green.png){#fig-red-plus-green fig-align="left"}
+
+## 
+
+![Red plus blue equals magenta](red-plus-blue.png){#fig-red-plus-blue fig-align="left"}
+
+## 
+
+![Green plus blue equals cyan](green-plus-blue.png){fig-align="left"}
 
 ## The color cube
 
-![Illustration of the color cube](color-cube.png){#fig-color-cube}
+![Illustration of the color cube](color-cube.png){#fig-color-cube fig-align="left"}
 
 ## The color cylinder
 
-![Color cylinder](hsv-colors.png){#fig-equi-spaced-hues}
+![Color cylinder](hsv-colors.png){#fig-hsv-colors fig-align="left"}
 
 ## Rainbow
 
-![ ](pure-rainbow.png){#fig-pure-rainbow}
+![](pure-rainbow.png){#fig-pure-rainbow fig-align="left"}
 
 ## Harsh contrasts
 
-![](harsh-contrasts.png){#fig-harsh-contrasts}
+![](harsh-contrasts.png){#fig-harsh-contrasts fig-align="left"}
 
 ## Lighter rainbow
 
-![](lighter-rainbow.png){#fig-lighter-rainbow}
-## Darker rainbow
+![](lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"} \## Darker rainbow
 
-![](darker-rainbow.png){#fig-darker-rainbow}
+![](darker-rainbow.png){#fig-darker-rainbow fig-align="left"}
 
 ## Gentler contrasts
 
-![](gentler-contrasts.png){#fig-gentler-contrasts}
-
+![](gentler-contrasts.png){#fig-gentler-contrasts fig-align="left"}
 
 ## Equally spaced hues
 
-![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues}
+![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues fig-align="left"}
 
+## 
 
+![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient fig-align="left"}
 
-##
+## 
 
-![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient}
+![Clothing mistake: using too many colors](bold-clothes.png){#fig-bold-clothes fig-align="left"}
 
-##
+## 
 
-![Clothing mistake: using too many colors](bold-clothes.png){#fig-bold-clothes}
-
-##
-
-![ADvertisement with a single red umbrella](red-umbrella.png){#red-umbrella}
+![ADvertisement with a single red umbrella](red-umbrella.png){#red-umbrella fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Graphic designers have known for quite a while that a restrained use of colors can be very effective. Here is an image from a YouTube video clip,
 
 The Travelers - Look under the Umberella commercial (1986). Retrieved 2019-09-07 from https://www.youtube.com/watch?v=3zQX66jd_c0
 
-The single red umbrella in a sea of black umbrellas stands out. Your eye can’t help but follow this umbrella as it travels across the screen from left to right. It’s a very powerful image.
+The single red umbrella in a sea of black umbrellas stands out. Your eye can't help but follow this umbrella as it travels across the screen from left to right. It's a very powerful image.
 
 A small dollop of color in your visualizations can be far more effective than using a whole bunch of different colors.
-
 :::
 
-##
+## 
 
-![Use of color to highlight a single individual](orange-mac.jpg){#fig-orange-mac}
+![Use of color to highlight a single individual](orange-mac.jpg){#fig-orange-mac fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here is a second example, from the movie, Legally Blonde. In this scene, the main character, Elle Woods, played by Reese Witherspoon, shows her individuality by opening up a bright orange and white Macintosh computer. All the other students are using generic black laptops.
 
 This has practical implications for data visualization.
 :::
 
-##
+## 
 
-![How many "5's" are in this figure?](count-fives-1.png){#fig-count-fives-1}
+![How many "5's" are in this figure?](count-fives-1.png){#fig-count-fives-1 fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Here's a simple exercise, count the number of "5's" on this graph. Don't include the "5" that appears in the caption.
 
 When you have an answer, type it in the chat box.
 
-[Pause here]
+\[Pause here\]
 
 Now I did try to help by using a different color for each number.
 :::
 
-##
+## 
 
-![Repeat question. How many "5's" are in this figure?](count-fives-2.png){#fig-count-fives-2}
+![Repeat question. How many "5's" are in this figure?](count-fives-2.png){#fig-count-fives-2 fig-align="left"}
 
 ::: notes
-Speaker notes
-
 Okay, now repeat this exercise. How many "5's" do you count? Notice how much faster it is when there is are two colors insead of nine.
 :::
 
