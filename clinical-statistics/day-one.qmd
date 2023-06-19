@@ -1282,4 +1282,74 @@ Speaker notes
 
 ## What are some common mistakes in the choice of colors
 
+http://www.pmean.com/posts/misuse-of-gradient/
+
+http://blog.pmean.com/rainbows/
+
+## Primary colors
+
+![Color combinations](primary-colors.jpg){#fig-primary-colors fig-align="left"}
+
+## The RGB color system
+
++ #rrggbb format
+
+  + #000000 is pure black
+  + #FFFFFF is pure white
+  + #FF0000 is pure red
+  + #00FF00 is pure green
+  + #0000FF is pure blue
++ You can mix and match to get 16,777,216 colors
+  + #800080 is purple, #FF69B4 is pink, #40E0D0 is turquoise
+
+## Color combinations: yellow
+
+![Red plus green](red-plus-green.png){#fig-red-plus-green fig-align="left"}
+![Red plus blue](red-plus-blue.png){#fig-red-plus-blue fig-align="left"}
+
+## Color combinations: magenta
+
+![Green plus blue](green-plus-blue.png){#fig-red-plus-green fig-align="left"}
+
+## The color cube
+
+![Illustration of the color cube](color-cube.png){#fig-color-cube fig-align="left"}
+
+## The color cylinder
+
+![Color cylinder](hsv-colors.png){#fig-equi-spaced-hues fig-align="left"}
+
+## Rainbow
+
+![ ](pure-rainbow.png){#fig-pure-rainbow fig-align="left"}
+
+## Harsh contrasts
+
+![](harsh-contrasts.png){#fig-harsh-contrasts fig-align="left"}
+
+## Lighter rainbow
+
+![](lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"}
+## Darker rainbow
+
+![](darker-rainbow.png){#fig-darker-rainbow fig-align="left"}
+
+## Gentler contrasts
+
+![](gentler-contrasts.png){#fig-gentler-contrasts fig-align="left"}
+
+
+## Equally spaced hues
+
+![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues fig-align="left"}
+
+
+
+## The rainbow gradient
+
+![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient fig-align="left"}
+
+
+
+
 ## Repeat quiz questions
