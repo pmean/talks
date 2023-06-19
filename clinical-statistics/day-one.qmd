@@ -5,7 +5,11 @@ format:
   revealjs:
     slide-number: true
     embed-resources: true
+    hash-type: number
 editor: visual
+knitr:
+  opts_chunk: 
+    fig-align: "left"
 ---
 
 ## Start with a bad joke
@@ -81,6 +85,8 @@ My goal: help you to become a better consumer of statistics
 
 ::: notes
 Speaker notes
+
+This course will cover three days. Here are the topics for each day
 :::
 
 ## Day one topics
@@ -93,6 +99,8 @@ Speaker notes
 
 ::: notes
 Speaker notes
+
+Today, you will learn about numerical summaries.
 :::
 
 ## Day one topics (continued)
@@ -106,6 +114,8 @@ Speaker notes
 
 ::: notes
 Speaker notes
+
+You will also learn a little bit about data visualization.
 :::
 
 ## Quiz questions
@@ -145,7 +155,7 @@ Speaker notes
 
 Here's an exercise I want you to do. Just count the number of occurrences of the letter "e". Once you have your answer, type it in the chat box.
 
-\[Pause here\]
+PAUSE HERE.
 
 The numbers are different because of two things. First, it is easy to make mistakes. Did anyone notice the repetition of the word "the" at the end of the third line and the beginning of the fourth. It would be easy to miss that and count one less "e".
 
@@ -154,9 +164,9 @@ What did you do with the first e in "Every"?
 Did you count the e's in the quotes itself or also on the slide instructions and the slide header?
 :::
 
-## Counting sperm
+## 
 
-![Image of a haemocytometer](sperm-count.png){#fig-who-2021 fig-align="left"}
+![Image of a haemocytometer](sperm-count.png){#fig-who-2021}
 
 ::: notes
 Speaker notes
@@ -168,36 +178,68 @@ One rule is to count cells if the head of the sperm cell touches the top or righ
 That's not the only way you can do this, but just make sure that whatever convention you use for deciding "inside" versus "outside" is consistent across your laboratory.
 :::
 
-## Tables of counts, using the Titanic data.
+## 
 
-![Counts of survival by gender](titanic-counts.png){#fig-counts fig-align="left"}
+![Titanic data: counts of survival by gender](titanic-counts.png){#fig-counts}
 
 ::: notes
 Speaker notes
+
+Here is some count data from an interesting data set. It shows who survived and who did not on the passenger ship, Titanic. 
+
+The Titanic was an enormous ship. It was bigger than any passenger ship ever built at the time. It was so large that they thought it was unsinkable. But in its first voyage across the Atlantic Ocean, it struck an iceberg and sunk. 
+
+They kept records on everyone on the ship: sex, age, and passenger class. There were 462 women on the ship. 308 of them survived, including Kate Winslet. The men did not fare as well. This was in a time when they really believed in the saying "Women and children first". If this happened today, I'd push past all the ladies and the little kids and jump in that life boat first.
+
+Among the 851 men, 709 died, including, sadly, Leonardo Di Caprio.
+
+I'm making a reference to a popular movie, "Titanic" that was released in 1997. Has anyone seen that movie?
+
+Anyway, you might want to examine mortality trends more closely by computing percentages. But there are three different ways you could compute these percentages.
 :::
 
-## Percentages dividing by column totals
+## 
 
-![Column percentages](titanic-column-percents.png){#fig-column-percents fig-align="left"}
+![Titanic data with column percentages](titanic-column-percents.png){#fig-column-percents}
 
 ::: notes
 Speaker notes
+
+Here are the percentages computed by dividing by the column totals. Divide the 308 surviving females by the total number of survivors, 450, to get 68%. Divide the 142 surviving males by 450 to get 32%. So those lifeboats were mostly, but not entirely, filled with women.
+
+These are called column percents. They add up to 100% within each column: 18% + 82% = 100% and 68% + 32% = 100%.
 :::
 
-## Percentages dividing by row totals
+## 
 
-![Row percentages](titanic-row-percents.png){fig-align="left"}
+![Titanic data with row percentages](titanic-row-percents.png){#fig-row-percents}
 
 ::: notes
 Speaker notes
+
+You could also divide by the row totals. Divide the 308 surviving women by the total number of women, 462, to get a survival rate of 67%. Divide the 142 surviving men by the total number of men, 851, to get 17%. 
+
+!7%! This shows how poorly the men fared on the Titanic. If you were female, you might have died, but more likely than not you did survive. For the men, not such good news. Most of them died. Only a small fraction survived.
+
+This is called the row percentages. These percentages add up to 100 within each row: 33% + 67% = 100% and 83% + 17% = 100%.
 :::
 
 ## Percentages divided by grand total
 
-![Cell percentages](titanic-cell-percents.png){fig-align="left"}
+![Titanic data with cell percentages](titanic-cell-percents.png){#fig-cell-percents}
 
 ::: notes
 Speaker notes
+
+You could also divide all the numbers by the grand total of 1,313. The 308 female survivors represented a bit less than 24% of all the passengers that set sail from England.
+
+The 142 male survivors represented a bit less than 11% of all the survivors.
+
+These are called the cell percentages. They add up to 100% across the entire table: 12% + 54% + 24% + 11% = 101%. Close enough!
+
+Which makes the most sense? It depends on your perspective. If you want to test the hypothesis that male passengers on the Titanic had a much smaller risk of dying, then the row percentages make the most sense. 
+
+But from the perspective of the Carpathia, the ship that rescued the survivors, the column percents make the most sense. They had to make room on their ship for 450 passengers, 68% who were female and 32% who were male. I bet that the lines for the women's bathrooms on the Carpathia were really long.
 :::
 
 ## My recommendations
@@ -205,13 +247,23 @@ Speaker notes
 -   Treatment or exposure as rows
 -   Outcome as columns
 -   Usually report row percentages
-    -   Female mortality rate: 33%
-    -   Male mortality rate: 83%
+    -   Female survival rate: 67%
+    -   Male survival rate: 17%
 -   But sometimes column percentages
     -   Survivors: 68% female, 32% male
 
 ::: notes
 Speaker notes
+
+I have some general guidelines that I use. They don't always work, but they work most of the time.
+
+If you have a variable that represents a treatment or exposure, try using that as the rows of the table. If you have a variable that represents an outcome, try using that as the columns of the table. Sometimes, there are no clearly identified treatment variables and no clearly identified outcome variables. But try to categorize them this way, if you can.
+
+With a table lined up with the treatments as the rows and the outcomes are the variables, calculate the row percentages. 
+
+In the Titanic data, survival is clearly an outcome. So arrange the table like I did with sex as the rows and survival as the columns and compare the two survival rates: a healthy 67% for females and a feeble 17% for males.
+
+But sometimes you will find that the column percents make more sense. It does depend on what question you are trying to answer with the data.
 :::
 
 ## Some rationale for these choices
@@ -248,17 +300,30 @@ Now, I believe it is important to think carefully about which is your rows and w
 Now this is not an absolute rule. Sometimes I'll switch things up. But about 90% of the time, I find that the layout with the treatment or exposure as the rows and the outcome as the columns, the table just looks better.
 :::
 
+## Break
+
+-   What have you just learned?
+-   What is coming next
+    -   Practice exercise
+    -   Calculation of the mean and median
+
+::: notes
+Speaker notes
+
+Let me pause here for a second. Are there any questions?
+:::
+
 ## On your own
 
 Calculate row and column percentages for the following tables. Interpret your results.
 
 ::: columns
 ::: {.column width="50%"}
-![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass fig-align="left"}
+![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass}
 :::
 
 ::: {.column width="50%"}
-![Titanic child counts](titanic-child-counts.png){#fig-titanic-child fig-align="left"}
+![Titanic child counts](titanic-child-counts.png){#fig-titanic-child}
 :::
 :::
 
@@ -272,9 +337,9 @@ Put your percentages in a table using a word processing program or text editor s
 Be sure to interpret these numbers. Come back together again in about 10 minutes.
 :::
 
-## The mean (average)
+## 
 
-![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean fig-align="left"}
+![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean}
 
 ::: notes
 Speaker notes
@@ -286,9 +351,9 @@ Professor Mean is my alter ego on the Internet. For those who don't get the insi
 I will use the terms mean and average interchangeably througout this talk.
 :::
 
-## The median
+## 
 
-![Road with a median strip](road-median.jpg){#fig-road-median fig-align="left"}
+![Road with a median strip](road-median.jpg){#fig-road-median}
 
 ::: notes
 Speaker notes
@@ -495,6 +560,8 @@ step2 <- function(x) {
 Speaker notes
 
 The first thing you do is sort the data from the lowest bacteria count to the highest bacteria count.
+
+The data was arranged by toom number, but now it is arranged by bacterial count.
 :::
 
 ## Before remediation median (3/4)
@@ -517,6 +584,8 @@ step3 <- function(x, div=4:5) {
 Speaker notes
 
 Then pick out the middle value. If you have an even number of data points, there will be two middle values.
+
+In this data set, the two middle values are the fourth and fifth largest values out of eight.
 :::
 
 ## Before remediation median (4/4)
@@ -605,6 +674,19 @@ Just average the two middle values.
 Speaker notes
 :::
 
+## Break
+
+-   What have you just learned?
+    -   Calculation of the mean and median
+-   What is coming next
+    -   Criticisms of the mean and median
+
+::: notes
+Speaker notes
+
+Let me pause here for a second. Are there any questions?
+:::
+
 ## Criticisms of the mean and median
 
 -   Are you combining apples and onions?
@@ -626,9 +708,9 @@ This is a big problem in a larger context than just the mean or median. There ar
 
 ## Use of the mean for ordinal data
 
-## Gould 1985
+## 
 
-![Gould 1985](gould-1985.png){#fig-gould-1985 fig-align="left"}
+![Excerpt from Gould 1985 publication](gould-1985.png){#fig-gould-1985}
 
 ::: notes
 Speaker notes
@@ -644,7 +726,7 @@ The image shown here is taken from phoenix5.org, an informational site for patie
 
 ## Bridge 2001, PMID: 11405531
 
-![Bridge and McKenzie 2001](bridge-2001.png){#fig-bridge-2001 fig-align="left"}
+![Bridge and McKenzie 2001](bridge-2001.png){#fig-bridge-2001}
 
 ::: notes
 Speaker notes
@@ -668,7 +750,7 @@ Speaker notes
 
 ## Tosato 2021, PMID: 34352201
 
-![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021 fig-align="left"}
+![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021}
 
 ::: notes
 Speaker notes
@@ -692,7 +774,7 @@ Speaker notes
 
 ## Ielapi 2021, PMID: 34968328 
 
-![Tosato et al 2021](ielapi-2021.png){#fig-tosato-2021 fig-align="left"}
+![Tosato et al 2021](ielapi-2021.png){#fig-tosato-2021}
 
 ## Ielapi 2021, PMID: 34968328 (continued)
 
@@ -718,7 +800,7 @@ Number of coffees during night shift, mean	1.4 ± 1.1
 
 ## Chen 2019, PMID: 31806195
 
-![Chen et al 2019](chen-2019.png){#fig-chen-2019 fig-align="left"}
+![Chen et al 2019](chen-2019.png){#fig-chen-2019}
 
 ::: notes
 Speaker notes
@@ -755,7 +837,7 @@ data.frame(x=rpois(2000, 20)) %>%
 ggsave("illustrate-percentiles.png")
 ```
 
-![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles fig-align="left"}
+![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles}
 
 ::: notes
 Speaker notes
@@ -1058,7 +1140,7 @@ data.frame(x) %>%
 ggsave("bimodal-histogram.png")
 ```
 
-![Bimodal histogram](bimodal-histogram.png){#fig-bimodal-histogram fig-align="left"}
+![Bimodal histogram](bimodal-histogram.png){#fig-bimodal-histogram}
 
 ::: notes
 Speaker notes
@@ -1078,7 +1160,7 @@ data.frame(x=rpois(2000, 5)) %>%
 ggsave("skewed-histogram.png")
 ```
 
-![Skewed histogram](skewed-histogram.png){#fig-skewed-histogram fig-align="left"}
+![Skewed histogram](skewed-histogram.png){#fig-skewed-histogram}
 
 ::: notes
 Speaker notes
@@ -1098,7 +1180,7 @@ data.frame(x=round(runif(2000, 0, 15))) %>%
 ggsave("uniform-histogram.png")
 ```
 
-![Uniform histogram](uniform-histogram.png){#fig-uniform-histogram fig-align="left"}
+![Uniform histogram](uniform-histogram.png){#fig-uniform-histogram}
 
 ::: notes
 Speaker notes
@@ -1122,7 +1204,7 @@ data.frame(x=round(x)) %>%
 ggsave("heavy-tailed-histogram.png")
 ```
 
-![Heavy-tailed histogram](heavy-tailed-histogram.png){#fig-heavy-tailed-histogram fig-align="left"}
+![Heavy-tailed histogram](heavy-tailed-histogram.png){#fig-heavy-tailed-histogram}
 
 ::: notes
 Speaker notes
@@ -1145,7 +1227,7 @@ data.frame(x=round(x)) %>%
 ggsave("normal-histogram.png")
 ```
 
-![Bell-shaped histogram](normal-histogram.png){#fig-normal-histogram fig-align="left"}
+![Bell-shaped histogram](normal-histogram.png){#fig-normal-histogram}
 
 ::: notes
 Speaker notes
@@ -1168,7 +1250,7 @@ data.frame(x=round(x)) %>%
 ggsave("one-s-histogram.png")
 ```
 
-![Percentage within one s](one-s-histogram.png){#fig-one-s-histogram fig-align="left"}
+![Percentage within one s](one-s-histogram.png){#fig-one-s-histogram}
 
 ::: notes
 Speaker notes
@@ -1191,7 +1273,7 @@ data.frame(x=round(x)) %>%
 ggsave("two-s-histogram.png")
 ```
 
-![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
+![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram}
 
 ::: notes
 Speaker notes
@@ -1214,7 +1296,7 @@ data.frame(x=round(x)) %>%
 ggsave("three-s-histogram.png")
 ```
 
-![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
+![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram}
 
 ::: notes
 Speaker notes
@@ -1224,7 +1306,7 @@ This shows the bell shaped curve with the data within two standard deviations of
 
 ## Lin 2022, PMID: 36126916
 
-![Lin et al 2022](lin-2022.png){#fig-lin-2022 fig-align="left"}
+![Lin et al 2022](lin-2022.png){#fig-lin-2022}
 
 ::: notes
 Speaker notes
@@ -1232,7 +1314,7 @@ Speaker notes
 
 ## Lin et al 2022 patient ages
 
-![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
+![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages}
 
 ::: notes
 Speaker notes
@@ -1240,7 +1322,7 @@ Speaker notes
 
 ## Lin et al 2022 Charlson Comorbidity Index
 
-![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
+![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci}
 
 ::: notes
 Speaker notes
@@ -1248,7 +1330,7 @@ Speaker notes
 
 ## Lin et al 2022 PHQ-2 scores
 
-![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
+![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq}
 
 ::: notes
 Speaker notes
@@ -1288,7 +1370,7 @@ http://blog.pmean.com/rainbows/
 
 ## Primary colors
 
-![Color combinations](primary-colors.jpg){#fig-primary-colors fig-align="left"}
+![Color combinations](primary-colors.jpg){#fig-primary-colors}
 
 ## The RGB color system
 
@@ -1304,52 +1386,108 @@ http://blog.pmean.com/rainbows/
 
 ## Color combinations: yellow
 
-![Red plus green](red-plus-green.png){#fig-red-plus-green fig-align="left"}
-![Red plus blue](red-plus-blue.png){#fig-red-plus-blue fig-align="left"}
+![Red plus green](red-plus-green.png){#fig-red-plus-green}
+![Red plus blue](red-plus-blue.png){#fig-red-plus-blue}
 
 ## Color combinations: magenta
 
-![Green plus blue](green-plus-blue.png){#fig-red-plus-green fig-align="left"}
+![Green plus blue](green-plus-blue.png){#fig-red-plus-green}
 
 ## The color cube
 
-![Illustration of the color cube](color-cube.png){#fig-color-cube fig-align="left"}
+![Illustration of the color cube](color-cube.png){#fig-color-cube}
 
 ## The color cylinder
 
-![Color cylinder](hsv-colors.png){#fig-equi-spaced-hues fig-align="left"}
+![Color cylinder](hsv-colors.png){#fig-equi-spaced-hues}
 
 ## Rainbow
 
-![ ](pure-rainbow.png){#fig-pure-rainbow fig-align="left"}
+![ ](pure-rainbow.png){#fig-pure-rainbow}
 
 ## Harsh contrasts
 
-![](harsh-contrasts.png){#fig-harsh-contrasts fig-align="left"}
+![](harsh-contrasts.png){#fig-harsh-contrasts}
 
 ## Lighter rainbow
 
-![](lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"}
+![](lighter-rainbow.png){#fig-lighter-rainbow}
 ## Darker rainbow
 
-![](darker-rainbow.png){#fig-darker-rainbow fig-align="left"}
+![](darker-rainbow.png){#fig-darker-rainbow}
 
 ## Gentler contrasts
 
-![](gentler-contrasts.png){#fig-gentler-contrasts fig-align="left"}
+![](gentler-contrasts.png){#fig-gentler-contrasts}
 
 
 ## Equally spaced hues
 
-![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues fig-align="left"}
+![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues}
 
 
 
-## The rainbow gradient
+##
 
-![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient fig-align="left"}
+![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient}
 
+##
 
+![Clothing mistake: using too many colors](bold-clothes.png){#fig-bold-clothes}
 
+##
+
+![ADvertisement with a single red umbrella](red-umbrella.png){#red-umbrella}
+
+::: notes
+Speaker notes
+
+Graphic designers have known for quite a while that a restrained use of colors can be very effective. Here is an image from a YouTube video clip,
+
+The Travelers - Look under the Umberella commercial (1986). Retrieved 2019-09-07 from https://www.youtube.com/watch?v=3zQX66jd_c0
+
+The single red umbrella in a sea of black umbrellas stands out. Your eye can’t help but follow this umbrella as it travels across the screen from left to right. It’s a very powerful image.
+
+A small dollop of color in your visualizations can be far more effective than using a whole bunch of different colors.
+
+:::
+
+##
+
+![Use of color to highlight a single individual](orange-mac.jpg){#fig-orange-mac}
+
+::: notes
+Speaker notes
+
+Here is a second example, from the movie, Legally Blonde. In this scene, the main character, Elle Woods, played by Reese Witherspoon, shows her individuality by opening up a bright orange and white Macintosh computer. All the other students are using generic black laptops.
+
+This has practical implications for data visualization.
+:::
+
+##
+
+![How many "5's" are in this figure?](count-fives-1.png){#fig-count-fives-1}
+
+::: notes
+Speaker notes
+
+Here's a simple exercise, count the number of "5's" on this graph. Don't include the "5" that appears in the caption.
+
+When you have an answer, type it in the chat box.
+
+[Pause here]
+
+Now I did try to help by using a different color for each number.
+:::
+
+##
+
+![Repeat question. How many "5's" are in this figure?](count-fives-2.png){#fig-count-fives-2}
+
+::: notes
+Speaker notes
+
+Okay, now repeat this exercise. How many "5's" do you count? Notice how much faster it is when there is are two colors insead of nine.
+:::
 
 ## Repeat quiz questions
