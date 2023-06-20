@@ -179,7 +179,7 @@ Did you count the e's in the quotes itself or also on the slide instructions and
 
 ## 
 
-![Image of a haemocytometer](sperm-count.png){#fig-who-2021 fig-align="left"}
+![Image of a haemocytometer](../images/sperm-count.png){#fig-who-2021 fig-align="left"}
 
 ::: notes
 This image is take from the WHO laboratory manual for the examination and processing of human semen, published in 2021. It shows a haemocytometer, an instrument used for counting the number of cells. To get a proper count, you need to include any cells inside the four by four grid of large squares in the middle of this micrograph. But what does "inside" mean? Should you count only those cells entirely inside the four by four grid. Or should you include cells that are partially inside the grid?
@@ -191,7 +191,7 @@ That's not the only way you can do this, but just make sure that whatever conven
 
 ## 
 
-![Titanic data: counts of survival by gender](titanic-counts.png){#fig-counts fig-align="left"}
+![Titanic data: counts of survival by gender](../images/titanic-counts.png){#fig-counts fig-align="left"}
 
 ::: notes
 Here is some count data from an interesting data set. It shows who survived and who did not on the passenger ship, Titanic.
@@ -209,7 +209,7 @@ Anyway, you might want to examine mortality trends more closely by computing per
 
 ## 
 
-![Titanic data with column percentages](titanic-column-percents.png){#fig-column-percents}
+![Titanic data with column percentages](../images/titanic-column-percents.png){#fig-column-percents}
 
 ::: notes
 Here are the percentages computed by dividing by the column totals. Divide the 308 surviving females by the total number of survivors, 450, to get 68%. Divide the 142 surviving males by 450 to get 32%. So those lifeboats were mostly, but not entirely, filled with women.
@@ -219,7 +219,7 @@ These are called column percents. They add up to 100% within each column: 18% + 
 
 ## 
 
-![Titanic data with row percentages](titanic-row-percents.png){#fig-row-percents fig-align="left"}
+![Titanic data with row percentages](../images/titanic-row-percents.png){#fig-row-percents fig-align="left"}
 
 ::: notes
 You could also divide by the row totals. Divide the 308 surviving women by the total number of women, 462, to get a survival rate of 67%. Divide the 142 surviving men by the total number of men, 851, to get 17%.
@@ -1331,7 +1331,7 @@ Number of coffees during night shift, mean  1.4 ± 1.1
     -   Computing the standard deviation
 -   What is coming next?
     -   Visualization
-    
+
 ::: notes
 Let me pause here for a second. Are there any questions?
 :::
@@ -1347,7 +1347,7 @@ Let me pause here for a second. Are there any questions?
     -   Boxplot
     -   Histogram
     -   Plot all the data
-    
+
 ::: notes
 There are many ways to visualize data. Your choices depend on the type of data you are trying to visualize. If all your variables are categorical, the plots that you are most likely to see are pie charts and bar charts.
 
