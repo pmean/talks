@@ -1,0 +1,52 @@
+---
+title: "Clinical statistics for non-statisticians: Readings"
+author: "Steve Simon"
+format: pptx
+editor: visual
+---
+
+## Gould 2006
+
+![Gould 2006](gould-2006.jpg){#fig-gould-2006 fig-align="left"}
+
+::: notes
+Speaker notes
+
+This cover is taken from the Amazon website.
+:::
+
+## Best 2012
+
+![Best 2012](best-2012.jpg){#fig-best-2012 fig-align="left"}
+
+::: notes
+Speaker notes
+
+First edition, 2001. Second edition, 2012.
+
+Image taken from Amazon website.
+:::
+
+## O'Neil 2016
+
+![O'Neil 2016](oneil-2016.jpg){#fig-oneil-2016 fig-align="left"}
+
+::: notes
+Speaker notes
+
+First edition, 2016.
+
+Image taken from Amazon website.
+:::
+
+## How companies learn your secrets
+
+https://www.nytimes.com/2012/02/19/magazine/shopping-habits.html
+
+## Machine Bias
+
+https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing
+
+## Bias in Algorithms
+
+https://fra.europa.eu/sites/default/files/fra_uploads/fra-2022-bias-in-algorithms_en.pdf
