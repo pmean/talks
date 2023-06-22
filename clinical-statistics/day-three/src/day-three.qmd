@@ -86,12 +86,10 @@ This story illustrates a dangerous extrapolation. It offers an important point i
 
 ## Comparison of treatment and control
 
--   Treatment, something new that you do to a patient
-    -   Intended to make things better.
+-   Treatment, something new to help a patient
     -   Active intervention
     -   Randomized trial
 -   Exposure, something that a patient endures
-    -   Concern that it might cause harm
     -   Passive observation
     -   Epidemiology study
 -   Control
@@ -119,3 +117,40 @@ Don't worry too much about the distinctions for now. The choice of what statisti
 $$X^2 = \Sigma \frac{(O_{ij}-E_{ij})^2}{E_{ij}}$$
 
 ![Counts of dead and survived by sex with expected coutns](../images/titanic-expected-counts.png){#fig-titanic-expected-counts fig-align="left"}
+
+::: notes
+The classic test for comparing a binary outcome in a treatment versus a control is the chi-squared test. Lay out the results in a two by two table. Here is the example of mortality versus sex that I discussed earlier. The chi-squared test compares the observed count (Oij) to the expected count (Eij). The expected count is the number dying or surviving, assuming that there is no difference between the treatment and control.
+
+The overall survival rate on the Titanic across all passengers is 450 / 1,313 or 34%. If that rate applied equally to men and women, you would expect to see 158.3 survivors among the women. We observed a lot more survivors, 308. If the rate applied equally to men, you'd expect to see 291.7 survivors. This is a lot more than the 142 that actually did survive. You can do similar calculations for the expected number of deaths in each group.
+
+In all four cells there is a large discrepancy between the observed counts and what you'd expect if the survival and mortality rates were the same for both men and women. This leads to a large value of the test statistic and you would reject the hypothesis that men and women were equally likely to survive.
+:::
+
+## Alternative approach, the odds ratio
+
+```{}
+        Died  Survived
+Females  154       308
+Males    709       142
+
+Survival odds for Females 2 to 1 in favor (308 / 154).
+Survival odds for Males 5 to 1 against (142/ 709).
+
+Odds ratio = (2/1) / (1/5) = 10
+```
+
+::: notes
+The odds ratio is a common way to describe changes in risk. The odds of survival for women was 2 to 1 in favor. The ratio of survivors (308) to deaths (154) is exactly 2, so you can cite the odds as 2 to 1 in favor of survival. In men, the ratio of survivors (142) to deaths (709) is about 1/5. I am rounding a bit here for simplicity.
+
+The odds ratio compares the 2 to 1 odds in favor to the 5 to 1 odds against to get 10. Women fared 10 times better than men because their odds of survival were 10 times better.
+:::
+
+## Confidence interval for the odds ratio.
+
+$$log(OR) \pm Z_{1-\alpha/2} \sqrt{\frac{1}{O_{11}} + \frac{1}{O_{12}} + \frac{1}{O_{21}} + \frac{1}{O_{22}}}$$
+
+If the confidence interval excludes the value of 1.0, reject the null hypothesis.
+
+::: notes
+The formula for the confidence interval for an odds ratio is a bit tricky. You have to compute the natural logarithm of the odds ratio. The  
+:::
