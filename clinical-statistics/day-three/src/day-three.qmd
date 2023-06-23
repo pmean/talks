@@ -45,7 +45,7 @@ You'll also get an introduction to regression models. I want to emphasize interp
 But first, a joke that relates to the topic of regression.
 :::
 
-##
+## 
 
 ![Image of a passenger jet with four engines](../images/airplane_0.png){#fig-airplane-0 fig-align="left"}
 
@@ -55,8 +55,7 @@ This image was downloaded from publicdomainvectors.org.
 Two statisticians are on a plane flying from Amsterdam to Zurich. The flight proceeds normally, until 15 minutes go by, when they hear ...
 :::
 
-
-##
+## 
 
 ![Image of a passenger jet with one bad engine](../images/airplane_1.png){#fig-airplane-1 fig-align="left"}
 
@@ -64,7 +63,7 @@ Two statisticians are on a plane flying from Amsterdam to Zurich. The flight pro
 ... a loud BANG! The pilot comes on the intercom and says "Ladies and gentlemen, one of the four engines on this plan just exploded. You're all fine, but the flight that was supposed to take four hours will now take six hours. I apologize for any inconvenience." So the two statisticians shrug their shoulders and start talking again about the geeky things that statisticians like to talk about. Fifteen minutes later, they hear ...
 :::
 
-##
+## 
 
 ![Image of a passenger jet with two bad engines](../images/airplane_2.png){#fig-airplane-2 fig-align="left"}
 
@@ -72,7 +71,7 @@ Two statisticians are on a plane flying from Amsterdam to Zurich. The flight pro
 ... another loud BANG! The pilot comes on the intercom and says "Ladies and gentlemen, a second engines just exploded. You're all fine, but the flight is now going to take eight hours. I greatly apologize for any inconvenience." So the two statisticians shrug their shoulders and start talking again. You know what happens next. In fifteen minutes later, they hear ...
 :::
 
-##
+## 
 
 ![Image of a passenger jet with three bad engines](../images/airplane_3.png){#fig-airplane-3 fig-align="left"}
 
@@ -95,7 +94,7 @@ This story illustrates a dangerous extrapolation. It offers an important point i
 -   Control
     -   Placebo, or
     -   Usual standard of care
-    
+
 ::: notes
 I am going to use the terms treatment and control a lot today, so you need to understand how I define these terms.
 
@@ -128,7 +127,7 @@ In all four cells there is a large discrepancy between the observed counts and w
 
 ## Alternative approach, the odds ratio
 
-```{}
+```         
         Died  Survived
 Females  154       308
 Males    709       142
@@ -137,6 +136,8 @@ Survival odds for Females 2 to 1 in favor (308 / 154).
 Survival odds for Males 5 to 1 against (142/ 709).
 
 Odds ratio = (2/1) / (1/5) = 10
+
+95% CI (7.7, 13)
 ```
 
 ::: notes
@@ -145,12 +146,173 @@ The odds ratio is a common way to describe changes in risk. The odds of survival
 The odds ratio compares the 2 to 1 odds in favor to the 5 to 1 odds against to get 10. Women fared 10 times better than men because their odds of survival were 10 times better.
 :::
 
-## Confidence interval for the odds ratio.
+## Alternative approach, relative risk
 
-$$log(OR) \pm Z_{1-\alpha/2} \sqrt{\frac{1}{O_{11}} + \frac{1}{O_{12}} + \frac{1}{O_{21}} + \frac{1}{O_{22}}}$$
+```         
+        Died  Survived
+Females  154       308
+Males    709       142
 
-If the confidence interval excludes the value of 1.0, reject the null hypothesis.
+Survival probability for 66.7%.
+Survival probability for Males 16.7%.
 
-::: notes
-The formula for the confidence interval for an odds ratio is a bit tricky. You have to compute the natural logarithm of the odds ratio. The  
-:::
+Relative risk = 0.667 / 0.167 = 4
+
+95% CI (3.4, 4.7)
+```
+
+## Which is the better measure?
+
+-   Two schools of thought
+    -   Relative risk is better
+        -   More natural interpretation
+    -   Odds ratio is better
+            -   Symmetric with respect to outcome
+-   Cannot use relative risk for certain datasets
+
+## Both are inferior to absolute risk reduction
+
+```         
+        Died  Survived
+Females  154       308
+Males    709       142
+
+Survival probability for 66.7%.
+Survival probability for Males 16.7%.
+
+Absolute risk reduction = 0.667 - 0.167 = 0.5
+
+95% CI (0.45, 0.55)
+```
+
+## Comparison of multinomial outcome
+
+-   Multinomial = 3 or more categories
+-   Beyond the scope of this class
+    -   Multinomial logistic regression
+    -   Ordinal logistic regression
+    
+## Comparison of a continuous outcome
+
+-   Two cases
+    -   Independent (unpaired) samples
+    -   Paired samples
+    
+## Two sample test
+
+-   Is $(\bar{X_1}-\bar{X_2})$ close to zero?
+-   How much sampling error?
+    -   $S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$
+    
+## Comparison of ages of deaths/survivors
+
+![Table of mean ages](../images/titanic-means.png){#fig-titanic-means fig-align="left"}
+95% CI (-0.3, 3.8)
+
+## Paired samples
+
+```{r}
+suppressMessages(
+  suppressWarnings(
+    library(glue)))
+suppressMessages(
+  suppressWarnings(
+    library(magrittr)))
+suppressMessages(
+  suppressWarnings(
+    library(tidyverse)))
+```
+
+```{r}
+room <- c(
+  121,
+  125,
+  163,
+  218,
+  233,
+  264,
+  324,
+  325)
+```
+
+```{r}
+bacteria_0 <- c(
+  11.8,
+  7.1,
+  8.2,
+  10.1,
+  10.8,
+  14,
+  14.6,
+  14)
+```
+
+```{r}
+bacteria_1 <- c(
+  10.1,
+  3.8,
+  7.2,
+  10.5,
+  8.3,
+  12,
+  12.1,
+  13.7)
+```
+
+```         
+Room Before  After
+ 121   11.8   10.1
+ 125    7.1    3.8
+ 163    8.2    7.2
+ 218   10.1   10.5
+ 233   10.8    8.3
+ 264   14     12  
+ 324   14.6   12.1
+ 325   14     13.7
+```
+
+## Average change
+
+```         
+Room Before  After Change
+ 121   11.8   10.1   -1.7
+ 125    7.1    3.8   -3.3
+ 163    8.2    7.2   -1.0
+ 218   10.1   10.5    0.4
+ 233   10.8    8.3   -2.5
+ 264   14     12     -2.0
+ 324   14.6   12.1   -2.5
+ 325   14     13.7   -0.3  
+```
+
+$\bar{D}=-1.61,\ S_D=1.24$
+
+95% CI (-2.65, -0.58)
+
+## Assumptions for t-tests
+
+-   t-tests require two or more assumptions
+    -   Patients are independent
+    -   Outcome is normally distributed
+    -   For two sample t-test, equal variation
+
+## Nonparametric test
+
+-   Uses ranks of the data
+
+## Wilcoxon signed rank test
+
+```         
+                           Absolute
+Room Before  After Change    Change   Rank
+ 121   11.8   10.1   -1.7       1.7      4
+ 125    7.1    3.8   -3.3       3.3      8
+ 163    8.2    7.2   -1.0       1.0      3
+ 218   10.1   10.5    0.4       0.4      2
+ 233   10.8    8.3   -2.5       2.5      6/7
+ 264   14     12     -2.0       2.0      5
+ 324   14.6   12.1   -2.5       2.5      6/7
+ 325   14     13.7   -0.3       0.3      1
+```
+
+p = 0.023

@@ -1,0 +1,56 @@
+---
+title: "Clinical statistics for non-statisticians: Day three"
+author: "Steve Simon"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: visual
+---
+
+
+## Confidence interval for the odds ratio (1/2)
+
+$$log(OR) \pm Z_{1-\alpha/2} \sqrt{\frac{1}{O_{11}} + \frac{1}{O_{12}} + \frac{1}{O_{21}} + \frac{1}{O_{22}}}$$
+
+If the confidence interval excludes the value of 1.0, reject the null hypothesis.
+
+::: notes
+The formula for the confidence interval for an odds ratio is a bit tricky. You have to compute the natural logarithm of the odds ratio. The
+:::
+
+## Confidence interval for the odds ratio (2/2)
+
+$$log(9.986) \pm 1.96 \sqrt{\frac{1}{154} + \frac{1}{308} + \frac{1}{709} + \frac{1}{142}}$$
+
+$$2.301 \pm 0.264$$
+
+$$ (2.037, 2.565)$$
+
+$$e^{2.037} = 7.68,\ e^{2.565} = 13.0$$
+
+If the confidence interval excludes the value of 1.0, reject the null hypothesis.
+
+::: notes
+The formula for the confidence interval for an odds ratio is a bit tricky. You have to compute the natural logarithm of the odds ratio. The
+:::
+
+## Confidence interval for the relative risk (1/2)
+
+$$log(RR) \pm Z_{1-\alpha/2} \sqrt{\frac{1}{O_{12}} - \frac{1}{O_{11}+O_{12}} + \frac{1}{O_{22}} - \frac{1}{O_{21} + O_{22}}}$$
+
+If the confidence interval excludes the value of 1.0, reject the null hypothesis.
+
+::: notes
+The formula for the confidence interval for an odds ratio is a bit tricky. You have to compute the natural logarithm of the odds ratio. The
+:::
+
+## Confidence interval for the relative risk (2/2)
+
+$$log(4) \pm 1.96 \sqrt{\frac{1}{308} - \frac{1}{462} + \frac{1}{142} - \frac{1}{851}}$$
+
+$$1.386 \pm 0.163$$
+
+$$ (1.223, 1.549)$$
+
+$$e^{1.223} = 3.40,\ e^{1.549} = 4.71$$
