@@ -299,6 +299,8 @@ $\bar{D}=-1.61,\ S_D=1.24$
 ## Nonparametric test
 
 -   Uses ranks of the data
+-   Does not rely on normality assumption
+-   Does not rely on Central Limit Theorem
 
 ## Wilcoxon signed rank test
 
@@ -316,3 +318,168 @@ Room Before  After Change    Change   Rank
 ```
 
 p = 0.023
+
+## Criticisms of nonparametric tests
+
+-   Not easy to get confidence intervals
+-   Difficult to do risk adjustments
+
+##
+
+![Quote from "Peggy Sue Got Married](../images/peggy-sue-quote.png){#fig-peggy-sue-quote fig-align="left"}
+
+::: notes
+I want to get a quick feel for your background and interests. Here’s a quote from a romantic comedy starring Kathleen Turner from 1986. A forty year old woman, played by Kathleen Turner, travels back in time to her high school senior year, 1960. She has an amusing interchange with her high school math teacher.
+
+“I happen to know that in the future, I will not have the slightest use for algebra, and I speak from experience.”
+
+Think back to your high school algebra class.
+
+Do you remember any important formulas from that class?
+
+Did you hate, hate, hate high school algebra?
+
+Did you love high school algebra?
+
+Big question: Will you use high school algebra in your future?
+
+Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
+:::
+
+## Pop quiz
+
+-   From high school algebra.
+    -   Pythagorean theorem
+        -   ?
+    -   Quadratic formula
+        -   ?
+    -   Equation for a straight line
+        -   ?
+
+## Pop quiz answers
+
+-   From high school algebra.
+    -   Pythagorean theorem
+        -   $a^2+b^2=c^2$
+    -   Quadratic formula
+        -   $\frac{-b \pm \sqrt{b^2-4ac}}{2a}$
+    -   Formula for a straight line
+        -   $y=mx+b$
+
+## Equation of a straight line
+
+-   $y=mx+b$
+    -   $m=$ slope $=\triangle y / \triangle x$
+    -   $b=$ y-intercept
+
+## In linear regression
+
+-   y: dependent variable
+-   x: independent variable
+-   Slope: estimated average change in y when x increases by one unit.
+-   Intercept: estimated average value of y when x equals zero.
+
+## Example: does mother's age affect duration of breast feeding?
+
+-   Study of breast feeding with pre-term infants
+    -   Difficulty: mother leaves hospital first
+
+## 
+
+![Scatterplot with regression line for age](../images/breast-feeding-vs-age.png){#fig-breast-feeding-vs-age fig-align="left"}
+
+## 
+
+![Linear regression output](../images/linear-regression-output.png){#fig-linear-regression-output fig-align="left"}
+
+## 
+
+![Linear regression output, slope](../images/output-slope.png){#fig-output-slope fig-align="left"}
+
+-   Slope = 0.4
+    -   The estimated average duration of breast feeding increases by 0.4 weeks for every increase of one year in the mother's age.
+
+## 
+
+![Linear regression output, intercept](../images/output-intercept.png){#fig-output-intercept fig-align="left"}
+
+-   Intercept = 5.9
+    -   The estimated average duration of breast feeding is 5.9 weeks for a mother with age = 0.
+    -   Clearly an inappropriate extrapolation
+
+## 
+
+![Linear regression output, p-value](../images/output-p-value.png){#fig-output-p-value fig-align="left"}
+
+-   p-value=0.019
+    -   Reject the null hypothesis and conclude that there is a positive relationship between mother's age and duration of breast feeding.
+
+## 
+
+![Linear regression output, confidence interval](../images/output-confidence-interval.png){#fig-output-confidence-interval fig-align="left"}
+
+-   95% Confidence interval (0.066 to 0.71)
+    -   Note 6.626E-02 $= 6.626 \times 10^{-2}$
+    -   You are 95% confident that the true regression slope is positive.
+    
+
+## Example: does treatment affect duration of breast feeding?
+
+-   Both groups: encourage breast feeding when mom is in hospital
+    -   Intervention: feed infants through ng tube when mom is away
+    -   Control: Feeding using bottles when mom is away
+
+## 
+
+![Scatterplot with regression line for treatment=1](../images/breast-feeding-vs-treatment.png){#fig-breast-feeding-vs-treatment fig-align="left"}
+
+## 
+
+![Linear regression output, treatment](../images/linear-regression-output-treatment.png){#fig-linear-regression-output-treatment fig-align="left"}
+
+## 
+
+![Scatterplot with regression line for control=1](../images/breast-feeding-vs-control.png){#fig-breast-feeding-vs-control fig-align="left"}
+
+## Linear regression with two independent variables
+
+-   Intercept
+-   Slope for first independent variable
+-   Slope for second independent variable
+
+## Interpretation of intercept and slopes
+
+-   Intercept: estimated average value of y when x1 and x2 both equal zero.
+-   Slope for x1: estimated average change in y when x increases by one unit **and x2 is held constant**.
+-   Slope for x2: similar interpretation
+
+## Adjusting for covariate imbalance
+
+-   Covariate: variable not of direct interest in the research
+    -   but has to be accounted for to draw valid conclusions
+-   Covariate imbalance: a difference in average levels of the covariate between treatment and control
+    -   Threat to the validity of the research
+-   Example: average age of mothers
+    -   25 in control group, 29 in treatment group
+-   Covariate imbalance not quite same as confounding
+
+## 
+
+![Multiple linear regression output](../images/output-multiple-regression.png){#fig-output-multiple-regression fig-align="left"}
+
+## Adjusted means
+
+-   Unadjusted
+    -   Treatment: $12.961 + 0.249 \times 29 = 20.2$
+    -   Control: $12.961 -5.972 + 0.249 \times 25 = 13.2$
+-   Adjusted
+    -   Treatment: $12.961 + 0.249 \times 27 = 19.7$
+    -   Control: $12.961 -5.972 + 0.249 \times 27 = 13.7$
+
+## Examples in the medical literature
+
+## Logistic regression
+
+## Confounding
+
+## Risk adjustment

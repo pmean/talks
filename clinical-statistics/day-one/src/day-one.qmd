@@ -22,7 +22,7 @@ knitr:
 ::: notes
 Let me start off with a brief warning. I like to draw analogies a lot in my talks to various cultural references, such as books, television shows, or movies. I do this because it enlivens what sometimes can be a tedious topic. But I have to apologize if some of my cultural references may be too specific to the United States. Let me give an example.
 
-There is a series, Ted Lasso, about a football coach, United States football, I mean. He is asked to coach a soccer team in England, soccer being the sport that the rest of the world calls football. Now I know that people outside the U.S.A. watch Ted Lasso. But part of the humor in that series is when Ted starts telling stories that have a point to them, and everyone stares at in befuddlement because the only people who understand that point Ted is trying to make have been living in the United States their entire lives. As an example, Ted wears a t-shirt on one show that says "Arthur Joes GAtes Stack barbecue." It's actually a joke that only those of us who live in Kansas City can laugh at. Look it up on the Internet if you are curious.
+There is a series, Ted Lasso, about a football coach, United States football, I mean. He is asked to coach a soccer team in England, soccer being the sport that the rest of the world calls football. Now I know that people outside the U.S.A. watch Ted Lasso. But part of the humor in that series is when Ted starts telling stories that have a point to them, and everyone stares at in befuddlement because the only people who understand that point Ted is trying to make have been living in the United States their entire lives. As an example, Ted wears a t-shirt on one show that says "Arthur Joes Gates Stack barbecue." It's actually a joke that only those of us who live in Kansas City can laugh at. Look it up on the Internet if you are curious.
 
 There's a stereotype of people in the United States that they think the world revolves around them. It's a stereotype that is not true for all of us, but it is true for many, including me. I try to fight that tendency, but it's not always easy.
 
@@ -627,9 +627,6 @@ Then pick out the middle value. Here again, there are two middle values.
 Just average the two middle values.
 :::
 
-::: notes
-:::
-
 ## Break
 
 -   What have you just learned?
@@ -749,13 +746,13 @@ The image shown here is taken from phoenix5.org, an informational site for patie
     -   When outliers/skewness might distort your conclusions
 -   Often, either is fine
 
-### notes
-
+::: notes
 While there is some consensus on when to use the mean versus the median, the choice is not always obvious. Controversies often arise over this issue.
 
 Here are some general guidelines.
 
-The mean allows extrapolation to totals. This is often important in the analysis of the economic effects of illness. :::
+The mean allows extrapolation to totals. This is often important in the analysis of the economic effects of illness.
+:::
 
 ## 
 
@@ -1187,6 +1184,11 @@ ggsave("normal-histogram.png")
 Here's a histogram that shows a symmetric distribution, with the most frequent values in the center and frequencies that taper off on either side. This is a bell shaped curve.
 :::
 
+## Why concern yourself with the bell shaped curve?
+
+-   You can characterize individual observations
+-   You can characterize summary measures
+
 ## Plus or minus one standard deviation
 
 ```{r}
@@ -1249,6 +1251,8 @@ ggsave("three-s-histogram.png")
 ::: notes
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
+
+## Central Limit Theorem
 
 ## Lin 2022, PMID: 36126916
 
