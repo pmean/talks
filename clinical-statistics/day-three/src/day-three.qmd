@@ -5,8 +5,26 @@ format:
   revealjs:
     slide-number: true
     embed-resources: true
+    show-notes: true
+
 editor: visual
 ---
+
+## Re-introduce yourself
+
+Here's one more interesting number about myself
+
+-   2,000: I have a website with over 2,000 separate pages.
+
+Tell us one more interesting number about yourself.
+
+::: notes
+Speaker notes
+
+Back in 1998, I started writing on the web. I would create a page or two each week. Eventually, it grew to over 2,000 pages. The quality of the site is uneven, but there's something for everyone. My major topics are data analysis, research ethics, and evidence-based medicine.
+
+The site is currently undergoing a major re-organization.
+:::
 
 ## Outline of the three day course
 

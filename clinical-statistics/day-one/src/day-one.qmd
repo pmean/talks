@@ -5,13 +5,21 @@ format:
   revealjs:
     slide-number: true
     embed-resources: true
-    hash-type: number
-    showNotes: separate-page
+    show-notes: true
 editor: visual
 knitr:
   opts_chunk: 
     fig-align: "left"
 ---
+
+<!---  To print speaker notes, add
+         ?print-pdf&showNotes=separate-page 
+       to the end of the URL. Then open the
+       print dialog box (ctrl-P) and choose
+       Save as PDF for the printer. Other 
+       options, like Microsoft Print to PDF
+       do not seem to work.
+  --->
 
 ## One warning
 
@@ -135,7 +143,54 @@ Today, you will learn about numerical summaries.
 You will also learn a little bit about data visualization.
 :::
 
-## Quiz questions
+## Quiz question 1
+
+```      Survived
+         No            Yes          Total
+Female   154 (33.3%)   308 (66.7%)   462 (100%)
+Male     709 (83.3%)   142 (16.7%)   851 (100%)
+Total    863 (65.7%)   450 (34.3%)  1313 (100%)
+```
+
+This data table shows counts and ...
+
+1.   cell percents
+2.   column percents
+3.   row percents
+4.   I do not know the answer
+
+::: notes
+Here is a question about the percentages shown in a table. If you do not know the answer, that's okay. This is something you will learn about in this lecture and you should be able to answer correctly at the end of the class.
+:::
+
+## Quiz question 2
+
+The median might be preferred to the mean if
+
+1.   a single extreme value distorts the mean
+2.   the data follows a bell shaped curve
+3.   there is very little variation in the data
+4.   you have a biased sample
+5.   I do not know the answer
+
+::: notes
+Here is a question about the median.
+:::
+
+## Quiz question 3
+
+The problem with error bars is that they
+
+1.   fail to show if the data is skewed
+2.   have several competing definitions
+3.   use only two numbers to characterize your data
+4.   all of the above are correct
+5.   none of the above are correct
+6.   I do not know the answer
+
+::: notes
+Here is a question about error bars
+:::
 
 ## Counting and proportions
 
@@ -179,7 +234,7 @@ Did you count the e's in the quotes itself or also on the slide instructions and
 
 ## 
 
-![Image of a haemocytometer](../images/sperm-count.png){#fig-who-2021 fig-align="left"}
+![Image of a haemocytometer](../images/../images/sperm-count.png){#fig-who-2021 fig-align="left"}
 
 ::: notes
 This image is take from the WHO laboratory manual for the examination and processing of human semen, published in 2021. It shows a haemocytometer, an instrument used for counting the number of cells. To get a proper count, you need to include any cells inside the four by four grid of large squares in the middle of this micrograph. But what does "inside" mean? Should you count only those cells entirely inside the four by four grid. Or should you include cells that are partially inside the grid?
@@ -231,7 +286,7 @@ This is called the row percentages. These percentages add up to 100 within each 
 
 ## Percentages divided by grand total
 
-![Titanic data with cell percentages](titanic-cell-percents.png){#fig-cell-percents fig-align="left"}
+![Titanic data with cell percentages](../images/titanic-cell-percents.png){#fig-cell-percents fig-align="left"}
 
 ::: notes
 You could also divide all the numbers by the grand total of 1,313. The 308 female survivors represented a bit less than 24% of all the passengers that set sail from England.
@@ -317,11 +372,11 @@ Calculate row and column percentages for the following tables. Interpret your re
 
 ::: columns
 ::: {.column width="50%"}
-![Titanic passenger class counts](titanic-passenger-class-counts.png){#fig-titanic-pclass fig-align="left"}
+![Titanic passenger class counts](../images/titanic-passenger-class-counts.png){#fig-titanic-pclass fig-align="left"}
 :::
 
 ::: {.column width="50%"}
-![Titanic child counts](titanic-child-counts.png){#fig-titanic-child fig-align="left"}
+![Titanic child counts](../images/titanic-child-counts.png){#fig-titanic-child fig-align="left"}
 :::
 :::
 
@@ -335,7 +390,7 @@ Be sure to interpret these numbers. Come back together again in about 10 minutes
 
 ## 
 
-![Cartoon image of Professor Mean](professor-mean.png){#fig-professor-mean fig-align="left"}
+![Cartoon image of Professor Mean](../images/professor-mean.png){#fig-professor-mean fig-align="left"}
 
 ::: notes
 Here's a cartoon image of Professor Mean. I know this looks like it was drawn by a professional artist, but it was actually drawn by me. Really!
@@ -347,7 +402,7 @@ I will use the terms mean and average interchangeably througout this talk.
 
 ## 
 
-![Road with a median strip](road-median.jpg){#fig-road-median fig-align="left"}
+![Road with a median strip](../images/road-median.jpg){#fig-road-median fig-align="left"}
 
 ::: notes
 This is an image of a traffic median. This is a strip of land, typically raised from the road surface, that splits the road in half.
@@ -725,7 +780,7 @@ Now, in spite of all the obvious problems with equivalence between different gra
 
 ## 
 
-![Excerpt from Gould 1985 publication](gould-1985.png){#fig-gould-1985 fig-align="left"}
+![Excerpt from Gould 1985 publication](../images/gould-1985.png){#fig-gould-1985 fig-align="left"}
 
 ::: notes
 Stephen Jay Gould was a famous Evolutionary Biologist. He was a prolific writer with 20 books and 300 essays. Much of his writing was for academic researchers, but just as much was for the general public.
@@ -756,7 +811,7 @@ The mean allows extrapolation to totals. This is often important in the analysis
 
 ## 
 
-![Exceprt from Bridge and McKenzie 2001, PMID: 11405531](bridge-2001.png){#fig-bridge-2001 fig-align="left"}
+![Exceprt from Bridge and McKenzie 2001, PMID: 11405531](../images/bridge-2001.png){#fig-bridge-2001 fig-align="left"}
 
 ::: notes
 :::
@@ -775,9 +830,9 @@ In the present data the mean of a set of values contributing to a measurement wa
 ::: notes
 :::
 
-## Chen 2019, PMID: 31806195
+## 
 
-![Chen et al 2019](chen-2019.png){#fig-chen-2019 fig-align="left"}
+![Chen et al 2019](../images/chen-2019.png){#fig-chen-2019 fig-align="left"}
 
 ::: notes
 :::
@@ -807,7 +862,7 @@ Results: We found that between 1995 and 2012, price increases outstripped median
 Let me pause here for a second. Are there any questions?
 :::
 
-## Percentiles
+## 
 
 ```{r}
 data.frame(x=rpois(2000, 20)) %>%
@@ -819,10 +874,10 @@ data.frame(x=rpois(2000, 20)) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", width=1) -> bar1
-ggsave("illustrate-percentiles.png")
+ggsave("../images/illustrate-percentiles.png")
 ```
 
-![Illustration of the 75th percentile](illustrate-percentiles.png){#fig-illustrate-percentiles fig-align="left"}
+![Illustration of the 75th percentile](../images/illustrate-percentiles.png){#fig-illustrate-percentiles fig-align="left"}
 
 ::: notes
 I want to mention percentiles briefly. A percentile is a value that splits the data so that a certain percentage is smaller and a certain percentage is larger.
@@ -1085,7 +1140,7 @@ Now, maybe you've seen or used a different formula. Don't worry about it. In a s
 Much variation in the real world follows a bell shaped curve, alternately called a normal distribution. You can assess whether you have a bell shaped curve using a histogram. Look for values in the middle being most common. The frequencies should taper off slowly as you moved away from the middle. The histogram should have symmetry. The left side of the histogram should be roughly equivalent to the right side of the histogram.
 :::
 
-## Not a bell shaped curve (1/4)
+## 
 
 ```{r}
 x <- c(rnorm(1200, 4, 1.5), rnorm(800, 10, 1.5))
@@ -1096,16 +1151,16 @@ data.frame(x) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", fill="white", width=1) -> bimodal_histogram
-ggsave("bimodal-histogram.png")
+ggsave("../images/bimodal-histogram.png")
 ```
 
-![Bimodal histogram](bimodal-histogram.png){#fig-bimodal-histogram fig-align="left"}
+![Bimodal histogram, not a bell shaped curve](../images/bimodal-histogram.png){#fig-bimodal-histogram fig-align="left"}
 
 ::: notes
 Here's a histogram that shows a bimodal distribution. The frequencies are not highest in the center of the data. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve (2/4)
+## 
 
 ```{r}
 data.frame(x=rpois(2000, 5)) %>%
@@ -1114,16 +1169,16 @@ data.frame(x=rpois(2000, 5)) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", fill="white", width=1) -> skewed_histogram
-ggsave("skewed-histogram.png")
+ggsave("../images/skewed-histogram.png")
 ```
 
-![Skewed histogram](skewed-histogram.png){#fig-skewed-histogram fig-align="left"}
+![Skewed histogram, not a bell shaped curve](../images/skewed-histogram.png){#fig-skewed-histogram fig-align="left"}
 
 ::: notes
 Here's a histogram that shows a skewed or asymmetric distribution. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve (3/4)
+## 
 
 ```{r}
 data.frame(x=round(runif(2000, 0, 15))) %>%
@@ -1132,16 +1187,16 @@ data.frame(x=round(runif(2000, 0, 15))) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", fill="white", width=1) -> uniform_histogram
-ggsave("uniform-histogram.png")
+ggsave("../images/uniform-histogram.png")
 ```
 
-![Uniform histogram](uniform-histogram.png){#fig-uniform-histogram fig-align="left"}
+![Uniform histogram, not a bell shaped curve](../images/uniform-histogram.png){#fig-uniform-histogram fig-align="left"}
 
 ::: notes
-Here's a histogram that shows a symmetric distibution, but the frequencies do not taper off as you move away from the center. This is not a bell shaped curve.
+Here's a histogram that shows a symmetric distribution, but the frequencies do not taper off as you move away from the center. This is not a bell shaped curve.
 :::
 
-## Not a bell shaped curve (4/4)
+## 
 
 ```{r}
 x <- rt(1000, 2)
@@ -1154,16 +1209,16 @@ data.frame(x=round(x)) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", fill="white", width=1) -> heavy_tailed_histogram
-ggsave("heavy-tailed-histogram.png")
+ggsave("../images/heavy-tailed-histogram.png")
 ```
 
-![Heavy-tailed histogram](heavy-tailed-histogram.png){#fig-heavy-tailed-histogram fig-align="left"}
+![Heavy-tailed histogram, not a bell shaped curve](../images/heavy-tailed-histogram.png){#fig-heavy-tailed-histogram fig-align="left"}
 
 ::: notes
 Here's a histogram that shows a symmetric distibution, but the frequencies taper off at first, but then flatten out. This is called a heavy tailed distribution and it tends to produce outliers, extreme values, on both sides. This is not a bell shaped curve.
 :::
 
-## A bell shaped curve (finally!)
+## 
 
 ```{r}
 x <- rnorm(2000, 10, 3)
@@ -1175,10 +1230,10 @@ data.frame(x=round(x)) %>%
     xlab(" ") +
     ylab(" ") +
     geom_bar(color="black", fill="white", width=1) -> normal_histogram
-ggsave("normal-histogram.png")
+ggsave("../images/normal-histogram.png")
 ```
 
-![Bell-shaped histogram](normal-histogram.png){#fig-normal-histogram fig-align="left"}
+![Bell-shaped histogram, finally!](../images/normal-histogram.png){#fig-normal-histogram fig-align="left"}
 
 ::: notes
 Here's a histogram that shows a symmetric distribution, with the most frequent values in the center and frequencies that taper off on either side. This is a bell shaped curve.
@@ -1189,7 +1244,7 @@ Here's a histogram that shows a symmetric distribution, with the most frequent v
 -   You can characterize individual observations
 -   You can characterize summary measures
 
-## Plus or minus one standard deviation
+## 
 
 ```{r}
 x <- round(x)
@@ -1201,16 +1256,16 @@ data.frame(x=round(x)) %>%
     ylab(" ") +
     scale_fill_manual(values=c("gray", "white")) +
     geom_bar(color="black", width=1) -> one_s_histogram
-ggsave("one-s-histogram.png")
+ggsave("../images/one-s-histogram.png")
 ```
 
-![Percentage within one s](one-s-histogram.png){#fig-one-s-histogram fig-align="left"}
+![Percentage within one standard deviation](../images/one-s-histogram.png){#fig-one-s-histogram fig-align="left"}
 
 ::: notes
 This shows the bell shaped curve with the data within one standard deviation of the mean highlighted in gray. Roughly 68% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
-## Plus or minus two standard deviations
+## 
 
 ```{r}
 x <- round(x)
@@ -1222,16 +1277,16 @@ data.frame(x=round(x)) %>%
     ylab(" ") +
     scale_fill_manual(values=c("gray", "white")) +
     geom_bar(color="black", width=1) -> two_s_histogram
-ggsave("two-s-histogram.png")
+ggsave("../images/two-s-histogram.png")
 ```
 
-![Percentage within two s](two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
+![Percentage within two standard deviations](../images/two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
 
 ::: notes
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
-## Plus or minus three standard deviations
+## 
 
 ```{r}
 x <- round(x)
@@ -1243,10 +1298,10 @@ data.frame(x=round(x)) %>%
     ylab(" ") +
     scale_fill_manual(values=c("gray", "white")) +
     geom_bar(color="black", width=1) -> three_s_histogram
-ggsave("three-s-histogram.png")
+ggsave("../images/three-s-histogram.png")
 ```
 
-![Percentage within three s](three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
+![Percentage within three standard deviations](../images/three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
 
 ::: notes
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
@@ -1254,37 +1309,39 @@ This shows the bell shaped curve with the data within two standard deviations of
 
 ## Central Limit Theorem
 
-## Lin 2022, PMID: 36126916
+## 
 
-![Lin et al 2022](lin-2022.png){#fig-lin-2022 fig-align="left"}
-
-::: notes
-:::
-
-## Lin et al 2022 patient ages
-
-![Excerpt from Table 1 of Lin et al 2022: ages](lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
+![Lin et al 2022, PMID: 36126916](../images/lin-2022.png){#fig-lin-2022 fig-align="left"}
 
 ::: notes
 :::
 
-## Lin et al 2022 Charlson Comorbidity Index
+## 
 
-![Excerpt from Table 1 of Lin et al 2022: CCI](lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
-
-::: notes
-:::
-
-## Lin et al 2022 PHQ-2 scores
-
-![Excerpt from Table 1 of Lin et al 2022: PHQ-2](lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
+![Excerpt from Table 1 of Lin et al 2022: ages](../images/lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
 
 ::: notes
 :::
 
-## Tosato 2021, PMID: 34352201
+## 
 
-![Tosato et al 2021](tosato-2021.png){#fig-tosato-2021 fig-align="left"}
+![Excerpt from Table 1 of Lin et al 2022: CCI](../images/lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
+
+::: notes
+CCI is short for the Charlson Comorbidity Index.
+:::
+
+## 
+
+![Excerpt from Table 1 of Lin et al 2022: PHQ-2](../images/lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
+
+::: notes
+PHQ-2 is a quality of life measure.
+:::
+
+## 
+
+![Tosato et al 2021, PMID: 34352201](../images/tosato-2021.png){#fig-tosato-2021 fig-align="left"}
 
 ::: notes
 :::
@@ -1305,7 +1362,7 @@ The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (
 
 ## Ielapi 2021, PMID: 34968328
 
-![Ielapi et al 2021](ielapi-2021.png){#fig-ielapi-2021 fig-align="left"}
+![Ielapi et al 2021, PMID: 34968328](../images/ielapi-2021.png){#fig-ielapi-2021 fig-align="left"}
 
 ## Ielapi 2021, PMID: 34968328 (continued)
 
@@ -1358,15 +1415,94 @@ There are many ways to visualize data. Your choices depend on the type of data y
 For continuous data, you might see bar charts (with or without error bars), boxplots, or histograms. All of these summarize the data, but often plotting all the individual data values is your best choice.
 :::
 
-## Pie charts for proportions
+## 
 
-## Bar charts for proportions
+## 
 
-## Bar charts for continuous data
+:::: {.columns}
 
-## Error bars
+::: {.column width="33%"}
+![Survivors among first class passengers](../images/pie-1st-class.png){#fig-pie-1st-class fig-align="left"}
+:::
 
-## Box plot
+::: {.column width="34%"}
+![Survivors among second class passengers](../images/pie-2nd-class.png){#fig-pie-2nd-class fig-align="left"}
+:::
+
+::: {.column width="33%"}
+![Survivors among third class passengers](../images/pie-3rd-class.png){#fig-pie-3rd-class fig-align="left"}
+:::
+
+::::
+
+::: notes
+I do not recommend pie charts. Here are three pie charts showing survivors among the various passenger classes. The red portion represents those who survived and the blue portion represents those who died.
+:::
+
+## 
+
+![Bar chart showing proportion of passenger classes among deaths and survivors](../images/bar-pclass-by-survived.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart showing proportion of deaths and survivors among passenger classes](../images/bar-survived-by-pclass.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart showing only proportion of survivors among passenger classes](../images/bar-survived-by-pclass-1.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart showing proportion of survivors among passenger classes and sex](../images/bar-survived-by-pclass-by-sex.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart showing proportion of survivors among sex and passenger classes](../images/bar-survived-by-sex-by-pclass.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart showing average age among deaths and survivors](../images/bar-survived-by-age.png){#fig-bar-survived-by-age fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Bar chart with error bars showing proportion of survivors among sex and passenger classes](../images/error-bars.png){#fig-bar-pclass-by-survived fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Boxplot showing ages of deaths and survivors](../images/boxplot-survived-by-age.png){#fig-boxplot-survived-by-age fig-align="left"}
+
+::: notes
+Note
+:::
+
 
 ## Histogram
 
@@ -1390,9 +1526,13 @@ http://www.pmean.com/posts/misuse-of-gradient/
 
 http://blog.pmean.com/rainbows/
 
-## Primary colors
+## 
 
-![Color combinations](primary-colors.jpg){#fig-primary-colors fig-align="left"}
+![Color combinations](../images/primary-colors.jpg){#fig-primary-colors fig-align="left"}
+
+::: notes
+The way you learned colors as a child is all wrong for computer graphics. The basic system of colors that you use with crayons and paints is that there are three primary colors, red, yellow, and blue and the combinations of any of these two colors produces a secondary color: orange, green, or purple.
+:::
 
 ## The RGB color system
 
@@ -1407,60 +1547,270 @@ http://blog.pmean.com/rainbows/
 -   You can mix and match to get 16,777,216 colors
 
     -   #800080 is purple, #FF69B4 is pink, #40E0D0 is turquoise
+    
+::: notes
+On the computer, you use the RGB color system.
+:::
 
 ## 
 
-![Red plus green equals yellow](red-plus-green.png){#fig-red-plus-green fig-align="left"}
+:::: {.columns}
+
+::: {.column width="33%"}
+![Red plus green equals yellow](../images/red-plus-green.png){#fig-red-plus-green fig-align="left"}
+:::
+
+::: {.column width="34%"}
+![Red plus blue equals magenta](../images/red-plus-blue.png){#fig-red-plus-blue fig-align="left"}
+:::
+
+::: {.column width="33%"}
+![Green plus blue equals cyan](../images/green-plus-blue.png){#fig-green-plus-blue fig-align="left"}
+:::
+
+::::
+
+::: notes
+In the rgb system, colors add up in a way that you never learned in kindergarten. There are new colors like magenta and cyan. The other thing to notice is that blending two colors makes things a bit brighter. This is most obvious in the combination of red and green to produce yellow, but you can see it in the other color combinations as well.
+:::
 
 ## 
 
-![Red plus blue equals magenta](red-plus-blue.png){#fig-red-plus-blue fig-align="left"}
+:::: {.columns}
 
-## 
+::: {.column width="33%"}
+![Yellow plus blue equals white](../images/yellow-plus-blue.png){#fig-yellow-plus-blue fig-align="left"}
+:::
 
-![Green plus blue equals cyan](green-plus-blue.png){fig-align="left"}
+::: {.column width="34%"}
+![Magenta plus green equals white](../images/magenta-plus-green.png){#fig-magenta-plus-green fig-align="left"}
+:::
+
+::: {.column width="33%"}
+![Cyan plus red equals white](../images/cyan-plus-red.png){#fig-cyan-plus-red fig-align="left"}
+:::
+
+::::
+
+::: notes
+Keep adding together and you get all the way to the brightest color, white. Try this with your kindergarten crayons and you would get a dark muddy brown. The rgb system is additive.
+:::
 
 ## The color cube
 
-![Illustration of the color cube](color-cube.png){#fig-color-cube fig-align="left"}
+![Illustration of the color cube](../images/color-cube.png){#fig-color-cube fig-align="left"}
 
-## The color cylinder
+::: notes
+Here are the basic rgb colors, along with white and black, arranged in a cube.
+:::
 
-![Color cylinder](hsv-colors.png){#fig-hsv-colors fig-align="left"}
+##
+
+![The red to green gradient on the color cube](../images/red-green-gradient.png){#fig-red-green-gradient fig-align="left"}
+
+::: notes
+Once you see the colors on a cube, you can figure out all sorts of interesting color gradients. Here's a commonly used gradient that starts at red, transitions to yellow in the middle, and then ends up at green.
+
+Imagine continuing this route through cyan (the top right corner), blue (the top corner in back), magenta (the top left corner), then back down to red. Visualize this path (it looks like a hexagon from this perspective) turned into a circle.
+:::
+
 
 ## Rainbow
 
-![](pure-rainbow.png){#fig-pure-rainbow fig-align="left"}
+![](../images/pure-rainbow.png){#fig-pure-rainbow fig-align="left"}
 
-## Harsh contrasts
+::: notes
+This circle is called a rainbow, but it's not quite accurate. A true rainbow doesn't have magenta and cyan, and it includes two colors, indigo and violet, that aren't found on this circle. But so many people call this the rainbow, so that's what I'll call it.
 
-![](harsh-contrasts.png){#fig-harsh-contrasts fig-align="left"}
+A lot of people use the rainbow circle, but it has many problems.
+:::
 
-## Lighter rainbow
+## The color cylinder
 
-![](lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"} \## Darker rainbow
+![Color cylinder](../images/hsv-colors.png){#fig-hsv-colors fig-align="left"}
 
-![](darker-rainbow.png){#fig-darker-rainbow fig-align="left"}
+::: notes
+Now extend this circle in two directions. Move the circle lower to create darker colors. The very bottom represents black, the darkest color.
 
-## Gentler contrasts
-
-![](gentler-contrasts.png){#fig-gentler-contrasts fig-align="left"}
-
-## Equally spaced hues
-
-![Color choices for nominal data](equi-spaced-hues.png){#fig-equi-spaced-hues fig-align="left"}
+Then draw the circle in towards the center. You get increasingly bright the closer you get to the middle. The very center of the circle is white, the brighest color.
+:::
 
 ## 
 
-![Illustration of the rainbow gradient](rainbow-gradient.png){#fig-rainbow-gradient fig-align="left"}
+![Various foreground and background color combinations](../images/harsh-contrasts.png){#fig-harsh-contrasts fig-align="left"}
+
+::: notes
+The first issue with the rainbow is that the colors come across as a bit harsh, especially when juxtaposed. This image shows a red foreground and green background in the top bar, a red foreground and a blue background in the second bar, and so forth. All the foreground and background colors are shown here.
+
+The color combinations seem to vibrate. At times, you might want an intensity like this. But most of the time, I think that this is just too harsh.
+:::
 
 ## 
 
-![Clothing mistake: using too many colors](bold-clothes.png){#fig-bold-clothes fig-align="left"}
+![A brighter version of the rainbow](../images/lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"} 
+
+::: notes
+There are two ways to make the colors less harsh. First, try moving closer to the center of the color cylinder. These produce brighter colors. To my eye, these colors look closer to a pastel version.
+:::
+
+## Darker rainbow
+
+![A darker version of the rainbow](../images/darker-rainbow.png){#fig-darker-rainbow fig-align="left"}
+
+::: notes
+A second way to make the colors less harsh is to move down on the cylinder.
+:::
 
 ## 
 
-![ADvertisement with a single red umbrella](red-umbrella.png){#red-umbrella fig-align="left"}
+![Color combinations using darker foregrounds and lighter backgrounds](../images/gentler-contrasts.png){#fig-gentler-contrasts fig-align="left"}
+
+::: notes
+Here are the combinations of foregrounds and backgrounds where all the foregrounds have been made a bit darker and all the backgrounds have been made a bit lighter.
+
+Most visualization software makes it easy to lighten or darken your colors. They offer alternatives to the pure rainbow colors such as "light green" and "dark red".
+:::
+
+## 
+
+![DIffering luminance values of the rainbow](../images/luminance.gif){#fig-luminance fig-align="left"}
+
+::: notes
+Another problem with the rainbow is that the colors have different levels of brightness. The technical term is luminance, and this image shows that yellow has the highest luminance and blue has the lowest.
+
+This image comes from the excellent website, workwithcolor.com.
+:::
+
+##
+
+```{r}
+data.frame(
+  x=runif(100), 
+  y=runif(100), 
+  z=sample(1:6, 100, replace=TRUE)) %>%
+  ggplot(aes(x, y, color=factor(z))) +
+    scale_color_manual(
+      values=c(
+        "red",
+        "green",
+        "blue",
+        "yellow",
+        "magenta",
+        "cyan")) +
+     theme(
+       panel.background = 
+         element_rect(
+           fill = "white",
+           colour = "white",
+           size = 0.5, 
+           linetype = "solid"),
+         panel.grid.major = 
+           element_line(
+             size = 0.5, 
+             linetype = 'solid',
+             colour = "gray"), 
+         panel.grid.minor = 
+           element_line(
+             size = 0.25, 
+             linetype = 'solid',
+             colour = "gray")) +
+    theme(legend.position="none") +
+    xlab(" ") +
+    ylab(" ") +
+    geom_point() -> scatter_white
+ggsave("../images/scatter-white.png")
+```
+
+![Rainbow colors on a white background](../images/scatter-white.png){#fig-scatter-white fig-align="left"}
+
+::: notes
+Because yellow very bright, it has a poor contrast against a white background.
+:::
+
+##
+
+```{r}
+scatter_white +
+  theme(
+    panel.background = 
+      element_rect(
+        fill = "black",
+        colour = "black",
+        size = 0.5, 
+        linetype = "solid")) +
+    theme(legend.position="none") -> scatter_black
+ggsave("../images/scatter-black.png")  
+```
+
+![Rainbow colors on a black background](../images/scatter-black.png){#fig-scatter-black fig-align="left"}
+
+::: notes
+Because blue is very dark, it has a poor contrast against a black background.
+:::
+
+## 
+
+![Rainbow colors showing a banding effect](../images/rainbow-gradient.png){#fig-rainbow-gradient fig-align="left"}
+
+::: notes
+There is one more problem with the rainbow. It has a banding effect because some of the transitions are sudden and others are more gradual. This producing a banding effect at yellow, magenta, and cyan.
+
+So what colors do I recommend?
+:::
+
+## 
+
+![One good set of color choices for nominal data](../images/equi-spaced-hues.png){#fig-equi-spaced-hues fig-align="left"}
+
+::: notes
+For nominal data, you want to colors to be about the same brightness, but not too close to each other.
+:::
+
+##
+
+![Examples of light to dark gradients](../images/light-to-dark-gradients.png){#fig-equi-spaced-hues fig-align="left"}
+
+::: notes
+For ordinal or continuous data, you have two choices. The first is a gradient from light to dark. Depending on your background color, this will either emphasize the low end of the scale or the high end of the scale.
+:::
+
+##
+
+![Examples of diverging gradients](../images/diverging-gradients.png){#fig-diverging-gradients fig-align="left"}
+
+::: notes
+A second choice is a diverging gradient which has a different dark color at either end and white or a brighter color in the middle. This will emphasize both extremes, presuming that you place the colors against a light background.
+:::
+
+## Color blindness
+
+-   Up to 10% of your audience is color blind
+    -   Most common: red-green
+-   Suggestions
+    -   Use alternate cues (shape, shading)
+    -   Test your image
+    -   Find color blind friendly palettes.
+
+::: notes
+There are more than a few people who has difficulty distinguishing colors. Color blind people can still distinguish some colors, but others cause problems. The most common problem is red-green color blindness.
+
+You can use alternate visual clues to supplement the codes that colors represent. While I earlier advocated for using similar levels of brightness, some variation in brightness, even a small amount, can help. You can also change the shape of data points along with the color.
+
+There are a number of websites that will simulate what your visualization will look like for various types of color blindness.
+
+You can also find various color combinations that are easier for color blind people to distinguish.
+:::
+## 
+
+![Clothing mistake: using too many colors](../images/bold-clothes.png){#fig-bold-clothes fig-align="left"}
+
+::: notes
+I want to encourage you to avoid mixing too many colors. Often the ideal number of colors is two. Here is a graphics image of what people who know fashion call a faux pas: the use of too many colors. I actually think that the colors look good here, but thats because the model is so good looking. On me, these colors would be atrocious.
+:::
+
+## 
+
+![ADvertisement with a single red umbrella](../images/red-umbrella.png){#red-umbrella fig-align="left"}
 
 ::: notes
 Graphic designers have known for quite a while that a restrained use of colors can be very effective. Here is an image from a YouTube video clip,
@@ -1474,7 +1824,7 @@ A small dollop of color in your visualizations can be far more effective than us
 
 ## 
 
-![Use of color to highlight a single individual](orange-mac.jpg){#fig-orange-mac fig-align="left"}
+![Use of color to highlight a single individual](../images/orange-mac.jpg){#fig-orange-mac fig-align="left"}
 
 ::: notes
 Here is a second example, from the movie, Legally Blonde. In this scene, the main character, Elle Woods, played by Reese Witherspoon, shows her individuality by opening up a bright orange and white Macintosh computer. All the other students are using generic black laptops.
@@ -1484,24 +1834,72 @@ This has practical implications for data visualization.
 
 ## 
 
-![How many "5's" are in this figure?](count-fives-1.png){#fig-count-fives-1 fig-align="left"}
+![How many "5's" are in this figure?](../images/count-fives-1.png){#fig-count-fives-1 fig-align="left"}
 
 ::: notes
 Here's a simple exercise, count the number of "5's" on this graph. Don't include the "5" that appears in the caption.
 
 When you have an answer, type it in the chat box.
 
-\[Pause here\]
+PAUSE HERE
 
 Now I did try to help by using a different color for each number.
 :::
 
 ## 
 
-![Repeat question. How many "5's" are in this figure?](count-fives-2.png){#fig-count-fives-2 fig-align="left"}
+![Repeat question. How many "5's" are in this figure?](../images/count-fives-2.png){#fig-count-fives-2 fig-align="left"}
 
 ::: notes
-Okay, now repeat this exercise. How many "5's" do you count? Notice how much faster it is when there is are two colors insead of nine.
+Okay, now repeat this exercise. How many "5's" do you count? Notice how much faster it is when there is are two colors instead of nine.
 :::
 
-## Repeat quiz questions
+## Repeat quiz question 1
+
+```      Survived
+         No            Yes          Total
+Female   154 (33.3%)   308 (66.7%)   462 (100%)
+Male     709 (83.3%)   142 (16.7%)   851 (100%)
+Total    863 (65.7%)   450 (34.3%)  1313 (100%)
+```
+
+This data table shows counts and ...
+
+1.   cell percents
+2.   column percents
+3.   row percents
+4.   I do not know the answer
+
+::: notes
+Here is the question I asked earlier about percentages.
+:::
+
+## Repeat quiz question 2
+
+The median might be preferred to the mean if
+
+1.   a single extreme value distorts the mean
+2.   the data follows a bell shaped curve
+3.   there is very little variation in the data
+4.   you have a biased sample
+5.   I do not know the answer
+
+::: notes
+Here is a repeat question about the median.
+:::
+
+## Repeat quiz question 3
+
+The problem with error bars is that they
+
+1.   fail to show if the data is skewed
+2.   have several competing definitions
+3.   use only two numbers to characterize your data
+4.   all of the above are correct
+5.   none of the above are correct
+6.   I do not know the answer
+
+::: notes
+Here is the repeat question about error bars
+:::
+
