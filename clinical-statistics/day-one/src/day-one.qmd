@@ -1615,6 +1615,18 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
 
 
 
+## 
+
+![Annual rainfall in selected cities](../images/rainfall-boxplot.png){#fig-rainfall-boxplot fig-align="left"}
+
+::: notes
+Comment on these boxplots
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
+:::
+
+
+
 ## Which visualization to choose?
 
 -   Categorical data
