@@ -5,21 +5,7 @@ format:
   revealjs:
     slide-number: true
     embed-resources: true
-    show-notes: true
-editor: visual
-knitr:
-  opts_chunk: 
-    fig-align: "left"
 ---
-
-<!---  To print speaker notes, add
-         ?print-pdf&showNotes=separate-page 
-       to the end of the URL. Then open the
-       print dialog box (ctrl-P) and choose
-       Save as PDF for the printer. Other 
-       options, like Microsoft Print to PDF
-       do not seem to work.
-  --->
 
 ## One warning
 
@@ -30,20 +16,22 @@ knitr:
 ::: notes
 Let me start off with a brief warning. I like to draw analogies a lot in my talks to various cultural references, such as books, television shows, or movies. I do this because it enlivens what sometimes can be a tedious topic. But I have to apologize if some of my cultural references may be too specific to the United States. Let me give an example.
 
-There is a series, Ted Lasso, about a football coach, United States football, I mean. He is asked to coach a soccer team in England, soccer being the sport that the rest of the world calls football. Now I know that people outside the U.S.A. watch Ted Lasso. But part of the humor in that series is when Ted starts telling stories that have a point to them, and everyone stares at in befuddlement because the only people who understand that point Ted is trying to make have been living in the United States their entire lives. As an example, Ted wears a t-shirt on one show that says "Arthur Joes Gates Stack barbecue." It's actually a joke that only those of us who live in Kansas City can laugh at. Look it up on the Internet if you are curious.
+There is a series, Ted Lasso, about a football coach, United States football, I mean. He is asked to coach a soccer team in England, soccer being the sport that the rest of the world calls football. Now I know that people outside the U.S.A. watch Ted Lasso. But part of the humor in that series is when Ted starts telling stories that have a point to them, and everyone stares at him in befuddlement because the only people who understand that point Ted is trying to make have been living in the United States their entire lives. As an example, Ted wears a t-shirt on one show that says "Arthur Joes Gates Stack barbecue." It's actually a joke that only those of us who live in Kansas City can laugh at. Look it up on the Internet if you are curious.
 
 There's a stereotype of people in the United States that they think the world revolves around them. It's a stereotype that is not true for all of us, but it is true for many, including me. I try to fight that tendency, but it's not always easy.
 
 The point is, that I will try to be inclusive of those of you joining from outside the United States, but if I include a cultural reference that you are unfamiliar with, please don't hesitate to ask me to explain it. It will be interesting to see what analogies translate to other countries.
 :::
 
+{{< pagebreak >}}
+
 ## Start with a bad joke
+
+*Put your reaction ("Ha ha", "Groan", etc.) in the chat box.*
 
 Two statistics are sitting in a bar. One turns to the other and asks, "So, how do you like married life?"
 
 The other statistic responds ...
-
-*Put your reaction ("Ha ha", "Groan", etc.) in the chat box.*
 
 ::: notes
 One more thing before I begin anything important. I like to start my talks with a silly joke. It always relates to something I am going to say later.
@@ -79,7 +67,7 @@ Here are three numbers about me.
 ## Your turn
 
 ::: notes
-I want each of you to share an interesting number about yourself.
+I want each of you to share one, just one, interesting number about yourself.
 :::
 
 ## A bit more about myself
@@ -145,19 +133,19 @@ You will also learn a little bit about data visualization.
 
 ## Quiz question 1
 
-```      Survived
+``` survived
          No            Yes          Total
-Female   154 (33.3%)   308 (66.7%)   462 (100%)
-Male     709 (83.3%)   142 (16.7%)   851 (100%)
-Total    863 (65.7%)   450 (34.3%)  1313 (100%)
+Female   154 (33%)   308 (67%)   462 (100%)
+Male     709 (83%)   142 (17%)   851 (100%)
+Total    863 (66%)   450 (34%)  1313 (100%)
 ```
 
 This data table shows counts and ...
 
-1.   cell percents
-2.   column percents
-3.   row percents
-4.   I do not know the answer
+1.  cell percents
+2.  column percents
+3.  row percents
+4.  I do not know the answer
 
 ::: notes
 Here is a question about the percentages shown in a table. If you do not know the answer, that's okay. This is something you will learn about in this lecture and you should be able to answer correctly at the end of the class.
@@ -167,11 +155,11 @@ Here is a question about the percentages shown in a table. If you do not know th
 
 The median might be preferred to the mean if
 
-1.   a single extreme value distorts the mean
-2.   the data follows a bell shaped curve
-3.   there is very little variation in the data
-4.   you have a biased sample
-5.   I do not know the answer
+1.  a single extreme value distorts the mean
+2.  the data follows a bell shaped curve
+3.  there is very little variation in the data
+4.  you have a biased sample
+5.  I do not know the answer
 
 ::: notes
 Here is a question about the median.
@@ -181,12 +169,12 @@ Here is a question about the median.
 
 The problem with error bars is that they
 
-1.   fail to show if the data is skewed
-2.   have several competing definitions
-3.   use only two numbers to characterize your data
-4.   all of the above are correct
-5.   none of the above are correct
-6.   I do not know the answer
+1.  fail to show if the data is skewed
+2.  have several competing definitions
+3.  use only two numbers to characterize your data
+4.  all of the above are correct
+5.  none of the above are correct
+6.  I do not know the answer
 
 ::: notes
 Here is a question about error bars
@@ -249,15 +237,21 @@ That's not the only way you can do this, but just make sure that whatever conven
 ![Titanic data: counts of survival by gender](../images/titanic-counts.png){#fig-counts fig-align="left"}
 
 ::: notes
-Here is some count data from an interesting data set. It shows who survived and who did not on the passenger ship, Titanic.
+I have some data taken from the passenger ship Titanic. I have used this data in many talks and on many of my web pages. But in the middle of preparing this talk, a tragedy occurred. Titan, a 22 foot submarine was taking five people to view the wreckage of the Titanic last week when it had a serious accident. I can't talk about this data set without first acknowledging this tragedy. My heart goes out to the families and friends of those who lost their lives.
+
+Now, I have a tendency to talk a bit flippantly about things, but I hope that none of my comments are interpreted as insensitive towards this recent tragedy. I had thought about changing this example, but it appears too many times in the talk to allow me to substitute another interesting data set.
+
+The five people who died last week joined 863 who died on the Titanic back in 1912. 
 
 The Titanic was an enormous ship. It was bigger than any passenger ship ever built at the time. It was so large that they thought it was unsinkable. But in its first voyage across the Atlantic Ocean, it struck an iceberg and sunk.
 
-They kept records on everyone on the ship: sex, age, and passenger class. There were 462 women on the ship. 308 of them survived, including Kate Winslet. The men did not fare as well. This was in a time when they really believed in the saying "Women and children first". If this happened today, I'd push past all the ladies and the little kids and jump in that life boat first.
+They kept records on everyone on the ship: sex, age, and passenger class. There were 462 women on the ship. 308 of them survived, including Kate Winslet. The men did not fare as well. This was in a time when they really believed in the saying "Women and children first".
 
 Among the 851 men, 709 died, including, sadly, Leonardo Di Caprio.
 
 I'm making a reference to a popular movie, "Titanic" that was released in 1997. Has anyone seen that movie?
+
+Now these numbers are just the passengers. Many of the crew died as well.
 
 Anyway, you might want to examine mortality trends more closely by computing percentages. But there are three different ways you could compute these percentages.
 :::
@@ -279,7 +273,7 @@ These are called column percents. They add up to 100% within each column: 18% + 
 ::: notes
 You could also divide by the row totals. Divide the 308 surviving women by the total number of women, 462, to get a survival rate of 67%. Divide the 142 surviving men by the total number of men, 851, to get 17%.
 
-!7%! This shows how poorly the men fared on the Titanic. If you were female, you might have died, but more likely than not you did survive. For the men, not such good news. Most of them died. Only a small fraction survived.
+17%! This shows how poorly the men fared on the Titanic. If you were female, you might have died, but more likely than not you DID survive. For the men, not such good news. Most of them died. Only a small fraction survived.
 
 This is called the row percentages. These percentages add up to 100 within each row: 33% + 67% = 100% and 83% + 17% = 100%.
 :::
@@ -311,7 +305,7 @@ But from the perspective of the Carpathia, the ship that rescued the survivors, 
     -   Survivors: 68% female, 32% male
 
 ::: notes
-I have some general guidelines that I use. They don't always work, but they work most of the time.
+These two by two tables occur a lot in Statistics. I have some general guidelines that I use with them. They don't always work, but they work most of the time.
 
 If you have a variable that represents a treatment or exposure, try using that as the rows of the table. If you have a variable that represents an outcome, try using that as the columns of the table. Sometimes, there are no clearly identified treatment variables and no clearly identified outcome variables. But try to categorize them this way, if you can.
 
@@ -349,7 +343,9 @@ Survived  No   33% (154)   83% (863)
 :::
 
 ::: notes
-Now, I believe it is important to think carefully about which is your rows and which is your columns. Here's the layout that I recommend on the left and the layout that I don't recommend on the right. The key comparison is among survival rates, 67% for females and only 17% for males. When you orient my way with the treatment/exposure (Sex) as rows and the outcome (Survived) as the columns, the numbers 67% and 17% are very close to one another. In the alternate layout the numbers you are most interested in comparing are not as close together.
+Now, I believe it is important to think carefully about which is your rows and which is your columns. Here's the layout that I recommend on the left and the layout that I don't recommend on the right. The only difference is that the second table is transposed from the first. What was the rows becomes the columns and what was the columns becomes the rows.
+
+The key comparison is among survival rates, 67% for females and only 17% for males. When you orient my way with the treatment/exposure (Sex) as rows and the outcome (Survived) as the columns, the numbers 67% and 17% are very close to one another. In the alternate layout the numbers you are most interested in comparing are not as close together.
 
 Now this is not an absolute rule. Sometimes I'll switch things up. But about 90% of the time, I find that the layout with the treatment or exposure as the rows and the outcome as the columns, the table just looks better.
 :::
@@ -385,7 +381,7 @@ Now try to report both column and row percents for one of these two tables. Brea
 
 Put your percentages in a table using a word processing program or text editor so you can share your results with the group.
 
-Be sure to interpret these numbers. Come back together again in about 10 minutes.
+Be sure to interpret these numbers. Come back together again in about 10 minutes. I'll bounce back and forth between the two rooms to see if you have any questions.
 :::
 
 ## 
@@ -491,18 +487,25 @@ bacteria_1 <- c(
 ```
 
 ```         
-Room Before  After Change
- 121   11.8   10.1   -1.7
- 125    7.1    3.8   -3.3
- 163    8.2    7.2   -1.0
- 218   10.1   10.5    0.4
- 233   10.8    8.3   -2.5
- 264   14     12     -2.0
- 324   14.6   12.1   -2.5
- 325   14     13.7   -0.3  
+Room Before  After
+ 121   11.8   10.1
+ 125    7.1    3.8
+ 163    8.2    7.2
+ 218   10.1   10.5
+ 233   10.8    8.3
+ 264   14     12  
+ 324   14.6   12.1
+ 325   14     13.7
 ```
 
 ::: notes
+Here is some data that I got off the web.
+
+https://dasl.datadescription.com/datafile/legionnaires-disease/
+
+This represents bacteria counts before and after a new air conditioning unit was installed in a small hotel.
+
+I want to illustrate the calculation of the mean and median.
 :::
 
 ## Before remediation mean
@@ -571,6 +574,8 @@ step1 <- function(x) {
 ```
 
 ::: notes
+Now for the median.
+
 Here is the data for bacteria counts before remediation. Notice that the data is arranged by room number.
 :::
 
@@ -593,7 +598,7 @@ step2 <- function(x) {
 ::: notes
 The first thing you do is sort the data from the lowest bacteria count to the highest bacteria count.
 
-The data was arranged by toom number, but now it is arranged by bacterial count.
+The data was arranged by room number, but now it is arranged by bacterial count. The smallest bacteria count is listed at the top and the largest is listed at the bottom.
 :::
 
 ## Before remediation median (3/4)
@@ -709,7 +714,7 @@ When it becomes a problem is when the data are so diverse that it becomes a mix 
 
 The other problem is that an average may be a reasonable number to represent the majority of patients in your sample, but it may masks some important trends that appear in a minority.
 
-This is a big problem in a larger context than just the mean or median. There are some very fancy high tech predition models that work very well for most people and the statistics like the mean and median back this up quite nicely. But the prediction models perform terribly for minority groups.
+This is a big problem in a larger context than just the mean or median. There are some very fancy high tech prediction models that work very well for most people and the statistics like the mean and median back this up quite nicely. But the prediction models perform terribly for minority groups. Something that does well for the average person may not be so great for a large segment of society.
 :::
 
 ## Use of the mean for ordinal data
@@ -790,44 +795,55 @@ One of his most famous essays was "The Median Isn't the Message". The title is a
 The Gould essay was written in 1985 for Discover Magazine. It has been reprinted many times, and you can easily find the full text with a simple Google search.
 
 The image shown here is taken from phoenix5.org, an informational site for patients with prostate cancer.
+
+Gould was diagnosed with a rare cancer, abdominal mesothelioma, with a very poor prognosis. Such a poor prognosis that Gould was actively discouraged by his physician from looking at any peer reviewed research about his cancer.
+
+But Gould looked anyway. "Of course, trying to keep an intellectual away from literature works about as well as recommending chastity to Homo sapiens, the sexiest primate of all."
+
+But he found that the doctor had good reason to discourage this trip to the medical library.
+
+"The literature couldn’t have been more brutally clear: Mesothelioma is incurable, with a median mortality of only eight months after discovery."
+
+Gould was momentarily distressed, but then he thought carefully about the problem.
+
+"When I learned about the eight-month median, my first intellectual reaction was: Fine, half the people will live longer; now what are my chances of being in that half? I read for a furious and nervous hour and concluded, with relief: damned good. I possessed every one of the characteristics conferring a probability of longer life: I was young; my disease had been recognized in a relatively early stage; I would receive the nation’s best medical treatment; I had the world to live for; I knew how to read the data properly and not despair."
+
+He goes on to find a bit more reason for optimism.
+
+"Another technical point then added even more solace. I immediately recognized that the distribution of variation about the eight-month median would almost surely be what statisticians call “right skewed.” (In a symmetrical distribution, the profile of variation to the left of the central tendency is a mirror image of variation to the right. Skewed distributions are asymmetrical, with variation stretching out more in one direction than the other—left skewed if extended to the left, right skewed if stretched out to the right.) The distribution of variation had to be right skewed, I reasoned. After all, the left of the distribution contains an irrevocable lower boundary of zero (since mesothelioma can only be identified at death or before). Thus, little space exists for the distribution’s lower (or left) half—it must be scrunched up between zero and eight months. But the upper (or right) half can extend out for years and years, even if nobody ultimately survives. The distribution must be right skewed, and I needed to know how long the extended tail ran—for I had already concluded that my favorable profile made me a good candidate for the right half of the curve."
+
+Gould did indeed find himself on the happy side of the eight month median, a good 20 years beyond the median.
+
+The median isn't the message. It is a single number with half the people on the lower side and half on the higher side. Don't think for a minute that single number like a median can characterize everyone in a group.
 :::
 
 ## Choosing between the mean and median
 
--   Often a source of controversy
+-   Often, either is fine
 -   When do you use the mean?
     -   When totals are important
+    -   "In 2020, the average expenditure by the Italian National Health Service (Servizio Sanitario Nazionale, SSN) per patient affected by at least one chronic disease was approximately 696 euros."
 -   When do you use the median
     -   When outliers/skewness might distort your conclusions
--   Often, either is fine
 
 ::: notes
 While there is some consensus on when to use the mean versus the median, the choice is not always obvious. Controversies often arise over this issue.
 
 Here are some general guidelines.
 
-The mean allows extrapolation to totals. This is often important in the analysis of the economic effects of illness.
-:::
+Most of the time, either the mean or the median is fine.
 
-## 
+One big advantage of the mean is that it allows extrapolation to totals. This is often important in the analysis of the economic effects of illness.
 
-![Exceprt from Bridge and McKenzie 2001, PMID: 11405531](../images/bridge-2001.png){#fig-bridge-2001 fig-align="left"}
+I found this data on the web site statista.com. The average cost per patient with at least one chronic disease was 696 euros. If you wanted to extrapolate this average and get a total cost for the whole country, multiply by the number of people in Italy times the proportion who have one or more chronic diseases.
 
-::: notes
-:::
+The other issue is outliers. Extreme values tend to pull the mean towards that value.
 
-## Bridge 2001, PMID: 11405531 (continued)
+We have this guy living in the United States named Elon Musk. My wife idolizes him. She bought a Tesla from his company and brags about it to all her friends. She's a big fan of his space exploration efforts and is fascinated by a possible manned flight to Mars.
 
-The measurement of airway resistance by the interrupter technique (Rint) needs standardization. Should measurements be made be during the expiratory or inspiratory phase of tidal breathing? **In reported studies, the measurement of Rint has been calculated as the median or mean of a small number of values, is there an important difference?**
+Me, I think he is just a rich jerk. But suppose you are computing average net worth of a random sample of individuals and by your good luck (my wife's perspective) or bad luck (my perspective) Elon Musk gets to be part of your sample. The average net worth approaches a billion dollars because all the money that Musk has swamps the total. No one else in the sample has a net worth anywhere near a billion dollars, so the mean is not a fair reflection of the average person in the sample. The median net worth doesn't change if Musk's net worth is 400 billion dollars, before he bought Twitter or 200 billion after he bought Twitter.
 
-::: notes
-:::
-
-## Bridge 2001, PMID: 11405531 (continued)
-
-In the present data the mean of a set of values contributing to a measurement was not significantly different from the median. **However, the use of the median has been recommended since it is less affected by possible outlying values such as might be included by fully automated equipment.**
-
-::: notes
+Now the Elon Musk example is silly, but the issue of outliers having an effect on the mean is important in many applications.
 :::
 
 ## 
@@ -835,6 +851,7 @@ In the present data the mean of a set of values contributing to a measurement wa
 ![Chen et al 2019](../images/chen-2019.png){#fig-chen-2019 fig-align="left"}
 
 ::: notes
+Here is an article I found on PubMed, one of my favorite websites that compares median and mean improvements in life expectancy in cancer patients.
 :::
 
 ## Chen 2019, PMID: 31806195 (continued)
@@ -842,6 +859,10 @@ In the present data the mean of a set of values contributing to a measurement wa
 Background: The prices of newly approved cancer drugs have risen over the past decades. **A key policy question is whether the clinical gains offered by these drugs in treating specific cancer indications justify the price increases.**
 
 ::: notes
+Here's part of the abstract. 
+
+The United States is like a lot of first world countries in that we spend more and more money each year on cancer treatments. Are we getting our money's worth?
+
 :::
 
 ## Chen 2019, PMID: 31806195 (continued)
@@ -849,6 +870,7 @@ Background: The prices of newly approved cancer drugs have risen over the past d
 Results: We found that between 1995 and 2012, price increases outstripped median survival gains, a finding consistent with previous literature. **Nevertheless, price per mean life-year gained increased at a considerably slower rate, suggesting that new drugs have been more effective in achieving longer-term survival.** Between 2013 and 2017, price increases reflected equally large gains in median and mean survival, resulting in a flat profile for benefit-adjusted launch prices in recent years.
 
 ::: notes
+Later on in the abstract, the authors point out that from the persective of the median, things are bleak. The median survival gains are not in line with the increasing amount of money spent on new treatments. But the mean survival gains show a different story. A flat profile means that increases in price are accompanied by an increase in benefits in terms of gains in the mean. What this implies is that the extreme tail of the distribution includes a number of Elon Musk types. A small number of people are showing amazingly big gains in survival, justifying the increase in cost.
 :::
 
 ## Break
@@ -882,7 +904,7 @@ ggsave("../images/illustrate-percentiles.png")
 ::: notes
 I want to mention percentiles briefly. A percentile is a value that splits the data so that a certain percentage is smaller and a certain percentage is larger.
 
-The 75th percentile, for example will be above 75% of the data and below 25% of the data. This graph illustrates the 75th percentile for some arbitrary data. THe gray bars represent about 75% of the data and the white bars represent about 25% of the data.
+The 75th percentile, for example will be above 75% of the data and below 25% of the data. This graph illustrates the 75th percentile for some arbitrary data. The gray bars represent about 75% of the data and the white bars represent about 25% of the data.
 
 I use a few weasel words like "roughly" and "about" because you can't always get a perfect split. But you can usually come close.
 :::
@@ -931,12 +953,13 @@ The 2nd percentile represents one of the special cases. You calculate p(n+1) and
 -   Percentile: goes from 0% to 100%
 -   Quantile: goes from 0.0 to 1.0
     -   90th percentile = 0.9 quantile
--   Quartiles: 25th, 50th, and 75th percentiles
-    -   Lower quartile: 25th percentile
-    -   Upper quartile: 75th percentile
+-   25th, 50th, and 75th percentiles: quartiles
+    -   25th percentile: $Q_1,\ X_{0.25}$ or lower quartile
+    -   Median/50th percentiles: $Q_2$ or $X_{0.5}$
+    -   75th percentile: $Q_3,\ X_{0.75}$ or upper quartile
 
 ::: notes
-A percentile always refers to a percentage. So it has to be between 0% and 100%. Sometimes, you may see references to a quantile. A quantile is a percentile, but is expressed as a proportion rather than a percent. A quantile goes from 0.0 to 1.0. The 25th percentile and the 0.25 quantile are the same thing.
+A percentile always refers to a percentage. So it has to be between 0% and 100%. Sometimes, you may see references to a quantile. A quantile is a percentile, but is expressed as a proportion rather than a percent. A quantile goes from 0.0 to 1.0. The 90th percentile and the 0.90 quantile are the same thing.
 
 You might see the term "quartiles". These are the 25th, 50th, and 75th percentiles. These three values split the data into quarters.
 
@@ -1037,7 +1060,7 @@ Go halfway between these values.
     -   Almost all products must meet a minimum standard
 
 ::: notes
-There are many reasons why you might be interested in percentiles rather than the mean or median. Actually, the median is a percentile, the 50th percentile, but what I mean is percentiles other than 50%.
+There are many reasons why you might be interested in percentiles rather than the mean or median. Actually, the median is a percentile, the 50th percentile, but I want to talk about percentiles other than 50%.
 
 One important use of percentiles is looking at the middle 50% of the data. This is the data between the lower quartile (25th percentile) and the upper quartile (75th percentile). Is the middle 50% of the data bunched tightly together or spread widely apart?
 
@@ -1116,21 +1139,10 @@ These are known as proof of concept trials. If a new therapy cannot succeed even
 If you are planning a trial that comes after many similar trials, you actually may want to encourage variation. Broaden the inclusion criteria so that the patients in the trial look no different than the patients you see every day in your clinic.
 :::
 
-## Standard deviation
-
-$$S = \sqrt{\frac{1}{n-1}\Sigma(X_i-\bar{X})^2}$$
-
-At least one alternative formulas.
-
-::: notes
-The standard deviation is a commonly used measure of how spread out the data is. The formula is a bit messy, but if you look carefully at it, you will see that it is a measure of how far each individual value is from the overall mean.
-
-Now, maybe you've seen or used a different formula. Don't worry about it. In a short course like this, I won't ask you to calculate anything as tedious as a standard deviation. Let the computer do all of the work.
-:::
-
 ## The bell shaped curve
 
 -   Does your variation follow a bell shaped curve?
+-   Synonyms: normality, normal distribution
     -   Values in the middle are most common
     -   Frequencies taper off away from the center
     -   Symmetry on either side
@@ -1283,7 +1295,7 @@ ggsave("../images/two-s-histogram.png")
 ![Percentage within two standard deviations](../images/two-s-histogram.png){#fig-two-s-histogram fig-align="left"}
 
 ::: notes
-This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
+This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within two standard deviations of the mean. To repeat, this is only true if the variation follows a bell shaped curve.
 :::
 
 ## 
@@ -1304,10 +1316,11 @@ ggsave("../images/three-s-histogram.png")
 ![Percentage within three standard deviations](../images/three-s-histogram.png){#fig-three-s-histogram fig-align="left"}
 
 ::: notes
-This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
+This shows the bell shaped curve with the data within three standard deviations of the mean highlighted in gray. Almost all of the data lies within three standard deviations of the mean. Rember, and this is worth repeating. This is only true if the variation follows a bell shaped curve.
 :::
 
 ## Behavior of the mean versus an individual
+
 -   Central Limit Theorem
     -   Sample mean is approximately normal
     -   Even if individual observations are not
@@ -1320,7 +1333,47 @@ For almost all settings, the sample mean follows a bell shaped curve. The extrem
 
 The mean is also less variable than an individual observation, by a factor equal to the square root of the sample size.
 
-What does this mean from a practical sense? It means that averages are much more predictable than individuals. The time that you spend getting a colonoscopy done can vary quite a bit. 
+What does this mean from a practical sense? It means that averages are much more predictable than individuals. The time that you spend getting a colonoscopy done can vary quite a bit. But the doctor who schedules eight colonoscopies in a day doesn't mind if yours takes a bit too long. From the perspective of the physician, the average time will be fairly predictable, even if an individual colonoscopy time varies quite a bit. 
+
+Now it is possible to get all eight colonoscopies taking longer than average. It doesn't happen very often, but on those days, the doctor earns every penny that they pay her.
+
+Remember this perspective. Sometimes you care mostly about the individual value and sometimes you care mostly about the average value.
+:::
+
+## Diagnosing distributional issues (1/2)
+
+-   For all data
+    -   $\bar{X} \gg X_{0.5}$
+    -   $\bar{X}$ and/or $X_{0.5}$ not midway between $Q_1$ and $Q_3$
+    -   $\bar{X}$ and/or $X_{0.5}$ not midway between min and max
+
+::: notes
+The best way to decide whether your data follows a bell shaped curve is by looking at a histogram. But this is not always an option. When you are reading a journal article, you probably only get descriptive statistics and not a histogram.
+
+There are certain patterns, however, that you might see in the descriptive statistics that SOMETIMES help you assess when the data does not follow a bell shaped curve.
+
+These don't diagnose every possible deviation from the bell shaped curve, so some types of deviations might be undiagnosed. But if you see any of these patterns, they are definitely indicative of non-normality.
+
+If the mean is a lot larger than the median, it is almost always because of some extreme values, but only on the high end.
+
+If the data is lop-sided, either because the mean/median are not midway between the upper and lower quartiles or because they are not midway between the smallest value and the largest value, this indicates a lack of symmetry and is inconsistent with the bell shaped curve.
+:::
+
+## Diagnosing distributional issues (2/2)
+
+-   For non-negative data
+    -   $S > 0.5 \times \bar{X}$
+-   For data with an lower and/or upper bound
+    -   $Q_1$ = lower bound
+    -   $Q_3$ = upper bound
+-   Don't overdiagnose, especially with small sample sizes!
+
+::: notes
+For non-negative data, data with a lower bound of zero, a large standard deviation, one that is half the size of the mean or greater, you would have the mean minus two standard deviations go negative. That's a pretty good sign that trying to apply the mean plus or minus two standard deviations is not going to make much sense.
+
+If there is another lower bound, or perhaps an upper bound to the data, see if one of the quartiles hits these bounds. If the 75th percentile equals the upper bound, that means that a quarter of your data is piled up at the upper bound. There's no way this could be consistent with a bell shaped curve.
+
+Be careful not to overdiagnose. Don't try to look for subtle patterns. A mean that is just slightly larger than the median or not quite halfway between the lower and upper quartiles is not a cause for concern.
 :::
 
 ## 
@@ -1328,6 +1381,7 @@ What does this mean from a practical sense? It means that averages are much more
 ![Lin et al 2022, PMID: 36126916](../images/lin-2022.png){#fig-lin-2022 fig-align="left"}
 
 ::: notes
+Here is a research study looking at US veterans diagnosed with schizophrenia, comparing those who relapsed with those who did not.
 :::
 
 ## 
@@ -1335,6 +1389,9 @@ What does this mean from a practical sense? It means that averages are much more
 ![Excerpt from Table 1 of Lin et al 2022: ages](../images/lin-2022-ages.png){#fig-lin-2022-ages fig-align="left"}
 
 ::: notes
+Here is part of a table for this article that gives a fair amount of detail about the ages of the veterans in this research study.
+
+The data here looks fairl well behaved. The mean and the median are close to one another. Ages are non-negative, so you could look at the standard deviation. A really large standard deviation could be trouble, but here is is around 13, nowhere close to half of the mean. The mean and median both find themselves about midway between the two quartiles and between the minimum and maximum values.
 :::
 
 ## 
@@ -1342,7 +1399,11 @@ What does this mean from a practical sense? It means that averages are much more
 ![Excerpt from Table 1 of Lin et al 2022: CCI](../images/lin-2022-cci.png){#fig-lin-2022-cci fig-align="left"}
 
 ::: notes
-CCI is short for the Charlson Comorbidity Index.
+CCI is short for the Charlson Comorbidity Index. It is a weighted sum of nineteen medical conditions.The larger the value of CCI, the sicker the patient.
+
+The CCI has a lower bound of zero, so you can see a problem right away. The standard deviations are about the same size or a bit bigger than the mean. The mean and medians are about midway between the two quartiles, but when you look at the minimum and maximum, there is quite a different story. 
+
+This is indeed not normally distributed. 
 :::
 
 ## 
@@ -1350,7 +1411,7 @@ CCI is short for the Charlson Comorbidity Index.
 ![Excerpt from Table 1 of Lin et al 2022: PHQ-2](../images/lin-2022-phq.png){#fig-lin-2022-phq fig-align="left"}
 
 ::: notes
-PHQ-2 is a quality of life measure.
+PHQ-2 is a quality of life measure. It ranges from 0 to 6. The very large standard deviations, both quite a bit bigger than the means, indicates strong evidence of non-normality.
 :::
 
 ## 
@@ -1365,6 +1426,7 @@ PHQ-2 is a quality of life measure.
 Symptom persistence weeks after laboratory-confirmed severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2) clearance is a relatively common long-term complication of Coronavirus disease 2019 (COVID-19). Little is known about this phenomenon in older adults. The present study aimed at determining the prevalence of persistent symptoms among older COVID-19 survivors and identifying symptom patterns.
 
 ::: notes
+Here's another article looking at long Covid, the persistence of symptoms long after infection.
 :::
 
 ## Tosato 2021, PMID: 34352201 (continued)
@@ -1372,6 +1434,7 @@ Symptom persistence weeks after laboratory-confirmed severe acute respiratory sy
 The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (38.4%) were women. The average time elapsed from hospital discharge was 76.8 ± 20.3 days (range 25-109 days).
 
 ::: notes
+There are fewer statistics presented here. Age and time since discharge are both non-negative, so you can compare the standard deviation to the mean. No problems here. It might be worth calculating the mean plus or minus two standard deviations. Rounding a bit you get 61 to 85 for age and 37 to 117 for time
 :::
 
 ## Ielapi 2021, PMID: 34968328
@@ -1382,11 +1445,13 @@ The mean age was 73.1 ± 6.2 years (median 72, interquartile range 27), and 63 (
 
 Background. Insomnia is one of the major health problems related with a decrease in quality of life (QOL) and also in poor functioning in night-shift nurses, that also may negatively affect patients' care. The aim of this study is to evaluate the prevalence of insomnia in night shift nurses.
 
+::: notes
+Here's an article about insomnia among nurses.
+:::
+
 ## Ielapi 2021, PMID: 34968328 (continued)
 
-Excerpt from Table 1.
-
-Data reported as mean ± standard deviation or median \[Q1-Q3\]
+Excerpt from Table 1. Data reported as mean ± standard deviation or median \[Q1-Q3\]
 
 ```         
 Overall (n = 2′355)
@@ -1400,6 +1465,12 @@ Number of coffees, mean 2.5 ± 1.5
 Number of coffees during night shift, mean  1.4 ± 1.1
 ```
 
+::: notes
+Break into small groups. The first group take the first four measures and the second group take the last four measures. Is there evidence that the data is non-normally distributed? 
+
+Also, calculate the mean plus of minus two standard deviations for any observations that report the mean and standard deviation.
+:::
+
 ## Break
 
 -   What have you just learned?
@@ -1411,25 +1482,27 @@ Number of coffees during night shift, mean  1.4 ± 1.1
 Let me pause here for a second. Are there any questions?
 :::
 
-##
+## 
 
 ![Entries in the electronic health record by job title](../images/ehr-entries.png){#ehr-entries fig-align="left"}
 
 ::: notes
-Interpret this bar chart.
+This bar chart is from an article about the unstructured part of the electronic health care records, often called the physician notes.
+
+I'm going to ask you to interpret a few bar charts like this one. In this bar chart, you see that physicians are responsible for the bulk of unstructured data. This is especially true for comments about social connection and isolation. Case managers provide 5% or less of the unstructured comments.
 :::
 
-##
+## 
 
-![Demographic distribution of voters and non-voters in Texas](../images/texas-voters.png){#fig-texas-votes fig-align="left"}
+![Fastest computers by country](../images/fastest-computers.png){#fig-fastest-computers fig-align="left"}
 
 ::: notes
 Interpret this bar chart.
 :::
 
-##
+## 
 
-![Fastest computers by country](../images/fastest-computers.png){#fig-fastest-computers fig-align="left"}
+![Demographic distribution of voters and non-voters in Texas](../images/texas-voters.png){#fig-texas-votes fig-align="left"}
 
 ::: notes
 Interpret this bar chart.
@@ -1455,8 +1528,7 @@ For continuous data, you might see bar charts (with or without error bars), boxp
 
 ## 
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
 ![Survivors among first class passengers](../images/pie-1st-class.png){#fig-pie-1st-class fig-align="left"}
 :::
@@ -1468,8 +1540,7 @@ For continuous data, you might see bar charts (with or without error bars), boxp
 ::: {.column width="33%"}
 ![Survivors among third class passengers](../images/pie-3rd-class.png){#fig-pie-3rd-class fig-align="left"}
 :::
-
-::::
+:::
 
 ::: notes
 I do not recommend pie charts. Here are three pie charts showing survivors among the various passenger classes. The red portion represents those who survived and the blue portion represents those who died.
@@ -1480,39 +1551,47 @@ I do not recommend pie charts. Here are three pie charts showing survivors among
 ![Bar chart showing proportion of passenger classes among deaths and survivors](../images/bar-pclass-by-survived.png){#fig-bar-pclass-by-survived fig-align="left"}
 
 ::: notes
-Note
+Here is the same data displayed as a bar chart. Survivors are evenly split betwen the three passenger classes, but fatilities were dominated by third class passengers.
 :::
 
 ## 
 
-![Bar chart showing proportion of deaths and survivors among passenger classes](../images/bar-survived-by-pclass.png){#fig-bar-pclass-by-survived fig-align="left"}
+![Bar chart showing proportion of deaths and survivors among passenger classes](../images/bar-survived-by-pclass.png){fig-align="left"}
 
 ::: notes
-Note
+Now with a chart like this you could display the data as two bars fatalities and survivors to see how they split up among the three passenger classes. But there is an alternate way to display this data.
+
+You could look at three bars, one for each passenger class with each bar split into two pieces, fatalities and survivors.
+
+Which is correct? Well it is just like the question raised earlier about row percents and column percents. A lot depends on your perspective, but I like the chart currently being shown as better. It shows decreasing proportion of survivors when you consider first class versus second or third class. It may have been women and children first, but it was also rich people first.
 :::
 
 ## 
 
-![Bar chart showing only proportion of survivors among passenger classes](../images/bar-survived-by-pclass-1.png){#fig-bar-pclass-by-survived fig-align="left"}
+![Bar chart showing only proportion of survivors among passenger classes](../images/bar-survived-by-pclass-1.png){fig-align="left"}
 
 ::: notes
-Note
+When you have bar charts divided into two pieces, there is no reason that you have to show both pieces. This is the exact same bar chart with the top part of the bar replaced. It shows the exact same trend, but with a bit less clutter.
 :::
 
 ## 
 
-![Bar chart showing proportion of survivors among passenger classes and sex](../images/bar-survived-by-pclass-by-sex.png){#fig-bar-pclass-by-survived fig-align="left"}
+![Bar chart showing proportion of survivors among passenger classes and sex](../images/bar-survived-by-pclass-by-sex.png){fig-align="left"}
 
 ::: notes
-Note
+Let's add another dimension. Let's look at passenger class and gender. This is called a clustered bar chart. This shows that regardless of passenger class, women fared better than men.
 :::
 
 ## 
 
-![Bar chart showing proportion of survivors among sex and passenger classes](../images/bar-survived-by-sex-by-pclass.png){#fig-bar-pclass-by-survived fig-align="left"}
+![Bar chart showing proportion of survivors among sex and passenger classes](../images/bar-survived-by-sex-by-pclass.png){fig-align="left"}
 
 ::: notes
-Note
+There's an alternate way to cluster the bar charts. Put the women in all three classes together in one cluster and the men in a differnt cluster. This plot shows that both men and women fared better if they paid for a more expensive cabin.
+
+Which is best? Well it depends on what you want to emphasize. If you want to contrast men and women, put the male and female bars next to one another. If you want to contrast passenger classes, put them next to one another. 
+
+The rule of thumb here is that the things that are the closest are the things that are most easily compared.
 :::
 
 ## 
@@ -1520,15 +1599,23 @@ Note
 ![Bar chart showing average age among deaths and survivors](../images/bar-survived-by-age.png){#fig-bar-survived-by-age fig-align="left"}
 
 ::: notes
-Note
+Now let's look at a continuous variable, age. This bar chart shows the average age among those who died and those who survived. A very small difference.
+
+Now I cannot recommend this bar chart because it shows a single number and cannot offer information about how variable the data is.
 :::
 
 ## 
 
-![Bar chart with error bars showing proportion of survivors among sex and passenger classes](../images/error-bars.png){#fig-bar-pclass-by-survived fig-align="left"}
+![Bar chart with error bars showing proportion of survivors among sex and passenger classes](../images/error-bars.png){fig-align="left"}
 
 ::: notes
-Note
+A common choice is to include error bars. In this example, the error bar shows plus and minus one standard deviation.
+
+Two numbers is better than one, but it is still not good. The error bars, by definition are symmetric, but the data that generated the error bars may or may not be symmetric.
+
+Another problem is that some researchers will use error bars to represent standard errors, confidence intervals, or ranges.
+
+I do not recommend that you use error bars.
 :::
 
 ## 
@@ -1536,7 +1623,7 @@ Note
 ![Boxplot showing ages of deaths and survivors](../images/boxplot-survived-by-age.png){#fig-boxplot-survived-by-age fig-align="left"}
 
 ::: notes
-Note
+For continuous data, I recommend boxplots. Here are the box plots of ages.
 :::
 
 ## 
@@ -1544,13 +1631,12 @@ Note
 ![Annotated boxplot](../images/annotated-boxplot.jpg){#fig-annotated-boxplot fig-align="left"}
 
 ::: notes
-Note
+If you have not seen a boxplot before, here is a nice schematic. The boxplot uses five numbers to summarize the data: the minimum value, the lower quartile, the median, the upper quartile and the maximum. The size of the box represents the interquartile range, the middle 50% of the data. If there are outliers, points that stray too far from the middle 50%, these are highlighted individually.
 :::
 
 ## 
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
 ![Histogram of ages of passengers that died](../images/histogram-age-no.png){#fig-histogram-age-no fig-align="left"}
 :::
@@ -1558,8 +1644,7 @@ Note
 ::: {.column width="50%"}
 ![Histogram of ages of passengers that survived](../images/histogram-age-yes.png){#fig-histogram-age-yes fig-align="left"}
 :::
-
-::::
+:::
 
 ::: notes
 Here are two histograms. They are great for looking at individual patterns, but do not allow for an easy comparison between two groups.
@@ -1570,7 +1655,7 @@ Here are two histograms. They are great for looking at individual patterns, but 
 ![SCatter plot of age vs survived](../images/scatter-survived-age.png){#fig-scatter-survived-age fig-align="left"}
 
 ::: notes
-Note
+In many cases I like plotting the individual data point. It doesn't help too much here because you have hundreds of ages.
 :::
 
 ## 
@@ -1578,12 +1663,22 @@ Note
 ![Scatter plot of age vs survived with jittering](../images/jittered.png){#fig-jittered fig-align="left"}
 
 ::: notes
-Note
+One method that researchers will use when trying to display hundreds of observations is jittering. Jittering is randomly shifting the data a bit to the left or right. I'm not a big fan of jittering, but sometimes it does help.
 :::
 
 ## 
 
-![Article feedback by type of article](../images/article-feedback.png){#fig-jittered fig-align="left"}
+![Self reported versus observed adherence](../images/self-reported-adherence.jpg){#fig-self-reported-adherence fig-align="left"}
+
+::: notes
+Comment on these boxplots
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
+:::
+
+## 
+
+![Article feedback by type of article](../images/article-feedback.png){fig-align="left"}
 
 ::: notes
 Comment on these boxplots
@@ -1599,21 +1694,7 @@ Wikipedia
 Comment on these boxplots
 
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9901771/
-
 :::
-
-
-## 
-
-![Self reported versus observed adherence](../images/self-reported-adherence.jpg){#fig-self-reported-adherence fig-align="left"}
-
-::: notes
-Comment on these boxplots
-
-https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
-:::
-
-
 
 ## 
 
@@ -1625,8 +1706,6 @@ Comment on these boxplots
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
 :::
 
-
-
 ## Which visualization to choose?
 
 -   Categorical data
@@ -1637,7 +1716,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
     -   Large datasets: boxplots
 
 ::: notes
-Note
+I have thrown a bunch of different visualizations at you. Let me try to sort them out.
 :::
 
 ## 
@@ -1645,7 +1724,9 @@ Note
 ![Color combinations](../images/primary-colors.jpg){#fig-primary-colors fig-align="left"}
 
 ::: notes
-The way you learned colors as a child is all wrong for computer graphics. The basic system of colors that you use with crayons and paints is that there are three primary colors, red, yellow, and blue and the combinations of any of these two colors produces a secondary color: orange, green, or purple.
+I want to spend a bit of time talking about color. Color is an important feature of visualization and one that is often poorly handled.
+
+Let's start by saying that the way you learned colors as a child is all wrong for computer graphics. The basic system of colors that you use with crayons and paints is that there are three primary colors, red, yellow, and blue and the combinations of any of these two colors produces a secondary color: orange, green, or purple.
 :::
 
 ## The RGB color system
@@ -1661,15 +1742,22 @@ The way you learned colors as a child is all wrong for computer graphics. The ba
 -   You can mix and match to get 16,777,216 colors
 
     -   #800080 is purple, #FF69B4 is pink, #40E0D0 is turquoise
-    
+
 ::: notes
-On the computer, you use the RGB color system.
+On the computer, you use the RGB color system. This represents six hexadecimal digits. Hexidecimal means base sixteen and the digits go 0, 1, 2, up to 9, then switches to letters: A for 10, B for 11, C for 12, D for 13, and E for 14 and F for 16. The smallest hexidecimal pair is 00 and the largest is FF.
+
+Three pairs of double 0 represent no red, no green, and no blue. It is the total absence of color: black.
+
+Thre pairs of double FF represents the maximum values for red, green, and blue. This is pure white.
+
+A double FF for red and zeros everywhere else gives pure red.
+
+Now you can mix and match these.
 :::
 
 ## 
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
 ![Red plus green equals yellow](../images/red-plus-green.png){#fig-red-plus-green fig-align="left"}
 :::
@@ -1681,8 +1769,7 @@ On the computer, you use the RGB color system.
 ::: {.column width="33%"}
 ![Green plus blue equals cyan](../images/green-plus-blue.png){#fig-green-plus-blue fig-align="left"}
 :::
-
-::::
+:::
 
 ::: notes
 In the rgb system, colors add up in a way that you never learned in kindergarten. There are new colors like magenta and cyan. The other thing to notice is that blending two colors makes things a bit brighter. This is most obvious in the combination of red and green to produce yellow, but you can see it in the other color combinations as well.
@@ -1690,8 +1777,7 @@ In the rgb system, colors add up in a way that you never learned in kindergarten
 
 ## 
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="33%"}
 ![Yellow plus blue equals white](../images/yellow-plus-blue.png){#fig-yellow-plus-blue fig-align="left"}
 :::
@@ -1703,8 +1789,7 @@ In the rgb system, colors add up in a way that you never learned in kindergarten
 ::: {.column width="33%"}
 ![Cyan plus red equals white](../images/cyan-plus-red.png){#fig-cyan-plus-red fig-align="left"}
 :::
-
-::::
+:::
 
 ::: notes
 Keep adding together and you get all the way to the brightest color, white. Try this with your kindergarten crayons and you would get a dark muddy brown. The rgb system is additive.
@@ -1718,7 +1803,7 @@ Keep adding together and you get all the way to the brightest color, white. Try 
 Here are the basic rgb colors, along with white and black, arranged in a cube.
 :::
 
-##
+## 
 
 ![The red to green gradient on the color cube](../images/red-green-gradient.png){#fig-red-green-gradient fig-align="left"}
 
@@ -1727,7 +1812,6 @@ Once you see the colors on a cube, you can figure out all sorts of interesting c
 
 Imagine continuing this route through cyan (the top right corner), blue (the top corner in back), magenta (the top left corner), then back down to red. Visualize this path (it looks like a hexagon from this perspective) turned into a circle.
 :::
-
 
 ## Rainbow
 
@@ -1761,7 +1845,7 @@ The color combinations seem to vibrate. At times, you might want an intensity li
 
 ## 
 
-![A brighter version of the rainbow](../images/lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"} 
+![A brighter version of the rainbow](../images/lighter-rainbow.png){#fig-lighter-rainbow fig-align="left"}
 
 ::: notes
 There are two ways to make the colors less harsh. First, try moving closer to the center of the color cylinder. These produce brighter colors. To my eye, these colors look closer to a pastel version.
@@ -1795,7 +1879,7 @@ Another problem with the rainbow is that the colors have different levels of bri
 This image comes from the excellent website, workwithcolor.com.
 :::
 
-##
+## 
 
 ```{r}
 data.frame(
@@ -1841,7 +1925,7 @@ ggsave("../images/scatter-white.png")
 Because yellow very bright, it has a poor contrast against a white background.
 :::
 
-##
+## 
 
 ```{r}
 scatter_white +
@@ -1880,15 +1964,15 @@ So what colors do I recommend?
 For nominal data, you want to colors to be about the same brightness, but not too close to each other.
 :::
 
-##
+## 
 
-![Examples of light to dark gradients](../images/light-to-dark-gradients.png){#fig-equi-spaced-hues fig-align="left"}
+![Examples of light to dark gradients](../images/light-to-dark-gradients.png){fig-align="left"}
 
 ::: notes
 For ordinal or continuous data, you have two choices. The first is a gradient from light to dark. Depending on your background color, this will either emphasize the low end of the scale or the high end of the scale.
 :::
 
-##
+## 
 
 ![Examples of diverging gradients](../images/diverging-gradients.png){#fig-diverging-gradients fig-align="left"}
 
@@ -1914,12 +1998,13 @@ There are a number of websites that will simulate what your visualization will l
 
 You can also find various color combinations that are easier for color blind people to distinguish.
 :::
+
 ## 
 
 ![Clothing mistake: using too many colors](../images/bold-clothes.png){#fig-bold-clothes fig-align="left"}
 
 ::: notes
-I want to encourage you to avoid mixing too many colors. Often the ideal number of colors is two. Here is a graphics image of what people who know fashion call a faux pas: the use of too many colors. I actually think that the colors look good here, but thats because the model is so good looking. On me, these colors would be atrocious.
+I want to encourage you to avoid mixing too many colors. Often the ideal number of colors is two. Here is a graphics image of what people who know fashion call a faux pas: the use of too many colors. I actually think that the colors look good here, but that's because the model is so good looking. On me, these colors would be atrocious.
 :::
 
 ## 
@@ -1970,7 +2055,7 @@ Okay, now repeat this exercise. How many "5's" do you count? Notice how much fas
 
 ## Repeat quiz question 1
 
-```      Survived
+``` survived
          No            Yes          Total
 Female   154 (33.3%)   308 (66.7%)   462 (100%)
 Male     709 (83.3%)   142 (16.7%)   851 (100%)
@@ -1979,10 +2064,10 @@ Total    863 (65.7%)   450 (34.3%)  1313 (100%)
 
 This data table shows counts and ...
 
-1.   cell percents
-2.   column percents
-3.   row percents
-4.   I do not know the answer
+1.  cell percents
+2.  column percents
+3.  row percents
+4.  I do not know the answer
 
 ::: notes
 Here is the question I asked earlier about percentages.
@@ -1992,11 +2077,11 @@ Here is the question I asked earlier about percentages.
 
 The median might be preferred to the mean if
 
-1.   a single extreme value distorts the mean
-2.   the data follows a bell shaped curve
-3.   there is very little variation in the data
-4.   you have a biased sample
-5.   I do not know the answer
+1.  a single extreme value distorts the mean
+2.  the data follows a bell shaped curve
+3.  there is very little variation in the data
+4.  you have a biased sample
+5.  I do not know the answer
 
 ::: notes
 Here is a repeat question about the median.
@@ -2006,14 +2091,13 @@ Here is a repeat question about the median.
 
 The problem with error bars is that they
 
-1.   fail to show if the data is skewed
-2.   have several competing definitions
-3.   use only two numbers to characterize your data
-4.   all of the above are correct
-5.   none of the above are correct
-6.   I do not know the answer
+1.  fail to show if the data is skewed
+2.  have several competing definitions
+3.  use only two numbers to characterize your data
+4.  all of the above are correct
+5.  none of the above are correct
+6.  I do not know the answer
 
 ::: notes
 Here is the repeat question about error bars
 :::
-

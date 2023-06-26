@@ -65,15 +65,15 @@ Here are more details about what you will see on hypothesis testing...
 
 A research paper computes a p-value of 0.45. How would you interpret this p-value?
 
-1.   Strong evidence for the null hypothesis
-2.   Strong evidence for the alternative hypothesis
-3.   Little or no evidence for the null hypothesis
-4.   Little or no evidence for the alternative hypothesis
-5.   More than one answer above is correct.
-6.   I do not know the answer.
+1.  Strong evidence for the null hypothesis
+2.  Strong evidence for the alternative hypothesis
+3.  Little or no evidence for the null hypothesis
+4.  Little or no evidence for the alternative hypothesis
+5.  More than one answer above is correct.
+6.  I do not know the answer.
 
 ::: notes
-Here's a quiz question that I proposed in an earlier presentation on p-values and confidence intervals. I wrote the responses without thinking, but then realized 
+Here's a quiz question that I proposed in an earlier presentation on p-values and confidence intervals. I wrote the responses without thinking, but then realized
 
 "This is an easy mistake to make."
 
@@ -84,12 +84,12 @@ and kept using this question. None of the answers listed above are correct, and 
 
 A research paper computes a confidence interval for a relative risk of 0.82 to 3.94. What does this confidence interval tell you.
 
-1.   The result is statistically significant and clinically important.
-2.   The result is not statistically significant, but is clinically important.
-3.   The result is statistically significant, but not clinically important.
-4.   The result is not statistically significant, and not clinically important.
-5.   The result is ambiguous.
-6.   I do not know the answer.
+1.  The result is statistically significant and clinically important.
+2.  The result is not statistically significant, but is clinically important.
+3.  The result is statistically significant, but not clinically important.
+4.  The result is not statistically significant, and not clinically important.
+5.  The result is ambiguous.
+6.  I do not know the answer.
 
 ::: notes
 Here's another question. It's actually a good question about a bad confidence interval. If you learn nothing else today, but you understand why this is a bad confidence interval, you will have learned a lot.
@@ -101,11 +101,11 @@ By the way, the calculation of this hypothetical confidence interval is fine. It
 
 A Bayesian data analysis can incorporate subjective opinions through the use of Bayes rule.
 
-1.   data shrinkage.
-2.   a prior distribution.
-3.   a posterior distribution.
-4.   p-values.
-5.   I do not know the answer.
+1.  data shrinkage.
+2.  a prior distribution.
+3.  a posterior distribution.
+4.  p-values.
+5.  I do not know the answer.
 
 ::: notes
 Here's a good question. Try to answer it. If you do not know the answer, it's okay to say 5.
@@ -115,12 +115,12 @@ Here's a good question. Try to answer it. If you do not know the answer, it's ok
 
 A random sample is one where
 
-1.   everyone in the population has the same chance of selection
-2.   selection is done haphazardly
-3.   treatment assignment is determined by a coin flip
-4.   I do not know the answer
+1.  everyone in the population has the same chance of selection
+2.  selection is done haphazardly
+3.  treatment assignment is determined by a coin flip
+4.  I do not know the answer
 
-:::notes
+::: notes
 One more question. It's okay to select #4.
 :::
 
@@ -211,10 +211,9 @@ There are a variety of responses here. The sample does not include home schooled
 
 -   Redfine your population
     -   Not all teenagers,
-        - but those attending public high schools.
-        
-::: notes
+        -   but those attending public high schools.
 
+::: notes
 :::
 
 ## What is a Type I error?
@@ -369,12 +368,12 @@ This is P(H). For simplicity, we multiplied each probability by 1000 and rounded
 
 A research paper computes a p-value of 0.45. How would you interpret this p-value?
 
-1.   Strong evidence for the null hypothesis
-2.   Strong evidence for the alternative hypothesis
-3.   Little or no evidence for the null hypothesis
-4.   Little or no evidence for the alternative hypothesis
-5.   More than one answer above is correct.
-6.   I do not know the answer.
+1.  Strong evidence for the null hypothesis
+2.  Strong evidence for the alternative hypothesis
+3.  Little or no evidence for the null hypothesis
+4.  Little or no evidence for the alternative hypothesis
+5.  More than one answer above is correct.
+6.  I do not know the answer.
 
 ::: notes
 Here's that bad quiz question again. Why are none of these answers correct?
@@ -388,12 +387,12 @@ Because a p-value is a measure of evidence against the null hypothesis. A large 
 
 A research paper computes a confidence interval for a relative risk of 0.82 to 3.94. What does this confidence interval tell you.
 
-1.   The result is statistically significant and clinically important.
-2.   The result is not statistically significant, but is clinically important.
-3.   The result is statistically significant, but not clinically important.
-4.   The result is not statistically significant, and not clinically important.
-5.   The result is ambiguous.
-6.   I do not know the answer.
+1.  The result is statistically significant and clinically important.
+2.  The result is not statistically significant, but is clinically important.
+3.  The result is statistically significant, but not clinically important.
+4.  The result is not statistically significant, and not clinically important.
+5.  The result is ambiguous.
+6.  I do not know the answer.
 
 ::: notes
 What does this confidence interval say about the research?
@@ -407,11 +406,11 @@ The result is ambiguous. You should be recoiling at this confidence interval bec
 
 A Bayesian data analysis can incorporate subjective opinions through the use of Bayes rule.
 
-1.   data shrinkage.
-2.   a prior distribution.
-3.   a posterior distribution.
-4.   p-values.
-5.   I do not know the answer.
+1.  data shrinkage.
+2.  a prior distribution.
+3.  a posterior distribution.
+4.  p-values.
+5.  I do not know the answer.
 
 ::: notes
 Here's a good question. See if you remember a key feature of Bayesian data analysis.
@@ -421,12 +420,12 @@ Here's a good question. See if you remember a key feature of Bayesian data analy
 
 A random sample is one where
 
-1.   everyone in the population has the same chance of selection
-2.   selection is done haphazardly
-3.   treatment assignment is determined by a coin flip
-4.   I do not know the answer
+1.  everyone in the population has the same chance of selection
+2.  selection is done haphazardly
+3.  treatment assignment is determined by a coin flip
+4.  I do not know the answer
 
-:::notes
+::: notes
 One more question, this time about sampling.
 :::
 
