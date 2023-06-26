@@ -1307,7 +1307,21 @@ ggsave("../images/three-s-histogram.png")
 This shows the bell shaped curve with the data within two standard deviations of the mean highlighted in gray. Roughly 95% of the data lies within one standard deviation of the mean. This is only true if the variation follows a bell shaped curve.
 :::
 
-## Central Limit Theorem
+## Behavior of the mean versus an individual
+-   Central Limit Theorem
+    -   Sample mean is approximately normal
+    -   Even if individual observations are not
+-   Standard error: $S/\sqrt{n}$
+
+::: notes
+The histograms above show the behavior of individuals in a sample. The mean of a sample behaves differently.
+
+For almost all settings, the sample mean follows a bell shaped curve. The extremes of bimodality, skewness, and other types of non-normality tend to average out across a sample.
+
+The mean is also less variable than an individual observation, by a factor equal to the square root of the sample size.
+
+What does this mean from a practical sense? It means that averages are much more predictable than individuals. The time that you spend getting a colonoscopy done can vary quite a bit. 
+:::
 
 ## 
 
@@ -1397,6 +1411,30 @@ Number of coffees during night shift, mean  1.4 ± 1.1
 Let me pause here for a second. Are there any questions?
 :::
 
+##
+
+![Entries in the electronic health record by job title](../images/ehr-entries.png){#ehr-entries fig-align="left"}
+
+::: notes
+Interpret this bar chart.
+:::
+
+##
+
+![Demographic distribution of voters and non-voters in Texas](../images/texas-voters.png){#fig-texas-votes fig-align="left"}
+
+::: notes
+Interpret this bar chart.
+:::
+
+##
+
+![Fastest computers by country](../images/fastest-computers.png){#fig-fastest-computers fig-align="left"}
+
+::: notes
+Interpret this bar chart.
+:::
+
 ## Visualization
 
 -   Categorical data
@@ -1414,8 +1452,6 @@ There are many ways to visualize data. Your choices depend on the type of data y
 
 For continuous data, you might see bar charts (with or without error bars), boxplots, or histograms. All of these summarize the data, but often plotting all the individual data values is your best choice.
 :::
-
-## 
 
 ## 
 
@@ -1503,28 +1539,94 @@ Note
 Note
 :::
 
+## 
 
-## Histogram
+![Annotated boxplot](../images/annotated-boxplot.jpg){#fig-annotated-boxplot fig-align="left"}
 
-## Plot all the data
+::: notes
+Note
+:::
 
-## Rug plot
+## 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![Histogram of ages of passengers that died](../images/histogram-age-no.png){#fig-histogram-age-no fig-align="left"}
+:::
+
+::: {.column width="50%"}
+![Histogram of ages of passengers that survived](../images/histogram-age-yes.png){#fig-histogram-age-yes fig-align="left"}
+:::
+
+::::
+
+::: notes
+Here are two histograms. They are great for looking at individual patterns, but do not allow for an easy comparison between two groups.
+:::
+
+## 
+
+![SCatter plot of age vs survived](../images/scatter-survived-age.png){#fig-scatter-survived-age fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Scatter plot of age vs survived with jittering](../images/jittered.png){#fig-jittered fig-align="left"}
+
+::: notes
+Note
+:::
+
+## 
+
+![Article feedback by type of article](../images/article-feedback.png){#fig-jittered fig-align="left"}
+
+::: notes
+Comment on these boxplots
+
+Wikipedia
+:::
+
+## 
+
+![Emergency care course test scores](../images/emergency-care-course.jpg){#fig-emergency-care-course fig-align="left"}
+
+::: notes
+Comment on these boxplots
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9901771/
+
+:::
+
+
+## 
+
+![Self reported versus observed adherence](../images/self-reported-adherence.jpg){#fig-self-reported-adherence fig-align="left"}
+
+::: notes
+Comment on these boxplots
+
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9310710/
+:::
+
+
 
 ## Which visualization to choose?
 
-## Tables versus graphs
+-   Categorical data
+    -   Use a table
+    -   Minimize distance of key comparisons
+-   Continuous data
+    -   Small datasets: plot all the data
+    -   Large datasets: boxplots
 
-## How should you display continuous data
-
-## How should you display categorical data
-
-## How do you illustrate trends and patterns
-
-## What are some common mistakes in the choice of colors
-
-http://www.pmean.com/posts/misuse-of-gradient/
-
-http://blog.pmean.com/rainbows/
+::: notes
+Note
+:::
 
 ## 
 
