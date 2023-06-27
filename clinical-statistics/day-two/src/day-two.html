@@ -1303,14 +1303,7 @@ display:block!important;
 </section>
 <section id="bayesian-question" class="slide level2">
 <h2>Bayesian question</h2>
-<p>A Bayesian data analysis can incorporate subjective opinions through the use of Bayes rule.</p>
-<ol type="1">
-<li>data shrinkage.</li>
-<li>a prior distribution.</li>
-<li>a posterior distribution.</li>
-<li>p-values.</li>
-<li>I do not know the answer.</li>
-</ol>
+<p>A Bayesian data analysis can incorporate subjective opinions through the use 1. data shrinkage. 2. a prior distribution. 3. a posterior distribution. 4. p-values. 5. I do not know the answer.</p>
 <aside class="notes">
 <p>Here’s a good question. Try to answer it. If you do not know the answer, it’s okay to say 5.</p>
 <style type="text/css">
@@ -1364,7 +1357,7 @@ display:block!important;
 <li>What to do when no research hypothesis</li>
 </ul>
 <aside class="notes">
-<p>P-values are a fundamental tools used in most research papers, but they are coming under increasing attack in the research community. P-values are an inferential tool and require a research hypothesis. data analyses. They are possibly the most commonly reported statistics in the medical literature. Two alternatives are confidence intervals and Bayesian data analysis.</p>
+<p>P-values are a fundamental tools used in most research papers, but they are coming under increasing attack in the research community. P-values are an inferential tool and require a research hypothesis. Two alternatives are confidence intervals and Bayesian data analysis.</p>
 <p>Much research is not inferential and does not have a formal research hypothesis. It is a mistake to force these studies into a hypothesis testing framework. I will cover what you should do when you do not have a formal research hypothesis.</p>
 <p>First, you need to remember some basic definitions from your Statistics 101 class.</p>
 <style type="text/css">
@@ -1382,8 +1375,7 @@ display:block!important;
 <section id="what-is-a-population" class="slide level2">
 <h2>What is a population?</h2>
 <ul>
-<li>Population: the group you wish to generalize your research results to.</li>
-<li>Usually people, defined in terms of
+<li>Population: a group that you wish to generalize your research results to. it is defined in terms of
 <ul>
 <li>Demography,</li>
 <li>Geography,</li>
@@ -1489,7 +1481,321 @@ display:block!important;
 </ul></li>
 </ul>
 <aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-a-parameter" class="slide level2">
+<h2>What is a parameter?</h2>
+<ul>
+<li>A parameter is a number computed from a sample.
+<ul>
+<li>Examples
+<ul>
+<li>Average health care cost associated with the 29,637 child with one or more ER visits.</li>
+<li>Proportion of these 29,637 children who died in their first year of life.</li>
+</ul></li>
+<li>Usually unknown</li>
+<li>Designated by Greek letters (<span class="math inline">\(\mu\)</span>, <span class="math inline">\(\pi\)</span>)</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-a-statistic" class="slide level2">
+<h2>What is a statistic?</h2>
+<ul>
+<li>A statistic is a number computed from a sample
+<ul>
+<li>Examples
+<ul>
+<li>Average health care cost associated with 100 children sampled from a local hospital.</li>
+<li>Proportion of these 100 children who died in their first year of life.</li>
+</ul></li>
+<li>Usually known</li>
+<li>Designated by non-Greek letters (<span class="math inline">\(\bar{X}\)</span>, <span class="math inline">\(\hat{p}\)</span>).</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-statistics" class="slide level2">
+<h2>What is Statistics?</h2>
+<ul>
+<li>Statistics
+<ul>
+<li>The use of information from a sample (a statistic) to make inferences about a population (a parameter)
+<ul>
+<li>Often a comparison of two populations</li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-the-null-hypothesis" class="slide level2">
+<h2>What is the null hypothesis?</h2>
+<ul>
+<li>The null hypothesis (<span class="math inline">\(H_0\)</span>) is a statement about a parameter.</li>
+<li>It implies no difference, no change, or no relationship.
+<ul>
+<li>Examples
+<ul>
+<li><span class="math inline">\(H_0:\ \mu_1 - \mu_2 = 0\)</span></li>
+<li><span class="math inline">\(H_0:\ \pi_1 - \pi_2 = 0\)</span></li>
+<li><span class="math inline">\(H_0:\ \rho = 0\)</span></li>
+</ul></li>
+</ul></li>
+<li>The alternative hypothesis (<span class="math inline">\(H_1\)</span> or <span class="math inline">\(H_a\)</span>) implies a difference, change, or relationship.
+<ul>
+<li>Examples
+<ul>
+<li><span class="math inline">\(H_1:\ \mu_1 - \mu_2 \ne 0\)</span></li>
+<li><span class="math inline">\(H_1:\ \pi_1 - \pi_2 \ne 0\)</span></li>
+<li><span class="math inline">\(H_1:\ \rho \ne 0\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-the-null-hypothesis-1" class="slide level2">
+<h2>What is the null hypothesis?</h2>
+<ul>
+<li>The null hypothesis (<span class="math inline">\(H_0\)</span>) is a statement about a parameter.</li>
+<li>It implies no difference, no change, or no relationship.
+<ul>
+<li>Examples</li>
+</ul></li>
+<li><span class="math inline">\(\beta\)</span> = P[Type II error]</li>
+<li>Power = <span class="math inline">\(1-\beta\)</span></li>
+</ul>
+<div class="notes">
 
+<p>A Type II error is accepting the null hypothesis when the null hypothesis is false. You should always remember that it is impossible to prove a negative. Some statisticians will emphasize this fact by using the phrase “fail to reject the null hypothesis” in place of “accept the null hypothesis.” The former phrase always strikes me as semantic overkill.</p>
+<p>Many studies have small sample sizes that make it difficult to reject the null hypothesis, even when there is a big change in the data. In these situations, a Type II error might be a possible explanation for the negative study results.</p>
+<p>Consider a new drug that we will put on the market if we can show that it is better than a placebo. In this context, H0 would represent the hypothesis that the average improvement (or perhaps the probability of improvement) among all patients taking the new drug is equal to the average improvement (probability of improvement) among all patients taking the placebo. A Type II error would be keeping an effective drug off the market.</p>
+<p>It bears repeating that population parameters are impossible to compute. So you will never know for certain if you have made a Type I error.</p>
+<p>Beta is the probability of a Type II error. Beta is a known quantity. Typically researchers try to keep beta small. 10% is a typical value, though in some settings, a Type II error rate as large as 20% could be tolerated.</p>
+<p>Power is defined as 1-beta. I will talk more about power in a little bit.</p>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</div></section>
+<section id="what-is-the-alternative-hypothesis" class="slide level2">
+<h2>What is the alternative hypothesis?</h2>
+<ul>
+<li>The alternative hypothesis (<span class="math inline">\(H_1\)</span> or <span class="math inline">\(H_a\)</span>) implies a difference, change, or relationship.
+<ul>
+<li>Examples
+<ul>
+<li><span class="math inline">\(H_1:\ \mu_1 - \mu_2 \ne 0\)</span></li>
+<li><span class="math inline">\(H_0:\ \pi_1 - \pi_2 \ne 0\)</span></li>
+<li><span class="math inline">\(H_0:\ \rho \ne 0\)</span></li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="hypothesis-in-english-instead-of-greek" class="slide level2">
+<h2>Hypothesis in English instead of Greek</h2>
+<ul>
+<li>Only statisticians like Greek letters
+<ul>
+<li>Translate to simple text</li>
+<li>For two group comparisons
+<ul>
+<li>Safer, more effective</li>
+</ul></li>
+<li>For regression models
+<ul>
+<li>Trend, association</li>
+</ul></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>As a researcher, you should always think about your hypothesis in terms of population parameters, but your writing should use text. Translate the Greek letters to English.</p>
+<p>If you have a hypothesis that compares two groups, look for comparative words like “safer” or “more effective”. If your hypothesis involves some type of regression model, you should consider terms like “trend” or “association”.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="example-of-text-hypotheses-1-of-1" class="slide level2">
+<h2>Example of text hypotheses (1 of 1)</h2>
+<ul>
+<li>“… the objective of this 78-week randomised, placebo-controlled study was to determine whether treatment with nilvadipine sustained-release 8 mg, once a day, was effective and safe in slowing the rate of cognitive decline in patients with mild to moderate Alzheimer disease.”
+<ul>
+<li>Lawlor B, Segurado R, Kennelly S, et al. Nilvadipine in mild to moderate Alzheimer disease: A randomised controlled trial. PLoS Med. 2018; 15(9): e1002660. DOI: 10.1371/journal.pmed.1002660</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Here’s an example of a two group comparison. One group gets nilvadipine and the other group gets a placebo. Safety was measured as the proportion of patients who experienced an adverse event. The researchers also measured the proportion of patients who experienced a serious adverse event. So the Greek hypothesis would involve pi’s.</p>
+<p>Effectiveness was measured using the Alzheimer’s Disease Assessment Scale Cognitive Subscale-12 and the Clinical Dementia Rating Scale sum of boxes. Both of these outcome measurements are continuous, so the Greek hypothesis would involve mu’s.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="example-of-text-hypotheses-2-of-2" class="slide level2">
+<h2>Example of text hypotheses (2 of 2)</h2>
+<ul>
+<li>“… we investigated trends in BCC incidence over a span of 20 years and the associations between incident BCC and risk factors in a total population of 140,171 participants from 2 large US-based cohort studies: women in the Nurses’ Health Study (NHS; 1986–2006) and men in the Health Professionals’ Follow-up Study (HPFS; 1988–2006).”
+<ul>
+<li>Wu S, Han J, Li WQ, Li T, Qureshi AA. Basal-cell carcinoma incidence and associated risk factors in U.S. women and men. Am J Epidemiol. 2013; 178(6): 890–897. DOI: 10.1093/aje/kwt073</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>This study used a regression model, a Cox regression model, to study trends and associations, so the Greek hypotheses would involve beta’s.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-a-decision-rule" class="slide level2">
+<h2>What is a decision rule?</h2>
+<ul>
+<li>Use of sample information to decide hypothesis.</li>
+<li>Examples - <span class="math inline">\(H_0:\ \mu_1 - \mu_2 = 0\)</span> - <span class="math inline">\(H_1:\ \mu_1 - \mu_2 \ne 0\)</span> - Accept <span class="math inline">\(H_0\)</span> if (${X}_1-{X}_2) / se is close to zero.</li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-a-decision-rule-1" class="slide level2">
+<h2>What is a decision rule?</h2>
+<ul>
+<li>Use of sample information to decide hypothesis.</li>
+<li>Examples - <span class="math inline">\(H_0:\ \pi_1 - \pi_2 = 0\)</span> - <span class="math inline">\(H_1:\ \pi_1 - \pi_2 \ne 0\)</span> - Accept <span class="math inline">\(H_0\)</span> if ($_1-_2) / se is close to zero.</li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="what-is-a-decision-rule-2" class="slide level2">
+<h2>What is a decision rule?</h2>
+<ul>
+<li>Use of sample information to decide hypothesis.</li>
+<li>Examples - <span class="math inline">\(H_0:\ \rho = 0\)</span> - <span class="math inline">\(H_1:\ \rho \ne 0\)</span> - Accept <span class="math inline">\(H_0\)</span> if r / se is close to zero.</li>
+</ul>
+<aside class="notes">
+<p>Add note</p>
 <style type="text/css">
 span.MJX_Assistive_MathML {
 position:absolute!important;
@@ -1505,20 +1811,60 @@ display:block!important;
 <section id="what-is-a-type-i-error" class="slide level2">
 <h2>What is a Type I error?</h2>
 <ul>
-<li>A Type I error is rejecting the null hypothesis when the null hypothesis is true (false positive).
+<li>A Type I error is rejecting the null hypothesis when the null hypothesis is true
 <ul>
+<li>(false positive).</li>
 <li>Example involving drug approval: a Type I error is allowing an ineffective drug onto the market.</li>
 </ul></li>
+<li><span class="math inline">\(\alpha\)</span> = P[Type I error]</li>
 </ul>
+<aside class="notes">
+<p>In your research, you specify a null hypothesis (typically labeled H0) and an alternative hypothesis (typically labeled Ha, or sometimes H1). By tradition, the null hypothesis corresponds to no change. When you are using Statistics to decide between these two hypothesis, you have to allow for the possibility of error. Actually, if you are using any other procedure, you should still allow for the possibility of error, but we statisticians are the only ones honest enough to admit this.</p>
+<p>A Type I error is rejecting the null hypothesis when the null hypothesis is true.</p>
+<p>Consider a new drug that we will put on the market if we can show that it is better than a placebo. In this context, H0 would represent the hypothesis that the average improvement (or perhaps the probability of improvement) among all patients taking the new drug is equal to the average improvement (probability of improvement) among all patients taking the placebo. A Type I error would be allowing an ineffective drug onto the market.</p>
+<p>Remember that the hypotheses involve population parameters. Population parameters are impossible to compute. So you can only talk about Type I errors in an abstract sense. You will never know for certain if you have made a Type I error.</p>
+<p>Alpha is the probability of a Type I error, and alpha is a value that you can compute. In most studies, researchers work hard to keep the probability of a Type I error low, typically at 5%.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="what-is-a-type-ii-error" class="slide level2">
 <h2>What is a Type II error?</h2>
 <ul>
 <li>A Type II error is accepting the null hypothesis when the null hypothesis is false.
 <ul>
+<li>False negative result</li>
 <li>An example involving drug approval: a Type II error is keeping an effective drug off of the market.</li>
 </ul></li>
+<li><span class="math inline">\(\beta\)</span> = P[Type II error]</li>
+<li>Power = <span class="math inline">\(1-\beta\)</span></li>
 </ul>
+<aside class="notes">
+<p>A Type II error is accepting the null hypothesis when the null hypothesis is false. You should always remember that it is impossible to prove a negative. Some statisticians will emphasize this fact by using the phrase “fail to reject the null hypothesis” in place of “accept the null hypothesis.” The former phrase always strikes me as semantic overkill.</p>
+<p>Many studies have small sample sizes that make it difficult to reject the null hypothesis, even when there is a big change in the data. In these situations, a Type II error might be a possible explanation for the negative study results.</p>
+<p>Consider a new drug that we will put on the market if we can show that it is better than a placebo. In this context, H0 would represent the hypothesis that the average improvement (or perhaps the probability of improvement) among all patients taking the new drug is equal to the average improvement (probability of improvement) among all patients taking the placebo. A Type II error would be keeping an effective drug off the market.</p>
+<p>It bears repeating that population parameters are impossible to compute. So you will never know for certain if you have made a Type I error.</p>
+<p>Beta is the probability of a Type II error. Beta is a known quantity. Typically researchers try to keep beta small. 10% is a typical value, though in some settings, a Type II error rate as large as 20% could be tolerated.</p>
+<p>Power is defined as 1-beta. I will talk more about power in a little bit.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="what-is-a-p-value" class="slide level2">
 <h2>What is a p-value?</h2>
@@ -1527,9 +1873,35 @@ display:block!important;
 <p>The smaller the p-value, the more evidence we have against H0.</p>
 <p>The p-value is also a measure of how likely we are to get a certain sample result or a result “more extreme,” assuming H0 is true.</p>
 <p>The type of hypothesis (right tailed, left tailed or two tailed) will determine what “more extreme” means.</p>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="what-does-a-p-value-tell-you" class="slide level2">
 <h2>What does a p-value tell you?</h2>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="what-is-a-confidence-interval" class="slide level2">
 <h2>What is a confidence interval?</h2>
@@ -1539,12 +1911,64 @@ display:block!important;
 <p>The confidence level is related to the alpha level (probability of a Type I error).</p>
 <p>It also has a long range sampling interpretation.</p>
 <p>If you repeatedly sampled from the same population, then 95% (or 90% or 99%) of the confidence intervals produced would contain the true value in the population.</p>
+<aside class="notes">
+<p>Add note</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
+</section>
+<section id="passive-smoking-controversy" class="slide level2">
+<h2>Passive smoking controversy</h2>
+<ul>
+<li>EPA meta-analysis of passive smoking
+<ul>
+<li>Criticized for using a one-sided hypothesis</li>
+<li>Samet JM, Burke TA. Turning science into junk: the tobacco industry and passive smoking. Am J Public Health. 2001;91(11):1742–1744.</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>Available in <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1446866/">html format</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1446866/pdf/0911742.pdf">PDF format</a>.</p>
+<p>Consider a study of the effects of second-hand smoke. These studies always use directional alternatives. From what we know about active cigarette smoking is that it increases the risk of cancer and cardiovascular disease. So there is no reason to expect that passive smoke exposure should be any different than active smoking. Maybe it is less toxic, because of dilution and because the smoking coming off a cigarette from one end is different than the smoke coming off the cigarette from the other end. Fair enough, but there is not reason to believe that things are so different that all of a sudden the smoke becomes protective.</p>
+<p>Since there is no scientific basis for a protective effect of passive smoking, it makes sense to test that passive smoking has no effect versus it having an increase in bad outcomes compared to the control group. So your null hypothesis is “not harmful” and your alternative is “harmful”. The beneficial hypothesis is lumped into the null hypothesis, but no one would dare claim that passive smoking was protective.</p>
+<p>Actually, the tobacco companies did complain that the use of a directional alternative violated the norms of science. They won in a court battle in North Carolina, but lost on appeal.</p>
+<p>As another aside, I was involved with prayer study. We planned this study using a one-sided hypothesis (remote prayer has a positive effect on health). The Institutional Review Board suggested changing this to a two-sided hypothesis (remote prayer has either a positive or a negative effect on health). Thankfully, we did not observe an outcome in the opposite tail as that would have been very difficult to explain.</p>
+<style type="text/css">
+span.MJX_Assistive_MathML {
+position:absolute!important;
+clip: rect(1px, 1px, 1px, 1px);
+padding: 1px 0 0 0!important;
+border: 0!important;
+height: 1px!important;
+width: 1px!important;
+overflow: hidden!important;
+display:block!important;
+}</style></aside>
 </section>
 <section id="why-you-might-prefer-a-confidence-interval" class="slide level2">
 <h2>Why you might prefer a confidence interval</h2>
 </section>
 <section id="what-sample-size-do-you-need" class="slide level2">
 <h2>What sample size do you need?</h2>
+</section>
+<section id="rule-of-50" class="slide level2">
+<h2>Rule of 50</h2>
+</section>
+<section id="rule-of-16" class="slide level2">
+<h2>Rule of 16</h2>
+</section>
+<section id="formal-software-for-sample-size-calculations" class="slide level2">
+<h2>Formal software for sample size calculations</h2>
+</section>
+<section id="criticisms-of-p-values" class="slide level2">
+<h2>Criticisms of p-values</h2>
 </section>
 <section id="what-should-you-do-if-you-do-not-have-a-hypothesis-to-test" class="slide level2">
 <h2>What should you do if you do not have a hypothesis to test?</h2>
