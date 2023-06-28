@@ -49,6 +49,7 @@ Here are more details about what you will see on hypothesis testing...
 
 ## Day two topics (continued)
 
+-   You may see this on day 3 instead.
 -   Sampling
     -   What do you gain with a random sample
     -   When might you prefer a non-random sample
@@ -207,10 +208,10 @@ Add note
 
 -   A parameter is a number computed from a sample.
     -   Examples
-        -   Average health care cost associated with the 29,637 child with one or more ER visits.
+        -   Average health care cost associated with the 29,637 children
         -   Proportion of these 29,637 children who died in their first year of life.
-    -   Usually unknown
-    -   Designated by Greek letters ($\mu$, $\pi$, $rho$)
+        -   Correlation between gestational age and number of ER visits of these 29,637 children.
+    -   Designated by Greek letters ($\mu$, $\pi$, $\rho$)
 
 ::: notes
 Add note
@@ -220,9 +221,9 @@ Add note
 
 -   A statistic is a number computed from a sample
     -   Examples
-        -   Average health care cost associated with 100 children sampled from a local hospital.
+        -   Average health care cost associated with 100 children.
         -   Proportion of these 100 children who died in their first year of life.
-    -   Usually known
+        -   Correlation between genstational age and number of ER visits of these 100 children.
     -   Designated by non-Greek letters ($\bar{X}$, $\hat{p}$, r).
 
 ::: notes
@@ -279,7 +280,18 @@ As a researcher, you should always think about your hypothesis in terms of popul
 If you have a hypothesis that compares two groups, look for comparative words like "safer" or "more effective". If your hypothesis involves some type of regression model, you should consider terms like "trend" or "association".
 :::
 
-## Example of text hypotheses (1 of 1)
+## Use PICO
+
+-   P = patient population
+-   I = intervention
+-   C = control
+-   O = outcome
+
+::: notes
+Add note
+:::
+
+## Example of text hypotheses (1/2)
 
 -   "... the objective of this 78-week randomised, placebo-controlled study was to determine whether treatment with nilvadipine sustained-release 8 mg, once a day, was effective and safe in slowing the rate of cognitive decline in patients with mild to moderate Alzheimer disease."
     -   Lawlor B, Segurado R, Kennelly S, et al. Nilvadipine in mild to moderate Alzheimer disease: A randomised controlled trial. PLoS Med. 2018; 15(9): e1002660. DOI: 10.1371/journal.pmed.1002660
@@ -290,7 +302,18 @@ Here's an example of a two group comparison. One group gets nilvadipine and the 
 Effectiveness was measured using the Alzheimer's Disease Assessment Scale Cognitive Subscale-12 and the Clinical Dementia Rating Scale sum of boxes. Both of these outcome measurements are continuous, so the Greek hypothesis would involve mu's.
 :::
 
-## Example of text hypotheses (2 of 2)
+## PICO for this study
+
+-   P = patients with mild to moderate Alzheimer disease
+-   I = Nilvadine
+-   C = placebo
+-   O = cognitive function
+
+::: notes
+Add note
+:::
+
+## Example of text hypotheses (2/2)
 
 -   "... we investigated trends in BCC incidence over a span of 20 years and the associations between incident BCC and risk factors in a total population of 140,171 participants from 2 large US-based cohort studies: women in the Nurses' Health Study (NHS; 1986--2006) and men in the Health Professionals' Follow-up Study (HPFS; 1988--2006)."
     -   Wu S, Han J, Li WQ, Li T, Qureshi AA. Basal-cell carcinoma incidence and associated risk factors in U.S. women and men. Am J Epidemiol. 2013; 178(6): 890--897. DOI: 10.1093/aje/kwt073
@@ -299,12 +322,12 @@ Effectiveness was measured using the Alzheimer's Disease Assessment Scale Cognit
 This study used a regression model, a Cox regression model, to study trends and associations, so the Greek hypotheses would involve beta's.
 :::
 
-## Use PICO
+## PICO for this study
 
--   P = patient population
--   I = intervention
--   C = control
--   O = outcome
+-   P = female nurses/male health professionals
+-   I = various risk factors
+-   C = absence of various risk factors
+-   O = presence/absence of BCC
 
 ::: notes
 Add note
@@ -357,7 +380,7 @@ Add note
 
 -   Example
     -   $H_0:\ \pi_1 - \pi_2 = 0$
-    -   $H_1:\ \pi_1 - \pi_2 \ne 0$ 
+    -   $H_1:\ \pi_1 - \pi_2 \ne 0$
     -   t = ($\hat{p}_1-\hat{p}_2$) / se
     -   Accept $H_0$ if t is close to zero.
 
@@ -368,7 +391,7 @@ Add note
 ## What is a decision rule? (3/3)
 
 -   Example
-    -   $H_0:\ \rho = 0$ 
+    -   $H_0:\ \rho = 0$
     -   $H_1:\ \rho \ne 0$
     -   t = r / se
     -   Accept $H_0$ if t is close to zero.
@@ -382,7 +405,7 @@ Add note
 -   A Type I error is rejecting the null hypothesis when the null hypothesis is true
     -   False positive
     -   Example involving drug approval: a Type I error is allowing an ineffective drug onto the market.
--   $\alpha$ = P[Type I error]
+-   $\alpha$ = P\[Type I error\]
 
 ::: notes
 In your research, you specify a null hypothesis (typically labeled H0) and an alternative hypothesis (typically labeled Ha, or sometimes H1). By tradition, the null hypothesis corresponds to no change. When you are using Statistics to decide between these two hypothesis, you have to allow for the possibility of error. Actually, if you are using any other procedure, you should still allow for the possibility of error, but we statisticians are the only ones honest enough to admit this.
@@ -400,8 +423,9 @@ Alpha is the probability of a Type I error, and alpha is a value that you can co
 
 -   A Type II error is accepting the null hypothesis when the null hypothesis is false.
     -   False negative result
+    -   Usually computed at MCD
     -   An example involving drug approval: a Type II error is keeping an effective drug off of the market.
--   $\beta$ = P[Type II error]
+-   $\beta$ = P\[Type II error\]
 -   Power = $1-\beta$
 
 ::: notes
@@ -461,10 +485,10 @@ If the p-value is small, you have lots of evidence against the null hypothesis. 
 ## What the p-value is not (1/2)
 
 -   A p-value is NOT the probability that the null hypothesis is true.
-    -   P[t or more extreme | null] is different than
-    -   P[null | t or more extreme]
-        -   P[null] is nonsensical
-        -   $\mu$, $\pi$, or $\rho$ are unknown constants
+    -   P\[t or more extreme \| null\] is different than
+    -   P\[null \| t or more extreme\]
+        -   P\[null\] is nonsensical
+        -   $\mu$, $\pi$, or $\rho$ are unknown constants (no sampling error)
 
 ::: notes
 The p-value is a conditional probability, and you always need to be careful about conditional probabilities. It is a probability about a sample result given an assumption about the population result. It is not a probability about a population result given the sample result. There are two reasons for this.
@@ -472,6 +496,8 @@ The p-value is a conditional probability, and you always need to be careful abou
 First, you can't reorder a conditional probability. The probability of A given B is almost never the same as the probability of B given A. The example I give for this is the probability of being happy given that you are rich. That's a pretty high number, I hope you'll agree. There are a few rich people who lead miserable lives, but from everything I've seen, most rich people are pretty darn happy. The reverse of this is the probability of being rich given that you are happy. That number is much smaller. Because although I believe that money can buy happiness, a lot of other things can also buy happiness just as well. It's not quite as easy to find happiness if you're poor, but somehow, a lot of poor people find a way to be happy anyway.
 
 A second reason that you can't reverse the order is that you cannot make a probability statement about population parameters. They are numbers computed from the entire population, and are fixed values. You cannot make a probability statement about something that has no sampling error.
+
+Only numbers computed from a sample (i.e., statistics) have sampling error.
 :::
 
 ## What the p-value is not (2/2)
@@ -525,40 +551,40 @@ In the first panel, a woman runs up to a man and shouts: Jelly beans cause acne!
 
 The man replies : Scientists! Investigate!
 
-In the second panel, one scientist, holding a clipboard announces: We found no link between jelly beans and acne (p > 0.05).
+In the second panel, one scientist, holding a clipboard announces: We found no link between jelly beans and acne (p \> 0.05).
 
 In the third panel, the woman says: I hear it's only a certain color that causes it.
 
-In a bunch of small panels, the scientist with a clipboard reports: We found no link between purple jelly beans and acne (p > 0.05).
+In a bunch of small panels, the scientist with a clipboard reports: We found no link between purple jelly beans and acne (p \> 0.05).
 
-We found no link between brown jelly beans and acne (p > 0.05).
+We found no link between brown jelly beans and acne (p \> 0.05).
 
-We found no link between pink jelly beans and acne (p > 0.05).
+We found no link between pink jelly beans and acne (p \> 0.05).
 
 The same for blue, teal, salmon, red, and so forth. And then...
 
-We found a link between green jelly beans and acne (p < 0.05). An off-screen voice goes: Whoa!
+We found a link between green jelly beans and acne (p \< 0.05). An off-screen voice goes: Whoa!
 
 The next six panels show
 
-We found no link between mauve jelly beans and acne (p > 0.05).
+We found no link between mauve jelly beans and acne (p \> 0.05).
 
-We found no link between beige jelly beans and acne (p > 0.05).
+We found no link between beige jelly beans and acne (p \> 0.05).
 
-We found no link between lilac jelly beans and acne (p > 0.05).
+We found no link between lilac jelly beans and acne (p \> 0.05).
 
-We found no link between black jelly beans and acne (p > 0.05).
+We found no link between black jelly beans and acne (p \> 0.05).
 
-We found no link between peach jelly beans and acne (p > 0.05).
+We found no link between peach jelly beans and acne (p \> 0.05).
 
-We found no link between orange jelly beans and acne (p > 0.05).
+We found no link between orange jelly beans and acne (p \> 0.05).
 
 At the bottom is a newspaper with the headline: Green Jelly Beans Linked To Acne! 95% Confidence. Only 5% chance of coincidence!
 
-If you are interested in a transcript and a detailed explanation, https://www.explainxkcd.com/wiki/index.php/882:_Significant
+If you are interested in a transcript and a detailed explanation, https://www.explainxkcd.com/wiki/index.php/882:\_Significant
 :::
 
-##  What is p-hacking?
+## What is p-hacking?
 
 -   Abuse of the hypothesis testing framework.
     -   Run multiple tests on the same outcome
@@ -620,7 +646,7 @@ If you repeatedly sampled from the same population, then 95% (or 90% or 99%) of 
 
 -   Homeopathic treatment of swelling after oral surgery
     -   95% CI: -5.5 to 7.5 mm
-    -   Lokken P, Straumsheim PA, Tveiten D, Skjelbred P, Borchgrevink CF. Effect of homoeopathy on pain and other events after acute trauma: placebo controlled trial with bilateral oral surgery BMJ. 1995;310(6992):1439-1442.   
+    -   Lokken P, Straumsheim PA, Tveiten D, Skjelbred P, Borchgrevink CF. Effect of homoeopathy on pain and other events after acute trauma: placebo controlled trial with bilateral oral surgery BMJ. 1995;310(6992):1439-1442.
 
 ::: notes
 http://www.bmj.com/content/310/6992/1439.full
@@ -723,7 +749,10 @@ Let's talk about one more case. I don't have a picture, but imagine a confidence
 
 -   Provides same information as p-value,
     -   Clinical importance
-    
+    -   Distinguish between
+        -   definitive negative result, or
+        -   more research is needed
+
 ::: notes
 Add note
 :::
@@ -732,7 +761,7 @@ Add note
 
 -   Sackett's formula
 -   Rules of thumb
--   Confidence interval width  
+-   Confidence interval width\
 -   Power calculations
 -   Post hoc power - never!
 -   Effect sizes - never!
@@ -743,15 +772,15 @@ I want to start the discussion of sample size with a formula proposed by David S
 Then I wanted to present two useful rules of thumb, formal calculations involving confidence intervals and power. I also want to warn you against two very bad approaches, post hoc power and effect sizes.
 :::
 
-##
+## 
 
-![Sackett 2001, PMID: ](../images/sackett-2001.png){#fig-sackett-2001 fig-align="left"}
+![Sackett 2001, PMID:](../images/sackett-2001.png){#fig-sackett-2001 fig-align="left"}
 
 ::: notes
 Add note
 :::
 
-##
+## 
 
 ![Formula found in Sackett 2001](../images/sackett-2001-formula.png){#fig-sackett-2001-formula fig-align="left"}
 
@@ -766,7 +795,7 @@ Add note
     -   Total sample size is irrelevant
     -   Strive for 25/50 **events** in each group
 -   Rule of 16
-    -   $ES = (\mu_1-\mu_2)/\sigma$
+    -   $ES = MCD / \sigma$
     -   $n = 16 / ES^2$
 
 ::: notes
@@ -779,11 +808,11 @@ No one every got thrown in jail for violating a rule of thumb. But when you do t
 The other rule, called the rule of 16, is useful for continuous outcomes. If you believe that a clinically important difference is a certain size, and that size is x% of a standard deviation, then you need to have 16/x-squared patients in each group. So if you believe that the clinically important difference is half a standard deviation, divide 16 by 0.5 squared to get 64 patients per group. If the clinically important difference is only one tenth of a standard deviation, watch out. You need to collect 16 divided by 0.1 squared or 1600 patients per group.
 :::
 
-## Confidence interval width  
+## Confidence interval width
 
 -   How narrow do you want you confidence interval?
     -   Algebraic solution
-        -   $\pm t_{0.975}SE=\pm 15$
+        -   $\pm t_{0.975}SE=\pm MCD$
         -   $SE=S_p \sqrt{1/n1+1/n2}$
         -   Solve for n1 and n2
         -   Usually assume n1 = n2
@@ -791,13 +820,16 @@ The other rule, called the rule of 16, is useful for continuous outcomes. If you
 
 ::: notes
 You can also justify your sample size by specifying how narrow you'd like your confidence intervals to be. This is especially useful in settings where there is no formal research hypothesis. The calculations here are a bit tedious, but manageable.
+
+If you are not good with algebra, just try computing confidence intervals for various sample sizes until you stumble onto one that you like: not too wide and not too narrow.
 :::
 
 ## Power calculations
 
--   Need to specify $D=\mu_1-\mu_2$
--   Power = $P[Reject H_0\ |\ D]=0.9$
--   = $P[\bar{X}_1-\bar{X}_2 > t_{0.975} SE\ |\ D]=0.9$
+-   Need to specify MCD
+-   Power = $P[Reject H_0\ |\ MCD]=0.9$
+-   = $P[\bar{X}_1-\bar{X}_2 > t_{0.975} SE\ |\ MCD]=0.9$
+    -   Solve for n1 and n2.
 
 ::: notes
 Add note
@@ -813,8 +845,11 @@ Add note
 
 ## Post hoc power, effect sizes - never!
 
--   Power must be calculated prior to data collection 
--   Effect sizes do not reflect clinical judgement
+-   Power must be calculated prior to data collection
+-   Effect sizes are only an intermediate calculation
+    -   Do not reflect clinical judgement
+    -   Always start with MCD
+-   Effect sizes also are not a useful summary statistic
 
 ::: notes
 Never try to justify your sample size after the fact. It is called a post hoc power calculation. It is very bad. If you didn't have the foresight to justify your sample size before collecting your data, rely on the width of your confidence intervals to show that your sample size was adequate.
@@ -826,12 +861,12 @@ If you want to define a minimum clinically important difference, you must do it 
 
 ## Criticisms of hypothesis testing (1 of 4)
 
-+ Criticisms of the binary hypothesis
-  + Dichotomy is simplistic
-  + Point null is never true
-  + Cannot prove the null
-+ Possible remedy
-  + $H_0 \ -\Delta \le \ \mu_1-\mu_2 \le \Delta$ 
+-   Criticisms of the binary hypothesis
+    -   Dichotomy is simplistic
+    -   Point null is never true
+    -   Cannot prove the null
+-   Possible remedy
+    -   $H_0 \ -\Delta \le \ \mu_1-\mu_2 \le \Delta$
 
 ::: notes
 There are many criticisms of hypothesis testing. You need to be aware of these criticisms, but I am not suggesting that you abandon hypothesis testing because of these criticisms.
@@ -853,14 +888,13 @@ Many of these criticisms of the binary hypothesis would disappear if we allowed 
 
 ## Criticisms of hypothesis testing (2 of 4)
 
-+ Criticisms of the p-value
-  + Not intuitive, easily misunderstood
-  + "results more extreme"
-  + Ignores clinical importance
-  + Does not measure uncontrolled biases
+-   Criticisms of the p-value
+    -   Not intuitive, easily misunderstood
+    -   "results more extreme"
+    -   Ignores clinical importance
+    -   Does not measure uncontrolled biases
 
 ::: notes
-
 The p-value that lies at the heart of hypothesis testing has also been roundly criticized. It seems backwards in more than one way. It is evidence against a hypothesis rather than for a hypothesis. You get lots of evidence against the null hypothesis when the p-value is small and little or no evidence when the p-value is large. And the conditional probability that your p-value represents, the probability of getting sample results or results more extreme given that the null hypothesis is true represents the reverse of what you really want. What you really want is the probability that the null hypothesis is true given the data that you observed.
 
 A lot of people dislike the idea of looking for a probability involving the sample results or results more extreme. Why, they ask, do you want a probability involving results more extreme. You didn't observe a value more extreme. You observed a single value.
@@ -872,11 +906,11 @@ Finally, the p-value is unaffected by threats to internal validity. If you condu
 
 ## Criticisms of hypothesis testing (3 of 4)
 
-+ General criticisms
-  + Too hard to reject H0
-  + Too easy to reject H0
-  + Too reliant on a single study
-  + Thoughtless application
+-   General criticisms
+    -   Too hard to reject H0
+    -   Too easy to reject H0
+    -   Too reliant on a single study
+    -   Thoughtless application
 
 ::: notes
 Hypothesis testing has been criticized because it is too hard to reject the null hypothesis, especially for small samples in a noisy setting. The conservative inside of you and me probably thinks this is good. Don't make a choice between two therapies or drugs until you've accumulated sufficient evidence. But failing to act quickly can sometimes force you to pay a price. This relates to the trade-offs that you see all the time between false negative results and false positive results. The hypothesis testing framework is biased towards preventing a false positive result (a Type I error) and it is very difficult to get this framework to work well when a false negative result is worse. This can occur, for example, in a setting with a 100% fatal disease with no known cure.
@@ -899,7 +933,7 @@ If the p-value receptor is activated and the p-value is 0.05 or smaller, the p-v
 
 The scientists also examined the effect of p-values reported in scientific notation. There was an increase in latency when the p-value receptor is fed a p-value in scientific notation. This probably represents an attempt to decode the scientific notation. But p-values in scientific notation with exponents of -4 or smaller showed an eventual spike in activation of the pleasure centers of the brain that are comparable to those achieved during orgasm.
 
-The research also noted a second important effect of the p-value receptor. Once the p-value receptor is stimulated, the entire cerebral cortex, the portion of your brain associated with logic and complex thinking, is immediately shut down. This insures that a scientist’s brain will focus only on the pleasure or pain associated with the p-value and will ignore the power of the study, the magnitude of the treatment effect, and other unimportant issues.
+The research also noted a second important effect of the p-value receptor. Once the p-value receptor is stimulated, the entire cerebral cortex, the portion of your brain associated with logic and complex thinking, is immediately shut down. This insures that a scientist's brain will focus only on the pleasure or pain associated with the p-value and will ignore the power of the study, the magnitude of the treatment effect, and other unimportant issues.
 
 The researchers suggest that statisticians who want to earn more consulting income and insure repeated business should do their best to produce only p-values that stimulate the pleasure centers of the brain.
 
@@ -923,7 +957,7 @@ This is a cartoon showing a table of p-values with various labels.
 
 0.051, 0.06 are labeled "On the edge of significance". If these values are on the edge of significance then the 0.04 and 0.049 should share that same label. But no one uses these hedging terms unless they are on the "wrong" side of 0.05.
 
-0.07, 0.08, 0.09, 0.099 are labeled "Highly suggestive, relevant at the p<0.10 level". I personally don't have a complaint here, but others consider this a post hoc modification and a form of p-hacking.
+0.07, 0.08, 0.09, 0.099 are labeled "Highly suggestive, relevant at the p\<0.10 level". I personally don't have a complaint here, but others consider this a post hoc modification and a form of p-hacking.
 
 ≥0.1 is labeled "Hey, look at this interesting subgroup analysis". This is a reference to p-hacking. If your primary p-value is not statistically significant, hunt for some other p-values.
 :::
@@ -947,7 +981,7 @@ There's a wonderful example of Bayesian data analysis at work that is simple and
 
 www.amstat.org/publications/jse/v3n3/albert.html.
 
-I want to use his second example, involving a comparison of ECMO to conventional therapy in the treatment of babies with severe respiratory failure.
+I want to use his second example, involving a comparison of ECMO to conventional therapy in the treatment of babies with severe respiratory failure. I'm going to modify things just a little bit.
 
 In this study, 28 of 29 babies assigned to ECMO survived and 6 of 10 babies assigned to conventional therapy survived.
 
@@ -963,14 +997,15 @@ Refer to the Albert article for the source of the original data.
 ::: notes
 Add note
 :::
+
 ## Prior
 
--   P[H] is prior
+-   P\[H\] is prior
     -   Subjective prior
         -   Contrast optimistic/pessimistic perspectives
         -   Incorporate prior knowledge
     -   Flat (non-informative prior)
-        
+
 ::: notes
 The first step is to specify P(H), which is called the prior probability. Specifying the prior probability is probably the one aspect of Bayesian data analysis that causes the most controversy. The prior probability represents the degree of belief that you have in a particular hypothesis prior to collection of your data.
 
@@ -996,23 +1031,9 @@ Third, while Bayesian data analysis allows you to incorporate subjective opinion
 ![Empty table for prior probabilities](../images/prior-shell.png){#fig-prior-shell fig-align="left"}
 
 ::: notes
-Jim Albert illustrated how a simple Bayesian analysis might provide interesting insights beyond what the traditional testing framework provided.
-
-He describes an example where a new therapy (new in the 1990s) called ECMO was compared to conventional therapy. ECMO stands for extracorporeal membrane oxygenation.
-
-In a study of ECMO versus standard therapy, the ECMO arm had 29 per-term babies, 28 of which survived. The standard therapy had 10 babies, 6 of which survived.
-
-With 11 probabilities for ECMO and 11 probabilities for conventional therapy, we have 121 possible combinations. How should we arrange those probabilities? One possibility is to assign half of the total probability to combinations where the probabilities are the same for ECMO and conventional therapy and the remaining half to combinations where the probabilities are different. Split each of these probabilities evenly over all the combinations.
-
-This is P(H). For simplicity, we multiplied each probability by 1000 and rounded.
-:::
-
-##
-
-![Empty table for prior probabilities](../images/prior-shell.png){#fig-prior-shell fig-align="left"}
-
-::: notes
 First layout the hyptohesized survival probabilities. The columns represent hypothesized probabilities of survival for ECMO and the rows represent hypothesized probabilities for conventional therapy.
+
+Now if I was doing this seriously, I'd list a few hundred or thousand probabilities across the top and down the side. But that wouldn't fit on a single slide.
 :::
 
 ## 
@@ -1087,6 +1108,28 @@ Add note
 Posterior probability of 20% or greater superiority
 :::
 
+## Criticisms of Bayesian data analysis
+
+-   Choice of prior distribution is arbitrary
+-   Probability of a hypothesis is absurd
+-   Requires strong distributional assumptions
+-   Computationally intensive
+
+::: notes
+Add note
+:::
+
+## Areas where Bayesian data analysis excel
+
+-   Imputation
+-   Latent models
+-   Random effects/hierarchical models
+-   Incorporating historical data
+
+::: notes
+Add note
+:::
+
 ## Repeat the bad quiz question
 
 A research paper computes a p-value of 0.45. How would you interpret this p-value?
@@ -1108,13 +1151,13 @@ Because a p-value is a measure of evidence against the null hypothesis. A large 
 
 ## Repat the bad confidence interval question.
 
-A research paper computes a confidence interval for a relative risk of 0.82 to 3.94. What does this confidence interval tell you.
+A research paper computes a confidence interval for a relative risk of 0.82 to 3.94. This confidence interval tells you that the result is
 
-1.  The result is statistically significant and clinically important.
-2.  The result is not statistically significant, but is clinically important.
-3.  The result is statistically significant, but not clinically important.
-4.  The result is not statistically significant, and not clinically important.
-5.  The result is ambiguous.
+1.  statistically significant and clinically important.
+2.  not statistically significant, but is clinically important.
+3.  statistically significant, but not clinically important.
+4.  not statistically significant, and not clinically important.
+5.  ambiguous.
 6.  I do not know the answer.
 
 ::: notes
