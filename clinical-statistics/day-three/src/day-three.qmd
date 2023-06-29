@@ -1,7 +1,10 @@
 ---
 title: "Clinical statistics for non-statisticians: Day three"
 author: "Steve Simon"
-format: docx
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
 ---
 
 ## Re-introduce yourself
@@ -1124,4 +1127,23 @@ Add note
 
 My goal: help you to become a better consumer of statistics
 
-*Any questions?*
+## Email (mail@pmean.com) or visit ...
+
+-   Github site [github.com/pmean](https://github.com/pmean)
+    -   [talks](https://github.com/pmean/talks):  clinical-statistics, sample-size-justification, power
+    -   [classes](https://github.com/pmean/classes): clinical-research-methodology, survival-models
+    -   [papers-and-presentations](https://github.com/pmean/papers-and-presentations): illustrating-linear-regression, power
+-   websites
+    -   [www.pmean.com](http://www.pmean.com/)
+        -   [original website](http://www.pmean.com/original_site.html), [blog](http://www.pmean.com/original_site.html), [new website](http://new.pmean.com/index.html)
+    -   Try googling *topic* site:pmean.com
+
+::: notes
+I am a part-time independent consultant, but I offer one hour of advice on any topic for free. So email me. I love quick questions and often take questions that I am asked by email and turn them into web pages.
+
+Anything I do, I put up on the web and make it available for free to anyone. I have a github site that is intended for programming, but I also use a progamming language, R Markdown, to create all my talks.
+
+My website is currently undergoing re-organization. I am try to update a lot of old broken pages and consolidate my old website and blog into a new site that will be easier to maintain and update. The new website also uses R Markdown.
+
+Half of the stuff is projects I started but never got around to finishing. So I apologize if you see something and it is only half-baked. Send me an encouraging email if you want me to update something that you find important in your work.
+:::
