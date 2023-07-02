@@ -1,0 +1,16 @@
+---
+title: "Sudoku puzzle"
+format:
+  html:
+    embed-resources: true
+editor: source
+---
+
+
+```{r setup}
+library(tidyverse)
+```
+
+```{r}
+read_csv("entries.csv",col_types="nnc")
+```
