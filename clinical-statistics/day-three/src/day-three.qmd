@@ -5,7 +5,6 @@ format:
   revealjs:
     slide-number: true
     embed-resources: true
-    show-notes: true
 ---
 
 ## Re-introduce yourself
@@ -125,9 +124,9 @@ Don't worry too much about the distinctions for now. The choice of what statisti
 
 ## Comparison of a binary outcome
 
-$$X^2 = \Sigma \frac{(O_{ij}-E_{ij})^2}{E_{ij}}$$
+$X^2 = \Sigma \frac{(O_{ij}-E_{ij})^2}{E_{ij}}$
 
-![Counts of dead and survived by sex with expected coutns](../images/titanic-expected-counts.png){#fig-titanic-expected-counts fig-align="left"}
+![Counts of dead and survived by sex with expected counts](../images/titanic-expected-counts.png){#fig-titanic-expected-counts fig-align="left"}
 
 ::: notes
 The classic test for comparing a binary outcome in a treatment versus a control is the chi-squared test. Lay out the results in a two by two table. Here is the example of mortality versus sex that I discussed earlier. The chi-squared test compares the observed count (Oij) to the expected count (Eij). The expected count is the number dying or surviving, assuming that there is no difference between the treatment and control.
@@ -158,6 +157,10 @@ The odds ratio is a common way to describe changes in risk. The odds of survival
 The odds ratio compares the 2 to 1 odds in favor to the 5 to 1 odds against to get 10. Women fared 10 times better than men because their odds of survival were 10 times better.
 :::
 
+::: notes
+Add note
+:::
+
 ## Alternative approach, relative risk
 
 ```         
@@ -173,6 +176,10 @@ Relative risk = 0.667 / 0.167 = 4
 95% CI (3.4, 4.7)
 ```
 
+::: notes
+Add note
+:::
+
 ## Which is the better measure?
 
 -   Two schools of thought
@@ -180,6 +187,10 @@ Relative risk = 0.667 / 0.167 = 4
         -   More natural interpretation
     -   Odds ratio is better - Symmetric with respect to outcome
 -   Cannot use relative risk for certain datasets
+
+::: notes
+Add note
+:::
 
 ## Both are inferior to absolute risk reduction
 
@@ -196,6 +207,10 @@ Absolute risk reduction = 0.667 - 0.167 = 0.5
 95% CI (0.45, 0.55)
 ```
 
+::: notes
+Add note
+:::
+
 ## Comparison of multinomial outcome
 
 -   Multinomial = 3 or more categories
@@ -203,11 +218,19 @@ Absolute risk reduction = 0.667 - 0.167 = 0.5
     -   Multinomial logistic regression
     -   Ordinal logistic regression
 
+::: notes
+Add note
+:::
+
 ## Comparison of a continuous outcome
 
 -   Two cases
     -   Independent (unpaired) samples
     -   Paired samples
+
+::: notes
+Add note
+:::
 
 ## Two sample test
 
@@ -215,9 +238,17 @@ Absolute risk reduction = 0.667 - 0.167 = 0.5
 -   How much sampling error?
     -   $S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$
 
+::: notes
+Add note
+:::
+
 ## Comparison of ages of deaths/survivors
 
 ![Mean ages](../images/titanic-means.png){#fig-titanic-means fig-align="left"} 95% CI (-0.3, 3.8)
+
+::: notes
+Add note
+:::
 
 ## Paired samples
 
@@ -281,6 +312,10 @@ Room Before  After
  325   14     13.7
 ```
 
+::: notes
+Add note
+:::
+
 ## Average change
 
 ```         
@@ -299,6 +334,10 @@ $\bar{D}=-1.61,\ S_D=1.24$
 
 95% CI (-2.65, -0.58)
 
+::: notes
+Add note
+:::
+
 ## Assumptions for t-tests
 
 -   t-tests require two or more assumptions
@@ -306,11 +345,19 @@ $\bar{D}=-1.61,\ S_D=1.24$
     -   Outcome is normally distributed
     -   For two sample t-test, equal variation
 
+::: notes
+Add note
+:::
+
 ## Nonparametric test
 
 -   Uses ranks of the data
 -   Does not rely on normality assumption
 -   Does not rely on Central Limit Theorem
+
+::: notes
+Add note
+:::
 
 ## Wilcoxon signed rank test
 
@@ -333,6 +380,10 @@ p = 0.023
 
 -   Not easy to get confidence intervals
 -   Difficult to do risk adjustments
+
+::: notes
+Add note
+:::
 
 ## 
 
@@ -366,6 +417,10 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   Equation for a straight line
         -   ?
 
+::: notes
+Add note
+:::
+
 ## Pop quiz answers
 
 -   From high school algebra.
@@ -376,11 +431,19 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   Formula for a straight line
         -   $y=mx+b$
 
+::: notes
+Add note
+:::
+
 ## Equation of a straight line
 
 -   $y=mx+b$
     -   $m=$ slope $=\triangle y / \triangle x$
     -   $b=$ y-intercept
+
+::: notes
+Add note
+:::
 
 ## In linear regression
 
@@ -389,18 +452,34 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
 -   Slope: estimated average change in y when x increases by one unit.
 -   Intercept: estimated average value of y when x equals zero.
 
+::: notes
+Add note
+:::
+
 ## Example: does mother's age affect duration of breast feeding?
 
 -   Study of breast feeding with pre-term infants
     -   Difficulty: mother leaves hospital first
 
+::: notes
+Add note
+:::
+
 ## 
 
 ![Scatterplot with regression line for age](../images/breast-feeding-vs-age.png){#fig-breast-feeding-vs-age fig-align="left"}
 
+::: notes
+Add note
+:::
+
 ## 
 
 ![Linear regression output](../images/linear-regression-output.png){#fig-linear-regression-output fig-align="left"}
+
+::: notes
+Add note
+:::
 
 ## 
 
@@ -408,6 +487,10 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
 
 -   Slope = 0.4
     -   The estimated average duration of breast feeding increases by 0.4 weeks for every increase of one year in the mother's age.
+
+::: notes
+Add note
+:::
 
 ## 
 
@@ -417,12 +500,20 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   The estimated average duration of breast feeding is 5.9 weeks for a mother with age = 0.
     -   Clearly an inappropriate extrapolation
 
+::: notes
+Add note
+:::
+
 ## 
 
 ![Linear regression output, p-value](../images/output-p-value.png){#fig-output-p-value fig-align="left"}
 
 -   p-value=0.019
     -   Reject the null hypothesis and conclude that there is a positive relationship between mother's age and duration of breast feeding.
+
+::: notes
+Add note
+:::
 
 ## 
 
@@ -432,11 +523,19 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   Note 6.626E-02 $= 6.626 \times 10^{-2}$
     -   You are 95% confident that the true regression slope is positive.
 
+::: notes
+Add note
+:::
+
 ## Example: does treatment affect duration of breast feeding?
 
 -   Both groups: encourage breast feeding when mom is in hospital
     -   Intervention: feed infants through ng tube when mom is away
     -   Control: Feeding using bottles when mom is away
+
+::: notes
+Add note
+:::
 
 ## 
 
@@ -446,9 +545,17 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
 
 ![Linear regression output, treatment](../images/linear-regression-output-treatment.png){#fig-linear-regression-output-treatment fig-align="left"}
 
+::: notes
+Add note
+:::
+
 ## 
 
 ![Scatterplot with regression line for control=1](../images/breast-feeding-vs-control.png){#fig-breast-feeding-vs-control fig-align="left"}
+
+::: notes
+Add note
+:::
 
 ## Linear regression with two independent variables
 
@@ -462,6 +569,10 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
 -   Slope for x1: estimated average change in y when x increases by one unit **and x2 is held constant**.
 -   Slope for x2: similar interpretation
 
+::: notes
+Add note
+:::
+
 ## Adjusting for covariate imbalance
 
 -   Covariate: variable not of direct interest in the research
@@ -472,9 +583,17 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   25 in control group, 29 in treatment group
 -   Covariate imbalance not quite same as confounding
 
+::: notes
+Add note
+:::
+
 ## 
 
 ![Multiple linear regression output](../images/output-multiple-regression.png){#fig-output-multiple-regression fig-align="left"}
+
+::: notes
+Add note
+:::
 
 ## Adjusted means
 
@@ -485,7 +604,16 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   Treatment: $12.961 + 0.249 \times 27 = 19.7$
     -   Control: $12.961 -5.972 + 0.249 \times 27 = 13.7$
 
-## Examples in the medical literature
+
+## Small group exercises
+
+-   Group 1: Effect of sex and height on fev
+-   Group 2: Effect of smoking and age on fev
+Examples in the medical literature
+
+::: notes
+Add note
+:::
 
 ## Joke about prediction models
 
@@ -499,6 +627,9 @@ A doctor is advising her patient about the risks of an upcoming surgery. She war
 :::
 
 ## Logistic regression
+
+-   Binary outcome
+-   Linear on a log odds scale
 
 ::: notes
 The logistic regression model is a model that uses a binary (two possible values) outcome variable. Examples of a binary variable are mortality (live/dead), and morbidity (healthy/diseased). Sometimes you might take a continuous outcome and convert it into a binary outcome. For example, you might be interested in the length of stay in the hospital for mothers during an unremarkable delivery. A binary outcome might compare mothers who were discharged within 48 hours versus mothers discharged more than 48 hours.
@@ -805,7 +936,7 @@ Here is the table of survival versus sex on the Titanic.
 Let's start with the CONSTANT row of the data. This has an interpretation similar to the intercept in the linear regression model. the B column represents the estimated log odds when SexMale=0. Above, you saw that the odds for dying were 2 to 1 against for females, and the natural logarithm of 2 is 0.693. The last column, EXP(B) represents the odds, or 2.000. You need to be careful with this interpretation, because sometimes SPSS will report the odds in favor of an event and sometimes it will report the odds against an event. You have to look at the crosstabulation to be sure which it is.
 :::
 
-## 
+## Probability calculations for males
 
 ![](../images/titanic-logistic-model.gif){fig-align="left"}
 
@@ -822,7 +953,7 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
 
 ## 
 
-![](../images/titanic-logistic-model.gif){fig-align="left"}
+![](../images/titanic-logistic-model.gif){#fig-titanic-logistic-model fig-align="left"}
 
 -   log odds ratio = -2.301
     -   odds ratio = 0.1
@@ -831,4 +962,188 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
 The SexMale row has an interpretation similar to the slope term in a linear regression model. The B column represents the estimated change in the log odds when SexMale increases by one unit. This is effectively the log odds ratio. We computed the odds ratio above, and -2.301 is the natural logarithm of 0.1. The last column, EXP(B) provides you with the odds ratio (0.100).
 :::
 
-## Examples of logistic regression from the literature
+## 
+
+![Description of the interview invite dataset](../images/interview-description.png){#fig-interview-description align="left"}
+
+::: notes
+"Resumes were sent out to 316 top law firms in the United States, and there were two randomized characteristics of each resume. First, the gender associated with the resume was randomized by assigning a first name of either James or Julia. Second, the socioeconomic class of the candidate was randomly assigned and represented through five minor changes associated with personal interests and other other minor details (e.g. an extracurricular activity of sailing team vs track and field). The outcome variable was whether the candidate was received an interview."
+:::
+
+## 
+
+![Crosstabulation of class and interview](../images/crosstab-class-interview.png){#fig-interview-description align="left"}
+
+::: notes
+Add note
+:::
+
+## 
+
+![Crosstabulation of gender and interview](../images/crosstab-gender-interview.png){#fig-interview-description align="left"}
+
+::: notes
+Add note
+:::
+
+## 
+
+![Logistic regression model for class](../images/logistic-model-class.png){#fig-logistic-model-class align="left"}
+
+::: notes
+Add note
+:::
+
+## 
+
+![Logistic regression model for gender](../images/logistic-model-gender.png){#fig-logistic-model-gender align="left"}
+
+::: notes
+Add note
+:::
+
+## 
+
+![Fruit fly data, round 1](../images/fruit-fly-data-1.png){#fig-fruit-fly-data-1 align="left"}
+
+::: notes
+This data represents survival time for a group of fruit flies and is a subset of a larger data set found at the Data and Story Library (DASL). The data set has been slightly modified to simplify some of these explanations.
+
+There are 25 flies in the sample, with the first fly dying on day 37 and the last fly dying on day 96.
+:::
+
+##
+
+![Fruit fly graph, round 1](../images/fruit-fly-km-1.png){#fig-fruit-fly-km-1 align="left"}
+
+::: notes
+If you wanted to estimate the survival probability for this data, you would draw a curve that decreases by 4% (1/25) every time a fly dies.
+:::
+
+## Fruit fly data (round 2)
+
+![Fruit fly data, round 2](../images/fruit-fly-data-2.png){#fig-fruit-fly-data-2 align="left"}
+
+::: notes
+Now let's alter the experiment. Suppose that totally by accident, a technician leaves the screen cover open on day 70 and all the flies escape. You're probably worried that the whole experiment has been ruined. But don't be so pessimistic. You still have complete information on survival of the fruit flies up to their 70th day of life. Here's how you would present the data and estimate the survival probabilities.
+:::
+
+##
+
+![Fruit fly graph, round 2](../images/fruit-fly-km-2.png){#fig-fruit-fly-km-2 align="left"}
+
+::: notes
+We clearly have enough data to make several important statements about survival probability. For example, the median survival time is 61 days because roughly half of the flies had died before this day.
+
+By the way, you might be tempted to ignore the ten flies who escaped. But that would seriously bias your results. The median survival time, for example, of the 15 flies who did not escape, for example, is only 54 days which is much smaller than the actual median.
+:::
+
+## 
+
+![Fruit fly data, round 3](../images/fruit-fly-data-3.png){#fig-fruit-fly-data-3 align="left"}
+
+::: notes
+Let's look at a third experiment, where the screen cover is left open and all but four of the remaining flies escape. It turns out that those four remaining flies who didn't bug out will allow us to still get reasonable estimates of survival probabilities beyond 70 days. Here is the data and the survival probabilities.
+:::
+
+##
+
+![Fruit fly graph, round 3](../images/fruit-fly-km-3.png){#fig-fruit-fly-km-3 align="left"}
+
+::: notes
+Add note
+:::
+
+##
+
+![Fruit fly graph, estimating the median](../images/fruit-fly-km-4.png){#fig-fruit-fly-km-4 align="left"}
+
+::: notes
+Add note
+:::
+
+##
+
+![Fruit fly graph, estimating survival probability](../images/fruit-fly-km-5.png){#fig-fruit-fly-km-5 align="left"}
+
+::: notes
+Add note
+:::
+
+##
+
+![Hypothetical survival distribution](../images/hazard_1.png){#fig-hazard_1 align="left"}
+
+::: notes
+Add note
+:::
+
+##
+
+![Hypothetical survival distribution, probability for 20-30 years](../images/hazard_2.png){#fig-hazard_2 align="left"}
+
+::: notes
+Add note
+:::
+
+![Hypothetical survival distribution, probability for 40-60 years](../images/hazard_3.png){#fig-hazard_2 align="left"}
+
+::: notes
+Add note
+:::
+
+
+
+## Defining the hazard function (1/2)
+
+-   To make a fair comparison
+    -   Adjust by the probability of surviving up to age 20 or age 40.
+    -   Calculate a death rate by dividing by the time range.
+    -   Calculate over a narrow time interval, Δt.
+
+## Defining the hazard function (2/2)
+
+-   The hazard function is defined as
+    -   h(t) = (P[t ≤ T ≤ t+Δt] / Δt) / P[T ≥ t]
+-   Key points
+    -   adjusted for the number surviving to that time (P[T ≥ t]),
+    -   calculated as a rate
+        -   (P[t ≤ T ≤ T+Δt] / Δt) is not a probability, and
+    -   computed over a narrow time interval.
+
+## 
+
+![Increasing, decreasing, and constant hazard functions](../images/hazard_4.png){#fig-hazard_4 align="left"}
+
+::: notes
+Add note
+:::
+
+## Summary
+
+-   Day one: Numerical summaries and data visualization
+-   Day two: Hypothesis testing and sampling
+-   Day three: Statistical tests to compare treatment to a control and regression models
+
+My goal: help you to become a better consumer of statistics
+
+## Email (mail@pmean.com) or visit ...
+
+-   Github site [github.com/pmean](https://github.com/pmean)
+    -   [talks](https://github.com/pmean/talks):  clinical-statistics, sample-size-justification, power
+    -   [classes](https://github.com/pmean/classes): clinical-research-methodology, survival-models
+    -   [papers-and-presentations](https://github.com/pmean/papers-and-presentations): illustrating-linear-regression, power
+-   websites
+    -   [www.pmean.com](http://www.pmean.com/)
+        -   [original website](http://www.pmean.com/original_site.html), [blog](http://www.pmean.com/original_site.html), [new website](http://new.pmean.com/index.html)
+    -   Try googling *topic* site:pmean.com
+
+::: notes
+I am a part-time independent consultant, but I offer one hour of advice on any topic for free. So email me. I love quick questions and often take questions that I am asked by email and turn them into web pages.
+
+Anything I do, I put up on the web and make it available for free to anyone. I have a github site that is intended for programming, but I also use a progamming language, R Markdown, to create all my talks.
+
+My website is currently undergoing re-organization. I am try to update a lot of old broken pages and consolidate my old website and blog into a new site that will be easier to maintain and update. The new website also uses R Markdown.
+
+Half of the stuff is projects I started but never got around to finishing. So I apologize if you see something and it is only half-baked. Send me an encouraging email if you want me to update something that you find important in your work.
+:::
