@@ -3054,22 +3054,35 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_csv</span>(<span class="st">&quot;entries.csv&quot;</span>,<span class="at">col_types=</span><span class="st">&quot;nnc&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;entries.csv&quot;</span>,<span class="at">col_types=</span><span class="st">&quot;nnc&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(rc) <span class="sc">%&gt;%</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">entry=</span><span class="fu">paste0</span>(entry, <span class="at">collapse=</span><span class="st">&quot;&quot;</span>)) <span class="ot">-&gt;</span> y</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 35 × 3
-      rc  entry clue                                                    
-   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;                                                   
- 1     1 724365 Always open                                             
- 2     1     18 Age when Alice had a baby&#39;s brain and an old man&#39;s heart
- 3     1      9 Musical based on film, 8 1/2                            
- 4     2     86 99&#39;s spouse                                             
- 5     2     21 Game where an ace is 1 or 11                            
- 6     2    934 Fictional platform at King&#39;s Crossing Station           
- 7     2     57 Heinz varieties                                         
- 8     3     25 Adele&#39;s third                                           
- 9     3    986 Not fevered                                             
-10     3     17 Youngest R viewer                                       
-# ℹ 25 more rows</code></pre>
+<pre><code># A tibble: 18 × 2
+      rc entry    
+   &lt;dbl&gt; &lt;chr&gt;    
+ 1     1 724365189
+ 2     2 857923461
+ 3     3 298134567
+ 4     4 192564378
+ 5     5 123456789
+ 6     6 198234567
+ 7     7 256134789
+ 8     8 123456789
+ 9     9 123456789
+10    10 782149635
+11    11 259861734
+12    12 429713568
+13    13 123456789
+14    14 317245689
+15    15 123456789
+16    16 123456789
+17    17 862193457
+18    18 978451623</code></pre>
 </div>
 </div>
 

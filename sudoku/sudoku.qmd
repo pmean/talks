@@ -12,5 +12,12 @@ library(tidyverse)
 ```
 
 ```{r}
-read_csv("entries.csv",col_types="nnc")
+x <- read_csv("entries.csv",col_types="nnc")
+```
+
+```{r}
+x %>%
+  group_by(rc) %>%
+  summarize(entry=paste0(entry, collapse="")) -> y
+y
 ```
