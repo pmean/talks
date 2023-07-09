@@ -3066,23 +3066,23 @@ vertical-align: -.125em;
    rc    entry    
    &lt;chr&gt; &lt;chr&gt;    
  1 r1    724365189
- 2 r2    859123467
- 3 r3    31694582 
- 4 r4    783192564
- 5 r5    412367895
- 6 r6    693145782
- 7 r7    312457896
- 8 r8    134789256
- 9 r9    532467891
-10 s1    783521496
+ 2 r2    859124367
+ 3 r3    316987524
+ 4 r4    132457896
+ 5 r5    281367495
+ 6 r6    569314782
+ 7 r7    192564378
+ 8 r8    789134256
+ 9 r9    532467981
+10 s1    783125496
 11 s2    251798634
-12 s3    497851623
-13 s4    317245689
-14 s5    625347918
-15 s6    536471982
-16 s7    149583726
+12 s3    496851723
+13 s4    319254687
+14 s5    628534719
+15 s6    547631982
+16 s7    135847629
 17 s8    862193457
-18 s9    973428561</code></pre>
+18 s9    974238561</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -3091,44 +3091,37 @@ vertical-align: -.125em;
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>) {</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  m1[i, ] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">str_split</span>(y<span class="sc">$</span>entry[i], <span class="at">pattern=</span><span class="st">&quot;&quot;</span>)[[<span class="dv">1</span>]])</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  m2[, i] <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">str_split</span>(y<span class="sc">$</span>entry[i<span class="sc">+</span><span class="dv">9</span>], <span class="at">pattern=</span><span class="st">&quot;&quot;</span>)[[<span class="dv">1</span>]])</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<pre><code>Error in m1[i, ] &lt;- as.numeric(str_split(y$entry[i], pattern = &quot;&quot;)[[1]]): number of items to replace is not a multiple of replacement length</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(m1, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">9</span>), <span class="fu">t</span>(m2)))</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(m4) <span class="ot">&lt;-</span> <span class="fu">c</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>],<span class="st">&quot; &quot;</span>, LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(m4) <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>]</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>m4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>m4 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">cbind</span>(m1, <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">9</span>), <span class="fu">t</span>(m2)))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(m4) <span class="ot">&lt;-</span> <span class="fu">c</span>(letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>],<span class="st">&quot; &quot;</span>, LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>])</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(m4) <span class="ot">&lt;-</span> letters[<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>m4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   a  b  c  d  e  f  g  h  i    A  B  C  D  E  F  G  H  I
-a  7  2  4  3  6  5  1  8  9 0  7  8  3  5  2  1  4  9  6
-b  8  5  9  1  2  3  4  6  7 0  2  5  1  7  9  8  6  3  4
-c -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-d -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-e -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-f -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-g -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-h -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1
-i -1 -1 -1 -1 -1 -1 -1 -1 -1 0 -1 -1 -1 -1 -1 -1 -1 -1 -1</code></pre>
+<pre><code>  a b c d e f g h i   A B C D E F G H I
+a 7 2 4 3 6 5 1 8 9 0 7 8 3 1 2 5 4 9 6
+b 8 5 9 1 2 4 3 6 7 0 2 5 1 7 9 8 6 3 4
+c 3 1 6 9 8 7 5 2 4 0 4 9 6 8 5 1 7 2 3
+d 1 3 2 4 5 7 8 9 6 0 3 1 9 2 5 4 6 8 7
+e 2 8 1 3 6 7 4 9 5 0 6 2 8 5 3 4 7 1 9
+f 5 6 9 3 1 4 7 8 2 0 5 4 7 6 3 1 9 8 2
+g 1 9 2 5 6 4 3 7 8 0 1 3 5 8 4 7 6 2 9
+h 7 8 9 1 3 4 2 5 6 0 8 6 2 1 9 3 4 5 7
+i 5 3 2 4 6 7 9 8 1 0 9 7 4 2 3 8 5 6 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(m1<span class="sc">==</span>m2, m1, <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(m1, m2)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in ifelse(m1 == m2, m1, as.numeric(paste0(m1, m2))): NAs introduced by
-coercion</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(m3) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">paste0</span>(<span class="st">&quot;r&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>), <span class="fu">paste0</span>(<span class="st">&quot;s&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>))</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>m3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>m3 <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(m1<span class="sc">==</span>m2, m1, <span class="fu">as.numeric</span>(<span class="fu">paste0</span>(m1, m2)))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(m3) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">paste0</span>(<span class="st">&quot;r&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>), <span class="fu">paste0</span>(<span class="st">&quot;s&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>m3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>    s1  s2 s3 s4 s5 s6 s7 s8 s9
-r1   7   2 NA NA NA NA NA NA NA
-r2   8   5 NA NA NA NA NA NA NA
-r3 -13 -11 -1 -1 -1 -1 -1 -1 -1
-r4 -15 -17 -1 -1 -1 -1 -1 -1 -1
-r5 -12 -19 -1 -1 -1 -1 -1 -1 -1
-r6 -11 -18 -1 -1 -1 -1 -1 -1 -1
-r7 -14 -16 -1 -1 -1 -1 -1 -1 -1
-r8 -19 -13 -1 -1 -1 -1 -1 -1 -1
-r9 -16 -14 -1 -1 -1 -1 -1 -1 -1</code></pre>
+<pre><code>   s1 s2 s3 s4 s5 s6 s7 s8 s9
+r1  7  2  4  3  6  5  1  8  9
+r2  8  5  9  1  2  4  3  6  7
+r3  3  1  6  9  8  7  5  2  4
+r4  1 37 28 42  5 76  8 91 62
+r5  2 89 15 35 63 73  4  9 53
+r6  5 68 91 34 14 41  7 83 28
+r7 14 96 27 56 67 49 36 74 85
+r8 79 83 92 18 31 48  2  5  6
+r9 56 34 23 47 69 72  9 87  1</code></pre>
 </div>
 </div>
 
