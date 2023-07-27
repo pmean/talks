@@ -17,6 +17,8 @@ Here's one more interesting number about myself
 Tell us one more interesting number about yourself.
 
 ::: notes
+*Speaker notes*
+
 I had adopted a young boy from Russia a few years earlier and I could not keep up with him. A game of tag would leave me winded after only a few minutes. So I started running every other day. I was not very fast, but I built up endurance, so I could run for almost an hour without needing to take a break.
 
 Lately, I have been a bit too busy, but I still try to run in organized races. Mostly 5 kilometer races, but I have done a few 10 kilometer races. I am not quite up to running a half marathon yet, but it is on my list of things to do before I die.
@@ -31,6 +33,8 @@ Lately, I have been a bit too busy, but I still try to run in organized races. M
 My goal: help you to become a better consumer of statistics
 
 ::: notes
+*Speaker notes*
+
 Just a reminder of where you are. Day one, you learned about numerical summaries and data visualization. Today, you will see information about hypothesis testing and sampling.
 :::
 
@@ -44,6 +48,8 @@ Just a reminder of where you are. Day one, you learned about numerical summaries
     -   What should you do if you do not have a hypothesis to test
 
 ::: notes
+*Speaker notes*
+
 Here are more details about what you will see on hypothesis testing...
 :::
 
@@ -58,6 +64,8 @@ Here are more details about what you will see on hypothesis testing...
     -   How can you ensure that your sampling approach is ethical
 
 ::: notes
+*Speaker notes*
+
 ...and what you will see on sampling.
 :::
 
@@ -73,6 +81,8 @@ A research paper computes a p-value of 0.45. How would you interpret this p-valu
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's a quiz question that I proposed in an earlier presentation on p-values and confidence intervals. I wrote the responses without thinking, but then realized
 
 "This is an easy mistake to make."
@@ -92,6 +102,8 @@ A research paper computes a confidence interval for a relative risk of 0.82 to 3
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's another question. It's actually a good question about a bad confidence interval. If you learn nothing else today, but you understand why this is a bad confidence interval, you will have learned a lot.
 
 By the way, the calculation of this hypothetical confidence interval is fine. It is what this confidence interval says about the researcher that matters.
@@ -108,6 +120,8 @@ A Bayesian data analysis can incorporate subjective opinions through the use of
 5.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's a good question. Try to answer it. If you do not know the answer, it's okay to say 5.
 :::
 
@@ -122,6 +136,8 @@ Here's a good question. Try to answer it. If you do not know the answer, it's ok
 -   What to do when no research hypothesis
 
 ::: notes
+*Speaker notes*
+
 P-values are a fundamental tools used in most research papers, but they are coming under increasing attack in the research community. P-values are an inferential tool and require a research hypothesis. Two alternatives are confidence intervals and Bayesian data analysis.
 
 Much research is not inferential and does not have a formal research hypothesis. It is a mistake to force these studies into a hypothesis testing framework. I will cover what you should do when you do not have a formal research hypothesis.
@@ -141,6 +157,8 @@ First, you need to remember some basic definitions from your Statistics 101 clas
     -   Or some combination of the above.
 
 ::: notes
+*Speaker notes*
+
 A population is a group that you have an interest in. You want to get a better understanding of this group, so you conduct a research study and wish to generalize the results of that study to the population.
 
 In clinical research, a population is almost always a group of people. There are a few exceptions. Sometimes you want to characterize inanimate objects, such as a group of hospitals or a group of medical devices. But let's keep the focus on people for now.
@@ -153,6 +171,8 @@ A population of people is defined in terms of certain characteristics. Usually i
 All infants born in the state of Missouri during the 1995 calendar year who have one or more visits to the Emergency room during their first year of life.
 
 ::: notes
+*Speaker notes*
+
 Here is an example of a population. It has many of the characteristics described on the previous slide: demography (infants), geography (born in Missouri), time (born in calendar year 1995, during first year of life) and care requirements (one or more ER visits).
 
 Most times the population is so large that it is difficult to get data on all the individuals of that population.
@@ -168,6 +188,8 @@ Here, we actually did have access to the data on all 29,637 infants, but most ti
     -   Always ask "who was left out?"
 
 ::: notes
+*Speaker notes*
+
 A sample is a subset of a population. Because that population of infants was so large, you decided to collect data on a smaller group, a sample of 100 infants, say.
 
 Statistics, according to one definition is the use of data from samples to make inferences about populations. That may be a bit too narrow a definition, but it does characterize quite a bit of what we statisticians do.
@@ -187,6 +209,8 @@ In contrast a biased sample is one where some people in the population have a de
 *Type your ideas in the chat box.*
 
 ::: notes
+*Speaker notes*
+
 Here is a scenario where a researcher selects a biased sample. I should note here that this is an example specific to the United States. In Italy, you might talk about a survey distributed to the scuola secondaria di secondo grado.
 
 STOP AND GET STUDENT RESPONSES
@@ -201,6 +225,8 @@ There are a variety of responses here. The sample does not include home schooled
         -   but those attending public high schools.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -214,6 +240,8 @@ Add note
     -   Designated by Greek letters ($\mu$, $\pi$, $\rho$)
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -227,6 +255,8 @@ Add note
     -   Designated by non-Greek letters ($\bar{X}$, $\hat{p}$, r).
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -237,6 +267,8 @@ Add note
         -   Often a comparison of two populations
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -250,6 +282,8 @@ Add note
         -   $H_0:\ \rho \ne 0$
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -262,6 +296,8 @@ Add note
         -   $H_1:\ \rho \ne 0$
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -275,6 +311,8 @@ Add note
         -   Trend, association
 
 ::: notes
+*Speaker notes*
+
 As a researcher, you should always think about your hypothesis in terms of population parameters, but your writing should use text. Translate the Greek letters to English.
 
 If you have a hypothesis that compares two groups, look for comparative words like "safer" or "more effective". If your hypothesis involves some type of regression model, you should consider terms like "trend" or "association".
@@ -288,6 +326,8 @@ If you have a hypothesis that compares two groups, look for comparative words li
 -   O = outcome
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -297,6 +337,8 @@ Add note
     -   Lawlor B, Segurado R, Kennelly S, et al. Nilvadipine in mild to moderate Alzheimer disease: A randomised controlled trial. PLoS Med. 2018; 15(9): e1002660. DOI: 10.1371/journal.pmed.1002660
 
 ::: notes
+*Speaker notes*
+
 Here's an example of a two group comparison. One group gets nilvadipine and the other group gets a placebo. Safety was measured as the proportion of patients who experienced an adverse event. The researchers also measured the proportion of patients who experienced a serious adverse event. So the Greek hypothesis would involve pi's.
 
 Effectiveness was measured using the Alzheimer's Disease Assessment Scale Cognitive Subscale-12 and the Clinical Dementia Rating Scale sum of boxes. Both of these outcome measurements are continuous, so the Greek hypothesis would involve mu's.
@@ -310,6 +352,8 @@ Effectiveness was measured using the Alzheimer's Disease Assessment Scale Cognit
 -   O = cognitive function
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -319,6 +363,8 @@ Add note
     -   Wu S, Han J, Li WQ, Li T, Qureshi AA. Basal-cell carcinoma incidence and associated risk factors in U.S. women and men. Am J Epidemiol. 2013; 178(6): 890--897. DOI: 10.1093/aje/kwt073
 
 ::: notes
+*Speaker notes*
+
 This study used a regression model, a Cox regression model, to study trends and associations, so the Greek hypotheses would involve beta's.
 :::
 
@@ -330,6 +376,8 @@ This study used a regression model, a Cox regression model, to study trends and 
 -   O = presence/absence of BCC
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -343,6 +391,8 @@ Add note
 -   Changes in opposite direction uninteresting
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -353,6 +403,8 @@ Add note
     -   Samet JM, Burke TA. Turning science into junk: the tobacco industry and passive smoking. Am J Public Health. 2001;91(11):1742--1744.
 
 ::: notes
+*Speaker notes*
+
 Available in [html format](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1446866/) or [PDF format](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1446866/pdf/0911742.pdf).
 
 Consider a study of the effects of second-hand smoke. These studies always use directional alternatives. From what we know about active cigarette smoking is that it increases the risk of cancer and cardiovascular disease. So there is no reason to expect that passive smoke exposure should be any different than active smoking. Maybe it is less toxic, because of dilution and because the smoking coming off a cigarette from one end is different than the smoke coming off the cigarette from the other end. Fair enough, but there is not reason to believe that things are so different that all of a sudden the smoke becomes protective.
@@ -373,6 +425,8 @@ As another aside, I was involved with prayer study. We planned this study using 
     -   Accept $H_0$ if t is close to zero.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -385,6 +439,8 @@ Add note
     -   Accept $H_0$ if t is close to zero.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -397,6 +453,8 @@ Add note
     -   Accept $H_0$ if t is close to zero.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -408,6 +466,8 @@ Add note
 -   $\alpha$ = P\[Type I error\]
 
 ::: notes
+*Speaker notes*
+
 In your research, you specify a null hypothesis (typically labeled H0) and an alternative hypothesis (typically labeled Ha, or sometimes H1). By tradition, the null hypothesis corresponds to no change. When you are using Statistics to decide between these two hypothesis, you have to allow for the possibility of error. Actually, if you are using any other procedure, you should still allow for the possibility of error, but we statisticians are the only ones honest enough to admit this.
 
 A Type I error is rejecting the null hypothesis when the null hypothesis is true.
@@ -429,6 +489,8 @@ Alpha is the probability of a Type I error, and alpha is a value that you can co
 -   Power = $1-\beta$
 
 ::: notes
+*Speaker notes*
+
 A Type II error is accepting the null hypothesis when the null hypothesis is false. You should always remember that it is impossible to prove a negative. Some statisticians will emphasize this fact by using the phrase "fail to reject the null hypothesis" in place of "accept the null hypothesis." The former phrase always strikes me as semantic overkill.
 
 Many studies have small sample sizes that make it difficult to reject the null hypothesis, even when there is a big change in the data. In these situations, a Type II error might be a possible explanation for the negative study results.
@@ -454,6 +516,8 @@ Power is defined as 1-beta. I will talk more about power in a little bit.
 -   Large p-value, accept $H_0$
 
 ::: notes
+*Speaker notes*
+
 A p-value is a measure of how much evidence we have against the null hypothesis.
 
 The smaller the p-value, the more evidence we have against H0.
@@ -473,6 +537,8 @@ The type of hypothesis (right tailed, left tailed or two tailed) will determine 
     -   Large, little evidence against the null
 
 ::: notes
+*Speaker notes*
+
 There are two interpretations that I feel are more practical. You can think of the p-value as a measure of consistency between the data and the null hypothesis. A small value implies inconsistency. It is very unlikely that you will get a value like you've seen in your sample or a value more extreme under the assumption that the null hypothesis is true. So you should reject that assumption.
 
 On the other hand if the sample results or anything more extreme has a high probability under the assumption that the null hypothesis is true, then you should feel comfortable accepting that assumption.
@@ -491,6 +557,8 @@ If the p-value is small, you have lots of evidence against the null hypothesis. 
         -   $\mu$, $\pi$, or $\rho$ are unknown constants (no sampling error)
 
 ::: notes
+*Speaker notes*
+
 The p-value is a conditional probability, and you always need to be careful about conditional probabilities. It is a probability about a sample result given an assumption about the population result. It is not a probability about a population result given the sample result. There are two reasons for this.
 
 First, you can't reorder a conditional probability. The probability of A given B is almost never the same as the probability of B given A. The example I give for this is the probability of being happy given that you are rich. That's a pretty high number, I hope you'll agree. There are a few rich people who lead miserable lives, but from everything I've seen, most rich people are pretty darn happy. The reverse of this is the probability of being rich given that you are happy. That number is much smaller. Because although I believe that money can buy happiness, a lot of other things can also buy happiness just as well. It's not quite as easy to find happiness if you're poor, but somehow, a lot of poor people find a way to be happy anyway.
@@ -510,6 +578,8 @@ Only numbers computed from a sample (i.e., statistics) have sampling error.
 -   Not very helpful for huge data sets
 
 ::: notes
+*Speaker notes*
+
 The p-value is not a measure for either hypothesis. It is always a measure against a particular hypothesis. Now when the p-value is small, you can make a strong statement. We have lots of evidence against the null hypothesis. That translates into lots of evidence in favor of the alternative hypothesis.
 
 When the p-value is large, however, you are in a quandary. Little or no evidence against the null hypothesis is not the same as lots of evidence for the null hypothesis.
@@ -535,6 +605,8 @@ A research paper computes a p-value of 0.45. How would you interpret this p-valu
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's that pop quiz again. Take a look at it quickly. Note that the p-value is of evidence against the null hypothesis. So each of the first four responses is wrong.
 
 I wrote this question quickly, so shame, shame on me. But I've reproduced the example because it illustrates an important point.
@@ -545,6 +617,8 @@ I wrote this question quickly, so shame, shame on me. But I've reproduced the ex
 ![xkcd cartoon about jelly beans and cancer](../images/xkcd-jelly-beans.png){#fig-xkcd-jelly-beans fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 This cartoon is impossible to read, but you can find it on the Canvas site or in the readings. Here's a brief run down.
 
 In the first panel, a woman runs up to a man and shouts: Jelly beans cause acne!
@@ -596,6 +670,8 @@ If you are interested in a transcript and a detailed explanation, https://www.ex
     -   Published protocol
 
 ::: notes
+*Speaker notes*
+
 This is an example of p-hacking. You change the testing process to increase the probability of a Type I error (Rejecting the null hypothesis when the null hypothesis is true). This increases the chance of getting a positive result, which you may find desirable, but only by increasing the probability of a false positive result.
 
 Some examples of p-hacking. Run multiple tests on the same outcome measure. Start with the regular t-test, include the t-test that allows for unequal variances, and run two different non-parametric tests, the Wilcoxon-Mann-Whitney test and the sign test. Choose the test with the smallest p-value.
@@ -625,6 +701,8 @@ Now p-hacking has happened because some people have a skewed view of research. T
     -   Tries to quantify uncertainty associated with the sampling process.
 
 ::: notes
+*Speaker notes*
+
 We statisticians have a habit of hedging our bets. We always insert qualifiers into our reports, warn about all sorts of assumptions, and never admit to anything more extreme than probable. There's a famous saying: "Statistics means never having to say you're certain."
 
 We qualify our statements, of course, because we are always dealing with imperfect information. In particular, we are often asked to make statements about a population (a large group of subjects) using information from a sample (a small, but carefully selected subset of this population). No matter how carefully this sample is selected to be a fair and unbiased representation of the population, relying on information from a sample will always lead to some level of uncertainty.
@@ -649,6 +727,8 @@ If you repeatedly sampled from the same population, then 95% (or 90% or 99%) of 
     -   Lokken P, Straumsheim PA, Tveiten D, Skjelbred P, Borchgrevink CF. Effect of homoeopathy on pain and other events after acute trauma: placebo controlled trial with bilateral oral surgery BMJ. 1995;310(6992):1439-1442.
 
 ::: notes
+*Speaker notes*
+
 http://www.bmj.com/content/310/6992/1439.full
 
 Always look for confidence intervals that are wide enough to drive a truck through. They are very good indicators of small sample sizes.
@@ -663,6 +743,8 @@ Now, you can't drive a truck through an interval that goes from -5.5 to 7.5 mm, 
 ![Interval that contains the null value](../images/ci01.gif){#fig-ci01 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 When you see a confidence interval in a published medical report, you should look for two things. First, does the interval contain a value that implies no change or no effect? For example, with a confidence interval for a difference look to see whether that interval includes zero. With a confidence interval for a ratio, look to see whether that interval contains one.
 
 Here's an example of a confidence interval that contains the null value. This interval implies no statistically significant change.
@@ -673,6 +755,8 @@ Here's an example of a confidence interval that contains the null value. This in
 ![Interval entirely above the null value](../images/ci02.gif){#fig-ci02 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Here's an example of a confidence interval that excludes the null value. If we assume that larger implies better, then the interval would imply a statistically significant improvement.
 :::
 
@@ -681,6 +765,8 @@ Here's an example of a confidence interval that excludes the null value. If we a
 ![Interval entirely below the null value](../images/ci03.gif){#fig-ci03 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Here's a different example of a confidence interval that excludes the null value. This interval implies a statistically significant decline.
 :::
 
@@ -689,6 +775,8 @@ Here's a different example of a confidence interval that excludes the null value
 ![Interval entirely inside the range of clinical indifference](../images/ci04.gif){#fig-ci04 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 You should also see whether the confidence interval lies partly or entirely within a range of clinical indifference. Clinical indifference represents values of such a trivial size that you would not want to change your current practice. For example, you would not recommend a special diet that showed a one year weight loss of only five pounds. You would not order a diagnostic test that had a predictive value of less than 50%.
 
 Clinical indifference is a medical judgment, and not a statistical judgment. It depends on your knowledge of the range of possible treatments, their costs, and their side effects. As statistician, I can only speculate on what a range of clinical indifference is. I do want to emphasize, however, that if a confidence interval is contained entirely within your range of clinical indifference, then you have clear and convincing evidence to keep doing things the same way.
@@ -699,6 +787,8 @@ Clinical indifference is a medical judgment, and not a statistical judgment. It 
 ![Interval partly inside/outside range of clinical indifference](../images/ci05.gif){#fig-ci05 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 One the other hand, if part of the confidence interval lies outside the range of clinical indifference, then you should consider the possibility that the sample size is too small.
 
 The interval contains zero, so it is plausible to behave as if the difference in population means or proportions is zero. But the interval also contains values that are clinically important. So it is plausible to behave as if there is a clinically important difference in means. How can you have two such different interpretations being plausible at the same time? That's the definition of ambiguity. If you don't like it, get used to it. Statistics will often identify areas of ambiguity, which is a good thing, because it tells us to not act prematurely, but instead demand more data before you make a definitive decision.
@@ -716,6 +806,8 @@ A research paper computes a confidence interval for a relative risk of 0.82 to 3
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Let's go back to that question I posed earlier.
 
 A research paper computes a confidence interval for a relative risk of 0.82 to 3.94. What does this confidence interval tell you.
@@ -732,6 +824,8 @@ It's a terrible thing, but it happens all the time and it doesn't seem to bother
 ![Confidence interval that contains the null value](../images/ci06.gif){#fig-ci06 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Some studies have sample sizes that are so large that even trivial differences are declared statistically significant, especially in this era of big data. If your confidence interval excludes the null value but still lies entirely within the range of clinical indifference, then you have a result with statistical significance, but no practical significance.
 :::
 
@@ -740,6 +834,8 @@ Some studies have sample sizes that are so large that even trivial differences a
 ![Confidence interval entirely outside the range of clinical indifference](../images/ci07.gif){#fig-ci07 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Finally, if your confidence interval excludes the null value and lies outside the range of clinical indifference, then you have both statistical and practical significance.
 
 Let's talk about one more case. I don't have a picture, but imagine a confidence interval that is mostly in the white region, the region of clinical importance, but the lower limit stretches into the range of clinical indifference. It doesn't quite include the null value, but it comes within kissing distance. That's a result that achieves statistical significance, but it does not provide definitive proof of clinical importance. No one ever talks about this case, but they should. Your confidence interval indicates statistical significance, but just barely. So don't pretend that your results are the final word. You should not stop researching until you get a confidence interval that lies entirely inside or entirely outside the range of clinical indifference.
@@ -754,6 +850,8 @@ Let's talk about one more case. I don't have a picture, but imagine a confidence
         -   more research is needed
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -767,6 +865,8 @@ Add note
 -   Effect sizes - never!
 
 ::: notes
+*Speaker notes*
+
 I want to start the discussion of sample size with a formula proposed by David Sackett. It isn't a deep mathematical formula, but rather something that tries to illustrate the intuition behind sample size calculations.
 
 Then I wanted to present two useful rules of thumb, formal calculations involving confidence intervals and power. I also want to warn you against two very bad approaches, post hoc power and effect sizes.
@@ -777,6 +877,8 @@ Then I wanted to present two useful rules of thumb, formal calculations involvin
 ![Sackett 2001, PMID:](../images/sackett-2001.png){#fig-sackett-2001 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -785,6 +887,8 @@ Add note
 ![Formula found in Sackett 2001](../images/sackett-2001-formula.png){#fig-sackett-2001-formula fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -799,6 +903,8 @@ Add note
     -   $n = 16 / ES^2$
 
 ::: notes
+*Speaker notes*
+
 The first of these is the rule of 50. If you are measuring a binary outcome, you need to plan for a large enough sample size so that you see 25 to 50 events in each group. This is a very useful rule for seeing if your sample size needs to be in the hundreds, or if it needs to be in the thousands.
 
 I was working with a researcher who wanted to study infants who were breastfeeding while at the hospital, go home and then come back in seven days with breastfeeding jaundice. I said, okay, about how often does this happen. And he said maybe somewhere between a half a percent and two percent of the babies. So I did the math. If the rate is on the high end, 2%, that means one out of every 50 patients will be readmitted. So you needs to get 50 times as many babies to assure that you will get 50 events. That's 2,500. In one group. And with the numbers on the high end of his interval. So I tell him, you'll probably need to study around 5,000 infants. He was not happy.
@@ -819,6 +925,8 @@ The other rule, called the rule of 16, is useful for continuous outcomes. If you
     -   Trial and error
 
 ::: notes
+*Speaker notes*
+
 You can also justify your sample size by specifying how narrow you'd like your confidence intervals to be. This is especially useful in settings where there is no formal research hypothesis. The calculations here are a bit tedious, but manageable.
 
 If you are not good with algebra, just try computing confidence intervals for various sample sizes until you stumble onto one that you like: not too wide and not too narrow.
@@ -832,6 +940,8 @@ If you are not good with algebra, just try computing confidence intervals for va
     -   Solve for n1 and n2.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -840,6 +950,8 @@ Add note
 ![Lenth Power and Sample Size software](../images/lenth-power.png){#fig-lenth-power fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -852,6 +964,8 @@ Add note
 -   Effect sizes also are not a useful summary statistic
 
 ::: notes
+*Speaker notes*
+
 Never try to justify your sample size after the fact. It is called a post hoc power calculation. It is very bad. If you didn't have the foresight to justify your sample size before collecting your data, rely on the width of your confidence intervals to show that your sample size was adequate.
 
 Your book and a lot of other books talk about effect sizes. While an effect size is a useful intermediate calculation, you cannot use the effect size, by itself, as it is impossible to interpret. Imagine a store with a sign in front announcing "Giant sale: all prices reduced by half a standard deviation".
@@ -869,6 +983,8 @@ If you want to define a minimum clinically important difference, you must do it 
     -   $H_0 \ -\Delta \le \ \mu_1-\mu_2 \le \Delta$
 
 ::: notes
+*Speaker notes*
+
 There are many criticisms of hypothesis testing. You need to be aware of these criticisms, but I am not suggesting that you abandon hypothesis testing because of these criticisms.
 
 The first set of criticisms deals with the binary nature of the hypotheses.
@@ -895,6 +1011,8 @@ Many of these criticisms of the binary hypothesis would disappear if we allowed 
     -   Does not measure uncontrolled biases
 
 ::: notes
+*Speaker notes*
+
 The p-value that lies at the heart of hypothesis testing has also been roundly criticized. It seems backwards in more than one way. It is evidence against a hypothesis rather than for a hypothesis. You get lots of evidence against the null hypothesis when the p-value is small and little or no evidence when the p-value is large. And the conditional probability that your p-value represents, the probability of getting sample results or results more extreme given that the null hypothesis is true represents the reverse of what you really want. What you really want is the probability that the null hypothesis is true given the data that you observed.
 
 A lot of people dislike the idea of looking for a probability involving the sample results or results more extreme. Why, they ask, do you want a probability involving results more extreme. You didn't observe a value more extreme. You observed a single value.
@@ -913,6 +1031,8 @@ Finally, the p-value is unaffected by threats to internal validity. If you condu
     -   Thoughtless application
 
 ::: notes
+*Speaker notes*
+
 Hypothesis testing has been criticized because it is too hard to reject the null hypothesis, especially for small samples in a noisy setting. The conservative inside of you and me probably thinks this is good. Don't make a choice between two therapies or drugs until you've accumulated sufficient evidence. But failing to act quickly can sometimes force you to pay a price. This relates to the trade-offs that you see all the time between false negative results and false positive results. The hypothesis testing framework is biased towards preventing a false positive result (a Type I error) and it is very difficult to get this framework to work well when a false negative result is worse. This can occur, for example, in a setting with a 100% fatal disease with no known cure.
 
 The opposite problem is also true. It is often too easy to reject the null hypothesis. In this era of big data, you can quickly get millions of data points or more and you have so much precision that any sample statistics even of a trivial size will lead to a statistically significant result. This is not good. Instead of identifying one or two risk factors as being statistically significant, a really big data set will identify hundreds or even thousands of risk factors as being statistically significant.
@@ -945,6 +1065,8 @@ This is from my blog: http://blog.pmean.com/scientist-brain/
 ![Cartoon showing interpretation of various p-values](../images/xkcd-p-values.png){#fig-xkcd-p-values fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 I have to end with another cartoon. Both of these cartoons were drawn by Scott Munro, the creator of the xkcd comic series.
 
 This is a cartoon showing a table of p-values with various labels.
@@ -969,6 +1091,8 @@ This is a cartoon showing a table of p-values with various labels.
 -   Qualitative data analysis
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -977,6 +1101,8 @@ Add note
 ![Albert 1995](../images/albert-1995.png){#figalbert-1995 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 There's a wonderful example of Bayesian data analysis at work that is simple and fun. It's taken directly from an article by Jim Albert in the Journal of Statistics Education (1995, vol. 3 no. 3) which is available on the web at
 
 www.amstat.org/publications/jse/v3n3/albert.html.
@@ -995,6 +1121,8 @@ Refer to the Albert article for the source of the original data.
     -   E = evidence (data)
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1007,6 +1135,8 @@ Add note
     -   Flat (non-informative prior)
 
 ::: notes
+*Speaker notes*
+
 The first step is to specify P(H), which is called the prior probability. Specifying the prior probability is probably the one aspect of Bayesian data analysis that causes the most controversy. The prior probability represents the degree of belief that you have in a particular hypothesis prior to collection of your data.
 
 The prior distribution can incorporate data from previous related studies or it can incorporate subjective impressions of the researcher. What!?! you're saying right now. Aren't statistics supposed to remove the need for subjective opinions?
@@ -1031,6 +1161,8 @@ Third, while Bayesian data analysis allows you to incorporate subjective opinion
 ![Empty table for prior probabilities](../images/prior-shell.png){#fig-prior-shell fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 First layout the hyptohesized survival probabilities. The columns represent hypothesized probabilities of survival for ECMO and the rows represent hypothesized probabilities for conventional therapy.
 
 Now if I was doing this seriously, I'd list a few hundred or thousand probabilities across the top and down the side. But that wouldn't fit on a single slide.
@@ -1041,6 +1173,8 @@ Now if I was doing this seriously, I'd list a few hundred or thousand probabilit
 ![Table with diagonal priors](../images/prior-diagonal.png){#fig-prior-diagonal fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1049,6 +1183,8 @@ Add note
 ![Table with lower triangle of prior probabilities](../images/prior-lower.png){#fig-prior-lower fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1057,6 +1193,8 @@ Add note
 ![Table with upper triangle of prior probabilities](../images/prior-upper.png){#fig-prior-upper fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1065,6 +1203,8 @@ Add note
 ![Complete table of prior probabilities](../images/prior.png){#fig-prior fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1073,6 +1213,8 @@ Add note
 ![Table of likelihoods](../images/likelihood.png){#fig-likelihood fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1081,6 +1223,8 @@ Add note
 ![Product of prior and likelihood](../images/product.png){#fig-product fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1089,6 +1233,8 @@ Add note
 ![Table of posterior probabilities](../images/posterior.png){#fig-posterior fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1097,6 +1243,8 @@ Add note
 ![Posterior probability of equality](../images/posterior-equality.png){#fig-posterior-equality fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1105,6 +1253,8 @@ Add note
 ![Table of superiority posterior probabilities](../images/posterior-superiority.png){fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Posterior probability of 20% or greater superiority
 :::
 
@@ -1116,6 +1266,8 @@ Posterior probability of 20% or greater superiority
 -   Computationally intensive
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1127,6 +1279,8 @@ Add note
 -   Incorporating historical data
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1142,6 +1296,8 @@ A research paper computes a p-value of 0.45. How would you interpret this p-valu
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's that bad quiz question again. Why are none of these answers correct?
 
 WAIT FOR STUDENTS TO RESPOND
@@ -1161,6 +1317,8 @@ A research paper computes a confidence interval for a relative risk of 0.82 to 3
 6.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 What does this confidence interval say about the research?
 
 WAIT FOR STUDENTS TO RESPOND
@@ -1179,6 +1337,8 @@ A Bayesian data analysis can incorporate subjective opinions through the use of 
 5.  I do not know the answer.
 
 ::: notes
+*Speaker notes*
+
 Here's a good question. See if you remember a key feature of Bayesian data analysis.
 :::
 
@@ -1194,5 +1354,7 @@ In today's class, you learned about
 *Are there any questions?*
 
 ::: notes
+*Speaker notes*
+
 You saw a lot today. I hope you are more comfortable with some of these concepts.
 :::

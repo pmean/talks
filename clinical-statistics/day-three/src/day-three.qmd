@@ -1,10 +1,7 @@
 ---
 title: "Clinical statistics for non-statisticians: Day three"
 author: "Steve Simon"
-format: 
-  revealjs:
-    slide-number: true
-    embed-resources: true
+format: docx
 ---
 
 ## Re-introduce yourself
@@ -16,6 +13,8 @@ Here's one more interesting number about myself
 Tell us one more interesting number about yourself.
 
 ::: notes
+*Speaker notes*
+
 Back in 2004, my wife traveled to Russia to adopt a two year old child. Every year is full of excitement and challenges. The one thing I will warn you about is that the older they get, the more expensive their toys become. When he was little, I could spend a few dollars for a Hot Wheels car. Now, he has a 2008 Hummer, and it cost quite a bit more!
 :::
 
@@ -28,6 +27,8 @@ Back in 2004, my wife traveled to Russia to adopt a two year old child. Every ye
 My goal: help you to become a better consumer of statistics
 
 ::: notes
+*Speaker notes*
+
 We are in the third day of the class. The topics you will see today include comparisons of a treatment to a control. This is a common setting in medical research. You will also get an introduction to regression models.
 :::
 
@@ -39,6 +40,8 @@ We are in the third day of the class. The topics you will see today include comp
     -   When should you use nonparametric tests?
 
 ::: notes
+*Speaker notes*
+
 The you use when comparing a treatment to a control depends on whether the outcome is continuous or categorical. You'll also get a feel for when to use nonparametric tests instead of the traditional tests.
 :::
 
@@ -51,6 +54,8 @@ The you use when comparing a treatment to a control depends on whether the outco
     -   How should you control for or adjust for confounding
 
 ::: notes
+*Speaker notes*
+
 You'll also get an introduction to regression models. I want to emphasize interpretation, both for linear regression and logistic regression. Regression models excel at identifying and controlling for confounding variables.
 
 But first, a joke that relates to the topic of regression.
@@ -61,6 +66,8 @@ But first, a joke that relates to the topic of regression.
 ![Image of a passenger jet with four engines](../images/airplane_0.png){#fig-airplane-0 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 This image was downloaded from publicdomainvectors.org.
 
 Two statisticians are on a plane flying from Amsterdam to Zurich. The flight proceeds normally, until 15 minutes go by, when they hear ...
@@ -71,6 +78,8 @@ Two statisticians are on a plane flying from Amsterdam to Zurich. The flight pro
 ![Image of a passenger jet with one bad engine](../images/airplane_1.png){#fig-airplane-1 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 ... a loud BANG! The pilot comes on the intercom and says "Ladies and gentlemen, one of the four engines on this plan just exploded. You're all fine, but the flight that was supposed to take four hours will now take six hours. I apologize for any inconvenience." So the two statisticians shrug their shoulders and start talking again about the geeky things that statisticians like to talk about. Fifteen minutes later, they hear ...
 :::
 
@@ -79,6 +88,8 @@ Two statisticians are on a plane flying from Amsterdam to Zurich. The flight pro
 ![Image of a passenger jet with two bad engines](../images/airplane_2.png){#fig-airplane-2 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 ... another loud BANG! The pilot comes on the intercom and says "Ladies and gentlemen, a second engines just exploded. You're all fine, but the flight is now going to take eight hours. I greatly apologize for any inconvenience." So the two statisticians shrug their shoulders and start talking again. You know what happens next. In fifteen minutes later, they hear ...
 :::
 
@@ -87,6 +98,8 @@ Two statisticians are on a plane flying from Amsterdam to Zurich. The flight pro
 ![Image of a passenger jet with three bad engines](../images/airplane_3.png){#fig-airplane-3 fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 ... a third loud BANG! The pilot comes on the itnercom and says "Ladies and gentlemen, we just lost a third engine. Now every engine on this aircraft is very powerful so you all will arrive safely in Zurich. But the flight time is now ten hours." At this point, one statistician turns to the other and says, "I hope this last engine doesn't explode..."
 
 "...OR WE'LL BE UP HERE FOREVER!"
@@ -107,6 +120,8 @@ This story illustrates a dangerous extrapolation. It offers an important point i
     -   Usual standard of care
 
 ::: notes
+*Speaker notes*
+
 I am going to use the terms treatment and control a lot today, so you need to understand how I define these terms.
 
 A treatment is something new that you as a researcher do to your patients. It could be a new drug, a medical device, an exercise regimen, or something else. It is intended to make things better. It might not make things better. In fact, it may at times make things worse. But the intent is important. A treatment is something that you do that you hope will make things better.
@@ -129,6 +144,8 @@ $X^2 = \Sigma \frac{(O_{ij}-E_{ij})^2}{E_{ij}}$
 ![Counts of dead and survived by sex with expected counts](../images/titanic-expected-counts.png){#fig-titanic-expected-counts fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 The classic test for comparing a binary outcome in a treatment versus a control is the chi-squared test. Lay out the results in a two by two table. Here is the example of mortality versus sex that I discussed earlier. The chi-squared test compares the observed count (Oij) to the expected count (Eij). The expected count is the number dying or surviving, assuming that there is no difference between the treatment and control.
 
 The overall survival rate on the Titanic across all passengers is 450 / 1,313 or 34%. If that rate applied equally to men and women, you would expect to see 158.3 survivors among the women. We observed a lot more survivors, 308. If the rate applied equally to men, you'd expect to see 291.7 survivors. This is a lot more than the 142 that actually did survive. You can do similar calculations for the expected number of deaths in each group.
@@ -152,12 +169,16 @@ Odds ratio = (2/1) / (1/5) = 10
 ```
 
 ::: notes
+*Speaker notes*
+
 The odds ratio is a common way to describe changes in risk. The odds of survival for women was 2 to 1 in favor. The ratio of survivors (308) to deaths (154) is exactly 2, so you can cite the odds as 2 to 1 in favor of survival. In men, the ratio of survivors (142) to deaths (709) is about 1/5. I am rounding a bit here for simplicity.
 
 The odds ratio compares the 2 to 1 odds in favor to the 5 to 1 odds against to get 10. Women fared 10 times better than men because their odds of survival were 10 times better.
 :::
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -177,6 +198,8 @@ Relative risk = 0.667 / 0.167 = 4
 ```
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -189,6 +212,8 @@ Add note
 -   Cannot use relative risk for certain datasets
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -208,6 +233,8 @@ Absolute risk reduction = 0.667 - 0.167 = 0.5
 ```
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -219,6 +246,8 @@ Add note
     -   Ordinal logistic regression
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -229,6 +258,8 @@ Add note
     -   Paired samples
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -239,6 +270,8 @@ Add note
     -   $S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -247,6 +280,8 @@ Add note
 ![Mean ages](../images/titanic-means.png){#fig-titanic-means fig-align="left"} 95% CI (-0.3, 3.8)
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -313,6 +348,8 @@ Room Before  After
 ```
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -335,6 +372,8 @@ $\bar{D}=-1.61,\ S_D=1.24$
 95% CI (-2.65, -0.58)
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -346,6 +385,8 @@ Add note
     -   For two sample t-test, equal variation
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -356,6 +397,8 @@ Add note
 -   Does not rely on Central Limit Theorem
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -382,6 +425,8 @@ p = 0.023
 -   Difficult to do risk adjustments
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -390,6 +435,8 @@ Add note
 ![Quote from "Peggy Sue Got Married](../images/peggy-sue-quote.png){#fig-peggy-sue-quote fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 I want to get a quick feel for your background and interests. Here's a quote from a romantic comedy starring Kathleen Turner from 1986. A forty year old woman, played by Kathleen Turner, travels back in time to her high school senior year, 1960. She has an amusing interchange with her high school math teacher.
 
 "I happen to know that in the future, I will not have the slightest use for algebra, and I speak from experience."
@@ -418,6 +465,8 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
         -   ?
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -432,6 +481,8 @@ Add note
         -   $y=mx+b$
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -442,6 +493,8 @@ Add note
     -   $b=$ y-intercept
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -453,6 +506,8 @@ Add note
 -   Intercept: estimated average value of y when x equals zero.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -462,6 +517,8 @@ Add note
     -   Difficulty: mother leaves hospital first
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -470,6 +527,8 @@ Add note
 ![Scatterplot with regression line for age](../images/breast-feeding-vs-age.png){#fig-breast-feeding-vs-age fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -478,6 +537,8 @@ Add note
 ![Linear regression output](../images/linear-regression-output.png){#fig-linear-regression-output fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -489,6 +550,8 @@ Add note
     -   The estimated average duration of breast feeding increases by 0.4 weeks for every increase of one year in the mother's age.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -501,6 +564,8 @@ Add note
     -   Clearly an inappropriate extrapolation
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -512,6 +577,8 @@ Add note
     -   Reject the null hypothesis and conclude that there is a positive relationship between mother's age and duration of breast feeding.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -524,6 +591,8 @@ Add note
     -   You are 95% confident that the true regression slope is positive.
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -534,6 +603,8 @@ Add note
     -   Control: Feeding using bottles when mom is away
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -546,6 +617,8 @@ Add note
 ![Linear regression output, treatment](../images/linear-regression-output-treatment.png){#fig-linear-regression-output-treatment fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -554,6 +627,8 @@ Add note
 ![Scatterplot with regression line for control=1](../images/breast-feeding-vs-control.png){#fig-breast-feeding-vs-control fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -570,6 +645,8 @@ Add note
 -   Slope for x2: similar interpretation
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -584,6 +661,8 @@ Add note
 -   Covariate imbalance not quite same as confounding
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -592,6 +671,8 @@ Add note
 ![Multiple linear regression output](../images/output-multiple-regression.png){#fig-output-multiple-regression fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -612,6 +693,8 @@ Add note
 Examples in the medical literature
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -623,6 +706,8 @@ Add note
     -   P\[death\] = 1.2
 
 ::: notes
+*Speaker notes*
+
 A doctor is advising her patient about the risks of an upcoming surgery. She warned that the probability that the patient would die during surgery was 60%. Then she looked up an said, no wait, the risk is twice as big in your demographic group. The chances that you will die during surgery is actually 120%. The patient seemed a bit confused. I know what a 100% risk of mortality would be---I'm a goner. But what would a 120% risk of mortality be? The doctor replied, that is a fate worse than death.
 :::
 
@@ -632,6 +717,8 @@ A doctor is advising her patient about the risks of an upcoming surgery. She war
 -   Linear on a log odds scale
 
 ::: notes
+*Speaker notes*
+
 The logistic regression model is a model that uses a binary (two possible values) outcome variable. Examples of a binary variable are mortality (live/dead), and morbidity (healthy/diseased). Sometimes you might take a continuous outcome and convert it into a binary outcome. For example, you might be interested in the length of stay in the hospital for mothers during an unremarkable delivery. A binary outcome might compare mothers who were discharged within 48 hours versus mothers discharged more than 48 hours.
 
 The covariates in a logistic regression model represent variables that might be associated with the outcome variable. Covariates can be either continuous or categorical variables.
@@ -650,6 +737,8 @@ A logistic regression model examines the relationship between one or more indepe
 prob BF = 4 + 2\*GA
 
 ::: notes
+*Speaker notes*
+
 Let's consider an artificial data example where we collect data on the gestational age of infants (GA), which is a continuous variable, and the probability that these infants will be breast feeding at discharge from the hospital (BF), which is a binary variable. We expect an increasing trend in the probability of BF as GA increases. Premature infants are usually sicker and they have to stay in the hospital longer. Both of these present obstacles to BF.
 
 A linear model would presume that the probability of BF increases as a linear function of GA. You can represent a linear function algebraically as
@@ -672,6 +761,8 @@ A simple interpretation of this model is that each additional week of GA adds an
 ![A bad linear trend in probability](../images/linear-trend-ga-bad.gif){#fig-linear-trend-ga-bad fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 I'm not an expert on BF; what little experience I've had with the topic occurred over 65 years ago. But I do know that an additive probability model tends to have problems when you get probabilities close to 0% or 100%. Let's change the linear model slightly to the following:
 
 prob BF = 4 + 3\*GA
@@ -686,6 +777,8 @@ You may find it difficult to explain what a probability of 106% means. This is a
 ![Multiplicative trend in probabilities](../images/multiplicative-trend-ga.gif){#fig-multiplicative-trend-ga fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 It's worthwhile to consider a different model here, a multiplicative model for probability, even though it suffers from the same problems as the additive model.
 
 In a multiplicative model, you change the probabilities by multiplying rather than adding. Here's a simple example.
@@ -705,6 +798,8 @@ A multiplicative model can't produce any probabilities less than 0%, but it's pr
 -   Prob = Odds / (Odds + 1)
 
 ::: notes
+*Speaker notes*
+
 The relationship between odds and probability Another approach is to try to model the odds rather than the probability of BF. You see odds mentioned quite frequently in gambling contexts. If the odds are three to one in favor of your favorite football team, that means you would expect a win to occur about three times as often as a loss. If the odds are four to one against your team, you would expect a loss to occur about four times as often as a win.
 
 You need to be careful with odds. Sometimes the odds represent the odds in favor of winning and sometimes they represent the odds against winning. Usually it is pretty clear from the context. When you are told that your odds of winning the lottery are a million to one, you know that this means that you would expect to having a losing ticket about a million times more often than you would expect to hit the jackpot.
@@ -733,6 +828,8 @@ In medicine and epidemiology, when an event is less likely to happen and more li
 -   DeSantis: $\frac{1/16}{1+1/16} = \frac{1}{17} = 0.059$
 
 ::: notes
+*Speaker notes*
+
 To convert from odds to probability, use the formula odds/(1+odds). You have to flip these around because 40 to 1 odds does not mean that Michelle Obama has 40 chances to win for every one chance of a loss.
 
 Table downloaded from oddschecker.com
@@ -773,6 +870,8 @@ Australia: 0.5%
 :::
 
 ::: notes
+*Speaker notes*
+
 These probabilities were computed from a table of odds posted at the beginning of the round of 16 for the football world cup. Convert these back to odds.
 
 These odds were taken from a December 2, 2022 blog post on the DraftKings website.
@@ -809,6 +908,8 @@ Australia: 200 to 1
 :::
 
 ::: notes
+*Speaker notes*
+
 Here are all the odds. Notice that the United States was rightfully given almost no chance of winning. But wait until the women's football World Cup.
 :::
 
@@ -817,6 +918,8 @@ Here are all the odds. Notice that the United States was rightfully given almost
 ![Multiplicative trend for odds](../images/multiplicative-odds-ga.gif){#fig-multiplicative-odds-ga fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Let's consider a multiplicative model for the odds (not the probability) of BF.
 
 This model implies that each additional week of GA triples the odds of BF. A multiplicative model for odds is nice because it can't produce any meaningless estimates.
@@ -827,6 +930,8 @@ This model implies that each additional week of GA triples the odds of BF. A mul
 ![Additive trend in log odds](../images/additive-log-odds-ga.gif){fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 It's interesting to look at how the logarithm of the odds behave.
 
 Notice that an extra week of GA adds 1.1 units to the log odds. So you can describe this model as linear (additive) in the log odds. When you run a logistic regression model in SPSS or other statistical software, it uses a model just like this, a model that is linear on the log odds scale. This may not seem too important now, but when you look at the output, you need to remember that SPSS presents all of the results in terms of log odds. If you want to see results in terms of probabilities instead of logs, you have to transform your results.
@@ -837,6 +942,8 @@ Notice that an extra week of GA adds 1.1 units to the log odds. So you can descr
 ![Odds converted into probabilities](../images/odds-converted.gif){#fig-odds-converted fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Let's look at how the probabilities behave in this model.
 
 Notice that even when the odds get as large as 27 to 1, the probability still stays below 100%. Also notice that the probabilities change in neither an additive nor a multiplicative fashion.
@@ -847,6 +954,8 @@ Notice that even when the odds get as large as 27 to 1, the probability still st
 ![S-shaped curve](../images/s-shaped-curve.gif){fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 A graph shows what is happening.
 
 The probabilities follow an S-shaped curve that is characteristic of all logistic regression models. The curve levels off at zero on one side and at one on the other side. This curve ensures that the estimated probabilities are always between 0% and 100%.
@@ -859,6 +968,8 @@ The probabilities follow an S-shaped curve that is characteristic of all logisti
 $log\ odds = -16.72 + 0.577 \times ga$
 
 ::: notes
+*Speaker notes*
+
 An example of a log odds model with real data
 
 There are other approaches that also work well for this type of data, such as a probit model, that I won't discuss here. But I did want to show you what the data relating GA and BF really looks like.
@@ -878,6 +989,8 @@ log odds = -16.72 + 0.577\*GA
     -   prob = 1.80 / (1+1.80) = 0.643
 
 ::: notes
+*Speaker notes*
+
 The table below shows the predicted log odds, and the calculations needed to transform this estimate back into predicted probabilities.
 
 Let's examine these calculations for GA = 30. The predicted log odds would be
@@ -902,6 +1015,8 @@ The predicted probability of 64.3% is reasonably close to the true probability (
 5.70/3.20 = 1.78
 
 ::: notes
+*Speaker notes*
+
 You might also want to take note of the predicted odds. Notice that the ratio of any odds to the odds in the next row is 1.78. For example,
 
 3.20/1.80 = 1.78
@@ -920,6 +1035,8 @@ This is a general property of the logistic model. The slope term in a logistic r
 ![Titanic probabilities for death and survival](../images/titanic-percents.gif){#fig-titanic-percents fig-align="left"}
 
 ::: notes
+*Speaker notes*
+
 Here is the table of survival versus sex on the Titanic.
 :::
 
@@ -933,6 +1050,8 @@ Here is the table of survival versus sex on the Titanic.
     -   prob = 0.667
 
 ::: notes
+*Speaker notes*
+
 Let's start with the CONSTANT row of the data. This has an interpretation similar to the intercept in the linear regression model. the B column represents the estimated log odds when SexMale=0. Above, you saw that the odds for dying were 2 to 1 against for females, and the natural logarithm of 2 is 0.693. The last column, EXP(B) represents the odds, or 2.000. You need to be careful with this interpretation, because sometimes SPSS will report the odds in favor of an event and sometimes it will report the odds against an event. You have to look at the crosstabulation to be sure which it is.
 :::
 
@@ -946,6 +1065,8 @@ Let's start with the CONSTANT row of the data. This has an interpretation simila
     -   prob = 0.167
 
 ::: notes
+*Speaker notes*
+
 Let's start with the CONSTANT row of the data. This has an interpretation similar to the intercept in the linear regression model. the B column represents the estimated log odds when SexMale=0. Above, you saw that the odds for dying were 2 to 1 against for females, and the natural logarithm of 2 is 0.693. The last column, EXP(B) represents the odds, or 2.000. You need to be careful with this interpretation, because sometimes SPSS will report the odds in favor of an event and sometimes it will report the odds against an event. You have to look at the crosstabulation to be sure which it is.
 
 The SexMale row has an interpretation similar to the slope term in a linear regression model. The B column represents the estimated change in the log odds when SexMale increases by one unit. This is effectively the log odds ratio. We computed the odds ratio above, and -2.301 is the natural logarithm of 0.1. The last column, EXP(B) provides you with the odds ratio (0.100).
@@ -959,6 +1080,8 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
     -   odds ratio = 0.1
 
 ::: notes
+*Speaker notes*
+
 The SexMale row has an interpretation similar to the slope term in a linear regression model. The B column represents the estimated change in the log odds when SexMale increases by one unit. This is effectively the log odds ratio. We computed the odds ratio above, and -2.301 is the natural logarithm of 0.1. The last column, EXP(B) provides you with the odds ratio (0.100).
 :::
 
@@ -967,6 +1090,8 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
 ![Description of the interview invite dataset](../images/interview-description.png){#fig-interview-description align="left"}
 
 ::: notes
+*Speaker notes*
+
 "Resumes were sent out to 316 top law firms in the United States, and there were two randomized characteristics of each resume. First, the gender associated with the resume was randomized by assigning a first name of either James or Julia. Second, the socioeconomic class of the candidate was randomly assigned and represented through five minor changes associated with personal interests and other other minor details (e.g. an extracurricular activity of sailing team vs track and field). The outcome variable was whether the candidate was received an interview."
 :::
 
@@ -975,6 +1100,8 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
 ![Crosstabulation of class and interview](../images/crosstab-class-interview.png){#fig-interview-description align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -983,6 +1110,8 @@ Add note
 ![Crosstabulation of gender and interview](../images/crosstab-gender-interview.png){#fig-interview-description align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -991,6 +1120,8 @@ Add note
 ![Logistic regression model for class](../images/logistic-model-class.png){#fig-logistic-model-class align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -999,6 +1130,8 @@ Add note
 ![Logistic regression model for gender](../images/logistic-model-gender.png){#fig-logistic-model-gender align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1007,6 +1140,8 @@ Add note
 ![Fruit fly data, round 1](../images/fruit-fly-data-1.png){#fig-fruit-fly-data-1 align="left"}
 
 ::: notes
+*Speaker notes*
+
 This data represents survival time for a group of fruit flies and is a subset of a larger data set found at the Data and Story Library (DASL). The data set has been slightly modified to simplify some of these explanations.
 
 There are 25 flies in the sample, with the first fly dying on day 37 and the last fly dying on day 96.
@@ -1017,6 +1152,8 @@ There are 25 flies in the sample, with the first fly dying on day 37 and the las
 ![Fruit fly graph, round 1](../images/fruit-fly-km-1.png){#fig-fruit-fly-km-1 align="left"}
 
 ::: notes
+*Speaker notes*
+
 If you wanted to estimate the survival probability for this data, you would draw a curve that decreases by 4% (1/25) every time a fly dies.
 :::
 
@@ -1025,6 +1162,8 @@ If you wanted to estimate the survival probability for this data, you would draw
 ![Fruit fly data, round 2](../images/fruit-fly-data-2.png){#fig-fruit-fly-data-2 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Now let's alter the experiment. Suppose that totally by accident, a technician leaves the screen cover open on day 70 and all the flies escape. You're probably worried that the whole experiment has been ruined. But don't be so pessimistic. You still have complete information on survival of the fruit flies up to their 70th day of life. Here's how you would present the data and estimate the survival probabilities.
 :::
 
@@ -1033,6 +1172,8 @@ Now let's alter the experiment. Suppose that totally by accident, a technician l
 ![Fruit fly graph, round 2](../images/fruit-fly-km-2.png){#fig-fruit-fly-km-2 align="left"}
 
 ::: notes
+*Speaker notes*
+
 We clearly have enough data to make several important statements about survival probability. For example, the median survival time is 61 days because roughly half of the flies had died before this day.
 
 By the way, you might be tempted to ignore the ten flies who escaped. But that would seriously bias your results. The median survival time, for example, of the 15 flies who did not escape, for example, is only 54 days which is much smaller than the actual median.
@@ -1043,6 +1184,8 @@ By the way, you might be tempted to ignore the ten flies who escaped. But that w
 ![Fruit fly data, round 3](../images/fruit-fly-data-3.png){#fig-fruit-fly-data-3 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Let's look at a third experiment, where the screen cover is left open and all but four of the remaining flies escape. It turns out that those four remaining flies who didn't bug out will allow us to still get reasonable estimates of survival probabilities beyond 70 days. Here is the data and the survival probabilities.
 :::
 
@@ -1051,6 +1194,8 @@ Let's look at a third experiment, where the screen cover is left open and all bu
 ![Fruit fly graph, round 3](../images/fruit-fly-km-3.png){#fig-fruit-fly-km-3 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1059,6 +1204,8 @@ Add note
 ![Fruit fly graph, estimating the median](../images/fruit-fly-km-4.png){#fig-fruit-fly-km-4 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1067,6 +1214,8 @@ Add note
 ![Fruit fly graph, estimating survival probability](../images/fruit-fly-km-5.png){#fig-fruit-fly-km-5 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1075,6 +1224,8 @@ Add note
 ![Hypothetical survival distribution](../images/hazard_1.png){#fig-hazard_1 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1083,12 +1234,16 @@ Add note
 ![Hypothetical survival distribution, probability for 20-30 years](../images/hazard_2.png){#fig-hazard_2 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
 ![Hypothetical survival distribution, probability for 40-60 years](../images/hazard_3.png){#fig-hazard_2 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1116,6 +1271,8 @@ Add note
 ![Increasing, decreasing, and constant hazard functions](../images/hazard_4.png){#fig-hazard_4 align="left"}
 
 ::: notes
+*Speaker notes*
+
 Add note
 :::
 
@@ -1139,6 +1296,8 @@ My goal: help you to become a better consumer of statistics
     -   Try googling *topic* site:pmean.com
 
 ::: notes
+*Speaker notes*
+
 I am a part-time independent consultant, but I offer one hour of advice on any topic for free. So email me. I love quick questions and often take questions that I am asked by email and turn them into web pages.
 
 Anything I do, I put up on the web and make it available for free to anyone. I have a github site that is intended for programming, but I also use a progamming language, R Markdown, to create all my talks.
