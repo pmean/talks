@@ -1,0 +1,248 @@
+---
+title: "Frailty models"
+format: 
+  pptx
+---
+
+## Fruit fly study, round 1 data
+
+```{}
+  37         58         73
+  40         59         75
+  43         60         77
+  44         61         79
+  45         62         89
+  47         68         94
+  49         70         96
+  54         71
+  56         72
+```
+
+::: notes
+Imagine an experiment where you monitor the survival time of 25 fruit flies. This is actually adapted from a real data set, but I have tweaked a few of the numbers to make things work out a bit easier.
+
+The first fly dies on day 37 and the last fly dies on day 96.
+:::
+
+## Fruit fly study, round 1 probabilities
+
+```{}
+  37  96%    58  60%    73  24%
+  40  92%    59  56%    75  20%
+  43  88%    60  52%    77  16%
+  44  84%    61  48%    79  12%
+  45  80%    62  44%    89   8%
+  47  76%    68  40%    94   4%
+  49  72%    70  36%    96   0%
+  54  68%    71  32%  
+  56  64%    72  38%
+```
+
+::: notes
+If you want to estimate survival probabilities, just count the number of flies still alive on a given day and divide by 25. Each fly funeral leads to a 4% reduction in survival probability.
+:::
+
+
+
+## Fruit fly study, round 1 graph
+
+![](fly-01.png)
+
+::: notes
+Here is what a graph of these probabilities would look like.
+:::
+
+## Fruit fly study, round 2 data
+
+```{}
+  37         58         70+
+  40         59         70+
+  43         60         70+
+  44         61         70+
+  45         62         70+
+  47         68         70+
+  49         70+        70+
+  54         70+
+  56         70+
+```
+
+::: notes
+Suppose that you ran that experiment, but on day 70, you left the cover off and 10 flies escaped. What a disaster, you think. The experiment is ruined.
+:::
+
+## Fruit fly study, round 2 probabilities
+
+```{}
+  37  96%    58  60%    70+  ?
+  40  92%    59  56%    70+  ?
+  43  88%    60  52%    70+  ?
+  44  84%    61  48%    70+  ?
+  45  80%    62  44%    70+  ?
+  47  76%    68  40%    70+  ?
+  49  72%    70+  ?     70+  ?
+  54  68%    70+  ?
+  56  64%    70+  ?
+```
+
+::: notes
+But hold on. You can still estimate survival probabilities up to 70 days. You can still estimate the median survival time (61 days). So all is not lost. You just lose survival times beyond 70 days.
+:::
+
+## Fruit fly study, round 2 graph
+
+![](fly-02.png)
+
+## Fruit fly study, round 3 data
+
+```{}
+  37         58         70+
+  40         59         75
+  43         60         70+
+  44         61         70+
+  45         62         89
+  47         68         70+
+  49         70+        96
+  54         71
+  56         70+
+```
+
+::: notes
+Suppose that you ran that experiment, but on day 70, you left the cover off and 6 of the 10 flies escaped. Now, you still have some data after 70 days. What do you do with it?
+:::
+
+## Fruit fly study, round 3 probabilities
+
+```{}
+  37  96%    58  60%    70+
+  40  92%    59  56%    75  20%
+  43  88%    60  52%    70+
+  44  84%    61  48%    70+
+  45  80%    62  44%    89  10%
+  47  76%    68  40%    70+
+  49  72%    70+        96   0%
+  54  68%    71  30%
+  56  64%    70+
+```
+
+::: notes
+You have to divvy up the remaining 40% of the survival probability among the 4 flies that remain. That means that each fly now carries 10% of the survival probability on their shoulders.
+:::
+
+## Fruit fly study, round 3 graph
+
+![](fly-03.png)
+
+::: notes
+Here is what a graph of these probabilities would look like.
+:::
+
+## Life insurance example
+
+```{r}
+library(readr)
+library(ggplot2)
+df <- read_tsv("life-table.txt", col_names=FALSE)
+names(df) <- c(
+  "age",
+  "h_male",
+  "s_male",
+  "life_expectancy_male",
+  "h_female",
+  "s_female",
+  "life_expectancy_female"
+)
+df$density_male <-
+  c(NA,
+    (df$s_male[-120]-df$s_male[-1]))/100000
+df <- df[1:110, ]
+a1 <- 21
+a2 <- 41
+a3 <- 95
+a4 <- 99
+ga <- df$age >= a1 & df$age <= a2
+gb <- df$age >= a3 & df$age <= a4
+p1 <- sum(df$density_male[ga])
+p2 <- sum(df$density_male[gb])
+df1 <- c(0, df$density_male[ga], 0)
+df2 <- c(0, df$density_male[gb], 0)
+poly1 <- data.frame(x=c(a1, a1:a2, a2), y=df1)
+poly2 <- data.frame(x=c(a3, a3:a4, a4), y=df2)
+```
+
+## Probabilities for life insurance
+
+```{r}
+ggplot(df, aes(age, density_male)) +
+  geom_line()
+```
+
+## Probabilities for ages `r a1` through `r a2`
+
+```{r}
+ggplot(df, aes(age, density_male)) +
+  geom_polygon(data=poly1, aes(x, y), fill="white") +
+  geom_line() +
+  geom_text(
+    aes(
+      x=(a1+a2)/2, 
+      y=0.001, 
+      label=paste(round(100*p1, 1), "%")))
+```
+
+## Probabilities for ages `r a3` through `r a4`
+
+```{r}
+ggplot(df, aes(age, density_male)) +
+  geom_polygon(data=poly2, aes(x, y), fill="white") +
+  geom_line() +
+  geom_text(
+    aes(
+      x=(a3+a4)/2, 
+      y=0.001, 
+      label=paste(round(100*p2, 1), "%")))
+```
+
+## Hazard functions
+
+$$h(t)=lim_{\Delta t \rightarrow 0}\frac{P[t \le T \le T+\Delta t]/\Delta t}{P[T \ge t]}$$
+
+$\ $
+
+$$h(t)=\frac{f(t)}{S(t)}$$
+
+$\ $
+
+-   where $f$ is the density function, and 
+-   $S$ is the survival function ($S(t)=1-F(t)$)
+
+
+## Hazard function
+
+```{r}
+ggplot(df, aes(age, h_male)) +
+  geom_line()
+```
+
+## Hazard function on a log scale
+
+```{r}
+ggplot(df, aes(age, h_male)) +
+  geom_line() +
+  scale_y_log10()
+```
+
+## Cox regression model, 1 of 2
+
+![](cox-paper.png)
+
+::: notes
+This paper by Sir David Roxbee Cox introduced the proportional hazards regression model, also known as the Cox regression model. This paper has been cited over 28,000 times and represents the 24th most cited research paper in any field, according to a 2014 publication in Nature.
+:::
+
+## Cox regression model, 2 of 2
+
+$h(t, X_i, \beta)=e^{X_i \beta}h_0(t)$
+
+$\ $
+
+$\frac{h(t_i, X_i, \beta)}{h(t_i, X_j, \beta)}=e^{(X_i-X_j) \beta}$
