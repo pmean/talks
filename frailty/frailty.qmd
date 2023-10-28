@@ -6,7 +6,7 @@ format:
 
 ## Fruit fly study, round 1 data
 
-```{}
+```         
   37         58         73
   40         59         75
   43         60         77
@@ -26,7 +26,7 @@ The first fly dies on day 37 and the last fly dies on day 96.
 
 ## Fruit fly study, round 1 probabilities
 
-```{}
+```         
   37  96%    58  60%    73  24%
   40  92%    59  56%    75  20%
   43  88%    60  52%    77  16%
@@ -42,8 +42,6 @@ The first fly dies on day 37 and the last fly dies on day 96.
 If you want to estimate survival probabilities, just count the number of flies still alive on a given day and divide by 25. Each fly funeral leads to a 4% reduction in survival probability.
 :::
 
-
-
 ## Fruit fly study, round 1 graph
 
 ![](fly-01.png)
@@ -54,7 +52,7 @@ Here is what a graph of these probabilities would look like.
 
 ## Fruit fly study, round 2 data
 
-```{}
+```         
   37         58         70+
   40         59         70+
   43         60         70+
@@ -72,7 +70,7 @@ Suppose that you ran that experiment, but on day 70, you left the cover off and 
 
 ## Fruit fly study, round 2 probabilities
 
-```{}
+```         
   37  96%    58  60%    70+  ?
   40  92%    59  56%    70+  ?
   43  88%    60  52%    70+  ?
@@ -94,7 +92,7 @@ But hold on. You can still estimate survival probabilities up to 70 days. You ca
 
 ## Fruit fly study, round 3 data
 
-```{}
+```         
   37         58         70+
   40         59         75
   43         60         70+
@@ -112,7 +110,7 @@ Suppose that you ran that experiment, but on day 70, you left the cover off and 
 
 ## Fruit fly study, round 3 probabilities
 
-```{}
+```         
   37  96%    58  60%    70+
   40  92%    59  56%    75  20%
   43  88%    60  52%    70+
@@ -138,7 +136,7 @@ Here is what a graph of these probabilities would look like.
 
 ## Life insurance example
 
-```{r}
+```{r, echo=FALSE}
 library(readr)
 library(ggplot2)
 df <- read_tsv("life-table.txt", col_names=FALSE)
@@ -169,7 +167,7 @@ poly1 <- data.frame(x=c(a1, a1:a2, a2), y=df1)
 poly2 <- data.frame(x=c(a3, a3:a4, a4), y=df2)
 ```
 
-```{r}
+```{r, echo=FALSE}
 ggplot(df, aes(age, density_male)) +
   geom_line()
 ```
@@ -230,7 +228,7 @@ The most obvious flaw is the unequal time intervals, `r a2-a1` years for the fir
 
 You can fix this by computing a rate. You get the rate by dividing the probability by the width of the time interval.
 
-The second flaw is that the probability changes over the interval, increasing in the first case and decreasing in the second case. 
+The second flaw is that the probability changes over the interval, increasing in the first case and decreasing in the second case.
 
 You can fix this by shrinking the width of the time interval.
 
@@ -246,7 +244,8 @@ You can fix this by dividing by the survivor probability.
 -   $$h(t)=lim_{\Delta t \rightarrow 0}\frac{P[t \le T \le T+\Delta t]/\Delta t}{P[T \ge t]}$$
 
 -   $$h(t)=\frac{f(t)}{S(t)}$$
-    -   where $f$ is the density function, and 
+
+    -   where $f$ is the density function, and
     -   $S$ is the survival function ($S(t)=1-F(t)$)
 
 ::: notes
@@ -289,7 +288,7 @@ The hazard function provides the foundation for much work in survival analysis. 
 -   $h(t, X_i, \beta)=exp(X_i \beta)h_0(t)$
     -   The meaning of proportional hazards
         -   $\frac{h(t_i, X_i, \beta)}{h(t_i, X_j, \beta)}=exp(X_i-X_j) \beta$
-        
+
 ::: notes
 The Cox regression model states that the hazard function for a particular value of the independent variable is the exponential of X beta times a baseline hazard, h0. If you compare the hazard function at two levels of the covariate, Xi and Xj, the hazard function changes by a proportion equal to exp((Xi-Xj)\beta).
 :::
@@ -298,13 +297,13 @@ The Cox regression model states that the hazard function for a particular value 
 
 -   Partial likelihood
     -   $\mathcal{l}_p(\beta)=\Pi_i \frac{exp(X_i \beta)}{\Sigma_{j \in R_i} exp(X_j \beta)}$
-        -    R is all patients in the risk set
+        -   R is all patients in the risk set
 -   Log partial likelihood
     -   $\mathcal{L}_p(\beta)=\Pi_i \Big(X_i \beta-ln(\Sigma_{j \in R_i} exp(X_j \beta)) \Big)$
--   $\hat\beta$ is the value that maximizes $\mathcal{L}_p(\beta)$    
-    
+-   $\hat\beta$ is the value that maximizes $\mathcal{L}_p(\beta)$
+
 ::: notes
-A maximum likelihood approach to estimation does not work well because the hazard function burns up too many degrees of freedom. But you can compute a partial likelihood. The estimates from a Cox regression maximize this partial likelihood. 
+A maximum likelihood approach to estimation does not work well because the hazard function burns up too many degrees of freedom. But you can compute a partial likelihood. The estimates from a Cox regression maximize this partial likelihood.
 
 It is often easier to work on the log scale, and maximizing the log partial likelihood is equivalent.
 :::
@@ -336,4 +335,171 @@ The formulas shown here area bit messy, but are very helpful when looking at var
 -   Replace it with the sandwich estimate, $I(\hat\beta)^{-1}(\hat L'\hat L)I(\hat\beta)^{-1}$
     -   $\hat L$ are score residuals, computed from the score statistic.
 -   Comparable to the Generalized Estimating Equations (gee) model.
-    
+
+## Rats data
+
+```{r}
+library(survival)
+rats[1:7, ]
+```
+
+## Analysis ignoring litter effect, Stata, 1 of 2
+
+```         
+stset time, failure(status)
+stcox rx
+```
+
+## Analysis ignoring litter effect, Stata, 2 of 2
+
+![](stata-01.png)
+
+## Analysis ignoring litter effect, SAS, 1 of 4
+
+```         
+proc phreg data=storage.rats;
+  model time*status(0) = rx;
+run;
+```
+
+## Analysis ignoring litter effect, SAS, 2 of 4
+
+![](sas-01.png)
+
+## Analysis ignoring litter effect, SAS, 3 of 4
+
+![](sas-02.png)
+
+## Analysis ignoring litter effect, SAS, 4 of 4
+
+![](sas-03.png)
+
+## Analysis ignoring litter effect, R, 1 of 2
+
+```         
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx, data=rats)
+```
+
+## Analysis ignoring litter effect, R, 2 of 2
+
+```{r}
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx, data=rats)
+```
+
+## Analysis ignoring litter effect, Stata, 1 of 2
+
+```         
+stset time, failure(status)
+stcox rx
+```
+
+## Analysis ignoring litter effect, Stata, 2 of 2
+
+![](stata-01.png)
+
+## Analysis ignoring litter effect, SAS, 1 of 4
+
+```         
+proc phreg data=storage.rats covs(aggregate);
+  model time*status(0) = rx;
+  id litter;
+run;
+```
+
+## Analysis ignoring litter effect, SAS, 2 of 4
+
+![](sas-01.png)
+
+## Analysis ignoring litter effect, SAS, 3 of 4
+
+![](sas-02.png)
+
+## Analysis ignoring litter effect, SAS, 4 of 4
+
+![](sas-03.png)
+
+
+## Analysis ignoring litter effect, R, 1 of 3
+
+```{}
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx, data=rats)
+```
+
+## Analysis ignoring litter effect, R, 2 of 3
+
+```{r}
+rats_surv <- Surv(rats$time, rats$status)
+m1 <- coxph(rats_surv ~ rx, data=rats)
+t1 <- capture.output(m1)
+cat(t1[1:5], sep="\n")
+```
+
+## Analysis ignoring litter effect, R, 3 of 3
+
+```{r}
+cat(t1[6:8], sep="\n")
+```
+
+## Analysis with robust variance (sandwich) estimate, Stata, 1 of 2
+
+```         
+stset time, failure(status)
+stcox rx, vce(cluster litter)
+```
+
+## Analysis with robust variance (sandwich) estimate, Stata, 2 of 2
+
+![](stata-02.png)
+
+## Analysis with robust variance (sandwich) estimate, SAS, 1 of 4
+
+```         
+proc phreg data=storage.rats covs(aggregate);
+  model time*status(0) = rx;
+  id litter;
+run;
+```
+
+## Analysis with robust variance (sandwich) estimate, SAS, 2 of 4
+
+![](sas-04.png)
+
+## Analysis with robust variance (sandwich) estimate, SAS, 3 of 4
+
+![](sas-05.png)
+
+## Analysis with robust variance (sandwich) estimate, SAS, 4 of 4
+
+![](sas-06.png)
+
+## Analysis with robust variance (sandwich) estimate, R, 1 of 2
+
+```         
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx + cluster(litter), data=rats)
+```
+
+## Analysis with robust variance (sandwich) estimate, R, 2 of 2
+
+```{r}
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx + cluster(litter), data=rats)
+```
+
+## Thiotepa data
+
+```{r}
+library(survival)
+bladder2[1:7, ]
+```
+
+## Plot of thiotepa data
+
+```{r}
+ggplot(bladder2, aes(id, stop)) +
+  geom_segment(aes(x=0,xend=stop, y=id, yend=id)) +
+  geom_text(aes(x=stop, y=id, label=event))
+```
