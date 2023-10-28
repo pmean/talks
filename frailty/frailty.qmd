@@ -299,7 +299,7 @@ The Cox regression model states that the hazard function for a particular value 
     -   $\mathcal{l}_p(\beta)=\Pi_i \frac{exp(X_i \beta)}{\Sigma_{j \in R_i} exp(X_j \beta)}$
         -   R is all patients in the risk set
 -   Log partial likelihood
-    -   $\mathcal{L}_p(\beta)=\Pi_i \Big(X_i \beta-ln(\Sigma_{j \in R_i} exp(X_j \beta)) \Big)$
+    -   $\mathcal{L}_p(\beta)=\Sigma_i \Big(X_i \beta-ln(\Sigma_{j \in R_i} exp(X_j \beta)) \Big)$
 -   $\hat\beta$ is the value that maximizes $\mathcal{L}_p(\beta)$
 
 ::: notes
@@ -311,13 +311,13 @@ It is often easier to work on the log scale, and maximizing the log partial like
 ## Testing in the Cox model
 
 -   Likelihood ratio test
-    -   $2 (\mathcal{L}_p(\hat\beta)-\mathcal{L}_p(0))$
+    -   $2 (\mathcal{L}_p(\hat\beta)-\mathcal{L}_p(\hat\beta_{reduced}))$
 -   Score test
-    -   $\frac{\partial}{\partial\beta_j}\mathcal{L}_p(0)$
+    -   $\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\hat\beta_{reduced})$
 -   Wald test
-    -   $I(\beta) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\beta)$
-    -   $se(\hat\beta) = \sqrt{I(\hat\beta)^{-1}_{jj}}$
-    -   $T = \frac{\hat\beta}{se(\hat\beta)}$
+    -   $I(\hat\beta}) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\beta)$
+    -   $se(\hat\beta_j) = \sqrt{I(\hat\beta)^{-1}_{jj}}$
+    -   $T = \frac{\hat\beta_j}{se(\hat\beta_j)}$
 
 ::: notes
 There are three tests that you can use for the Cox regression model. A partial likelihood ratio test compares the highest log partial likelihood (the log partial likelihood at $\hat\beta$ to the log partial likelihood at zero.
@@ -340,52 +340,8 @@ The formulas shown here area bit messy, but are very helpful when looking at var
 
 ```{r}
 library(survival)
+rats <- rats[rats$sex=="f", ]
 rats[1:7, ]
-```
-
-## Analysis ignoring litter effect, Stata, 1 of 2
-
-```         
-stset time, failure(status)
-stcox rx
-```
-
-## Analysis ignoring litter effect, Stata, 2 of 2
-
-![](stata-01.png)
-
-## Analysis ignoring litter effect, SAS, 1 of 4
-
-```         
-proc phreg data=storage.rats;
-  model time*status(0) = rx;
-run;
-```
-
-## Analysis ignoring litter effect, SAS, 2 of 4
-
-![](sas-01.png)
-
-## Analysis ignoring litter effect, SAS, 3 of 4
-
-![](sas-02.png)
-
-## Analysis ignoring litter effect, SAS, 4 of 4
-
-![](sas-03.png)
-
-## Analysis ignoring litter effect, R, 1 of 2
-
-```         
-rats_surv <- Surv(rats$time, rats$status)
-coxph(rats_surv ~ rx, data=rats)
-```
-
-## Analysis ignoring litter effect, R, 2 of 2
-
-```{r}
-rats_surv <- Surv(rats$time, rats$status)
-coxph(rats_surv ~ rx, data=rats)
 ```
 
 ## Analysis ignoring litter effect, Stata, 1 of 2
@@ -482,11 +438,75 @@ rats_surv <- Surv(rats$time, rats$status)
 coxph(rats_surv ~ rx + cluster(litter), data=rats)
 ```
 
-## Analysis with robust variance (sandwich) estimate, R, 2 of 2
+## Analysis with robust variance (sandwich) estimate, R, 2 of 3
 
 ```{r}
 rats_surv <- Surv(rats$time, rats$status)
-coxph(rats_surv ~ rx + cluster(litter), data=rats)
+m2 <- coxph(rats_surv ~ rx + cluster(litter), data=rats)
+t2 <- capture.output(m2)
+cat(t2[1:5], sep="\n")
+```
+
+## Analysis with robust variance (sandwich) estimate, R, 3 of 3
+
+```{r}
+cat(t2[6:8], sep="\n")
+```
+
+## Analysis with frailty term, Stata, 1 of 2
+
+```         
+stset time, failure(status)
+stcox rx, shared(litter)
+```
+
+## Analysis with frailty term, Stata, 2 of 2
+
+![](stata-03.png)
+
+## Analysis with frailty term, SAS, 1 of 4
+
+```         
+proc phreg data=storage.rats;
+  class litter;
+  model time*status(0) = rx;
+  id litter;
+  random litter / dist=gamma;
+run;
+```
+
+## Analysis with frailty term, SAS, 2 of 4
+
+![](sas-07.png)
+
+## Analysis with frailty term, SAS, 3 of 4
+
+![](sas-08.png)
+
+## Analysis with frailty term, SAS, 4 of 4
+
+![](sas-09.png)
+
+## Analysis with frailty term, R, 1 of 2
+
+```         
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx + frailty(litter), data=rats)
+```
+
+## Analysis with frailty term, R, 2 of 3
+
+```{r}
+rats_surv <- Surv(rats$time, rats$status)
+m3 <- coxph(rats_surv ~ rx + frailty(litter), data=rats)
+t3 <- capture.output(m3)
+cat(t3[1:6], sep="\n")
+```
+
+## Analysis with frailty term, R, 3 of 3
+
+```{r}
+cat(t3[8:12], sep="\n")
 ```
 
 ## Thiotepa data
@@ -502,4 +522,30 @@ bladder2[1:7, ]
 ggplot(bladder2, aes(id, stop)) +
   geom_segment(aes(x=0,xend=stop, y=id, yend=id)) +
   geom_text(aes(x=stop, y=id, label=event))
+i <- 82
+```
+
+## Data for subject `r i`
+
+```{r}
+bi <- bladder2[bladder2$id==i,]
+bi
+```
+
+## Re-setting the clock
+
+```{r}
+bj <- bi
+bj$start[2:4] <- bj$start[2:4]-bj$stop[1:3]
+bj$stop[2:4] <- bj$stop[2:4]-bj$stop[1:3]
+bj
+```
+
+## Alternative analysis: Poisson regression
+
+```{r}
+bk <- bi[4, 1:4]
+bk$event_count <- sum(bi$event)
+bk$time_at_risk <- bi$stop[4]
+bk
 ```
