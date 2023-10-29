@@ -134,6 +134,13 @@ You have to divvy up the remaining 40% of the survival probability among the 4 f
 Here is what a graph of these probabilities would look like.
 :::
 
+## Break
+
+-   What have your learned
+    -   Review of handling censored values
+-   What's coming next
+    -   Motivation for hazard function
+
 ## Life insurance example
 
 ```{r, echo=FALSE}
@@ -280,6 +287,13 @@ ggplot(df, aes(age, h_male)) +
 The pattern becomes a bit clearer when you look at the hazard function on a log scale. The risk of death is high early in your life, but drops. There is a safe period during your pre-teen and early teen years, but then the risk rises because of an increase in deaths associated with things like driving, alcohol, and other drugs. Some of that fades as you mature but other risks increase because of the unavoidable aging of your body.
 :::
 
+## Break
+
+-   What have your learned
+    -   Motivation for hazard function
+-   What's coming next
+    -   Review of Cox Proportional Hazards Regression
+
 ## Cox publication
 
 ![](cox-paper.png)
@@ -334,6 +348,13 @@ You can get a standard error for your estimates through the matrix of second par
 The formulas shown here area bit messy, but are very helpful when looking at various properties of the Cox regression model, such as residual analysis.
 :::
 
+## Break
+
+-   What have your learned
+    -   Review of Cox Proportional Hazards Regression
+-   What's coming next
+    -   How to handle violations of the independence assumption
+    
 ## Violations of the independence assumption
 
 -   Cox regression assumes that individual observations are independent. This may be problematic.
@@ -381,6 +402,23 @@ The frailty term is usually a Gamma distribution or (less often) a lognormal dis
 The frailty term is a latent variable, one that is not directly observable.
 :::
 
+## Alternative analysis: stratification
+
+-   Use a different baseline hazard for each cluster
+    -   Only works with a few very large clusters
+    -   Does not identify "frail" or "strong" clusters
+    
+::: notes
+An alternative worth considering is stratification. Stratification fits a separate baseline hazard function for each cluster. This can use up a lot of degrees of freedom, so only consider this if you have a few clusters and each cluster is very large. This might occur in some multi-center clinical trials, but is unlikely with many other research scenarios.
+:::
+
+## Break
+
+-   What have your learned
+    -   How to handle violations of the independence assumption
+-   What's coming next
+    -   Analyses using Stata, SAS, and R
+    
 ## Rats data
 
 ```{r}
@@ -621,6 +659,13 @@ cat(t3[1:6], sep="\n")
 cat(t3[8:12], sep="\n")
 ```
 
+## Break
+
+-   What have your learned
+    -   Analyses using Stata, SAS, and R
+-   What's coming next
+    -   Issues with repeated measures
+    
 ## Thiotepa data
 
 ```{r}
@@ -662,11 +707,26 @@ bk$time_at_risk <- bi$stop[4]
 print(bk, row.names=FALSE)
 ```
 
-## Alternative analysis: stratification
+## So many choices...
 
--   Use a different baseline hazard for each cluster
-    -   Only works with a few very large clusters
-    
-::: notes
-One more alternative worth considering is stratification. Stratification fits a separate baseline hazard function for each cluster. This can use up a lot of degrees of freedom, so only consider this if you have a few very large clusters, such as in a multi-center clinical trial.
-:::
+-   Robust variance (sandwich)
+    -   Provides marginal estimates
+-   Frailty estimates
+    -   Provides individual estimates
+    -   Identifies "good" and "bad" clusters
+-   Poisson regression
+    -   Assumes risk independent of time
+-   Stratified analysis
+    -   Only works for small number of clusters
+-   **Never ignore clusters**
+
+## Summary
+
+-   What have your learned
+    -   Review of handling censored values
+    -   Motivation for hazard function
+    -   Review of Cox Proportional Hazards Regression
+    -   How to handle violations of the independence assumption
+    -   Analyses using Stata, SAS, and R
+    -   Issues with repeated measures
+
