@@ -169,6 +169,7 @@ poly2 <- data.frame(x=c(a3, a3:a4, a4), y=df2)
 
 ```{r, echo=FALSE}
 ggplot(df, aes(age, density_male)) +
+  theme_minimal() +
   geom_line()
 ```
 
@@ -182,7 +183,8 @@ Imagine yourself working in life insurance sales. You want to price your policie
 
 ```{r}
 ggplot(df, aes(age, density_male)) +
-  geom_polygon(data=poly1, aes(x, y), fill="white") +
+  geom_polygon(data=poly1, aes(x, y), fill="gray") +
+  theme_minimal() +
   geom_line() +
   geom_text(
     aes(
@@ -199,7 +201,8 @@ The probability of a potential customer dying between the ages of `r a1` and `r 
 
 ```{r}
 ggplot(df, aes(age, density_male)) +
-  geom_polygon(data=poly2, aes(x, y), fill="white") +
+  geom_polygon(data=poly2, aes(x, y), fill="gray") +
+  theme_minimal() +
   geom_line() +
   geom_text(
     aes(
@@ -256,6 +259,7 @@ The hazard function addresses all three of the concerns mentioned above. It comp
 
 ```{r}
 ggplot(df, aes(age, h_male)) +
+  theme_minimal() +
   geom_line()
 ```
 
@@ -267,6 +271,7 @@ This is what the hazard function for mortality data looks like.
 
 ```{r}
 ggplot(df, aes(age, h_male)) +
+  theme_minimal() +
   geom_line() +
   scale_y_log10()
 ```
@@ -315,7 +320,7 @@ It is often easier to work on the log scale, and maximizing the log partial like
 -   Score test
     -   $\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\hat\beta_{reduced})$
 -   Wald test
-    -   $I(\hat\beta}) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\beta)$
+    -   $I(\hat\beta) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\beta)$
     -   $se(\hat\beta_j) = \sqrt{I(\hat\beta)^{-1}_{jj}}$
     -   $T = \frac{\hat\beta_j}{se(\hat\beta_j)}$
 
@@ -329,20 +334,64 @@ You can get a standard error for your estimates through the matrix of second par
 The formulas shown here area bit messy, but are very helpful when looking at various properties of the Cox regression model, such as residual analysis.
 :::
 
+## Violations of the independence assumption
+
+-   Cox regression assumes that individual observations are independent. This may be problematic.
+    -   Family/litter effects
+    -   Multi-center trials
+    -   Repeated measurements
+        -   Left eye/right eye
+        -   Infection
+        -   Rehospitalization
+
+::: notes
+The Cox regression model assumes that the times are independent from one observation to another. This may be an issue in several settings, such as data from related family members, from multi-center trials, or from repeated measurments on the same subject.
+:::
+
 ## Robust variance (sandwich estimator)
 
--   The variance covariance matrix, $I(\hat\beta)^{-1}$ is biased.
--   Replace it with the sandwich estimate, $I(\hat\beta)^{-1}(\hat L'\hat L)I(\hat\beta)^{-1}$
+-   If observations are correlated
+    -   Estimated coefficients, $\hat\beta$, are unbiased, but
+    -   Estimated variance covariance matrix, $I(\hat\beta)^{-1}$ is biased.
+-   Replace $I(\hat\beta)^{-1}$ with $I(\hat\beta)^{-1}(\hat L'\hat L)I(\hat\beta)^{-1}$
     -   $\hat L$ are score residuals, computed from the score statistic.
 -   Comparable to the Generalized Estimating Equations (gee) model.
+
+::: notes
+When the observations are not independent, the regression coefficients, $\hat\beta$, are still unbiased, but the variances and covariances of these coefficients are messed up. This leads to confidence intervals that are way too wide or way too narrow. It also messes up the Type I error probabilities. Any sample size justifications based on an independence assumptions are invalid.
+
+One approach to getting a proper estimate of the variances and covariances is to replace the inverse of the information matrix with a more complex estimate. This estimate uses residuals from the score statistic to adjust for the correlations induced by the family/litter effect, center effect, or repeated measurements.
+:::
+
+## Frailty model
+
+-   Use double subscript for covariates
+    -   i represents common family, litter, center, etc.
+-   $h(t, X_ij, \beta)=exp(X_ij \beta)Z_ih_0(t)$
+    -   $Z-i$ is usually a Gamma or lognormal distribution with a mean of 1.
+-   Equivalent formulations
+    -   $h(t, X_ij, \beta)=exp(X_ij \beta)exp(V_i)h_0(t)$
+    -   $h(t, X_ij, \beta)=exp(X_ij \beta +V_i)h_0(t)$
+
+::: notes
+The frailty model adds an extra random term to the proportional hazards model that multiplies the hazard function by a variable that is constant across the cluster creating all the troublesome correlations.
+
+The frailty term is usually a Gamma distribution or (less often) a lognormal distribution. The mean of either distribution is held to be 1.0. Clusters with a  term greater than 1 represent clusters that are more frail or more likely to experience the event. If the term is less than 1, that means the cluster is less frail or less likely to experience the event.
+
+The frailty term is a latent variable, one that is not directly observable.
+:::
 
 ## Rats data
 
 ```{r}
 library(survival)
 rats <- rats[rats$sex=="f", ]
-rats[1:7, ]
+print(rats[1:7, ], row.names=FALSE)
 ```
+
+::: notes
+Here are the first few rows of a data set looking at survival in rats. The researchers took either three males or three female rats from the same litter. One of the rats received an experimental treatment and the other two in the litter served as controls. I have reduced the dataset by looking only at female rats.
+:::
 
 ## Analysis ignoring litter effect, Stata, 1 of 2
 
@@ -351,26 +400,42 @@ stset time, failure(status)
 stcox rx
 ```
 
+::: notes
+Here is the code in Stata to do a Cox regression. You suspect that the Cox model will not be valid, but it is still a useful first step.
+:::
+
 ## Analysis ignoring litter effect, Stata, 2 of 2
 
 ![](stata-01.png)
 
+::: notes
+This is the output from Stata.
+:::
+
 ## Analysis ignoring litter effect, SAS, 1 of 4
 
 ```         
-proc phreg data=storage.rats covs(aggregate);
+proc phreg data=storage.rats;
   model time*status(0) = rx;
-  id litter;
 run;
 ```
+
+::: notes
+This is the code in SAS.
+:::
 
 ## Analysis ignoring litter effect, SAS, 2 of 4
 
 ![](sas-01.png)
 
+::: notes
+SAS places its output in several tables. Here and on the next two slides are some of the key tables.
+:::
+
 ## Analysis ignoring litter effect, SAS, 3 of 4
 
 ![](sas-02.png)
+
 
 ## Analysis ignoring litter effect, SAS, 4 of 4
 
@@ -381,10 +446,17 @@ run;
 
 ```{}
 rats_surv <- Surv(rats$time, rats$status)
-coxph(rats_surv ~ rx, data=rats)
+coxph(rats_surv ~ rx,
+  data=rats)
 ```
 
+::: notes
+Here is the code in R.
+:::
+
 ## Analysis ignoring litter effect, R, 2 of 3
+
+::: {style="font-size: 50%;"}
 
 ```{r}
 rats_surv <- Surv(rats$time, rats$status)
@@ -393,11 +465,19 @@ t1 <- capture.output(m1)
 cat(t1[1:5], sep="\n")
 ```
 
+::: notes
+Here are the first few lines of output.
+:::
+
 ## Analysis ignoring litter effect, R, 3 of 3
 
 ```{r}
 cat(t1[6:8], sep="\n")
 ```
+
+::: notes
+Here is the rest of the output.
+:::
 
 ## Analysis with robust variance (sandwich) estimate, Stata, 1 of 2
 
@@ -406,9 +486,17 @@ stset time, failure(status)
 stcox rx, vce(cluster litter)
 ```
 
+::: notes
+To fit the robust variance or sandwich estimate, include "vce" with the stcox procedure.
+:::
+
 ## Analysis with robust variance (sandwich) estimate, Stata, 2 of 2
 
 ![](stata-02.png)
+
+::: notes
+Here is the output. Things have not changed that much, mainly because the litter effect is not very strong.
+:::
 
 ## Analysis with robust variance (sandwich) estimate, SAS, 1 of 4
 
@@ -419,9 +507,17 @@ proc phreg data=storage.rats covs(aggregate);
 run;
 ```
 
+::: notes
+The SAS code uses the "covs" keyword to get the robust variances.
+:::
+
 ## Analysis with robust variance (sandwich) estimate, SAS, 2 of 4
 
 ![](sas-04.png)
+
+::: notes
+The key tables in SAS appear here and on the next two slides.
+:::
 
 ## Analysis with robust variance (sandwich) estimate, SAS, 3 of 4
 
@@ -438,6 +534,10 @@ rats_surv <- Surv(rats$time, rats$status)
 coxph(rats_surv ~ rx + cluster(litter), data=rats)
 ```
 
+::: notes
+Use the "cluster" function in R to fit the robust variance model.
+:::
+
 ## Analysis with robust variance (sandwich) estimate, R, 2 of 3
 
 ```{r}
@@ -446,6 +546,10 @@ m2 <- coxph(rats_surv ~ rx + cluster(litter), data=rats)
 t2 <- capture.output(m2)
 cat(t2[1:5], sep="\n")
 ```
+
+::: notes
+The output from R appears here and on the next slides.
+:::
 
 ## Analysis with robust variance (sandwich) estimate, R, 3 of 3
 
@@ -460,9 +564,17 @@ stset time, failure(status)
 stcox rx, shared(litter)
 ```
 
+::: notes
+Stata refers to a "shared" frailty term, implying that the random term is shared by observations in the same cluster.
+:::
+
 ## Analysis with frailty term, Stata, 2 of 2
 
 ![](stata-03.png)
+
+::: notes
+Here is the output in Stata.
+:::
 
 ## Analysis with frailty term, SAS, 1 of 4
 
@@ -513,7 +625,7 @@ cat(t3[8:12], sep="\n")
 
 ```{r}
 library(survival)
-bladder2[1:7, ]
+print(bladder2[1:7, ], row.names=FALSE)
 ```
 
 ## Plot of thiotepa data
@@ -529,7 +641,7 @@ i <- 82
 
 ```{r}
 bi <- bladder2[bladder2$id==i,]
-bi
+print(bi, row.names=FALSE)
 ```
 
 ## Re-setting the clock
@@ -538,7 +650,7 @@ bi
 bj <- bi
 bj$start[2:4] <- bj$start[2:4]-bj$stop[1:3]
 bj$stop[2:4] <- bj$stop[2:4]-bj$stop[1:3]
-bj
+print(bj, row.names=FALSE)
 ```
 
 ## Alternative analysis: Poisson regression
@@ -547,5 +659,14 @@ bj
 bk <- bi[4, 1:4]
 bk$event_count <- sum(bi$event)
 bk$time_at_risk <- bi$stop[4]
-bk
+print(bk, row.names=FALSE)
 ```
+
+## Alternative analysis: stratification
+
+-   Use a different baseline hazard for each cluster
+    -   Only works with a few very large clusters
+    
+::: notes
+One more alternative worth considering is stratification. Stratification fits a separate baseline hazard function for each cluster. This can use up a lot of degrees of freedom, so only consider this if you have a few very large clusters, such as in a multi-center clinical trial.
+:::
