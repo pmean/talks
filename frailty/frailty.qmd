@@ -1,5 +1,6 @@
 ---
 title: "Frailty models"
+author: "Steve Simon"
 format: 
   pptx
 ---
@@ -134,7 +135,7 @@ You have to divvy up the remaining 40% of the survival probability among the 4 f
 Here is what a graph of these probabilities would look like.
 :::
 
-## Break
+## Break #1
 
 -   What have your learned
     -   Review of handling censored values
@@ -249,9 +250,9 @@ If you are in insurance sales, you do not sell policies to newborn infants. You 
 You can fix this by dividing by the survivor probability.
 :::
 
-## Hazard functions
+## Hazard function, definition
 
--   $$h(t)=lim_{\Delta t \rightarrow 0}\frac{P[t \le T \le T+\Delta t]/\Delta t}{P[T \ge t]}$$
+-   $$h(t)=lim_{\Delta t \rightarrow 0}\frac{P[t \le T \le t+\Delta t]/\Delta t}{P[T \ge t]}$$
 
 -   $$h(t)=\frac{f(t)}{S(t)}$$
 
@@ -262,7 +263,7 @@ You can fix this by dividing by the survivor probability.
 The hazard function addresses all three of the concerns mentioned above. It computes a rate by dividing by $\Delta t$. It shrinks the interval but using a limit. And it adjusts for survivorship by dividing by the survivor probability.
 :::
 
-## Hazard function
+## Hazard function, example
 
 ```{r}
 ggplot(df, aes(age, h_male)) +
@@ -287,7 +288,7 @@ ggplot(df, aes(age, h_male)) +
 The pattern becomes a bit clearer when you look at the hazard function on a log scale. The risk of death is high early in your life, but drops. There is a safe period during your pre-teen and early teen years, but then the risk rises because of an increase in deaths associated with things like driving, alcohol, and other drugs. Some of that fades as you mature but other risks increase because of the unavoidable aging of your body.
 :::
 
-## Break
+## Break #2
 
 -   What have your learned
     -   Motivation for hazard function
@@ -330,32 +331,28 @@ It is often easier to work on the log scale, and maximizing the log partial like
 ## Testing in the Cox model
 
 -   Likelihood ratio test
-    -   $2 (\mathcal{L}_p(\hat\beta)-\mathcal{L}_p(\hat\beta_{reduced}))$
+    -   $\mathcal{L}_p(\ )$
 -   Score test
-    -   $\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\hat\beta_{reduced})$
--   Wald test
-    -   $I(\hat\beta) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\beta)$
-    -   $se(\hat\beta_j) = \sqrt{I(\hat\beta)^{-1}_{jj}}$
-    -   $T = \frac{\hat\beta_j}{se(\hat\beta_j)}$
+    -   $U(\ )=\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\ )})$
+-   Wald test (information matrix)
+    -   Uses $I(\ ) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\ )$
 
 ::: notes
-There are three tests that you can use for the Cox regression model. A partial likelihood ratio test compares the highest log partial likelihood (the log partial likelihood at $\hat\beta$ to the log partial likelihood at zero.
+There are three tests that you can use for the Cox regression model. The likelihood ratio test uses the log partial likelihood directly. The score test uses the vector of first derivatives of the log partial likelihood. The Wald test uses the information matrix which is defined as the matrix of second derivatives of the log partial likelihood.
 
-The score test looks at the first derivative of the partial likelihood evaluated at zero.
+The three tests are asymptotically equivalent, but they will sometimes disagree for small samples.
 
-You can get a standard error for your estimates through the matrix of second partial derivatives of the log partial likelihood.
-
-The formulas shown here area bit messy, but are very helpful when looking at various properties of the Cox regression model, such as residual analysis.
+The Wald test is simple, the score test is fast, and the likelihood ratio test is best for small sample sizes. But in my experience, there is very little difference among these tests.
 :::
 
-## Break
+## Break #3
 
 -   What have your learned
     -   Review of Cox Proportional Hazards Regression
 -   What's coming next
     -   How to handle violations of the independence assumption
     
-## Violations of the independence assumption
+## Violations of the independence assumption, 1 of 2
 
 -   Cox regression assumes that individual observations are independent. This may be problematic.
     -   Family/litter effects
@@ -366,14 +363,35 @@ The formulas shown here area bit messy, but are very helpful when looking at var
         -   Rehospitalization
 
 ::: notes
-The Cox regression model assumes that the times are independent from one observation to another. This may be an issue in several settings, such as data from related family members, from multi-center trials, or from repeated measurments on the same subject.
+The Cox regression model assumes that the times are independent from one observation to another. This may be an issue in several settings, such as data from related family members, from multi-center trials, or from repeated measurements on the same subject.
 :::
 
-## Robust variance (sandwich estimator)
+## Violations of the independence assumption, 2 of 2
 
 -   If observations are correlated
     -   Estimated coefficients, $\hat\beta$, are unbiased, but
-    -   Estimated variance covariance matrix, $I(\hat\beta)^{-1}$ is biased.
+    -   Estimated variance covariance matrix is biased.
+
+
+## Frailty model
+
+-   Use double subscript for covariates
+    -   i represents common family, litter, center, etc.
+-   $h(t, X_{ij}, \beta)=Z_i exp(X_{ij} \beta) h_0(t)$
+    -   $Z_i$ is usually a Gamma or lognormal distribution with a mean of 1.
+    -   Z_i > 1 implies greater frailty
+
+
+::: notes
+The frailty model adds an extra random term to the proportional hazards model that multiplies the hazard function by a variable that is constant across the cluster creating all the troublesome correlations.
+
+The frailty term is usually a Gamma distribution or (less often) a lognormal distribution. The mean of either distribution is held to be 1.0. Clusters with a  term greater than 1 represent clusters that are more frail or more likely to experience the event. If the term is less than 1, that means the cluster is less frail or less likely to experience the event.
+
+The frailty term is a latent variable, one that is not directly observable.
+:::
+
+## Alternative analysis: Robust variance (sandwich estimator)
+
 -   Replace $I(\hat\beta)^{-1}$ with $I(\hat\beta)^{-1}(\hat L'\hat L)I(\hat\beta)^{-1}$
     -   $\hat L$ are score residuals, computed from the score statistic.
 -   Comparable to the Generalized Estimating Equations (gee) model.
@@ -382,24 +400,6 @@ The Cox regression model assumes that the times are independent from one observa
 When the observations are not independent, the regression coefficients, $\hat\beta$, are still unbiased, but the variances and covariances of these coefficients are messed up. This leads to confidence intervals that are way too wide or way too narrow. It also messes up the Type I error probabilities. Any sample size justifications based on an independence assumptions are invalid.
 
 One approach to getting a proper estimate of the variances and covariances is to replace the inverse of the information matrix with a more complex estimate. This estimate uses residuals from the score statistic to adjust for the correlations induced by the family/litter effect, center effect, or repeated measurements.
-:::
-
-## Frailty model
-
--   Use double subscript for covariates
-    -   i represents common family, litter, center, etc.
--   $h(t, X_ij, \beta)=exp(X_ij \beta)Z_ih_0(t)$
-    -   $Z-i$ is usually a Gamma or lognormal distribution with a mean of 1.
--   Equivalent formulations
-    -   $h(t, X_ij, \beta)=exp(X_ij \beta)exp(V_i)h_0(t)$
-    -   $h(t, X_ij, \beta)=exp(X_ij \beta +V_i)h_0(t)$
-
-::: notes
-The frailty model adds an extra random term to the proportional hazards model that multiplies the hazard function by a variable that is constant across the cluster creating all the troublesome correlations.
-
-The frailty term is usually a Gamma distribution or (less often) a lognormal distribution. The mean of either distribution is held to be 1.0. Clusters with a  term greater than 1 represent clusters that are more frail or more likely to experience the event. If the term is less than 1, that means the cluster is less frail or less likely to experience the event.
-
-The frailty term is a latent variable, one that is not directly observable.
 :::
 
 ## Alternative analysis: stratification
@@ -412,7 +412,7 @@ The frailty term is a latent variable, one that is not directly observable.
 An alternative worth considering is stratification. Stratification fits a separate baseline hazard function for each cluster. This can use up a lot of degrees of freedom, so only consider this if you have a few clusters and each cluster is very large. This might occur in some multi-center clinical trials, but is unlikely with many other research scenarios.
 :::
 
-## Break
+## Break #4
 
 -   What have your learned
     -   How to handle violations of the independence assumption
@@ -494,8 +494,6 @@ Here is the code in R.
 
 ## Analysis ignoring litter effect, R, 2 of 3
 
-::: {style="font-size: 50%;"}
-
 ```{r}
 rats_surv <- Surv(rats$time, rats$status)
 m1 <- coxph(rats_surv ~ rx, data=rats)
@@ -517,6 +515,70 @@ cat(t1[6:8], sep="\n")
 Here is the rest of the output.
 :::
 
+## Analysis with frailty term, Stata, 1 of 2
+
+```         
+stset time, failure(status)
+stcox rx, shared(litter)
+```
+
+::: notes
+Stata refers to a "shared" frailty term, implying that the random term is shared by observations in the same cluster.
+:::
+
+## Analysis with frailty term, Stata, 2 of 2
+
+![](stata-03.png)
+
+::: notes
+Here is the output in Stata.
+:::
+
+## Analysis with frailty term, SAS, 1 of 4
+
+```         
+proc phreg data=storage.rats;
+  class litter;
+  model time*status(0) = rx;
+  id litter;
+  random litter / dist=gamma;
+run;
+```
+
+## Analysis with frailty term, SAS, 2 of 4
+
+![](sas-07.png)
+
+## Analysis with frailty term, SAS, 3 of 4
+
+![](sas-08.png)
+
+## Analysis with frailty term, SAS, 4 of 4
+
+![](sas-09.png)
+
+## Analysis with frailty term, R, 1 of 2
+
+```         
+rats_surv <- Surv(rats$time, rats$status)
+coxph(rats_surv ~ rx + frailty(litter), data=rats)
+```
+
+## Analysis with frailty term, R, 2 of 3
+
+```{r}
+rats_surv <- Surv(rats$time, rats$status)
+m3 <- coxph(rats_surv ~ rx + frailty(litter), data=rats)
+t3 <- capture.output(m3)
+cat(t3[1:6], sep="\n")
+```
+
+## Analysis with frailty term, R, 3 of 3
+
+```{r}
+cat(t3[8:12], sep="\n")
+```
+
 ## Analysis with robust variance (sandwich) estimate, Stata, 1 of 2
 
 ```         
@@ -526,6 +588,8 @@ stcox rx, vce(cluster litter)
 
 ::: notes
 To fit the robust variance or sandwich estimate, include "vce" with the stcox procedure.
+
+There are several variations on this code, and you should read the Stata manual carefully.
 :::
 
 ## Analysis with robust variance (sandwich) estimate, Stata, 2 of 2
@@ -595,71 +659,7 @@ The output from R appears here and on the next slides.
 cat(t2[6:8], sep="\n")
 ```
 
-## Analysis with frailty term, Stata, 1 of 2
-
-```         
-stset time, failure(status)
-stcox rx, shared(litter)
-```
-
-::: notes
-Stata refers to a "shared" frailty term, implying that the random term is shared by observations in the same cluster.
-:::
-
-## Analysis with frailty term, Stata, 2 of 2
-
-![](stata-03.png)
-
-::: notes
-Here is the output in Stata.
-:::
-
-## Analysis with frailty term, SAS, 1 of 4
-
-```         
-proc phreg data=storage.rats;
-  class litter;
-  model time*status(0) = rx;
-  id litter;
-  random litter / dist=gamma;
-run;
-```
-
-## Analysis with frailty term, SAS, 2 of 4
-
-![](sas-07.png)
-
-## Analysis with frailty term, SAS, 3 of 4
-
-![](sas-08.png)
-
-## Analysis with frailty term, SAS, 4 of 4
-
-![](sas-09.png)
-
-## Analysis with frailty term, R, 1 of 2
-
-```         
-rats_surv <- Surv(rats$time, rats$status)
-coxph(rats_surv ~ rx + frailty(litter), data=rats)
-```
-
-## Analysis with frailty term, R, 2 of 3
-
-```{r}
-rats_surv <- Surv(rats$time, rats$status)
-m3 <- coxph(rats_surv ~ rx + frailty(litter), data=rats)
-t3 <- capture.output(m3)
-cat(t3[1:6], sep="\n")
-```
-
-## Analysis with frailty term, R, 3 of 3
-
-```{r}
-cat(t3[8:12], sep="\n")
-```
-
-## Break
+## Break #5
 
 -   What have your learned
     -   Analyses using Stata, SAS, and R
@@ -673,12 +673,29 @@ library(survival)
 print(bladder2[1:7, ], row.names=FALSE)
 ```
 
-## Plot of thiotepa data
+## Plot of thiotepa data, 1 of 2
 
 ```{r}
-ggplot(bladder2, aes(id, stop)) +
-  geom_segment(aes(x=0,xend=stop, y=id, yend=id)) +
+ggplot(
+    bladder2[bladder2$rx==1, ], 
+    aes(stop, id)) +
+  geom_segment(
+      aes(x=0,xend=stop, y=id, yend=id)) +
   geom_text(aes(x=stop, y=id, label=event))
+```
+
+## Plot of thiotepa data, 2 of 2
+
+```{r}
+ggplot(
+    bladder2[bladder2$rx==2, ], 
+    aes(stop, id)) +
+  geom_segment(
+      aes(x=0,xend=stop, y=id, yend=id)) +
+  geom_text(aes(x=stop, y=id, label=event))
+```
+
+```{r}
 i <- 82
 ```
 
