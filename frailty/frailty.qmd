@@ -5,6 +5,23 @@ format:
   pptx
 ---
 
+## what you will learn today
+
+-   Review of handling censored values
+-   Motivation for hazard function
+-   Review of Cox Proportional Hazards Regression
+-   How to handle violations of the independence assumption
+-   Analyses using Stata, SAS, and R
+-   Issues with repeated measures
+
+::: notes
+Here's the list of topics that I will cover today. Ask lots of questions during the talk. You can unmute and ask a question directly, or you can type your question into the chat box. I love questions and I usually get very good ones from this group. If I don't get to cover all the material, but I answer a bunch of questions that you have, that still counts as a successful talk.
+:::
+
+## Fruit fly example
+
+![Source: Wikipedia](fruit-fly.png)
+
 ## Fruit fly study, round 1 data
 
 ```         
@@ -333,7 +350,7 @@ It is often easier to work on the log scale, and maximizing the log partial like
 -   Likelihood ratio test
     -   $\mathcal{L}_p(\ )$
 -   Score test
-    -   $U(\ )=\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\ )})$
+    -   $U(\ )=\frac{\partial}{\partial\beta_j}\mathcal{L}_p(\ )$
 -   Wald test (information matrix)
     -   Uses $I(\ ) = -\frac{\partial^2}{\partial\beta^2}\mathcal{L}_p(\ )$
 
@@ -392,6 +409,8 @@ The frailty term is a latent variable, one that is not directly observable.
 
 ## Alternative analysis: Robust variance (sandwich estimator)
 
+-   In many ways, very similar to frailty models
+    -   But some subtle differences
 -   Replace $I(\hat\beta)^{-1}$ with $I(\hat\beta)^{-1}(\hat L'\hat L)I(\hat\beta)^{-1}$
     -   $\hat L$ are score residuals, computed from the score statistic.
 -   Comparable to the Generalized Estimating Equations (gee) model.
@@ -419,6 +438,10 @@ An alternative worth considering is stratification. Stratification fits a separa
 -   What's coming next
     -   Analyses using Stata, SAS, and R
     
+## Rats example
+
+![Source: Wikipedia](rat-litter.jpg)
+
 ## Rats data
 
 ```{r}
@@ -549,6 +572,10 @@ run;
 
 ![](sas-07.png)
 
+::: notes
+SAS (and other software) offers two options for frailty models and other models with random effects. The most common approach is REML, restricted maximum likelihood, which you see here. An alternative, ML or maximum likelihood, is a bit more complex computationally but useful when you want to contrast a simple random effects model to a more complex random effects model. For most analyses, either REML or ML is just fine.
+:::
+
 ## Analysis with frailty term, SAS, 3 of 4
 
 ![](sas-08.png)
@@ -666,6 +693,10 @@ cat(t2[6:8], sep="\n")
 -   What's coming next
     -   Issues with repeated measures
     
+## Thiotepa example
+
+![Source: Business Wire](thiotepa.jpg)
+
 ## Thiotepa data
 
 ```{r}
@@ -726,18 +757,42 @@ print(bk, row.names=FALSE)
 
 ## So many choices...
 
--   Robust variance (sandwich)
-    -   Provides marginal estimates
 -   Frailty estimates
     -   Provides individual estimates
     -   Identifies "good" and "bad" clusters
--   Poisson regression
-    -   Assumes risk independent of time
+-   Robust variance (sandwich)
+    -   Provides marginal estimates
 -   Stratified analysis
     -   Only works for small number of clusters
+-   Poisson regression
+    -   Assumes risk independent of time
 -   **Never ignore clusters**
 
-## Summary
+## Summary, 1 of 4
+
+![](fruit-fly.png)
+
+::: notes
+In today's talk, you've seen this handsome devil, who helped you understand the concept of censoring.
+:::
+
+## Summary, 2 of 4
+
+![](rat-litter.jpg)
+
+::: notes
+You also saw this happy family, who helped you see how to apply frailty models and some alternatives. 
+:::
+
+## Summary, 3 of 4
+
+![](thiotepa.jpg)
+
+::: notes
+You also saw this cancer drug, that helped you visualize the issues associated with repeated measures.
+:::
+
+## Summary, 4 of 4
 
 -   What have your learned
     -   Review of handling censored values
