@@ -224,12 +224,6 @@ There are a variety of responses here. The sample does not include home schooled
     -   Not all teenagers,
         -   but those attending public high schools.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What is a parameter?
 
 -   A parameter is a number computed from a sample.
@@ -238,12 +232,6 @@ Add note
         -   Proportion of these 29,637 children who died in their first year of life.
         -   Correlation between gestational age and number of ER visits of these 29,637 children.
     -   Designated by Greek letters ($\mu$, $\pi$, $\rho$)
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## What is a statistic?
 
@@ -254,23 +242,11 @@ Add note
         -   Correlation between genstational age and number of ER visits of these 100 children.
     -   Designated by non-Greek letters ($\bar{X}$, $\hat{p}$, r).
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What is Statistics?
 
 -   Statistics
     -   The use of information from a sample (a statistic) to make inferences about a population (a parameter)
         -   Often a comparison of two populations
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## What is the null hypothesis?
 
@@ -281,12 +257,6 @@ Add note
         -   $H_0:\ \pi_1 - \pi_2 \ne 0$
         -   $H_0:\ \rho \ne 0$
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What is the alternative hypothesis?
 
 -   The alternative hypothesis ($H_1$ or $H_a$) implies a difference, change, or relationship.
@@ -294,12 +264,6 @@ Add note
         -   $H_1:\ \mu_1 - \mu_2 \ne 0$
         -   $H_1:\ \pi_1 - \pi_2 \ne 0$
         -   $H_1:\ \rho \ne 0$
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Hypothesis in English instead of Greek
 
@@ -325,12 +289,6 @@ If you have a hypothesis that compares two groups, look for comparative words li
 -   C = control
 -   O = outcome
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Example of text hypotheses (1/2)
 
 -   "... the objective of this 78-week randomised, placebo-controlled study was to determine whether treatment with nilvadipine sustained-release 8 mg, once a day, was effective and safe in slowing the rate of cognitive decline in patients with mild to moderate Alzheimer disease."
@@ -351,12 +309,6 @@ Effectiveness was measured using the Alzheimer's Disease Assessment Scale Cognit
 -   C = placebo
 -   O = cognitive function
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Example of text hypotheses (2/2)
 
 -   "... we investigated trends in BCC incidence over a span of 20 years and the associations between incident BCC and risk factors in a total population of 140,171 participants from 2 large US-based cohort studies: women in the Nurses' Health Study (NHS; 1986--2006) and men in the Health Professionals' Follow-up Study (HPFS; 1988--2006)."
@@ -375,12 +327,6 @@ This study used a regression model, a Cox regression model, to study trends and 
 -   C = absence of various risk factors
 -   O = presence/absence of BCC
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## One-sided alternatives
 
 -   Examples
@@ -389,12 +335,6 @@ Add note
     -   $H_1:\ \rho \gt 0$
 -   Changes in only one direction expected
 -   Changes in opposite direction uninteresting
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Passive smoking controversy
 
@@ -424,12 +364,6 @@ As another aside, I was involved with prayer study. We planned this study using 
     -   t = ($\bar{X}_1-\bar{X}_2$) / se
     -   Accept $H_0$ if t is close to zero.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What is a decision rule? (2/3)
 
 -   Example
@@ -438,12 +372,6 @@ Add note
     -   t = ($\hat{p}_1-\hat{p}_2$) / se
     -   Accept $H_0$ if t is close to zero.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What is a decision rule? (3/3)
 
 -   Example
@@ -451,12 +379,6 @@ Add note
     -   $H_1:\ \rho \ne 0$
     -   t = r / se
     -   Accept $H_0$ if t is close to zero.
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## What is a Type I error?
 
@@ -849,12 +771,6 @@ Let's talk about one more case. I don't have a picture, but imagine a confidence
         -   definitive negative result, or
         -   more research is needed
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## What sample size do you need?
 
 -   Sackett's formula
@@ -876,21 +792,9 @@ Then I wanted to present two useful rules of thumb, formal calculations involvin
 
 ![Sackett 2001, PMID:](../images/sackett-2001.png){#fig-sackett-2001 fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Formula found in Sackett 2001](../images/sackett-2001-formula.png){#fig-sackett-2001-formula fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Rules of thumb
 
@@ -939,21 +843,9 @@ If you are not good with algebra, just try computing confidence intervals for va
 -   = $P[\bar{X}_1-\bar{X}_2 > t_{0.975} SE\ |\ MCD]=0.9$
     -   Solve for n1 and n2.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Formal software for sample size calculations
 
 ![Lenth Power and Sample Size software](../images/lenth-power.png){#fig-lenth-power fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Post hoc power, effect sizes - never!
 
@@ -1090,12 +982,6 @@ This is a cartoon showing a table of p-values with various labels.
     -   Include confidence intervals
 -   Qualitative data analysis
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Bayesian example
 
 ![Albert 1995](../images/albert-1995.png){#figalbert-1995 fig-align="left"}
@@ -1119,12 +1005,6 @@ Refer to the Albert article for the source of the original data.
 -   $P(H|E) = P(E|H) P(H) / P(E)$
     -   H = hypothesis
     -   E = evidence (data)
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Prior
 
@@ -1172,81 +1052,33 @@ Now if I was doing this seriously, I'd list a few hundred or thousand probabilit
 
 ![Table with diagonal priors](../images/prior-diagonal.png){#fig-prior-diagonal fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Table with lower triangle of prior probabilities](../images/prior-lower.png){#fig-prior-lower fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
 ![Table with upper triangle of prior probabilities](../images/prior-upper.png){#fig-prior-upper fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Complete table of prior probabilities](../images/prior.png){#fig-prior fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
 ![Table of likelihoods](../images/likelihood.png){#fig-likelihood fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Product of prior and likelihood](../images/product.png){#fig-product fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
 ![Table of posterior probabilities](../images/posterior.png){#fig-posterior fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Posterior probability of equality](../images/posterior-equality.png){#fig-posterior-equality fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -1265,24 +1097,12 @@ Posterior probability of 20% or greater superiority
 -   Requires strong distributional assumptions
 -   Computationally intensive
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Areas where Bayesian data analysis excel
 
 -   Imputation
 -   Latent models
 -   Random effects/hierarchical models
 -   Incorporating historical data
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Repeat the bad quiz question
 

@@ -180,12 +180,6 @@ The odds ratio is a common way to describe changes in risk. The odds of survival
 The odds ratio compares the 2 to 1 odds in favor to the 5 to 1 odds against to get 10. Women fared 10 times better than men because their odds of survival were 10 times better.
 :::
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Alternative approach, relative risk
 
 ```         
@@ -201,12 +195,6 @@ Relative risk = 0.667 / 0.167 = 4
 95% CI (3.4, 4.7)
 ```
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Which is the better measure?
 
 -   Two schools of thought
@@ -214,12 +202,6 @@ Add note
         -   More natural interpretation
     -   Odds ratio is better - Symmetric with respect to outcome
 -   Cannot use relative risk for certain datasets
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Both are inferior to absolute risk reduction
 
@@ -236,12 +218,6 @@ Absolute risk reduction = 0.667 - 0.167 = 0.5
 95% CI (0.45, 0.55)
 ```
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Comparison of multinomial outcome
 
 -   Multinomial = 3 or more categories
@@ -249,23 +225,11 @@ Add note
     -   Multinomial logistic regression
     -   Ordinal logistic regression
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Comparison of a continuous outcome
 
 -   Two cases
     -   Independent (unpaired) samples
     -   Paired samples
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Two sample test
 
@@ -273,21 +237,9 @@ Add note
 -   How much sampling error?
     -   $S_p\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}$
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Comparison of ages of deaths/survivors
 
 ![Mean ages](../images/titanic-means.png){#fig-titanic-means fig-align="left"} 95% CI (-0.3, 3.8)
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Paired samples
 
@@ -351,12 +303,6 @@ Room Before  After
  325   14     13.7
 ```
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Average change
 
 ```         
@@ -375,12 +321,6 @@ $\bar{D}=-1.61,\ S_D=1.24$
 
 95% CI (-2.65, -0.58)
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Assumptions for t-tests
 
 -   t-tests require two or more assumptions
@@ -388,23 +328,11 @@ Add note
     -   Outcome is normally distributed
     -   For two sample t-test, equal variation
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Nonparametric test
 
 -   Uses ranks of the data
 -   Does not rely on normality assumption
 -   Does not rely on Central Limit Theorem
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Wilcoxon signed rank test
 
@@ -427,12 +355,6 @@ p = 0.023
 
 -   Not easy to get confidence intervals
 -   Difficult to do risk adjustments
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -468,12 +390,6 @@ Source: https://www.moviequotes.com/s-movie/peggy-sue-got-married/
     -   Equation for a straight line
         -   ?
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Pop quiz answers
 
 -   From high school algebra.
@@ -484,23 +400,11 @@ Add note
     -   Formula for a straight line
         -   $y=mx+b$
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Equation of a straight line
 
 -   $y=mx+b$
     -   $m=$ slope $=\triangle y / \triangle x$
     -   $b=$ y-intercept
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## In linear regression
 
@@ -509,42 +413,18 @@ Add note
 -   Slope: estimated average change in y when x increases by one unit.
 -   Intercept: estimated average value of y when x equals zero.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Example: does mother's age affect duration of breast feeding?
 
 -   Study of breast feeding with pre-term infants
     -   Difficulty: mother leaves hospital first
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Scatterplot with regression line for age](../images/breast-feeding-vs-age.png){#fig-breast-feeding-vs-age fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Linear regression output](../images/linear-regression-output.png){#fig-linear-regression-output fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -552,12 +432,6 @@ Add note
 
 -   Slope = 0.4
     -   The estimated average duration of breast feeding increases by 0.4 weeks for every increase of one year in the mother's age.
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -567,24 +441,12 @@ Add note
     -   The estimated average duration of breast feeding is 5.9 weeks for a mother with age = 0.
     -   Clearly an inappropriate extrapolation
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Linear regression output, p-value](../images/output-p-value.png){#fig-output-p-value fig-align="left"}
 
 -   p-value=0.019
     -   Reject the null hypothesis and conclude that there is a positive relationship between mother's age and duration of breast feeding.
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -594,23 +456,11 @@ Add note
     -   Note 6.626E-02 $= 6.626 \times 10^{-2}$
     -   You are 95% confident that the true regression slope is positive.
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Example: does treatment affect duration of breast feeding?
 
 -   Both groups: encourage breast feeding when mom is in hospital
     -   Intervention: feed infants through ng tube when mom is away
     -   Control: Feeding using bottles when mom is away
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -620,21 +470,9 @@ Add note
 
 ![Linear regression output, treatment](../images/linear-regression-output-treatment.png){#fig-linear-regression-output-treatment fig-align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Scatterplot with regression line for control=1](../images/breast-feeding-vs-control.png){#fig-breast-feeding-vs-control fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Linear regression with two independent variables
 
@@ -648,12 +486,6 @@ Add note
 -   Slope for x1: estimated average change in y when x increases by one unit **and x2 is held constant**.
 -   Slope for x2: similar interpretation
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## Adjusting for covariate imbalance
 
 -   Covariate: variable not of direct interest in the research
@@ -664,21 +496,9 @@ Add note
     -   25 in control group, 29 in treatment group
 -   Covariate imbalance not quite same as confounding
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Multiple linear regression output](../images/output-multiple-regression.png){#fig-output-multiple-regression fig-align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Adjusted means
 
@@ -695,12 +515,6 @@ Add note
 -   Group 1: Effect of sex and height on fev
 -   Group 2: Effect of smoking and age on fev
 Examples in the medical literature
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Joke about prediction models
 
@@ -1103,41 +917,17 @@ The SexMale row has an interpretation similar to the slope term in a linear regr
 
 ![Crosstabulation of class and interview](../images/crosstab-class-interview.png){#fig-interview-description align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Crosstabulation of gender and interview](../images/crosstab-gender-interview.png){#fig-interview-description align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
 ![Logistic regression model for class](../images/logistic-model-class.png){#fig-logistic-model-class align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ## 
 
 ![Logistic regression model for gender](../images/logistic-model-gender.png){#fig-logistic-model-gender align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## 
 
@@ -1197,61 +987,23 @@ Let's look at a third experiment, where the screen cover is left open and all bu
 
 ![Fruit fly graph, round 3](../images/fruit-fly-km-3.png){#fig-fruit-fly-km-3 align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ##
 
 ![Fruit fly graph, estimating the median](../images/fruit-fly-km-4.png){#fig-fruit-fly-km-4 align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ##
 
 ![Fruit fly graph, estimating survival probability](../images/fruit-fly-km-5.png){#fig-fruit-fly-km-5 align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ##
 
 ![Hypothetical survival distribution](../images/hazard_1.png){#fig-hazard_1 align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ##
 
 ![Hypothetical survival distribution, probability for 20-30 years](../images/hazard_2.png){#fig-hazard_2 align="left"}
 
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
 ![Hypothetical survival distribution, probability for 40-60 years](../images/hazard_3.png){#fig-hazard_2 align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
-
-
 
 ## Defining the hazard function (1/2)
 
@@ -1273,12 +1025,6 @@ Add note
 ## 
 
 ![Increasing, decreasing, and constant hazard functions](../images/hazard_4.png){#fig-hazard_4 align="left"}
-
-::: notes
-*Speaker notes*
-
-Add note
-:::
 
 ## Summary
 
