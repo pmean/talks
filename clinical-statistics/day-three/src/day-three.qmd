@@ -645,7 +645,7 @@ Add note
 ## Interpretation of intercept and slopes
 
 -   Intercept: estimated average value of y when x1 and x2 both equal zero.
--   Slope for x1: estimated average change in y when x increases by one unit **and x2 is held constant**.
+-   Slope for x1: estimated average change in y when x1 increases by one unit **and x2 is held constant**.
 -   Slope for x2: similar interpretation
 
 ::: notes
