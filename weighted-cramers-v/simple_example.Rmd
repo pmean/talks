@@ -1,0 +1,27 @@
+---
+title: "Weighted Cramer's V"
+author: "Steve Simon"
+date: "Created 2021-04-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Create two three by three tables.
+
+```{r create}
+n <- 146
+set.seed(12453)
+x <- rep(1:3, 3)
+y <- rep(1:3, each=3)
+p1 <- c(0.2, 0.1, 0.1, 0.2, 0.1, 0.1, 0.1, 0.05, 0.05)
+n1 <- round(n*0.479)
+z1 <- rmultinom(1, n1, p1)
+z1
+n2 <- n-n1
+p2 <- c(0.3, 0.05, 0.05, 0.2, 0.05, 0.05, 0.2, 0.05, 0.05)
+z2 <- rmultinom(1, n2, p2)
+z2
+```

@@ -1,0 +1,254 @@
+---
+title: "Illustrating linear regression"
+author: "Steve Simon"
+date: "October 8, 2017"
+output: html_document
+---
+
+This program illustrates how to run various simple linear regression models in R.
+
+Install these libraries if you do not already have them.
+
+```{r install-packages, eval=FALSE}
+install.packages("broom")
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("magrittr")
+```
+
+The datasets you see below are described at
+
+http://lib.stat.cmu.edu/DASL/Datafiles/homedat.html
+
+https://ww2.amstat.org/publications/jse/datasets/fev.txt
+
+```{r read-data}
+fn <- "http://lib.stat.cmu.edu/DASL/Datafiles/homedat.html"
+ab <- read.table(file=fn, header=FALSE, as.is=TRUE, sep="~")
+tabbed_lines <- grepl("\\t", ab$V1)
+write.table(ab[tabbed_lines, ],
+  file="albuquerque.tsv", quote=FALSE,
+  col.names=FALSE, row.names=FALSE)
+ab <- read.table(file="albuquerque.tsv", header=FALSE, as.is=TRUE)
+names(ab) <- c("price", "sqft", "age", "feats", "ne", "cust", "corner", "taxes")
+head(ab)
+ab$price <- ab$price*100
+ab$age <- as.numeric(ab$age)
+
+fn <- "http://www.amstat.org/publications/jse/datasets/fev.dat.txt"
+pu <- read.table(file=fn)
+```
+
+There are no variable names at the top of this file, but you can add them based on the description. You also can create factors for the two categorical variables, smoke and sex.
+
+```{r add-names-and-factors}
+names(pu) <- c("age","fev","ht","sex","smoke")
+pu$smoke.factor <- factor(pu$smoke, levels=0:1,    labels=c("nonsmoker", "smoker"))
+pu$sex.factor <- factor(pu$sex, levels=0:1,    labels=c("female", "male"))
+
+head(pu)
+tail(pu)
+summary(pu)
+```
+
+Does the size of a house (sqft) help predict the sales price? First, draw a graph.
+
+```{r sqft-graph}
+library(ggplot2)
+ggplot(data=ab, aes(x=sqft, y=price)) + 
+  expand_limits(x=0, y=0) +
+  geom_point() -> sqft_graph
+print(sqft_graph)
+```
+
+The lm function computes a linear regression model and stores the relevant information in a list. Use the print function to get a brief description of the model and the summary functiton to get a more detailed description. 
+
+```{r sqft-model}
+sqft_model <- lm(price~sqft, data=ab)
+print(sqft_model)
+summary(sqft_model)
+names(sqft_model)
+```
+
+It is tricky to extract information from the linear regression model (or any statistical model in R). The broom library makes this extraction process easier. It works with a wide range of models in R. The glance function provides a single line summary of the model. The tidy function provides a tibble (a fancy data frame) with one row for each coefficient in the model. The augment function adds predicted values and residuals to the original data frame or produces predicted values for a data frame with new values.
+
+```{r broom}
+library(broom)
+library(dplyr)
+library(magrittr)
+glance(sqft_model)
+sqft_coefficients <- tidy(sqft_model)
+sqft_coefficients
+sqft_predictions <- augment(sqft_model)
+head(sqft_predictions)
+sqft_new_predictions <- augment(sqft_model, newdata=data.frame(sqft=c(0, 1000, 2000, 3000)))
+sqft_new_predictions
+```
+
+You can add the linear regression line to your plot easily.
+
+```{r draw-line}
+sqft_graph + geom_smooth(method=lm)
+sqft_coefficients %>%
+  filter(term=="(Intercept)") %>%
+  select(estimate) %>%
+  as.numeric -> sqft_intercept
+sqft_coefficients %>%
+  filter(term=="sqft") %>%
+  select(estimate) %>%
+  as.numeric -> sqft_slope
+sqft_new_predictions %>%
+  filter(sqft==2000) %>%
+  select(.fitted) %>%
+  as.numeric -> predict_at_2000
+sqft_new_predictions %>%
+  filter(sqft==3000) %>%
+  select(.fitted) %>%
+  as.numeric -> predict_at_3000
+predict_midpoint <- (predict_at_2000 + predict_at_3000) / 2
+predict_difference <- predict_at_3000 - predict_at_2000
+sqft_graph +
+  geom_abline(slope=sqft_slope, intercept=sqft_intercept) +
+  geom_label(aes(x=0, y=sqft_intercept, label=round(sqft_intercept))) +
+  geom_segment(x=2000, y=predict_at_2000, xend=3000, yend=predict_at_2000,
+    arrow=arrow(ends="both", length=unit(0.05, "inches"))) +
+  geom_label(x=2500, y=predict_at_2000, label="1000") +
+  geom_segment(x=3000, y=predict_at_2000, xend=3000, yend=predict_at_3000,
+    arrow=arrow(ends="both", length=unit(0.05, "inches"))) +
+  geom_label(x=3000, y=predict_midpoint, label=round(predict_difference))
+```
+
+The slope in a linear regression model is the estimated average change in Y when X increases by 1 unit. For the sqft model, it says that for each additional square foot of room in your house, you get an additional `r round(sqft_slope)` dollars in your price.
+
+The intercept in a linear regression model is the estimated average value of Y when X equals 0. In the sqft model, it says that the estimated average price of a house with zero square feet is `r round(sqft_intercept)` dollars. Interpretation of the intercept is tricky when the range of the independent variable does not inlcude zero.
+
+It is often useful to plot the predicted values versus the residuals to see if there is any trend or pattern that remains unexplained by a linear prediction.
+
+```{r residual-plots}
+ggplot(sqft_predictions, aes(x=.fitted, y=.resid)) +
+  geom_point() +
+  geom_smooth(method=loess, se=FALSE)
+```
+
+The qq plot of the residuals helps you to assess the normality assumption of the linear regression model. A reasonably straight line indicates a distribution that is reasonably
+
+```{r qq-plots}
+ggplot(sqft_predictions) +
+  stat_qq(aes(sample=.resid))
+```
+
+When you have a binary predictor, you should code the two categories as 0 and 1 (known among the statistics cognescenti as an indicator variable). This is already done for us in the Albuquerque data set.
+
+```{r cust-model}
+cust_model <- lm(price~cust, data=ab)
+glance(cust_model)
+cust_coefficients <- tidy(cust_model)
+cust_coefficients
+cust_coefficients %>% 
+  filter(term=="(Intercept)") %>%
+  select(estimate) %>%
+  as.numeric -> cust_intercept
+cust_coefficients %>% 
+  filter(term=="cust") %>%
+  select(estimate) %>%
+  as.numeric -> cust_slope
+cust_new_predictions <- augment(cust_model, newdata=data.frame(cust=c(0, 1)))
+cust_new_predictions
+cust_new_predictions %>%
+  filter(cust==0) %>%
+  select(.fitted) %>%
+  as.numeric -> predict_at_0
+cust_new_predictions %>%
+  filter(cust==1) %>%
+  select(.fitted) %>%
+  as.numeric -> predict_at_1
+predict_difference <- predict_at_1 - predict_at_0
+predict_midpoint <- (predict_at_0 + predict_at_1) / 2
+ab %>%
+  group_by(cust) %>%
+  summarize(mean_price=mean(price)) %>%
+  ungroup -> group_means
+group_means
+```
+
+Normally, you would use a boxplot to describe the relationship between a categorical variable like cust and a continuous variable like price. But I will show a scatterplot here because it better illustrates the mechanics of linear regression with an indicator variable.
+
+```{r cust-graph}
+ggplot(ab, aes(x=cust, y=price)) +
+  geom_point() +
+  geom_smooth(method="lm", se=FALSE) + 
+  geom_label(x=0, y=predict_at_0, label=round(predict_at_0, -3)) +
+  geom_label(x=1, y=predict_at_1, label=round(predict_at_1, -3))
+```
+
+The intercept is the estimated average value of Y when X=0, so in this example, it means that the estimated average price of normal (non-custom-built) houses is `r round(cust_intercept / 1000)` thousand dollars. The slope is the estimated average change in Y when X increases by one unit. In this example, it means that the estimated average price increases by `r round(cust_slope / 1000)` thousand dollars when you swtich from a normal to a custom-built home.
+
+When you include two independent variables (call them X1 and X2) in a linear regression model, the interpretation changes slightly. The intercept is the estimated average value of Y when both X1 and X2 are equal to zero. The slope for X1 is the estimated average change in Y when X1 increases by one unit and X2 remains constant. The slope for X2 is the estimated average change in Y when X2 increases by one unit and X1 remains constant.
+
+This concept of holding a variable constant is the foundation for risk-adjusted regression models.
+
+In the Albuquerque housing data set, it turns out that the two independent variables sqft and cust are closely related. Custom-built houses tend to be bigger than normal houses and bigger houses are more likely to be custom-built. So is the large discrepancy in average prices between regular and custom-built homes just because custom-built houses are bigger? Put both sqft and cust in a linear regression model and see what happens.
+
+```{r sqft-and-cust}
+adjusted_model <- lm(price~sqft+cust, data=ab)
+adjusted_coefficients <- tidy(adjusted_model)
+adjusted_coefficients
+adjusted_coefficients %>%
+  filter(term=="cust") %>%
+  select(estimate) %>%
+  as.numeric -> adjusted_cust_slope
+adjusted_coefficients %>%
+  filter(term=="sqft") %>%
+  select(estimate) %>%
+  as.numeric -> adjusted_sqft_slope
+adjusted_coefficients %>%
+  filter(term=="(Intercept)") %>%
+  select(estimate) %>%
+  as.numeric -> intercept_normal
+intercept_custom <- intercept_normal + adjusted_cust_slope
+ab %>%
+  filter(cust==0) %>%
+  summarize(sqft=mean(sqft), price=mean(price)) %>% 
+  mutate(label=paste(round(sqft, -1), round(price, -3), sep=", ")) -> normal_mean
+normal_mean
+ab %>%
+  filter(cust==1) %>%
+  summarize(sqft=mean(sqft), price=mean(price))  %>% 
+  mutate(label=paste(round(sqft, -1), round(price, -3), sep=", ")) -> custom_mean
+ab %>%
+  summarize(sqft=mean(sqft)) %>%
+  mutate(normal=intercept_normal + adjusted_sqft_slope*sqft)  %>%
+  mutate(nlabel=paste(round(sqft, -1), round(normal, -3), sep=", ")) %>%
+  mutate(custom=intercept_custom + adjusted_sqft_slope*sqft)  %>%
+  mutate(clabel=paste(round(sqft, -1), round(custom, -3), sep=", ")) -> overall_mean
+```
+
+The estimated average price of a home is `r round(adjusted_cust_slope / 1000)` thousand dollars more expensive, on average, than a normal home when the size of the home is held constant.
+
+This is still statistically significant, but substantially smaller than the unadjusted estimate (`r round(cust_slope / 1000)` thousand dollars). So about `r 100 - round(100 * adjusted_cust_slope / cust_slope)`% of the difference in the average price of custom versus normal homes can be accounted for by the difference in sizes.
+
+```{r adjusted-plot}
+ggplot(ab) +
+  geom_point(aes(x=sqft, y=price, color=factor(cust)), shape=1) +
+  theme(legend.position="none") +
+  expand_limits(x=0, y=0) +
+  scale_color_manual(values=c("0"="black", "1"="red")) + 
+  geom_abline(slope=adjusted_sqft_slope, intercept=intercept_normal, color="black") +
+  geom_abline(slope=adjusted_sqft_slope, intercept=intercept_custom, color="red") +
+  geom_label(x=normal_mean$sqft, y=normal_mean$price, label=normal_mean$label, color="black") +
+  geom_label(x=custom_mean$sqft, y=custom_mean$price, label=custom_mean$label, color="red")
+
+ggplot(ab) +
+  geom_point(aes(x=sqft, y=price, color=factor(cust)), shape=1) +
+  theme(legend.position="none") +
+  expand_limits(x=0, y=0) +
+  scale_color_manual(values=c("0"="black", "1"="red")) + 
+  geom_abline(slope=adjusted_sqft_slope, intercept=intercept_normal, color="black") +
+  geom_abline(slope=adjusted_sqft_slope, intercept=intercept_custom, color="red") +
+  geom_label(x=overall_mean$sqft, y=overall_mean$normal, label=overall_mean$nlabel, color="black") +
+  geom_label(x=overall_mean$sqft, y=overall_mean$custom, label=overall_mean$clabel, color="red")
+```
+
+```{r save-everything, echo=FALSE}
+save.image(file="linear.RData")
+```

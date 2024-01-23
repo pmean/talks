@@ -1,0 +1,10 @@
+---
+title: "Weaning yourself away from p-values"
+author: "Steve Simon"
+date: "11/29/2020"
+output: html_document
+---
+
+Abstract
+
+The American Statistical Association published a harsh criticism of p-values in 2019. While all of the criticisms are well justified, the document does not offer any suggestions for what you should do in light of these criticisms. You've been using p-values for your whole career; you can't just go cold turkey. In this talk, I will offer a simple and easy to implement pathway that you can follow, weaning yourself slowly from your excessive reliance on p-values. There are several areas where the use of p-values is especially unwarranted and where excellent alternatives are available. We'll discuss alternatives to p-values for selecting independent variables and checking regression assumptions. In this weaning process, you should also recognize seetings where you should modify the ubiquitous alpha=0.05 cut-off or abandon the hypothesis testing framework altogether.
