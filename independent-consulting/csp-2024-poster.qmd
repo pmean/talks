@@ -1,0 +1,331 @@
+---
+title: "Setting up an independent consulting practice"
+author: "Steve Simon"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Setting up an independent consulting practice
+
+-   Advantages and disadvantages
+-   Informal and formal business entities
+-   Bill by the hour or by the project?
+-   Contracts and Insurance
+-   Invoices and taxes
+-   Getting customers
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+## <!---Advantages and disadvantages--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Disadvantages
+
+-   No support for professional development
+-   Feast or famine work hours
+-   Huge variety of problems
+
+:::
+
+::: {.column width="50%"}
+
+### Advantages
+
+-   You have the best boss in the whole world
+-   You can "fire" bad clients
+-   Huge variety of problems
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+There are big differences between being an independent consultant and working as a consultant inside a large organization. Some are good differences and some are bad differences. Let me start with the bad differences.
+
+You can't get money from any of your clients to support your professional development. You have to spend your own dime on travel to a conference like this, the continuing education classes that you take, and the reading that you do to stay current with recent trends and developments.
+
+Your hours as an independent consultant are highly variable. It is either feast (way too much work and not enough hours in the week to do it all) or famine (long stretches with little or no work). Inside a large corporation, you may see some efforts to ask for overtime (perhaps paid, perhaps unpaid), but you still get paid your 40 hours of work even during quiet times.
+
+You also have to have a broad knowledge base because your clients will each have their own special needs. In a large corporation, the problems tend to be narrower in scope. Furthemore, if you are one of several statisticians, you get the opportunity to develop separate niches among yourselves.
+
+The biggest advantage of independent consulting is that you are your own boss. I've had the good fortune of having good bosses throughout my career, but even so, none of them has understood me and my needs better than I do.
+
+As an independent consultant, you have the opportunity to walk away from anyone for any reason. You don't want to do this cavalierly, of course, especially if you are hurting for business. In a large corporation, it's harder to turn down work. You usually have to get your boss involved and there will be lots of attempts at "conflict resolution." Even if you are successful in doing this in a large organization, you end up paying a big price.
+
+You may see the huge variety of problems as an advantage instead of a disadvantage. Sure, it makes your work harder, but also a lot more interesting. You have the opportunity to branch out into new and different areas.
+:::
+
+## <!---Business entities--->
+
+:::: {.columns}
+
+::: {.column width=50%}
+
+### Formal entities
+-   Limited liability corporation
+    -   Protection from business debts
+-   S or C Chapter Corporation
+    -   Tax advantages
+-   Recommendation
+    -   Hire lawyer and accountant
+
+:::
+
+::: {.column width=50%}
+
+### Sole proprietorship or partnership
+
+-   Sole proprietorship
+    -   No paperwork!
+-   Recommendation
+    -   Consider changing after expansion
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+You have the choice of an informal or a formal business entity. 
+
+A limited liability corporation provides you with some protection from creditors if you have accumulated a substantial amount of debt. You may not have this as an issue. Your work as a consultant is not at all like a restaurant or a small shop where you might have to start out in a hole getting your business off the ground.
+
+A corporation offers some tax advantages in addition to the protection from creditors.
+
+If you want to investigate the advantages of a limited liability corporation or an S or C chapter corporation, talk it over with a lawyer. You have to file some paperwork, but it is not too terribly difficult.
+
+The informal choice is called a sole proprietorship. You are effectively doing business under your own name. You still get to use a name like P.Mean Consulting for your business, but you don't need to file any legal documents.
+
+You lose some of the protections that are available for more complex business entities. If you are starting out small, you might not feel the need for these protections. Talk to a lawyer or accountant about this. Also consider changing to a more formal business entity as your work expands. This could mean that you are taking on broader range of clients, you are moving from part-time consulting to full-time consulting, or you start hiring others to work with you.
+
+One business entity that you should avoid is a partnership. This is a recomendation that I have seen from several experts. It is complex to set up and you need to specify how to dissolve your partnership should the need arise. Think of it as preparing to get married and having to draft contingent divorce papers at the same time.
+
+If you want to work with someone, one of you takes the lead as the head of the business and hires the other person as an employee of that business.
+:::
+
+## <!---Billing--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Billing by the project
+
+-   Your greatest risk
+    -   "Just one more analysis, please"
+-   Recommendations
+    -   Develop a scope of work
+    -   Get percentage at start and halfway
+    -   Break project into pieces
+
+:::
+
+::: {.column width="50%"}
+
+### Billing by the hour
+
+-   Your greatest risk
+    -   "Do we really need that assumption check?"
+-   Recommendations
+    -   No lower than $130 per hour
+    -   Get a retainer
+    -   Increase your rate yearly
+    
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+
+A decision you will have to make right away is how you will bill. The two choices are to bill by the hour or bill by the project. You can generally get better pay when you bill by the project--if you do it carefully.
+
+You need to develop a scope of work and clearly define both what you will do and what is outside the scope of your work. So, for example, specify that you will not address any secondary outcome measures. If your client wants that, they have to pay you for a separate project.
+
+If you bill by the project, get some of the money up front and halfway through the study. Waiting until the project is done for any payment can raise some serious cash flow issues.
+
+Also break the project into small pieces, if you can. It is not a benefit to you or to your client to obtain work out a long drawn out project with uncertainty about when the final product will arrive and when you get your final payment. If you can, break the project into small pieces, each of which produces something of value to your client. And get payment in full each time a small piece is completed.
+
+Billing by the hour is simpler. You actually don't mind if your client wants just one more analysis. The risk is different. Once your client gets their coveted p-value, the rest of the work, like checking assumptions becomes superfluous.
+
+Be sure to charge a reasonable rate. A survey by the Consulting Section of the American Statistical Association in 2005 pegged the average hourly rate as $130.
+
+You could ask for a retainer, which is an upfront payment for the first five or ten hours of work. And consider raising your hourly rate at the end of every year. You grow as a consultant, producing data analyses faster and of greater quality every year. So why not ask for more money?
+:::
+
+## <!---Contracts and insurance--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Contracts
+
+-    “A verbal contract isn’t worth the paper it is written on.” Samuel Goldwyn
+-   Contract provisions
+    -   Avoid one-sided conditions
+    -   Don't be afraid to strike out sections
+
+:::
+
+::: {.column width="50%"}
+
+### Insurance
+
+-   Do you need personal insurance?
+-   Business insurance
+    -   May be required by your clients
+    -   Liability
+    -   Errors and Omissions
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+Contracts are often a sticking point for your work with a client. You should pay a lawyer to develop a standard contract that you can use for most clients.
+
+You are allowed to work without a contract, in spite of the warning by Samuel Goldwyn. You lose the ability to quickly resolve problems, such as non-payment. If you trust your clients and if they trust you, a simple outline of what you plan to do is the only thing you need.
+
+If your client sends you a contract, read it carefully. If you've done quite a few contracts, you may not need to run the latest one by your lawyer. Nevertheless, you should get a legal review for your first contract, and maybe the second or third one too.
+
+Do read the contract carefully and look for one-sided conditions, such as you assuming all the liability if either of you is sued. Some clients will demand that you show proof of insurance, and this may be a deal breaker if you do not need insurance coverage for your other clients.
+
+Don't be afraid to strike out contract terms you don't like. Sometimes a company's legal department will try to use a "one size fits all" contract. If something doesn't make sense to you, strike it out and see what happens.
+
+You may be asked to sign a non-disclosure agreement before your client will even talk to you about their data. These are usually straightforward and don't have the potential problems that a consulting contract would have.
+
+There are two types of insurance: personal and business. You may not have to worry about personal insurance. Maybe your consulting business is a side venture and you have coverage through your regular job. Maybe you have insurance coverage thanks to your spouse's job. 
+
+If you're not so fortunate, you have to purchase insurance coverage out of the profits you make from consulting. This should definitely include health and dental insurance, but you might also want or need life insurance or disability insurance. Factor these expenses in when you are planning to start your career as an independent consultant. 
+
+There are two type of business insurance: liability insurance and errors and omissions insurance. Errors and omissions insurance covers a specific type of liability when a mistake you make as a professional statistician results in substantial harm to your client and they sue you for damages. Talk to an insurance agent about whether you need either or both types of insurance.
+:::
+
+## <!---Invoices and taxes--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Invoices
+
+-   Find a sample invoice or create your own
+    -   Discount for early payments or penalty for late payments
+    -   Itemized list of tasks/hours worked
+
+:::
+
+::: {.column width="50%"}
+
+### Accounting and taxes
+
+-   Separate checking account
+    -   Use only for business expenses
+-   Quarterly payments of estimated taxes
+-   Retirement programs
+    -   Simplified Employee Pension
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+Most clients will pay you if you send them an invoice. This is just an itemized list of the things you have done or the hours you have worked. There are certain standard elements on an invoice like your name and address and the client's name and address. If you are worried about late payments, put a due date on the invoice and offer a small discount if they pay the invoice quickly. 
+
+You can find sample invoice templates on the Internet, but it is not too hard to design one yourself. Be sure that you indicate clearly what name belongs on the check: your name or the company's name. 
+
+Send invoices regularly, at least monthly. There is nothing worse than forgetting to invoice for a couple of months and then sending a monstrously large bill once you do catch up.
+
+Whether you are billing by the hour or billing by the project, make sure that you provide deliverables about as frequently as you send invoices. You don't want your client to feel like they are paying a lot of money with nothing to show for it.
+
+When you are starting an independent consulting practice, one of the first things you should do is to set up a separate checking account for your business. Deposit all your payments into that account and pay all your business expenses out of that account. Transfer money as needed from your business account to your personal account to cover your living expenses, but don't pay your water bill directly from your business account.
+
+Keeping business expenses separate from personal expenses makes it easier for you to write off business expenses against your income when you file taxes. If you make more than a trivial amount of income, you should pay estimated taxes to the IRS and possibly to your state. This is done four times divided not quite evenly across the year.
+
+You should consider payments into a retirement account from your consulting income. There is a special program for self-employed called the Simple Employee Pension that is is a tax write-off of up to 25% of your net consulting income. Talk to an accountant to set this up.
+:::
+
+## <!---Getting customers--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Develop "word of mouth"
+
+-   Announce to family, friends, colleagues
+-   Stay in touch with former customers
+    -   But not too often
+    -   Offer something of value/interest
+-   Keep several lines of communication open
+
+:::
+
+::: {.column width="50%"}
+
+### Give away free samples
+
+-   Blog (be consistent!)
+-   Newsletter (be consistent!)
+-   Volunteer
+    -   High visibility work
+-   Talks
+    -   Both statistical and non-statistical
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+::: notes
+
+Getting customers is one of the things that worries new consultants the most. There are a variety of ways to find new customers, and most of these can be characterized either as developing word of mouth and giving away free samples of your work.
+
+Word of mouth is an informal phrase for getting work through personal connections. Let everyone you know hear the news. You are starting a new consulting business and you'd like to help anyone who needs it. You probably will not get any business from your family and friends, but maybe they know someone who could provide you with a lot of business. 
+
+Once you have a few customers, stay on their good side. Send them a nice thank you note a week or two after your project has closed. Tell them how much you enjoyed working with them and how you'd be glad to help out again should a need arise. Ask them if they know anyone else who might be interested in using your services.
+
+Then follow up, but not too often with additional emails. If you run across an interesting article on the internet or in the local newspaper that you think they might be interested in them, send them a copy. You don't need to ask about additional work. Your purpose is to keep your name in front of anyone who you have worked for before. Your email, even without an overt pitch for work, will increase the chances of you getting repeat business from a client or getting a powerful referral to a new client.
+
+Keep a variety of lines of communication open. You might find that some clients prefer to contact your through your linked in account, for example.
+
+You can also increase your visibility to potential clients by giving away free samples of your work. Write articles for a blog or newsletter.
+
+If you commit to a blog or newsletter, regularity rather an frequency is the most critical factor. Don't write a dozen blog posts in your first week, burn out, and then don't post anything for the next month. Pace yourself. One or two articles per week is more than enough. A monthly newsletter is more than enough. Just keep the pace going.
+
+Volunteer, especially for jobs that are high visibility. I took over as president of the Kansas City R Users Group a few years ago, and I get to send out meeting notices and introduce the speakers at each meeting. Anyone who attends those meetings will presume (inaccurately, but I won't point that out) that I am the best R programmer in the Kansas City area because I run the Kansas City R Users Group.
+
+Give talks whenever you can, both to statistical audiences and to other audiences as well. Do your talks well and people will remember you as a resource on the topics that you choose.
+
+Be judicious in what your produce for your blog/newsletter, don't volunteer for every job in sight, and don't try to be a full time professional speaker. Invest a small amount of time in these efforts, but don't overdo it. Save some of your free samples for the clients that pay the bills.
+:::
