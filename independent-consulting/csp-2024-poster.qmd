@@ -85,7 +85,7 @@ You may see the huge variety of problems as an advantage instead of a disadvanta
 
 ::: {.column width=50%}
 
-### Sole proprietorship or partnership
+### Informal entity
 
 -   Sole proprietorship
     -   No paperwork!
@@ -278,10 +278,10 @@ You should consider payments into a retirement account from your consulting inco
 
 ::: {.column width="50%"}
 
-### Develop "word of mouth"
+### "Word of mouth"
 
--   Announce to family, friends, colleagues
--   Stay in touch with former customers
+-   "Birth announcement"
+-   Contact former customers
     -   But not too often
     -   Offer something of value/interest
 -   Keep several lines of communication open
@@ -290,7 +290,7 @@ You should consider payments into a retirement account from your consulting inco
 
 ::: {.column width="50%"}
 
-### Give away free samples
+### Free samples
 
 -   Blog (be consistent!)
 -   Newsletter (be consistent!)
