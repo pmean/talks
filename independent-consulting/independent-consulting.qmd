@@ -1,0 +1,154 @@
+---
+title: "Setting up an independent consulting practice"
+author: "Steve Simon"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Topics to be covered
+
+-   Hobby or a career?
+-   How do I find customers?
+-   Bill by the hour or by the project?
+-   Sole proprietorship or a limited liability corporation?
+-   Contracts and Insurance
+-   Invoices and taxes
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+--- 
+
+<!---Billing--->
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### This is a hobby
+
+-   Focus on 
+    -   Finding good clients
+-   Don't neglect
+    -   Insurance
+
+:::
+
+::: {.column width="50%"}
+
+### This is a career
+
+-   Focus on 
+    -   Billing
+-   Don't neglect
+    -   Contracts
+
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+--- <!---Getting customers--->
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+### Develop "word of mouth"
+-   Announce to family, friends, colleagues
+-   Stay in touch with former customers
+    -   But not too often
+    -   Offer something of value/interest
+:::
+
+::: {.column width="50%"}
+
+### Give away free samples
+
+-   Blog (be consistent!)
+-   Newsletter (be consistent!)
+-   Volunteer
+    -   High visibility work
+-   Talks
+    -   Both statistical and non-statistical
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+--- <!---Billing--->
+
+:::: {.columns}
+::: {.column width="50%"}
+
+### Bill by the hour
+
+-   Your greatest benefit
+    -   Simplicity
+-   Your greatest risk
+    -   Pressure to cut corners
+-   Recommendations
+    -   No lower than $130 per hour
+    -   Do not charge the same for everyone
+    
+:::
+
+::: {.column width="50%"}
+
+### Bill by the project
+
+-   Your greatest benefit
+    -   More income (but be careful)
+-   Your greatest risk
+    -   Scope creep
+-   Recommendations
+    -   Ask for money up front
+    -   New work means new contract
+    
+:::
+
+::::
+
+::: aside
+Disclaimer: I am not a lawyer. I am not an accountant.
+:::
+
+--- <!---Business entities--->
+
+:::: {.columns}
+::: {.column width=50%}
+
+### Informal entity
+
+-   Sole proprietorship
+    -   No paperwork!
+-   Recommendation
+    -   Consider changing after expansion
+    
+:::
+
+::: {.column width=50%}
+
+### Formal entity
+
+-   Limited liability corporation
+    -   Protection from business debts
+-   corporation
+    -   Tax advantages
+-   Partnership
+    -   Not recommended
+-   Recommendation
+    -   Hire lawyer and accountant
+
+:::
+
+::::
