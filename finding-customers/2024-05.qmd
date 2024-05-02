@@ -146,8 +146,9 @@ I want to take another short break and see if there are any questions.
 Does anyone want to share experiences that they have had in this area that they have found helpful.
 :::
 
-
 {{< include _2024-05-06.qmd >}}
+
+{{< include _2024-05-07.qmd >}}
 
 ## Summary
 
