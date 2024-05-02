@@ -16,7 +16,7 @@ editor: source
 Image from movieposters.com, available in html format at https://www.movieposters.com/products/youve-got-mail-mpw-132902
 
 This is a clip from the Rom-Com, You've Got Mail, with Tom Hanks and Meg Ryan. Although many clients will find you by email, there are other methods of communication that you should not ignore.
-
+:::
 
 ## Recognize that not everyone will find you by email
 
@@ -24,7 +24,6 @@ This is a clip from the Rom-Com, You've Got Mail, with Tom Hanks and Meg Ryan. A
 -   Social media
     -   LinkedIn
     -   X (Twitter)
-    
 
 ::: notes
 I love email. A day without email is a day without sunshine. Even the spam is fun. But not everyone uses email to communicate.

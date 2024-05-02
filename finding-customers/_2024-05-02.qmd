@@ -9,7 +9,7 @@ editor: source
 
 ## Identify this movie
 
-![](golden-ticket.png "Image of Charlie (Peter Ostrum) finding a golden ticker in Willy Wonka and the Chocolate Factory")
+![](golden-ticket.png "Charlie (Peter Ostrum) finding a golden ticker in Willy Wonka and the Chocolate Factory")
 
 ::: notes
 Image from The Prop Gallery. Willy wonka and the Chocolate Factory (1971) - Golden Ticket, available in html format at https://www.thepropgallery.com/willy-wonka-original-golden-ticket/
@@ -70,7 +70,7 @@ If you want to do a newsletter, pay to use a commercial email service. They will
 For a newsletter to be effective, it has to appear regularly. Don't try to publish too often. It may get annoying and besides, you might burn out after just a few issues. Certainly no more than monthly. If I had to do it over again, I would have limited my newsletter to quarterly.
 :::
 
-::: Create a blog
+## Create a blog
 
 -   Similar to newsletters
     -   Indexed by search engines

@@ -18,7 +18,7 @@ Image from Aaron Hendrix. In Defense of the Critic: Ratatouille at 10. Talk Film
 My final thoughts come from an animated film. This one is a bit trickier. This dour looking soul is Anton Ego (voiced by Peter O'Toole), a restaurant critic in the movie Ratatouille. I want to highlight him because he is a restaurant customer that you definitely want to keep happy.
 ::: 
 
-## Keeping your existing customers
+## Keeping your existing customers happy
 
 -   Three things to be careful about
     -   Time
@@ -39,10 +39,10 @@ Avoid cost overruns. If the project costs more than you said it would make sure 
 Make sure that everything you produce is high quality. Avoid rework.
 :::
 
-## Keeping your existing customers
+## More ways to keep your existing customers happy
 
--   Regular billing
--   Honesty about your limitations
+-   Bill regulary
+-   Be honest about your limitations
 -   Make them less dependent on you
 
 ::: notes

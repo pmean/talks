@@ -9,7 +9,7 @@ editor: source
 
 ## Identify this movie
 
-![](ned-ryerson.png "Image of an annoying salesperson, Ned Ryerson, in the movie, Groundhog Day")
+![](ned-ryerson.png "An annoying salesperson, Ned Ryerson, in the movie, Groundhog Day")
 
 ::: notes
 Image from Phil Hornshaw. Listen to Ned Ryerson Tell Behind-the-Scenes Stories About 'Groundhog Day'" The Wrap, 2018-02-02, available in html format at https://www.thewrap.com/ned-ryerson-behind-the-scenes-groundhog-day/

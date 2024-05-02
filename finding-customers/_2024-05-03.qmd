@@ -9,7 +9,7 @@ editor: source
 
 ## Identify this movie
 
-![](election.png "An impage of Tracy Flick (Reese Witherspoon) from the movie, Election")
+![](election.png "Tracy Flick (Reese Witherspoon) from the movie, Election")
 
 
 ::: notes

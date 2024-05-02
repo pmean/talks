@@ -9,7 +9,7 @@ editor: source
 
 ## Identify this movie
 
-![](sister-act.png "Image of Sister Mary Clarence (Whoopi Goldberg) from the movie Sister Act)
+![](sister-act.png "Sister Mary Clarence (Whoopi Goldberg) from the movie Sister Act")
 
 ::: notes
 Image is from Jami Ganz, Sister Act cast: Where are they now?, Entertainment, 2023-02-02, available in html format at https://ew.com/movies/sister-act-where-are-they-now/ 
@@ -26,7 +26,7 @@ I don't want you to wear a habit, but I want you to develop a habit.
     -   Secondary efforts only support your primary effort
 -   Keep the time commitments manageable
 
-:::
+::: notes
 Don't adopt all of the ideas I have proposed here, but if you do adopt an idea, make a regular commitment. Don't do a flurry of activity. Pace yourself to avoid burnout. At the same time, carve out time, maybe a few hours every week where you focus exclusively on efforts to improve your visibility and to get your name out in front of people who can become your customers.
 
 It's important to identify a primary effort. Don't spread yourself too thinly. Pick something. Let's say it is your newsletter. If that's the case, make sure that you get a plug in for your newsletter on those occasions when you find yourself giving a talk. Use social media mostly to publicize your newsletter. Include a subscription link in the signature file of your emails.

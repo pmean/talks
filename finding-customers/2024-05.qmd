@@ -1,7 +1,7 @@
 ---
 title: "See bottom of file for title"
 format: 
-  revealjs:
+  pptx:
     slide-number: true
     embed-resources: true
 params:
@@ -70,7 +70,7 @@ We hope you will consider attending this event.
 -   What's coming next
     -   `r params$topic_02`
 -   Any questions?
--   What have you in this area that you found helpful?
+-   What have you done in this area that you found helpful?
 
 ::: notes
 I want to take a short break here and see if there are any questions.
@@ -87,7 +87,7 @@ I know that are some experienced consultants in this talk. I also want to encour
 -   What's coming next
     -   `r params$topic_03`
 -   Any questions?
--   What have you in this area that you found helpful?
+-   What have you done in this area that you found helpful?
 
 ::: notes
 I want to take another short break and see if there are any questions.
@@ -95,7 +95,6 @@ I want to take another short break and see if there are any questions.
 Does anyone want to share experiences that they have had in this area that they have found helpful.
 :::
 
-    
 {{< include _2024-05-03.qmd >}}
 
 ## Break #3
@@ -105,7 +104,7 @@ Does anyone want to share experiences that they have had in this area that they 
 -   What's coming next
     -   `r params$topic_04`
 -   Any questions?
--   What have you in this area that you found helpful?
+-   What have you done in this area that you found helpful?
 
 ::: notes
 I want to take another short break and see if there are any questions.
@@ -113,7 +112,6 @@ I want to take another short break and see if there are any questions.
 Does anyone want to share experiences that they have had in this area that they have found helpful.
 :::
 
-    
 {{< include _2024-05-04.qmd >}}
 
 ## Break #4
@@ -123,7 +121,7 @@ Does anyone want to share experiences that they have had in this area that they 
 -   What's coming next
     -   `r params$topic_05`
 -   Any questions?
--   What have you in this area that you found helpful?
+-   What have you done in this area that you found helpful?
 
 ::: notes
 I want to take another short break and see if there are any questions.
@@ -161,7 +159,7 @@ Does anyone want to share experiences that they have had in this area that they 
     -   `r params$topic_05`
     -   `r params$topic_06`
 -   Any questions?
--   What have you in this area that you found helpful?
+-   What have you found helpful?
 
 ::: notes
 This is my last slide. Are there are any questions?
