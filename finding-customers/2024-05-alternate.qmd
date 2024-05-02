@@ -1,0 +1,181 @@
+---
+title: "See bottom of file for title"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+params:
+  topic_01: "Use word of mouth"
+  topic_02: "Give away free samples of your work"
+  topic_03: "Consider volunteering"
+  topic_04: "Recognize that not everyone will contact you by email"
+  topic_05: "Turn all of these efforts into a regular work habit"
+  topic_06: "Addendum: Keeping your existing customers happy"
+editor: source
+---
+
+## Topics to be covered
+
+```{r}
+# Preliminaries, if needed
+
+# Keep this chunk, even if no code, so that
+# params is populated from the yaml header.
+
+# To print speaker notes, add
+#   ?print-pdf&showNotes=separate-page 
+#   to the end of the URL. Then open the
+#   print dialog box (ctrl-P) and choose
+#   Save as PDF for the printer. Other 
+#   options, like Microsoft Print to PDF
+#   do not seem to work.
+```
+
+-   What you will learn
+    -   `r params$topic_01`
+    -   `r params$topic_02`
+    -   `r params$topic_03`
+    -   `r params$topic_04`
+    -   `r params$topic_05`
+    -   `r params$topic_06`
+
+::: notes
+Here's some information from the organizer of this webinar. I'm putting it here so I can reference it as I develop my talk.
+
+Hello ASA Community:
+
+The Statistical Consulting Section would like to invite you to attend our webinar focused on private statistical consultants. Steve Simon, Ph.D. will present strategies for finding paying customers for your statistical consulting business.
+
+Title: Finding Customers for Your Consulting Business
+Presenter: Steve Simon, Ph.D.
+Date & Time: May 02, 2024, at 12pm ET
+Registration Link: Click here to register
+Abstract: 
+
+You are starting a new career as an independent statistical consultant. Congratulations! One of your early concerns will be how to find paying customers. Here are some strategies. 1. Use word of mouth, one person telling another person about who you are and what you do. You can do this with friends, family, and professional colleagues. You can use a current customer to help you find new customers. I will explain how to do this carefully, so you don't get labeled a pest (or worse, a spammer). 2. Give away free samples of your work. Write about things that illustrate your knowledge and experience. In addition to traditional writing avenues, consider a blog post or an email newsletter. I will provide guidance on how to do this effectively without spending an inordinate amount of your time. 3. Consider volunteering. There are many opportunities where you can help out in a way gets you known by others, both direct customers and people who can refer customers to you. I will discuss some of the more helpful volunteer choices that maximize your visibility and credibility. 4. Recognize that not everyone will find you by email. I will discuss some of the alternative channels of communications that your customers might use. 5. Most importantly, turn all of these efforts into regular work habits. Pacing is important. Don't do a flurry of work and then burn out.
+
+About the Presenter: 
+
+Steve Simon received a Ph.D. in Statistics from the University of Iowa in 1982. He currently runs a small consulting business, P.Mean Consulting, as a sole proprietorship. He is also a faculty member in the Department of Biomedical and Health Informatics at the University of Missouri-Kansas City. He has over 100 peer-reviewed publications, four of which have won major awards. He has written one book, Statistical Evidence in Medical Trials, and a book chapter, R for Big Data Analysis, in Big Data Analysis for Bioinformatics and Biomedical Discoveries. He is the author of a major website and blog about Statistics, Research Design, and Evidence Based Medicine, with well over 2,000 pages. It is currently being consolidated under a uniform format using blogdown. He is president of the Kansas City R Users Group and is looking for speakers for future Zoom meetings. His current research interests include using Bayesian models to forecast patient accrual in clinical trials and examining data sharing practices in peer-reviewed articles.
+
+We hope you will consider attending this event.
+:::
+
+{{< include _2024-05-01.qmd >}}
+
+## Break #1
+
+-   What you have learned
+    -   `r params$topic_01`
+-   What's coming next
+    -   `r params$topic_02`
+-   Any questions?
+-   What have you done in this area that you found helpful?
+
+::: notes
+I want to take a short break here and see if there are any questions.
+
+I know that are some experienced consultants in this talk. I also want to encourage at this time anyone to share experiences that they have had in this area that they have found helpful.
+:::
+
+{{< include _2024-05-02.qmd >}}
+
+## Break #2
+
+-   What you have learned
+    -   `r params$topic_02`
+-   What's coming next
+    -   `r params$topic_03`
+-   Any questions?
+-   What have you done in this area that you found helpful?
+
+::: notes
+I want to take another short break and see if there are any questions.
+
+Does anyone want to share experiences that they have had in this area that they have found helpful.
+:::
+
+{{< include _2024-05-03.qmd >}}
+
+## Break #3
+
+-   What you have learned
+    -   `r params$topic_03`
+-   What's coming next
+    -   `r params$topic_04`
+-   Any questions?
+-   What have you done in this area that you found helpful?
+
+::: notes
+I want to take another short break and see if there are any questions.
+
+Does anyone want to share experiences that they have had in this area that they have found helpful.
+:::
+
+{{< include _2024-05-04.qmd >}}
+
+## Break #4
+
+-   What you have learned
+    -   `r params$topic_04`
+-   What's coming next
+    -   `r params$topic_05`
+-   Any questions?
+-   What have you done in this area that you found helpful?
+
+::: notes
+I want to take another short break and see if there are any questions.
+
+Does anyone want to share experiences that they have had in this area that they have found helpful.
+:::
+
+{{< include _2024-05-05.qmd >}}
+
+## Break #5
+
+-   What you have learned
+    -   `r params$topic_05`
+-   What's coming next
+    -   `r params$topic_06`
+-   Any questions?
+-   What have you in this area that you found helpful?
+
+::: notes
+I want to take another short break and see if there are any questions.
+
+Does anyone want to share experiences that they have had in this area that they have found helpful.
+:::
+
+
+{{< include _2024-05-06.qmd >}}
+
+{{< include _2024-05-07.qmd >}}
+
+## Summary
+
+-   What you have learned
+    -   `r params$topic_01`
+    -   `r params$topic_02`
+    -   `r params$topic_03`
+    -   `r params$topic_04`
+    -   `r params$topic_05`
+    -   `r params$topic_06`
+-   Any questions?
+-   What have you found helpful?
+
+::: notes
+This is my last slide. Are there are any questions?
+
+I'd also like to open the floor for others to comment.
+:::
+
+
+<!---
+      You have to put the title down 
+      here to override the titles of
+      all the include files.
+--->
+
+---
+title: "Finding Customers for Your Consulting Business"
+---

@@ -9,7 +9,7 @@ editor: source
 
 ## Identify this movie
 
-![](golden-ticket.png "Charlie (Peter Ostrum) finding a golden ticker in Willy Wonka and the Chocolate Factory")
+![](golden-ticket.png "Charlie (Peter Ostrum) finding a golden ticket in Willy Wonka and the Chocolate Factory")
 
 ::: notes
 Image from The Prop Gallery. Willy wonka and the Chocolate Factory (1971) - Golden Ticket, available in html format at https://www.thepropgallery.com/willy-wonka-original-golden-ticket/

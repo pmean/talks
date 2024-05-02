@@ -8,7 +8,7 @@ params:
   topic_01: "Use word of mouth"
   topic_02: "Give away free samples of your work"
   topic_03: "Consider volunteering"
-  topic_04: "Recognize that not everyone will find you by email"
+  topic_04: "Recognize that not everyone will contact you by email"
   topic_05: "Turn all of these efforts into a regular work habit"
   topic_06: "Addendum: Keeping your existing customers happy"
 editor: source

@@ -1,0 +1,56 @@
+---
+title: "Summary"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Use word of mouth
+
+![](ned-ryerson.png "An annoying salesperson, Ned Ryerson, in the movie, Groundhog Day")
+
+::: notes
+If you want to get clients for your new consulting business, the first thing you need to do is to use word of mouth.
+:::
+
+## Give away free samples of your work
+
+![](golden-ticket.png "Charlie (Peter Ostrum) finding a golden ticket in Willy Wonka and the Chocolate Factory")
+
+::: notes
+You should give away free samples of your work
+:::
+
+## Consider volunteering
+
+![](election.png "Tracy Flick (Reese Witherspoon) from the movie, Election")
+
+::: notes
+Consider volunteering
+:::
+
+## Recognize that not everyone will contact you by email
+
+![](youve-got-mail.png "Movie poster of Tom Hanks and Meg Ryan in You've Got Mail")
+
+::: notes
+You will get more customers if you have a variety of ways that your customers can contact you.
+:::
+
+## Turn all of these efforts into a regular work habit
+
+![](sister-act.png "Sister Mary Clarence (Whoopi Goldberg) from the movie Sister Act")
+
+::: notes
+Make these efforts a work habit, one that you do regularly but you also pace yourself so you don't burn out.
+:::
+
+## Keep your existing customers happy
+
+![](ratatouille.png "Anton Ego (voiced by Peter O'Toole) in the movie Ratatouille")
+
+::: notes
+Finally, once you have a good customer, keep them happy so that they will continue to want to work with you.
+:::
