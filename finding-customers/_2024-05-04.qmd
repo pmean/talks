@@ -1,0 +1,51 @@
+---
+title: "Recognize that not everyone will find you by email"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Identify this movie
+
+![](youve-got-mail.png "Movie poster of Tom Hanks and Meg Ryan in You've Got Mail")
+
+::: notes
+
+Image from movieposters.com, available in html format at https://www.movieposters.com/products/youve-got-mail-mpw-132902
+
+This is a clip from the Rom-Com, You've Got Mail, with Tom Hanks and Meg Ryan. Although many clients will find you by email, there are other methods of communication that you should not ignore.
+
+
+## Recognize that not everyone will find you by email
+
+-   Falling out of fashion with younger generations
+-   Social media
+    -   LinkedIn
+    -   X (Twitter)
+    
+
+::: notes
+I love email. A day without email is a day without sunshine. Even the spam is fun. But not everyone uses email to communicate.
+
+Many social media apps have an alternate channel for communication. I have to confess that I hate LinkedIn. It is overflowing with headhunters who have a wonderful career opportunity that just might be right for you.
+
+But I've gotten a couple of clients through LinkedIn. They see my profile and send me a message that I have to figure out how to read and how to reply to.
+
+I don't use Twitter, now called X, but it is also a common method to send private messages.
+
+There may be other social media out there, anyone want to comment? I'm on Facebook a lot. The biggest time sink ever invented. But it is a lot of fun. I must say though, that I have never gotten any work in spite of all my Facebook posts.
+
+:::
+ 
+
+## Accept payment from alternate sources
+
+-   Standard for most is invoicing
+-   Alternatives
+    -   Paypal, Venmo
+
+::: notes
+It is not really a way to find clients, but I should mention that if you are an independent consultant, you should learn how to accept payments from alternate sources. It's not hard to figure out Paypal or Venmo, though I have to admit that sometimes I can't fit all these new technologies inside my already overstuffed cranium.
+:::

@@ -1,0 +1,146 @@
+---
+title: "Give away free samples of your work"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Identify this movie
+
+![](golden-ticket.png "Image of Charlie (Peter Ostrum) finding a golden ticker in Willy Wonka and the Chocolate Factory")
+
+::: notes
+Image from The Prop Gallery. Willy wonka and the Chocolate Factory (1971) - Golden Ticket, available in html format at https://www.thepropgallery.com/willy-wonka-original-golden-ticket/
+
+This is an image of Charlie, played by the young actor, Peter Ostrum, holding up a golden ticket that he just got in the movie, Willy Wonka and the Chocolate Factory.
+
+Everybody likes getting something extra for free. Maybe you can't offer something as exciting as a free tour of a chocolate factory, but you can offer something of value for free.
+:::
+
+## Give away free samples of your work
+
+-   Writing
+    -   Books
+    -   Newsletters
+    -   Blog posts
+-   Talks
+    -   For statisticians
+    -   For non-statisticians
+    -   Let others promote your work
+
+
+::: notes
+It does take time, but one way to get known is to give away for free some of things that you'd like to get people to pay you for.
+
+Take some time to write up or talk about the things that you do. Don't give away the whole store, of course, but give them a small taste that will whet their appetite and leave them wanting more.
+:::
+
+## Write a book
+
+-   Not easy and not for everyone
+-   Much greater impact than journal articles
+-   Self publishing option?
+
+::: notes
+When you write a book about Statistics, don't expect a huge royalty stream. The money goes to authors who can write about vampires that sparkle in the sunlight. What you get is a lot of visibility.
+
+I have to mention books here because they have such a big impact. Not everyone can write a book and writing a whole book is not easy. But the payback that you get from a book is far greater than what you get from writing journal articles.
+
+I wrote a book in 2006, and it opened a lot of doors for me.I got invitations to talk in London and Amsterdam through that book. I was asked to testify in a court case based on something in my book.
+
+My book was published by Oxford University Press, and boy that sounds impressive. More importantly, it insured that my book would get a handful of reviews, which (thankfully), were mostly positive.
+
+You should try for a publisher, but self publishing is an easy option these days. 
+:::
+
+## Publish a newsletter
+
+-   Use an established vendor
+    -   Formal unsubscribe mechanism
+-   Publish regularly
+    -   Monthly or less often
+
+::: notes
+I had a newsletter, The Monthly Mean, that I sent out for several years, and I got several hundred subscribers. It had a couple of original articles, a recommended book, article, or website, and interesting quote, and a brief story about our son, Nick. I had to abandon it because of time pressure, but I got a lot of good publicity while it was going. It really helped me stay in touch with a lot of important people.
+
+If you want to do a newsletter, pay to use a commercial email service. They will provide a professional look to your newsletter. More importantly, they will provide a trustworthy way for people to subscribe and unsubscribe. It is well worth the investment.
+
+For a newsletter to be effective, it has to appear regularly. Don't try to publish too often. It may get annoying and besides, you might burn out after just a few issues. Certainly no more than monthly. If I had to do it over again, I would have limited my newsletter to quarterly.
+:::
+
+::: Create a blog
+
+-   Similar to newsletters
+    -   Indexed by search engines
+    -   More impact than journal article
+-   Publish regularly, but not too often
+    -   Fresh content
+    -   Recommendations
+-   Stay away from politics
+    
+::: notes
+I wrote a website back in 1998 and turned it into a blog about ten years later. A blog is a lot like a newsletter, but it has the added advantage of getting indexed by search engines like Google and Bing.
+
+It takes work to publish a blog. Make sure that you publish regularly, but not too often. There's little value to send out a flurry of blog posts for the first month, then get burned out and not publish anything for the next three years.
+
+For my website and blog, I tried to average one or two articles a week. That's more than I would recommend to most people. But do spend some time at least once a month.
+
+Because I started a website and blog so many years ago, I now have over two thousand pages. The quality is uneven, and many pages need a serious overhaul. But I have gotten a lot of business from people who first found me through my website and blog.
+
+It is hard to provide fresh content on a regular basis, but it helps to supplement your content with recommendations from other websites, journals, newspaper articles, and books. Think of this as sort of an annotated bibliography. Put in a link and a description no longer than a single paragraph. People love it when they get a hint as to what lies behind that bright blue underlined hyperlink.
+
+You will be tempted to talk about politics on your blog. Don't do it! Half the people will love what you write and half the people will hate what you write, but you will lose ten times more business opportunities from the people that hate you than you will get from the people that love you.
+
+If you must talk politics, set up a totally separate blog where you share your opinions about Donald Trump. Keep a thick firewall between the two blogs.
+:::
+
+## Give talks 
+
+-   Client audiences
+-   Statistical audiences
+    -   Other statisticians will often send you referrals.
+
+::: notes
+Find opportunities to give talks to groups that you hope to get business from. I've given simple statistics tutorials from groups like the American Society of Andrology and the Medical Library Association. I also give talks to groups like you. You're not going to hire me as a consultant. Heck, you probably know twice as much as I do about the work that you do. The value in giving talks to a statistical audience is that they often send you referrals to clients that they don't want to work with or that they can't work with.
+
+I always let people know that I want to help with the sorts of projects and the sorts of cliets that no one else wants to work with. That's not literally true, but I will say that at least a few of my best clients have been cast off by other statisticians.
+:::
+
+## Let others promote your work, 1 of 4
+
+![](introduction.png "Suggested introduction text that illustrates some opportunities for promoting your business")
+
+
+::: notes
+When you give a talk let others do your promotion for you. Here's the introduction that I shared with Andrea Mack and Ryan Peterson. Thank you for that introduction, by the way. You can't read it at this font size, but let me highlight a few things in it. 
+:::
+
+## Let others promote your work, 2 of 4
+
+...He currently runs a small consulting business, P.Mean Consulting, as a sole proprietorship...
+
+::: notes
+Notice how I got the name of my consulting business listed. It's a whole lot better than me saying the name of my consulting business.
+:::
+
+## Let others promote your work, 3 of 4
+
+...He is president of the Kansas City R Users Group and is looking for speakers for future Zoom meetings...
+
+::: notes
+Here's a plug, not for my consulting, but you get the idea.
+:::
+
+## Let others promote your work, 4 of 4
+
+His current research interests include using Bayesian models to forecast patient accrual in clinical trials and examining data sharing practices in peer-reviewed articles.
+
+::: notes
+This is not promoting my consulting business, but rather it represents an opportunity to see if anyone else is working in this area who might want to collaborate with me.
+
+You can often get the session chair or organizer to say things about you that sound much more impressive than when you say it yourself.
+
+There's no guarantee that you will get the introduction that you want, but nine times out of ten, I get the introduction that I shared almost word for word. Even if they leave most of the details out, it cost almost no time to prepare an introduction like this.
+:::

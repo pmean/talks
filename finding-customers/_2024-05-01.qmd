@@ -1,0 +1,122 @@
+---
+title: "Use word of mouth"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Identify this movie
+
+![](ned-ryerson.png "Image of an annoying salesperson, Ned Ryerson, in the movie, Groundhog Day")
+
+::: notes
+Image from Phil Hornshaw. Listen to Ned Ryerson Tell Behind-the-Scenes Stories About 'Groundhog Day'" The Wrap, 2018-02-02, available in html format at https://www.thewrap.com/ned-ryerson-behind-the-scenes-groundhog-day/
+
+In each section, I will use a familiar movie to introduce the topic. Take a look at this image and tell me what movie it is from.
+
+Type your answer in the chat box.
+
+The image is of an obnoxious salesperson, Ned Ryerson, who repeatedly assaults the Bill Murray character, Phil Connors, trying to sell insurance.
+
+You do want to promote your business, but not like Ned Ryerson.
+:::
+
+## Use word of mouth
+
+-   Birth announcement
+-   Current customers
+-   Staying in touch
+
+::: notes
+Word of mouth is an idiomatic phrase meaning one person telling another person about who you are and what you do. You can do this with friends, family, and professional colleagues. You can use a current customer to help you find new customers. You should stay in touch with everyone, and I will explain how to do this carefully, so you don't get labeled a pest (or worse, a spammer).
+::: 
+
+## Birth announcement
+
+-   "I'm embarking on a new career move, starting a small statistical consulting business, P.Mean Consulting. I'm so excited. Wish me luck." Send to
+    -   Family,
+    -   Friends,
+    -   Colleagues from your former job
+    -   Former professors from your degree program
+-   Use email and/or social media
+-   Send only once
+
+::: notes
+Send an email to everyone you know: family, friends, colleagues from your old workplace, faculty from your old University. Just keep it short and sweet. 
+
+You really don't need to directly solicit for customers in your birth announcement. Be ready with a more detailed follow-up for anyone who asks.
+
+It's important to send out only one birth announcement. You don't want to become annoying Ned Ryerson.
+:::
+
+## Thank you note
+
+-   "Thanks for involving me in this interesting project. If you have anything similar in the future, I'd love to continue our collaboration."
+    -   Send one week/one month after final payment
+    -   Send only once
+
+## Stay in regular touch
+
+-   No direct solicitation
+    -   "I heard that your youngest is leaving for college. What's it like being an empty nester?"
+    -   "I bet your whole town is celebrating with two straight Super Bowl victories."
+    -   "I saw this NYTimes article about long COVID, and it reminded me of your work."
+-   Not too often, every six months?
+    
+::: notes
+You should stay in regular touch with anyone you have been working with in the past. You want them to remember who you are in case they come across a new project where you might be able to help. 
+
+More importantly, you also want them to remember who you are when they are talking to their colleagues both within their company and colleagues from other companies. They're having a lunchtime discussion When lunch partner says how much trouble they are having putting together a DSMB, a Data and Safety Monitoring Board, you want your name to be a name that they remember.
+
+So find an excuse to stay in touch. Don't pull a Ned Ryerson and try to hit your client bases with a direct solicitation. Find something else to email them about. It can be something about them: Ask them about their kids, their pets.
+
+It could be something about where they live. Kansas City is a football town and we're always glad to hear from those jealous fans in Buffalo and Cincinnati. 
+
+One recommendation I really like is finding an article in a journal or newspaper that relates to what they do and sharing it with them.
+
+Don't do this too often. Judge this by the particular person you have worked with, but I would suggest no more often than twice a year.
+:::
+
+## Business cards
+
+-   Hand out at every event
+    -   "Good to chat with you. Here's a card. Call me or email me if you want to talk some more."
+-   Write something on the back
+    -   "Ethics code for research"
+-   Take their cards and follow-up
+    -   Business card = one (but only one) free spam
+    -   "I just wanted to say again how much I enjoyed your talk"
+
+
+::: notes
+I always forget to take business cards with me. You get five thousand of these at a pop and I always move to a new job/office before I use a hundred of them.
+
+Get in the habit of ending a conversation by handing out your card. Write something on the back so they will remember what the conversation was about.
+
+When you get a card, don't do what I do, and toss it in your desk drawer in the vain hope that you will find it six months from now when you realize that you need to contact this person again.
+
+Send an email out the day after the conversation and offer a compliment. That way, you'll have both the card, and a message in your sent folder, doubling the chances that you can retrieve their contact information six months down the road.
+
+People often don't like getting a lot of emails, but if they hand you a card with their email address on it, they can't complain if you send one message afterwards.
+
+Just don't press your luck by sending two, unless they respond positively to your first email. 
+:::
+
+## Email ticklers
+
+-   Signature file
+    -   "New career! P.Mean Consulting"
+    -   "P.Mean Consulting. Now in our second year of business"
+    -   Short and sweet
+-   Configure your email name
+    -   Not "Steve Simon", use "Steve Simon, P.Mean Consulting"
+
+::: notes
+You can always stick in little ticklers in the email messages that you send out. Use a standard signature file that reminds everyone the name of your company. 
+
+Keep the signature file short and sweet. Many people dislike multiline signature files, but if you can fit something onto one line (or no more than two lines), go ahead.
+
+Also configure your email system so that outgoing messages say more than just your name. Sneak your company name onto the From: field of every message that you send out.
+:::

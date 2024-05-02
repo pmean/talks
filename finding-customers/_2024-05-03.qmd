@@ -1,0 +1,94 @@
+---
+title: "Consider volunteering"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Identify this movie
+
+![](election.png "An impage of Tracy Flick (Reese Witherspoon) from the movie, Election")
+
+
+::: notes
+Here's another clip from a movie. If you know the movie, put something in the chat box.
+
+This is the excessively eager student, Tracy Flick, played by Reese Witherspoon, from the movie, Election, raising her hand vigorously to volunteer an answer to the teacher's question.
+
+Volunteering is a good way to gain visibility.
+:::
+
+## Volunteering
+
+-   Similar to giving away free samples
+    -   Officer in an organization
+    -   Committee work
+    -   Pro bono work
+-   Strive for high visibility work
+-   Don't volunteer unless you can do a good job
+
+## Officer in an organization
+
+-   Client-rich organizations
+-   ASA offices
+    -   Related positions
+-   Committee work
+
+::: notes
+There are many organizations that need volunteers to run them. Look for organizations that have lots of people who might be potential clients. This is a bit tricky because you might be perceived as an outsider and not qualified. But if you find a chance to take any role, even a small one in an organization like the Midwest Society for Pediatric Research, you will find yourself meeting and working with people who might like you enough to hire you.
+
+Becoming an officer in an organization like the American Statistical Association is easier, and don't discount the fact that other statisticians are often a prime source for new clients that they can't work with or that they don't want to work with. You could start with your local ASA chapter, or you could involve yourself in the work of a group like the Statistical Consulting Section of the ASA.
+
+There are other positions like the ASA that you should consider. I am president of the Kansas City R Users Group, and that means I get to introduce the speakers at every meeting, and I send out emails under my name publicizing the meetings. Better still, many people will presume that the president of the Kansas City R Users Group knows more about R programming than anyone else in the Kansas City area. Not true, but I'm not going to tell them that.
+
+In any organization, being an officer is high visibility, but other committee work might still be effective. Strive for something like a newsletter committee where your name might end up in the masthead.
+:::
+
+## Pro bono work
+
+-   Statistics Without Borders
+    -    Steve Pierson, Gary Shapiro, Jim Cochran, Fritz Scheuren
+-   Stats4Good
+    -   David Corliss
+-   Informal efforts
+    -   Find a cause you believe in
+-   Never offer free consulting to a potential paying client
+    
+::: notes
+There are a couple of organizations where you can do really interesting work. The Statistics Without Borders group was established in 2008 and provides a lot of assistance to help promote human welfare in locations that can't afford to pay for help. 
+
+Another group is Stats4Good, run by David Corliss.
+
+It's a great way to build your resume. Be sure to brag about your work. Pro bono work is often very intriguing.
+
+you can also find a Pro Bono effort on your own. I was at a talk where someone presented work of her group providing medical care to homeless people. I stopped by to chat with her afterwards, and mentioned offered my assistance if she ever needed help on Statistics, such as building an evaluation plan to measure the benefits of her group's work. I just did this a month ago, but it looks like I might have a nibble.
+
+Now be sure to never offer free consulting to someone that you hope to turn into a paying client. Once they get used to getting something for free, you'll never get them to pay for your services.
+
+I do offer the first hour of consulting for free, and I do point clients towards web pages that I have written that relate to their work. But nothing more than that.
+:::
+
+## Strive for high visibility work
+
+-   Some volunteer work is largely anonymous
+    -   Peer review
+    -   Grants committees
+    
+::: notes
+Some work is largely anonymous, mostly because of confidentiality restrictions. If you are a peer reviewer or a if you are reviewing grants, you have to keep silent on most of the details of your work. The editor or the chair of the grant committee may be grateful for your work, but your hard work will not get any recognition beyond that.
+
+Do think carefully about this type of work, but I don't want to discourage this type of volunteering. If you volunteer to review other research, you still benefit. It helps your professional growth in many ways, and there is a real need to good quality work in this area. So o ahead and volunteer for these low visibility efforts as long as you don't think you are doing it to get famous.
+:::
+
+## Don't voluneer unless you can do a good job
+
+-   Avoid efforts that you hate
+-   Avoid efforts you don't have time for
+
+::: notes
+One word of caution. Volunteering for a high visibility job and then doing a lousy job is worse than not volunteering at all. Anyone who sees you will know not to recommend you to their colleagues. If you screw up as president of your local ASA chapter, count on losing any recommendations from statisticians in your community.
+
+Look at the type of work and the amount of time that it takes. Pick and choose carefully.
+:::

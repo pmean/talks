@@ -1,0 +1,54 @@
+---
+title: "Addendum: Keeping your existing customers happy"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Identify this movie
+
+
+![](ratatouille.png "Image of Anton Ego (voiced by Peter O'Toole) in the movie Ratatouille")
+
+::: notes
+Image from Aaron Hendrix. In Defense of the Critic: Ratatouille at 10. Talk Film Society, 2017-06-29. Available in html format at https://talkfilmsociety.com/articles/in-defense-of-the-critic-ratatouille-at-10
+
+My final thoughts come from an animated film. This one is a bit trickier. This dour looking soul is Anton Ego (voiced by Peter O'Toole), a restaurant critic in the movie Ratatouille. I want to highlight him because he is a restaurant customer that you definitely want to keep happy.
+::: 
+
+## Keeping your existing customers
+
+-   Three things to be careful about
+    -   Time
+    -   Money
+    -   Quality
+
+::: notes
+I was talking with another consultant about this upcoming talk and he said, you know, I don't work very hard to find new clients. I work at keeping the existing clients.
+
+I had not thought about it that way, and to be honest, I am not very good at keeping clients long term.
+
+I asked another consultant who came up with three things that you have to be careful about and he immediately came up with a list of three things: time, money, and quality.
+
+Make sure that you honor any time commitments that you make. This starts with setting those time limits carefully at the start.
+
+Avoid cost overruns. If the project costs more than you said it would make sure that you have a darned good reason and that your client agrees. If you can't get agreement, then you may be better off eating the cost overrun yourself.
+
+Make sure that everything you produce is high quality. Avoid rework.
+:::
+
+## Keeping your existing customers
+
+-   Regular billing
+-   Honesty about your limitations
+-   Make them less dependent on you
+
+::: notes
+I can add a few extra insights. I tend to be sloppy about sending out invoices, and this is a big problem. I don't need to worry about cash flow on my end, but it is often a consideration on the other end. Don't waiting three or four months and then sock your client with a Godizilla sized bill.
+
+Be honest with your client. They may have high expectations from your work, but let them know that sometimes a study is a bust with all the p-values larger than 0.05. Yes, I know that negative studies are just as valuable as positive studies. But if your client has pie-in-the-sky expectations, you want to give then an early dose of the reality of statistics, especially if their sample size is quite marginal.
+
+The other thing that I do believe quite strongly helps in keeping customers is to make them less dependent on you. Teach them how to do some of the basic analyses themselves. Show them how to choose among competing methods. For some clients this will actually bring them back to you more often because they enjoy developing a sense of self mastery. You get the side benefit that when they do see you, they present not the boring mundance simple stuff but the challenging problems that they still are unable to master.
+:::
