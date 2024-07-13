@@ -2374,3 +2374,150 @@ The problem with error bars is that they
 
 Here is the repeat question about error bars
 :::
+
+## Your comments, designing clinical trials, 1 of 8
+
+-   When do you use randomized versus non-randomized studies?
+    -   Observational studies
+    -   Experimental studies
+        -   Randomized studies
+        -   Quasi-experimental studies
+    -   Randomization is overrated
+-   Definitely will cover
+
+## Your comments, designing clinical trials, 2 of 8
+
+-   Different types of clinical trials
+    -   Crossover trials
+    -   Adaptive trials
+    -   Real world evidence
+-   Might cover
+
+## Your comments, designing clinical trials, 3 of 8
+
+-   Superiority vs non-inferiority
+    -   New drug is cheaper, more convenient, fewer side effects
+    -   Willing to tolerate a small deficit in efficacy
+-   Might cover
+
+## Your comments, designing clinical trials, 4 of 8
+
+-   Balanced vs unbalanced study design, randomization ratio
+    -   All others things being equal, balanced is better
+    -   What to do when controls are cheaper
+-   Might cover
+
+## Your comments, designing clinical trials, 5 of 8
+
+-   Number of matching/stratification factors
+    -   Don't go overboard!
+    -   Only the "drop dead" important factors
+-   Might cover
+
+## Your comments, designing clinical trials, 6 of 8
+
+-   Frequency of assessment
+    -   Cost versus information trade-off
+-   Probably won't cover
+
+## Your comments, designing clinical trials. 7 of 8
+
+-   Disproportionate patient drop-out 
+    -   Often a fatal problem
+    -   Prevention!
+    -   Intention to treat analysis
+    -   Get partial information
+
+## Your comments, designing clinical trials, 8 of 8
+
+-   Dose escalation and dose optimization
+    -   3+3 designs
+    -   Bayesian designs
+-   Probably won't cover
+
+## Your comments, problematic situations, 1 of 2
+
+-   Mis-stratification error rate
+    -   Randomization relies on large numbers
+    -   Physician subversion?
+-   Probably won't cover
+    
+## Your comments, problematic situations, 2 of 2
+
+-   How do you handle missing data?
+    -   No news is good news
+    -   No news is bad news
+    -   No news is average news
+    -   No news is yesterday's news
+    -   Single imputation
+    -   Multiple imputation
+-   Might cover
+
+## Your comments, Communication, 1 of 2
+
+-   Explaining complex statistical concepts
+    -   Avoid condescension
+    -   Size up your audience
+    -   Cite relevant, accessible examples
+    -   Focus on nouns, not adjectives
+-   Might cover
+
+## Your comments, Communication, 2 of 2
+
+-   Different ways to visualize data
+    -   Uses and abuses of color
+    -   The error of error bars
+    -   Proximity principle
+-   Definitely will cover
+
+## Your comments, analysis, 1 of 3
+
+-   Time to event models, survival 
+    -   Censored values are not missing values
+    -   Kaplan-Meier curve
+    -   Proportional hazards models
+-   Definitely will cover
+
+## Your comments, analysis, 2 of 3
+
+-   Number needed to treat, number needed to harm
+    -   Absolute versus relative risk
+    -   "Good" values for NNT
+    -   NNT to NNH ratio
+-   Might cover
+  
+## Your comments, analysis, 3 of 3
+
+-   Bayesian analysis, historical benchmarks
+    -   Prior distribution
+    -   Likelihood
+    -   Posterior distribution
+    -   Controversies
+-   Definitely will cover
+
+## Give me your feedback {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+1. To randomize or not to randomize
+2. Types of clinical trials
+3. Non-inferiority trials
+4. Unbalanced trials
+5. Number of strata
+6. Frequency of assessment
+7. Disproportionate drop-out
+8. Dose escalation
+:::
+
+::: {.column width="50%"}
+9. Mis-stratification
+10. Missing data
+11. Explaining complex concepts
+12. Visualization
+13. Survival models
+14. NNT, NNH
+15. Bayesian analysis
+:::
+
+::::
