@@ -1,0 +1,264 @@
+---
+title: "Clinical statistics for non-statisticians: Extra topics"
+author: "Steve Simon"
+format:
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## Your comments, 1 of 15
+
+-   When do you use randomized versus non-randomized studies?
+    -   Observational studies
+    -   Experimental studies
+        -   Randomized studies
+        -   Quasi-experimental studies
+    -   Randomization is overrated
+-   Definitely will cover
+
+::: notes
+*Speaker notes*
+
+Several of you filled out a survey. One of the questions was about topics that you'd like to see covered in this class. I took the liberty of rewording some of these and organizing them into general categories. The most common category was designing research studies, and I received at least eight distinct suggestions.
+
+One important question is when you might use randomized studies and when you might forgo randomization in favor of an alternative design.
+:::
+
+
+
+## Your comments, 2 of 15
+
+-   Different types of clinical trials
+    -   Crossover trials
+    -   Adaptive trials
+    -   Real world evidence
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+One request was for different types of clinical trials. I didn't know quite what that meant. Here are some things I thought might fit under this topic. If the person who wrote this wants to clarify this or if anyone else wants to offer suggestions, let me know.
+:::
+
+## Your comments, 3 of 15
+
+-   Superiority vs non-inferiority
+    -   New drug is 
+        -   cheaper, 
+        -   more convenient,
+        -   fewer side effects
+    -   Willing to tolerate a small deficit in efficacy
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+Non-inferiority trials are a bit tricky. The word itself, non-inferior, is a double negative. I've given lectures on why you might want to test a non-inferiority hypothesis and how you would do this.
+:::
+
+## Your comments, 4 of 15
+
+-   Balanced vs unbalanced study design, randomization ratio
+    -   All others things being equal, balanced is better
+    -   What to do when controls are cheaper
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+This topic and the next two refer to data analysis strategies. 
+
+Unbalanced study designs have different numbers of patients in the groups you want to compare.
+
+In an observational study, unbalanced is the norm. In experimental studies, you typically want balance. All other things being equial, it provides the best precision and power. But things are not always equal. In particular, if the controls are chepaer than the comparison group, you can get more for your budget by oversampling the less expensive controls.
+:::
+
+## Your comments, 5 of 15
+
+-   Number of matching/stratification factors
+    -   Don't go overboard!
+    -   Only the "drop dead" important factors
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+This topic and the next two refer to data analysis strategies. 
+
+Matching and stratification is a great way to improve the precision and power of your research. But don't overdo it. 
+
+Too many matching or stratification factors raise logistical issues. I recommend that reserve matching for only the most important factors, the ones that really can have a big impact on your outcome.
+:::
+
+## Your comments, 6 of 15
+
+-   Frequency of assessment
+    -   Cost versus information trade-off
+-   Probably won't cover
+
+::: notes
+*Speaker notes*
+
+Should you assess your patients every week or just once a month? Do you want assessments spaced evenly across the duration of the trial or do you use fewer assessments in the later parts of the trial? This is not really statistical issue. The experts in medicine and science have the knowledge and expertise to decide when to evaluate. There are a few minor considerations regarding precision, but these are subservient to the scientific and medical ramifications.
+:::
+
+## Your comments, 7 of 15
+
+-   Disproportionate patient drop-out 
+    -   Often a fatal problem
+    -   Prevention!
+    -   Get partial information
+    -   Intention to treat analysis
+    -   Imputation
+
+::: notes
+*Speaker notes*
+
+Drop outs are always a serious issue, but when you have a higher dropout rate in the treatment arm, it is almost always very bad news. Try to prevent dropouts, if you can. There are some approaches that can try to patch things up, but prevention is your best strategy.
+:::
+
+## Your comments, 8 of 15
+
+-   Dose escalation and dose optimization
+    -   3+3 designs
+    -   Bayesian designs
+-   Probably won't cover
+
+::: notes
+*Speaker notes*
+
+:::
+
+## Your comments 9 of 15
+
+-   Mis-stratification error rate
+    -   Randomization relies on large numbers
+    -   Physician subversion?
+-   Probably won't cover
+    
+::: notes
+*Speaker notes*
+
+This topic and the next one refer to how to handle troublesome situations. 
+:::
+
+## Your comments, 10 of 15
+
+-   How do you handle missing data?
+    -   No news is good news
+    -   No news is bad news
+    -   No news is average news
+    -   No news is yesterday's news
+    -   Single imputation
+    -   Multiple imputation
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+:::
+
+## Your comments, 11 of 15
+
+-   Explaining complex statistical concepts
+    -   Avoid condescension
+    -   Size up your audience
+    -   Cite relevant, accessible examples
+    -   Focus on nouns, not adjectives
+-   Might cover
+
+::: notes
+*Speaker notes*
+
+This topic and the next one refer to communication issues. 
+:::
+
+## Your comments, 12 of 15
+
+-   Different ways to visualize data
+    -   Uses and abuses of color
+    -   The error of error bars
+    -   Proximity principle
+-   Definitely will cover
+
+::: notes
+*Speaker notes*
+
+:::
+
+## Your comments, 13 of 15
+
+-   Time to event models, survival 
+    -   Censored values are not missing values
+    -   Kaplan-Meier curve
+    -   Proportional hazards models
+-   Definitely will cover
+
+::: notes
+*Speaker notes*
+
+This topic and the next two refer to data analysis strategies. 
+:::
+
+## Your comments, 14 of 15
+
+-   Number needed to treat, number needed to harm
+    -   Absolute versus relative risk
+    -   "Good" values for NNT
+    -   NNT to NNH ratio
+-   Might cover
+  
+::: notes
+*Speaker notes*
+
+:::
+
+## Your comments, 15 of 15
+
+-   Bayesian analysis, historical benchmarks
+    -   Prior distribution
+    -   Likelihood
+    -   Posterior distribution
+    -   Controversies
+-   Definitely will cover
+
+::: notes
+*Speaker notes*
+
+:::
+
+## Give me your feedback {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+1. To randomize or not to randomize
+2. Types of clinical trials
+3. Non-inferiority trials
+4. Unbalanced trials
+5. Number of strata
+6. Frequency of assessment
+7. Disproportionate drop-out
+8. Dose escalation
+:::
+
+::: {.column width="50%"}
+9. Mis-stratification
+10. Missing data
+11. Explaining complex concepts
+12. Visualization
+13. Survival models
+14. NNT, NNH
+15. Bayesian analysis
+:::
+
+::::
+
+::: notes
+*Speaker notes*
+
+Here's a list of everything. Let me know in the chat box what topics you would like to see. I can't promise that I will do everything that you ask for, but I will try.
+:::
+

@@ -1582,6 +1582,7 @@ PHQ-2 is a quality of life measure. It ranges from 0 to 6. The very large standa
 ::: notes
 *Speaker notes*
 
+Here's an article looking at long Covid, the persistence of symptoms long after infection.
 :::
 
 ## Tosato 2021, PMID: 34352201 (continued)
@@ -1591,7 +1592,7 @@ Symptom persistence weeks after laboratory-confirmed severe acute respiratory sy
 ::: notes
 *Speaker notes*
 
-Here's another article looking at long Covid, the persistence of symptoms long after infection.
+Here is the first half of the abstract.
 :::
 
 ## Tosato 2021, PMID: 34352201 (continued)
@@ -2521,3 +2522,4 @@ Here is the repeat question about error bars
 :::
 
 ::::
+
