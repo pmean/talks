@@ -1601,6 +1601,29 @@ width: 1px!important;
 overflow: hidden!important;
 display:block!important;
 }</style></aside>
+</section>
+<section id="your-responses" class="slide level2 smaller">
+<h2>Your responses</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>                                  y n
+1                 Bayesian analysis 4
+2                      Missing data 3
+3                   Survival models 3
+4          Types of clinical trials 3
+5       Explaining complex concepts 2
+6                          NNT, NNH 2
+7            Non-inferiority trials 2
+8                   Dose escalation 1
+9  To randomize or not to randomize 1
+10                Unbalanced trials 1
+11        Disproportionate drop-out 0
+12          Frequency of assessment 0
+13               Mis-stratification 0
+14                 Number of strata 0
+15                    Visualization 0</code></pre>
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>
@@ -2628,6 +2651,44 @@ window.QuartoSupport = function () {
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

@@ -279,3 +279,40 @@ I am a big fan of Bayesian analysis, and it is especially valuable for incorpora
 Here's a list of everything. Let me know in the chat box what topics you would like to see. I can't promise that I will do everything that you ask for, but I will try.
 :::
 
+## Your responses {.smaller}
+
+```{r}
+#| echo:false
+#| message:false
+
+library(tidyverse)
+x <- c(
+  10, 13, 14, 15,
+  2,
+  13, 3, 14, 15,
+  2, 10, 11,
+  1, 3, 4, 8, 10, 11,
+  2, 15,
+  13, 15,
+  1:15)
+la <- c(
+  "To randomize or not to randomize",
+  "Types of clinical trials",
+  "Non-inferiority trials",
+  "Unbalanced trials",
+  "Number of strata",
+  "Frequency of assessment",
+  "Disproportionate drop-out",
+  "Dose escalation",
+  "Mis-stratification",
+  "Missing data",
+  "Explaining complex concepts",
+  "Visualization",
+  "Survival models",
+  "NNT, NNH",
+  "Bayesian analysis")
+data.frame(y=la[x]) %>% 
+  count(y) %>% 
+  arrange(desc(n)) %>%
+  mutate(n=n-1)
+```
