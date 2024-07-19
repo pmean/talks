@@ -1,7 +1,7 @@
 ---
 title: "Clinical statistics for non-statisticians: Extra topics"
 author: "Steve Simon"
-format:
+format: 
   revealjs:
     slide-number: true
     embed-resources: true
@@ -129,7 +129,7 @@ Drop outs are always a serious issue, but when you have a higher dropout rate in
 ::: notes
 *Speaker notes*
 
-Dose escalation and dose optimization are issues in Phase I clinical trials. This is done in small batches. The first few subjects start with a very low dose, one that is probably not going to be effective, but which will probably not produce any serious side effects. Depending on what you see you might collect additional information at that dose, or try a larger dose. Keep going until you find the maximum tolerated dose.
+Dose escalation and dose optimization are issues in Phase I clinical trials. In a Phase I trial, you are usually testing a new drug or device in humans for the first time. The goal is to identify the MTD (maximum tolerated dose).  This is a dose that does not produce an excess of side effects. This is done in small batches. The first few subjects start with a very low dose, one that is probably not going to be effective, but which will probably not produce any serious side effects. Depending on what you see you might collect additional information at that dose, or try a larger dose. Keep going until you find the maximum tolerated dose.
 
 The 3+3 design is most common approach, but it is very ad hoc and has a lot of undesirable properties. Some of the alternative approaches work better. Bayesian designs have a lot of promise. In a Bayesian design, you set prior beliefs about dose patterns and update them as you collect more data.
 
@@ -149,6 +149,12 @@ Le Tourneau C, Lee JJ, Siu LL. Dose escalation methods in phase I cancer clinica
 *Speaker notes*
 
 This topic and the next one refer to how to handle troublesome situations. 
+
+Mis-stratification is a term that I have not heard before, but I am guessing it is when patients are stratified by an important factor like age, but one group gets too many very old patients, just by the luck of the draw. It is a big problem for small sample sizes, because randomization relies on the law of large numbers.
+
+You should be aware that sometimes imbalance in an important strata is an indication of physician subversion of the randomization process. Sometimes recruiting physicians in a large trial might try to steer a patient towards one particular arm of the study. This is a very serious problem that could undermine the whole research project.
+
+This is a fairly advanced topic, so I won't cover it unless there is a lot of interest.
 :::
 
 ## Your comments, 10 of 15
@@ -165,6 +171,7 @@ This topic and the next one refer to how to handle troublesome situations.
 ::: notes
 *Speaker notes*
 
+This is a very important problem in research. There are simple solutions, but the correct solution, multiple imputation is a bit advanced for a class like this. I certainly would consider talking about it if there is interest.
 :::
 
 ## Your comments, 11 of 15
@@ -180,6 +187,10 @@ This topic and the next one refer to how to handle troublesome situations.
 *Speaker notes*
 
 This topic and the next one refer to communication issues. 
+
+Explaining complex statistical concepts is what I do for a living. I have a few general suggestions, though it is easy to say and difficult to do.
+
+I can talk about this if there is interest.
 :::
 
 ## Your comments, 12 of 15
@@ -193,6 +204,7 @@ This topic and the next one refer to communication issues.
 ::: notes
 *Speaker notes*
 
+I already have this in the lecture and will start in on it shortly. Visualization is a huge part of statistics and I could not teach this class without talking about it in some detail. So I am glad that one of you asked for this.
 :::
 
 ## Your comments, 13 of 15
@@ -207,6 +219,8 @@ This topic and the next one refer to communication issues.
 *Speaker notes*
 
 This topic and the next two refer to data analysis strategies. 
+
+A previous set of students asked about this, so I already have it in the lecture for day 3. Let me know if you want just a quick overview or more details.
 :::
 
 ## Your comments, 14 of 15
@@ -220,6 +234,7 @@ This topic and the next two refer to data analysis strategies.
 ::: notes
 *Speaker notes*
 
+This is an important topic. I don't have any material planned for it yet, but I can fit this in during the second day, if there is interest.
 :::
 
 ## Your comments, 15 of 15
@@ -234,6 +249,7 @@ This topic and the next two refer to data analysis strategies.
 ::: notes
 *Speaker notes*
 
+I am a big fan of Bayesian analysis, and it is especially valuable for incorporating historical benchmarks. It is already in the material for day 2.
 :::
 
 ## Give me your feedback {.smaller}
@@ -269,3 +285,40 @@ This topic and the next two refer to data analysis strategies.
 Here's a list of everything. Let me know in the chat box what topics you would like to see. I can't promise that I will do everything that you ask for, but I will try.
 :::
 
+## Your responses {.smaller}
+
+```{r}
+#| echo:false
+#| message:false
+
+library(tidyverse)
+x <- c(
+  10, 13, 14, 15,
+  2,
+  13, 3, 14, 15,
+  2, 10, 11,
+  1, 3, 4, 8, 10, 11,
+  2, 15,
+  13, 15,
+  1:15)
+la <- c(
+  "To randomize or not to randomize",
+  "Types of clinical trials",
+  "Non-inferiority trials",
+  "Unbalanced trials",
+  "Number of strata",
+  "Frequency of assessment",
+  "Disproportionate drop-out",
+  "Dose escalation",
+  "Mis-stratification",
+  "Missing data",
+  "Explaining complex concepts",
+  "Visualization",
+  "Survival models",
+  "NNT, NNH",
+  "Bayesian analysis")
+data.frame(y=la[x]) %>% 
+  count(y) %>% 
+  arrange(desc(n)) %>%
+  mutate(n=n-1)
+```

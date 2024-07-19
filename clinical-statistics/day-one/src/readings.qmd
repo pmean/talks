@@ -2,7 +2,7 @@
 title: "Clinical statistics for non-statisticians: Readings"
 author: "Steve Simon"
 format: pptx
-editor: visual
+editor: source
 ---
 
 ## Gould 2006

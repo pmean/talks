@@ -8,6 +8,15 @@ format:
 editor: source
 ---
 
+## There are a few unforunate typos
+
+-   Definition of the null hypothesis
+    -    Fix this before you teach again!
+    
+## Additions
+
+Next time around put in some material on equivalence and non-inferiority tests.
+
 ## Re-introduce yourself
 
 Here's one more interesting number about myself
@@ -147,7 +156,7 @@ First, you need to remember some basic definitions from your Statistics 101 clas
 
 ## What is a population?
 
--   Population: a group that you wish to generalize your research results to. it is defined in terms of
+-   Population: a group that you wish to generalize your research results to. It is defined in terms of
     -   Demography,
     -   Geography,
     -   Occupation,
@@ -226,7 +235,7 @@ There are a variety of responses here. The sample does not include home schooled
 
 ## What is a parameter?
 
--   A parameter is a number computed from a sample.
+-   A parameter is a number computed from a population.
     -   Examples
         -   Average health care cost associated with the 29,637 children
         -   Proportion of these 29,637 children who died in their first year of life.
@@ -239,7 +248,7 @@ There are a variety of responses here. The sample does not include home schooled
     -   Examples
         -   Average health care cost associated with 100 children.
         -   Proportion of these 100 children who died in their first year of life.
-        -   Correlation between genstational age and number of ER visits of these 100 children.
+        -   Correlation between gestational age and number of ER visits of these 100 children.
     -   Designated by non-Greek letters ($\bar{X}$, $\hat{p}$, r).
 
 ## What is Statistics?
@@ -253,7 +262,7 @@ There are a variety of responses here. The sample does not include home schooled
 -   The null hypothesis ($H_0$) is a statement about a parameter.
 -   It implies no difference, no change, or no relationship.
     -   Examples
-        -   $H_1:\ \mu_1 - \mu_2 = 0$
+        -   $H_0:\ \mu_1 - \mu_2 = 0$
         -   $H_0:\ \pi_1 - \pi_2 = 0$
         -   $H_0:\ \rho = 0$
 

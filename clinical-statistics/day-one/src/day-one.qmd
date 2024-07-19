@@ -1,7 +1,7 @@
 ---
 title: "Clinical statistics for non-statisticians: Day one"
 author: "Steve Simon"
-format:
+format: 
   revealjs:
     slide-number: true
     embed-resources: true
@@ -490,6 +490,7 @@ Here are the mathematical formulas for the mean and median. I know some people h
 ## Bacteria before and after A/C upgrade
 
 ```{r}
+#| echo: false
 suppressMessages(
   suppressWarnings(
     library(glue)))
@@ -502,6 +503,7 @@ suppressMessages(
 ```
 
 ```{r}
+#| echo: false
 room <- c(
   121,
   125,
@@ -514,6 +516,7 @@ room <- c(
 ```
 
 ```{r}
+#| echo: false
 bacteria_0 <- c(
   11.8,
   7.1,
@@ -526,6 +529,7 @@ bacteria_0 <- c(
 ```
 
 ```{r}
+#| echo: false
 bacteria_1 <- c(
   10.1,
   3.8,
@@ -564,6 +568,7 @@ I want to illustrate the calculation of the mean and median.
 ## Before remediation mean
 
 ```{r}
+#| echo: false
 adds_0 <- paste0(bacteria_0, collapse=" + ") 
 sum_0 <- sum(bacteria_0)
 mean_0 <- mean(bacteria_0)
@@ -586,6 +591,7 @@ Here's the data for bacterial counts before remediation. If you add the eight va
 ## After remediation mean
 
 ```{r}
+#| echo: false
 adds_1 <- paste0(bacteria_1, collapse=" + ") 
 sum_1 <- sum(bacteria_1)
 mean_1 <- mean(bacteria_1)
@@ -608,6 +614,7 @@ Here are the same calculations for the bacterial counts after remediation.
 ## Before remediation median (1/4)
 
 ```{r}
+#| echo: false
 space <- function(x) {
   x1 <- rep("", 15)
   x1[2*(1:8)-1] <- x
@@ -641,6 +648,7 @@ Here is the data for bacteria counts before remediation. Notice that the data is
 ## Before remediation median (2/4)
 
 ```{r}
+#| echo: false
 step2 <- function(x) {
   o <- order(x)
   y <- sprintf("%4.1f", x[o])
@@ -665,6 +673,7 @@ The data was arranged by room number, but now it is arranged by bacterial count.
 ## Before remediation median (3/4)
 
 ```{r}
+#| echo: false
 step3 <- function(x, div=4:5) {
   o <- order(x)
   y <- rep("", 8)
@@ -689,6 +698,7 @@ In this data set, the two middle values are the fourth and fifth largest values 
 ## Before remediation median (4/4)
 
 ```{r}
+#| echo: false
 step4 <- function(x, div=4:5) {
   o <- order(x)
   x1 <- x[o]
@@ -1286,6 +1296,7 @@ Much variation in the real world follows a bell shaped curve, alternately called
 ## 
 
 ```{r}
+#| echo: false
 x <- c(rnorm(1200, 4, 1.5), rnorm(800, 10, 1.5))
 x <- pmax(0, round(x))
 data.frame(x) %>%
@@ -1308,6 +1319,7 @@ Here's a histogram that shows a bimodal distribution. The frequencies are not hi
 ## 
 
 ```{r}
+#| echo: false
 data.frame(x=rpois(2000, 5)) %>%
   ggplot(aes(x)) +
     theme(legend.position="none") +
@@ -1400,6 +1412,7 @@ Here's a histogram that shows a symmetric distribution, with the most frequent v
 ## 
 
 ```{r}
+#| echo: false
 x <- round(x)
 y <- (x<7) + (x > 13)
 data.frame(x=round(x)) %>%
@@ -1423,6 +1436,7 @@ This shows the bell shaped curve with the data within one standard deviation of 
 ## 
 
 ```{r}
+#| echo: false
 x <- round(x)
 y <- (x<4) + (x > 16)
 data.frame(x=round(x)) %>%
@@ -1446,6 +1460,7 @@ This shows the bell shaped curve with the data within two standard deviations of
 ## 
 
 ```{r}
+#| echo: false
 x <- round(x)
 y <- (x<1) + (x > 19)
 data.frame(x=round(x)) %>%
@@ -2126,6 +2141,7 @@ This image comes from the excellent website, workwithcolor.com.
 ## 
 
 ```{r}
+#| echo: false
 data.frame(
   x=runif(100), 
   y=runif(100), 
@@ -2269,7 +2285,7 @@ I want to encourage you to avoid mixing too many colors. Often the ideal number 
 
 ## 
 
-![ADvertisement with a single red umbrella](../images/red-umbrella.png){#red-umbrella fig-align="left"}
+![Advertisement with a single red umbrella](../images/red-umbrella.png){#red-umbrella fig-align="left"}
 
 ::: notes
 *Speaker notes*
@@ -2375,151 +2391,4 @@ The problem with error bars is that they
 
 Here is the repeat question about error bars
 :::
-
-## Your comments, designing clinical trials, 1 of 8
-
--   When do you use randomized versus non-randomized studies?
-    -   Observational studies
-    -   Experimental studies
-        -   Randomized studies
-        -   Quasi-experimental studies
-    -   Randomization is overrated
--   Definitely will cover
-
-## Your comments, designing clinical trials, 2 of 8
-
--   Different types of clinical trials
-    -   Crossover trials
-    -   Adaptive trials
-    -   Real world evidence
--   Might cover
-
-## Your comments, designing clinical trials, 3 of 8
-
--   Superiority vs non-inferiority
-    -   New drug is cheaper, more convenient, fewer side effects
-    -   Willing to tolerate a small deficit in efficacy
--   Might cover
-
-## Your comments, designing clinical trials, 4 of 8
-
--   Balanced vs unbalanced study design, randomization ratio
-    -   All others things being equal, balanced is better
-    -   What to do when controls are cheaper
--   Might cover
-
-## Your comments, designing clinical trials, 5 of 8
-
--   Number of matching/stratification factors
-    -   Don't go overboard!
-    -   Only the "drop dead" important factors
--   Might cover
-
-## Your comments, designing clinical trials, 6 of 8
-
--   Frequency of assessment
-    -   Cost versus information trade-off
--   Probably won't cover
-
-## Your comments, designing clinical trials. 7 of 8
-
--   Disproportionate patient drop-out 
-    -   Often a fatal problem
-    -   Prevention!
-    -   Intention to treat analysis
-    -   Get partial information
-
-## Your comments, designing clinical trials, 8 of 8
-
--   Dose escalation and dose optimization
-    -   3+3 designs
-    -   Bayesian designs
--   Probably won't cover
-
-## Your comments, problematic situations, 1 of 2
-
--   Mis-stratification error rate
-    -   Randomization relies on large numbers
-    -   Physician subversion?
--   Probably won't cover
-    
-## Your comments, problematic situations, 2 of 2
-
--   How do you handle missing data?
-    -   No news is good news
-    -   No news is bad news
-    -   No news is average news
-    -   No news is yesterday's news
-    -   Single imputation
-    -   Multiple imputation
--   Might cover
-
-## Your comments, Communication, 1 of 2
-
--   Explaining complex statistical concepts
-    -   Avoid condescension
-    -   Size up your audience
-    -   Cite relevant, accessible examples
-    -   Focus on nouns, not adjectives
--   Might cover
-
-## Your comments, Communication, 2 of 2
-
--   Different ways to visualize data
-    -   Uses and abuses of color
-    -   The error of error bars
-    -   Proximity principle
--   Definitely will cover
-
-## Your comments, analysis, 1 of 3
-
--   Time to event models, survival 
-    -   Censored values are not missing values
-    -   Kaplan-Meier curve
-    -   Proportional hazards models
--   Definitely will cover
-
-## Your comments, analysis, 2 of 3
-
--   Number needed to treat, number needed to harm
-    -   Absolute versus relative risk
-    -   "Good" values for NNT
-    -   NNT to NNH ratio
--   Might cover
-  
-## Your comments, analysis, 3 of 3
-
--   Bayesian analysis, historical benchmarks
-    -   Prior distribution
-    -   Likelihood
-    -   Posterior distribution
-    -   Controversies
--   Definitely will cover
-
-## Give me your feedback {.smaller}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-1. To randomize or not to randomize
-2. Types of clinical trials
-3. Non-inferiority trials
-4. Unbalanced trials
-5. Number of strata
-6. Frequency of assessment
-7. Disproportionate drop-out
-8. Dose escalation
-:::
-
-::: {.column width="50%"}
-9. Mis-stratification
-10. Missing data
-11. Explaining complex concepts
-12. Visualization
-13. Survival models
-14. NNT, NNH
-15. Bayesian analysis
-:::
-
-::::
 
