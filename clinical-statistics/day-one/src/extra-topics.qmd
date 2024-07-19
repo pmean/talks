@@ -129,6 +129,13 @@ Drop outs are always a serious issue, but when you have a higher dropout rate in
 ::: notes
 *Speaker notes*
 
+Dose escalation and dose optimization are issues in Phase I clinical trials. This is done in small batches. The first few subjects start with a very low dose, one that is probably not going to be effective, but which will probably not produce any serious side effects. Depending on what you see you might collect additional information at that dose, or try a larger dose. Keep going until you find the maximum tolerated dose.
+
+The 3+3 design is most common approach, but it is very ad hoc and has a lot of undesirable properties. Some of the alternative approaches work better. Bayesian designs have a lot of promise. In a Bayesian design, you set prior beliefs about dose patterns and update them as you collect more data.
+
+A nice reference is
+
+Le Tourneau C, Lee JJ, Siu LL. Dose escalation methods in phase I cancer clinical trials. J Natl Cancer Inst. 2009 May 20;101(10):708-20. doi: 10.1093/jnci/djp079. Epub 2009 May 12. PMID: 19436029; PMCID: PMC2684552.
 :::
 
 ## Your comments 9 of 15
