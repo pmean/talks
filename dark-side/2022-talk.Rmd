@@ -71,7 +71,7 @@ I want to list a few quiz questions relating to this lecture. Remember these que
 
 What is the main philosophical foundation of empiricism?
 
-+v Everything can be reduced to a mathematical equation.
++ Everything can be reduced to a mathematical equation.
 + Experiments can reveal the realities of the world.
 + Some questions are impossible to answer.
 + We construct our own reality based on our own lived experiences
@@ -615,6 +615,51 @@ o <- 0.88
 draw_circles() + geom_text(x=0, y=-0.1, label="Data\nScience", size=10)
 ```
 
+### Repeat of quiz questions (1/3)
+
+Why does Joel Best call statistics a social construct?
+
++ Statistics are misquoted often on social media.
++ Statistics are selected, shaped, and presented by human beings.
++ Statistics are used to promote socialism.
++ Statistics are dehumanizing.
+
+<div class="notes">
+
+I want to list a few quiz questions relating to this lecture. Remember these questions when I get to the slide that discusses them.
+
+</div>
+
+### Repeat of quiz questions (2/3)
+
+What is the main philosophical foundation of empiricism?
+
++ Everything can be reduced to a mathematical equation.
++ Experiments can reveal the realities of the world.
++ Some questions are impossible to answer.
++ We construct our own reality based on our own lived experiences
+
+<div class="notes">
+
+Here's the second question.
+
+</div>
+
+### Repeat of quiz questions (3/3)
+
+What is a major problem with data science?
+
++ Data scientists rely on large amounts of data with uneven quality.
++ Models developed by data scientists can lead to loss of privacy.
++ Prediction models are a black box that can hide discriminatory intent.
++ All of the above.
+
+<div class="notes">
+
+Here's the third question. You don't need to answer these questions now. Just be ready to answer them after the lecture.
+
+</div>
+
 ### Why you are needed
 
 1. Too many geeks, not enough scientists
@@ -624,7 +669,7 @@ If you are interested, email me: simons@umkc.edu
 
 You can find my talk here:
 
-https://github.com/pmean/papers-and-presentations/blob/master/dark-side/2022-talk.pptx
+https://github.com/pmean/talks/blob/master/dark-side/2022-talk.pptx
 
 <div class="notes">
 
