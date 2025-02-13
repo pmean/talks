@@ -5,7 +5,23 @@ format: pptx
 editor: visual
 ---
 
-### What is Quarto?
+## Test columns
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+Right column
+:::
+
+::::
+
+
+
+## What is Quarto?
 
 -   Markup language
     -   Weave documentation, code, output
