@@ -1,5 +1,5 @@
 ---
-title: "Sample size justification"
+title: "simon-2025-5512-guest-lecture"
 author: "Steve Simon"
 format: 
   revealjs:
@@ -289,7 +289,7 @@ A population is a collection of people (or possibly other objects) of interest t
 
 ## Example of a population
 
-All infants born in the state of Missouri during the 1995 calendar year who have one or more visits to the Emergency room during their first year of life. 
+All **infants** born in the state of **Missouri** during the **1995** calendar year who have one or more **visits to the Emergency room** during their first year of life. 
 
 ::: notes
 
@@ -386,7 +386,7 @@ The alternative hypothesis is complementary. I need to mention one-sided hypothe
     -   It is also known as a false positive. 
 
 -   Example involving drug approval:
-    -   a Type I error is allowing an ineffective drug onto the market.
+    -   allowing an ineffective drug onto the market.
 
 ::: notes
 
@@ -414,7 +414,7 @@ Errors associated with the sampling process lead you to a false positive conclus
     -   accepting $H_0$ when $H_0$ is false.
     -   It is also known as a false negative
 -   Example involving drug approval:
-    -   a Type II error is keeping an effective drug off of the market.
+    -   keeping an effective drug off of the market.
   
 ::: notes
 
@@ -433,7 +433,8 @@ Actually, FDA (and the research community in general) used to be too much concer
 
 ## Definition: Power function
 
--   Probablity of rejecting the null hypothesis for various values in the alternative hypothesis
+-   Probablity of rejecting the null hypothesis
+    -   parameters in the alternative hypothesis
 -   Power is a function of 
     -   Parameter(s)
     -   Alpha
@@ -491,7 +492,7 @@ Here's an example of how power changes as the sample size increases.
 
 In a nutshell, choose a sample size large enough
 
--   to insure that the chances of making a Type I or a Type II error are both small. or
+-   to insure that alpha and beta are both small. or
 -   (equivalently) to insure that alpha is small and power is large. or
 -   to produce a reasonably narrow confidence interval.
 
@@ -555,7 +556,7 @@ I have found that the PICO acronym used in Evidence-Based Medicine is a useful w
 
 ::: notes
 
-You might consider getting an estimate of the standard deviation from the data you collectin in a pilot study. There are lots of good reasons to run a pilot study anyway, so this should always be a consideration.
+You might consider getting an estimate of the standard deviation from the data you collecting in a pilot study. There are lots of good reasons to run a pilot study anyway, so this should always be a consideration.
 
 You've already done a literature review haven't you? If so, search through the papers in your review that used the same outcome measure that you are proposing in your study and a reasonably similar patient population. This is not always easy, and you will sometimes be forced to use a study where the patients are quite different from your patients. Don't fret too much about this, but make a good faith effort to find the most representative population that you can.
 
