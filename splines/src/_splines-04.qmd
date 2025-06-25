@@ -104,17 +104,3 @@ Most references I have looked at state that it is the number of knots rather tha
 
 :::
 
-## References
-
-Donald H. House. Chapter 14. Spline Curves. Available in [pdf format][hou1].
-
-Aris Perperoglou, Willi Sauerbrei, Michal Abrahamowicz, Matthias Schmid. A review of spline function procedures in R. BMC Medical Research Methodology 19, 46 (2019). DOI: 10.1186/s12874-019-0666-3. Available in [html format][per1] or [pdf format][per2]. 
-
-[har1]: https://search.r-project.org/CRAN/refmans/Hmisc/html/rcspline.eval.html
-
-[hou1]: https://people.cs.clemson.edu/~dhouse/courses/405/notes/splines.pdf
-
-[per1]: https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-019-0666-3
-[per2]: https://bmcmedresmethodol.biomedcentral.com/track/pdf/10.1186/s12874-019-0666-3.pdf
-
-[sim3]: http://new.pmean.com/extrapolation-joke/
