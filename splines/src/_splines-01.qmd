@@ -1,0 +1,323 @@
+---
+title: "Splines, part 1"
+format: pptx
+editor: source
+---
+
+```{r}
+#| label: 01-setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+
+## xkcd comic
+
+-   Title "CURVE-FITTING METHODS AND THE MESSAGE THEY SEND"
+-   Drawn by Scott Munro
+-   Open-source license
+-   [Link to comic][ref-xkcd] at xkcd.com
+-   [More details][ref-explain] at explain-xkcd.com
+
+[ref-xkcd]: https://xkcd.com/2048/
+[ref-explain]: https://www.explainxkcd.com/wiki/index.php/2048:_Curve-Fitting
+
+::: notes
+
+Let me start with a cartoon from the xkcd site of Scott Munro. Scott Munro produces comics that poke fun at various scientific and mathematical concepts. There are a handful that directly address statistics, including this one. The actual panels in the comic are small, so I split them up onto separate slides.
+
+:::
+
+## xkcd comic, panel 01
+
+![](../images/xkcd-01.png "Panel 01 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a linear regression fit. The caption reads, "Hey, I did a regression."
+
+:::
+
+## xkcd comic, panel 02
+
+![](../images/xkcd-02.png "Panel 02 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a quadratic regression fit. The caption reads, "I wanted a curved line, so I made one with Math."
+
+:::
+
+## xkcd comic, panel 03
+
+![](../images/xkcd-03.png "Panel 03 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a logarithmic regression fit. The caption reads, "Look, it's tapering off!"
+
+:::
+
+## xkcd comic, panel 04
+
+![](../images/xkcd-04.png "Panel 04 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with an exponential regression fit. The caption reads, "Look, it's growing uncontrollably."
+
+:::
+
+## xkcd comic, panel 05
+
+![](../images/xkcd-05.png "Panel 05 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a loess smoothing curve. The caption reads, "I'm sophisticated, not like those bumbling polynomial people."
+
+:::
+
+## xkcd comic, panel 06
+
+![](../images/xkcd-06.png "Panel 06 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a flat linear regression fit (slope=0). The caption reads, "I'm making a scatter plot but I don't want to."
+
+:::
+
+## xkcd comic, panel 07
+
+![](../images/xkcd-07.png "Panel 07 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a logistic curve regression fit. The caption reads, "I need to connect these two lines, but my first idea didn't have enough Math."
+
+:::
+
+## xkcd comic, panel 08
+
+![](../images/xkcd-08.png "Panel 08 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with no particular regression line, but a very wide (nd probably appropriate) confidence band. This captures the idea that there is uncertainty not only in the deviation of the points from the regression curve, but true uncertainty about the shape of that regression curve. The caption reads, "Listen, science is hard. But I'm a serious person doing my best."
+
+There is an active field of research under the topic uncertainty quantification that tries to take into account all the sources of uncertainty including uncertainty about which model is the correct model.
+
+:::
+
+## xkcd comic, panel 09
+
+![](../images/xkcd-09.png "Panel 09 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a piecewise linear regression fit. The caption reads, "I have a theory and this is the only data I could find."
+
+:::
+
+## xkcd comic, panel 10
+
+![](../images/xkcd-10.png "Panel 10 of xkcd comic")
+
+::: notes
+
+Here the proposed regression model gets a bit silly. This shows a scatter of data points with a smooth curve connecting every data point. The caption reads, "I clikced 'smooth lines' in Excel."
+
+:::
+
+## xkcd comic, panel 11
+
+![](../images/xkcd-11.png "Panel 11 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with a smoother that looks like it uses medians somehow. The caption reads, "I had an idea for how to clean up the data. What do you think?"
+
+:::
+
+## xkcd comic, panel 12
+
+![](../images/xkcd-12.png "Panel 12 of xkcd comic")
+
+::: notes
+
+This shows a scatter of data points with what looks like a B-spline. The caption reads, "As you can see, this model smoothly fits the - Wait, No, No, Don't extend it. AAAAAA!!"
+
+:::
+
+## A real-world problem, without the data
+
+-   Threshold model
+    -   Nothing happens until you meet a threshold
+    -   Then things get worse
+    
+::: notes
+
+Several decades ago, I was faced with a data analysis problem. I wanted to fit a threshold model where everything is fine and normal until the exposure level meets a certain threshold. Then things get worse. 
+
+I don't have the data for this problem but let me illustrate conceptually how a threshold model might work. It provides a simple but useful analog to regression splines.
+
+:::
+    
+## Linear function
+
+```{r}
+#| label: 01-linear
+
+data.frame(x=c(0:18), y=100-80*(0:18)/18)|>
+  ggplot() +
+  aes(x, y) +
+  geom_line() +
+  expand_limits(y=c(0, 100)) + 
+  scale_x_continuous(breaks=(0:6)*3, minor=NULL) +
+  scale_y_continuous(breaks=20*(0:5), minor=NULL)
+```
+
+::: notes
+
+Here is what a linear function might look like. It is not what we want, but always start with the easiest model.
+
+:::
+
+## $Y=\beta_0+\beta_1 X$
+
+```{}
+1  0
+1  3
+1  6
+1  9
+1 12
+1 15
+1 18
+```
+
+::: notes
+
+This is the formula and the design matrix for a linear fit.
+
+:::
+
+## Step function
+
+```{r}
+#| label: 01-elbow
+
+data.frame(x=c(0:9, 9:18), y=c(rep(80, 10), rep(40, 10)))|>
+  ggplot() +
+  aes(x, y) +
+  geom_line() +
+  expand_limits(y=c(0, 100)) + 
+  scale_x_continuous(breaks=(0:6)*3, minor=NULL) +
+  scale_y_continuous(breaks=20*(0:5), minor=NULL)
+```
+
+::: notes
+
+A threshold model could look like this. It is a step function that is at a high level prior to the threshold at X=9 and then drops after.
+
+This is a discontinuous function. It might make sense in some settings. In other settings, you might expect the decline to be not so sudden and abrupt.
+
+:::
+
+## $Y=\beta_0+\beta_1 I_{[X>9]}$
+
+```{}
+1  0
+1  0
+1  0
+1  0
+1  1
+1  1
+1  1
+```
+
+::: notes
+
+Here is the formula and the design matrix for a step function. The I notation is an indicator function that is equal to 1 if the logical comparison is true and 0 if it is false.
+
+:::
+
+## Elbow regression
+
+```{r}
+#| label: 01-step
+
+data.frame(x=c(0:9, 9:18), y=c(rep(80, 10), seq(80, 20, length=10))) |>
+  ggplot() +
+  aes(x, y) +
+  geom_line() +
+  expand_limits(y=c(0, 100)) +
+  scale_x_continuous(breaks=(0:6)*3, minor=NULL) +
+  scale_y_continuous(breaks=20*(0:5), minor=NULL)
+```
+
+::: notes
+
+Here is a better model. It is flat and at a high level for values less than 9 and declines linearly for values greater than 9.
+
+Note the "elbow" at the threshold. This might be okay, but it might be better for a transition that does not change slope so suddenly.
+
+:::
+
+## $Y=\beta_0+\beta_1 I_{[X>9]}(X-9)$
+
+```{}
+1  0
+1  0
+1  0
+1  0
+1  3
+1  6
+1  9
+```
+
+::: notes
+
+This is the formula and design matrix for an elbow regression. The independent variable is computed by multiplying the indicator variable by the value of X, but only after subtracting the threshold of 9. It is important to subtract the nine so that the linear decline after the threshold matches up with the flat section before the threshold.
+
+:::
+
+## Quadratic analog
+
+```{r}
+#| label: 01-quadratic
+
+data.frame(x=c(0:9, 9:18), y=c(rep(80, 10), 80-60*seq(0, 1, length=10)^2)) |>
+  ggplot() +
+  aes(x, y) +
+  geom_line() +
+  expand_limits(y=c(0, 100)) +
+  scale_x_continuous(breaks=(0:6)*3, minor=NULL) +
+  scale_y_continuous(breaks=20*(0:5), minor=NULL)
+```
+
+::: notes
+
+Here is a functional form that avoid the elbow at the threshold value. It fits a quadratic decline, or a parabola, but the parabola starts at the point where the derivative is equal to zero.
+
+:::
+
+## $Y=\beta_0+\beta_1 I_{[X>9]}(X-9)^2$
+
+```{}
+1  0
+1  0
+1  0
+1  0
+1  9
+1 36
+1 81
+```
+
+::: notes
+
+This is the formula and design matrix for the quadratic analog, or the elbowless regression.
+
+:::

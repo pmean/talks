@@ -1,0 +1,36 @@
+---
+title: "Splines, part 06"
+format: pptx
+editor: source
+---
+
+## Part 06
+
+```{r}
+#| label: 06-test-1
+
+n <- 20
+print(
+  data.frame(
+    x1=rnorm(n),
+    x2=rnorm(n),
+    x3=rnorm(n),
+    x4=rnorm(n),
+    x5=rnorm(n),
+    x6=rnorm(n)))
+```
+
+## Part 06
+
+```{r}
+#| label: 06-test-2
+
+data.frame(x=rnorm(100)) |>
+  ggplot() +
+  aes(x=x) +
+  geom_histogram(
+    color="black",
+    fill="white",
+    bins=10)
+```
+

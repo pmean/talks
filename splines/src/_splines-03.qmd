@@ -1,0 +1,115 @@
+---
+title: "Splines, part 03"
+format: pptx
+editor: source
+---
+
+## B-splines
+
+-   Mathematically equivalent form
+-   Much less collinearity
+
+::: notes
+
+B-splines provide a solution with less issues of multi-collinearity.
+
+:::
+
+```{r}
+#| label: 03-b-splines
+
+cubic_spline <- bs(xm$c2, knots=c(5, 10, 15), degree=3, intercept=TRUE)
+```
+
+
+```{r}
+#| label: 03-bplot
+
+n <- ncol(cubic_spline)
+bplot <- list(rep(NULL, n))
+for (j in 1:n) {
+  dat <- cbind(xm$c2, cubic_spline[ , j])
+  display_curve(dat, "Cubic B-spline terms") |>
+    display_dots(dat[1:21, ]) -> bplot[[j]]
+}
+```
+
+```{r}
+#| label: 03-bplot-1
+
+bplot[[1]]
+```
+
+::: notes
+
+
+The individual columns represent piecwise cubic polynomials. As I cycle through these graphs, notice how they are concentrated in certain intervals and there is only a partial overlap between these intervals. Also notice how they transition smoothly to zero outside those intervals.
+
+
+:::
+
+```{r}
+#| label: 03-bplot-2
+
+bplot[[2]]
+```
+
+## B-splines have less issues with multicollinearity.
+
+```{r cubic-splines-15}
+round(cor(cubic_spline), 2)
+```
+
+::: notes
+
+Although there is some correlation, this not nearly as bad as the piecewise approach.
+
+:::
+
+## B-spline fit to the artificial data
+
+```{r cubic-splines-16}
+lm(xm$y~cubic_spline) %>%
+  augment(newdata=xm) %>%
+  select(c2, .fitted) %>%
+    display_curve("Cubic spline fit to the data") %>%
+    display_dots(simulated_example)
+```
+
+## Natural splines
+
+-   B-spline restrictions
+    -   Continuity
+    -   Smoothness
+-   Natural spline additional restriction
+    -   Linear extrapolation beyond the outside knots
+
+::: notes
+
+A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first knot and to the right of the last knot. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
+
+You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
+
+:::
+
+```{r cubic-splines-25}
+natural_spline <- ns(xm$c2, knots=c(5, 10, 15), intercept=TRUE)
+extended_x <- seq(-5, 25, by=1/64)
+extended_y <- rep(NA, length(extended_x))
+extended_y[extended_x %in% 0:20] <- simulated_example$y
+
+lm(xm$y~natural_spline) |>
+  augment(newdata=natural_spline) |>
+  data.frame(c2) |>
+  select(c2, .fitted) |>
+    display_curve("Natural spline fit to the data") |>
+    display_dots(simulated_example)
+```
+
+::: notes
+
+Here is the natural spline fit to your simulated dataset.
+
+You can probably see the linearity at the extremes of the data.
+
+:::
