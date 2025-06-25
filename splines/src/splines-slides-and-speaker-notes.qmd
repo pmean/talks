@@ -23,6 +23,9 @@ editor: source
 #| message: false
 #| warning: false
 
+# library(pspline)
+library(readr)
+library(rms)
 library(tidyverse)
 ```
 
