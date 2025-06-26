@@ -119,19 +119,6 @@ b_spline |>
   gt()
 ```
 
-```{r cubic-splines-12}
-spline_columns <- names(xm)[c(2:4, 8, 12, 16)]
-xm |>
-  select(all_of(spline_columns)) |>
-  cor() |>
-  data.frame() |>
-  round(2) -> spline_correlations
-
-bind_cols(data.frame(` `=spline_columns), spline_correlations) |>
-  gt()
-```
-
-
 ::: notes
 
 Although there is some correlation, this not nearly as bad as the piecewise approach.

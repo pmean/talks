@@ -40,23 +40,72 @@ This is a bit controversial. Selecting a statistical model post hoc (after viewi
 
 :::
 
-```{r cubic-splines-26}
+```{r}
+#| label: 04-aic-loop
+
+aplots <- list(rep(NULL, 4))
 
 linear_fit <- lm(y~x, data=xm)
-AIC(linear_fit)
 
-for (k in 3:7) {
-  knots <- 20*((1:k)-0.5)/k
+ti <- paste0("Linear fit, AIC = ", round(AIC(linear_fit), 1))
+
+linear_fit |> 
+  augment(newdata=xm) |>
+    select(c2, .fitted) |>
+    display_curve(ti) |>
+    display_dots(simulated_example) -> aplots[[1]]
+  
+
+for (k in 3:5) {
+  knots <- seq(3, 17, length=k)
   lm(y~bs(c2, knots=knots), data=xm) -> rcs_fit
-  # lm(y~rcs(c2, k), data=xm) -> rcs_fit
-  ti <- paste0(k, " knots, AIC = ", round(AIC(rcs_fit), 1), ", BIC = ", round(BIC(rcs_fit), 1))
+  ti <- paste0(k, " knots, AIC = ", round(AIC(rcs_fit), 1))
   rcs_fit %>%
-    augment(newdata=xm) %>%
-    select(c2, .fitted) %>%
-      display_curve(ti) %>%
-      display_dots(simulated_example) -> cplot
-    plot(cplot + geom_vline(xintercept=knots, color="black", linetype="dotted"))
+    augment(newdata=xm) |>
+    select(c2, .fitted) |>
+    display_curve(ti) |>
+    display_dots(simulated_example) +
+      geom_vline(
+        xintercept=knots, 
+        color="black") -> aplots[[k-1]]
 }
+```
+
+## AIC for a linear fit
+
+```{r}
+#| label: 05-aplots-1
+
+i <- 1
+aplots[[i]]
+i <- i+1
+```
+
+## AIC for a three knot spline
+
+```{r}
+#| label: 05-aplots-2
+
+aplots[[i]]
+i <- i+1
+```
+
+## AIC for a four knot spline
+
+```{r}
+#| label: 05-aplots-3
+
+aplots[[i]]
+i <- i+1
+```
+
+## AIC for a five knot spline
+
+```{r}
+#| label: 05-aplots-4
+
+aplots[[i]]
+i <- i+1
 ```
 
 ## Use inside knowlege to place the knots

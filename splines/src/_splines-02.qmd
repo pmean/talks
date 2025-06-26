@@ -243,7 +243,8 @@ i <- 1
 ## `r lb[i]`
 
 ```{r}
-plot(c_plots[[i]])
+c_plots[[i]] +
+  expand_limits(y=0)
 i <- i+1
 ```
 
@@ -470,9 +471,7 @@ xm |>
   select(all_of(spline_columns)) |>
   cor() |>
   data.frame() |>
-  round(2) -> spline_correlations
-
-bind_cols(data.frame(`-`=spline_columns), spline_correlations) |>
+  round(2) |>
   gt()
 ```
 

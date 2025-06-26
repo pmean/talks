@@ -30,9 +30,38 @@ Let me show how to use a spline in a logistic regression model with data from su
 
 :::
 
+## Some general points
+
+-   Coefficients are uninterpretable
+-   Splines are a package
+    -   But can test linear versus nonlinear
+-   Graphs, graphs, graphs
+-   Don't over-interpret the tails
+-   
+
+::: notes
+
+Before I show some results using real data, let me make a few general points. The slope coefficient in a linear regression model without splines is easy to interpret. It is the estimated average change in Y when X increases by one unit, holding all the other independent variables constant.
+
+You will not find such an easy interpretation associated with the coefficients attached to the spline terms. In fact, there is not a difficult interpretation either. The coefficients that you see have no practical meaning. You can't say that a certain coefficient means that the relationship flattens out for large values of the independent variable. Just ignore the numbers altogether.
+
+The other thing you need to keep in mind is that the spline terms are a package deal. You can't zero out one of the five or seven spline terms because it is not statistically significant. You have to either include all of the spline terms in your final model or exclude all of the spline terms. There is no "in between" choice.
+
+The one thing you can do is to compare a linear model to a spline model. The linear model is implicitly nested within the spline model, even though none of the spline terms look at all linear. You look at how much the sums of squares for error decrease when you move from a linear model to a spline model and test using the standard F ratio that you use when comparing nested models.
+
+The other thing to note is that splines just scream out "Graph me!". The coefficients themselves may be uninterpretable, but the graphs usually illustrate an interesting pattern.
+
+I was helping someone with an analysis of nonlinearity in a logistic regression model. In this context, that means non-linear on a log odds scale. This person ran all sorts of tests and measures and couldn't make any sense of all the numbers they produced. These were really complex and detailed tests, and I had to run to Google more than once to figure out what these numbers were trying to measure.
+
+But a simple graph revealed an obvious pattern. High values of a particular variable showed a strong linear effect, but middling values and low values were all about the same. Kind of like that example I showed at the beginning of the talk.
+
+While you do want to look carefully at all the trends, be cautious about what happens at the tails, the very smallest values and the very largest values. There is less data to use for the splines at the tails and the standard errors will typically explode. Be especially cautious about outlier in the variable you are splining. A sharp bend in the spline might be driven by one or two data points.
+
+:::
+
 ## About the Titanic
 
--   Laregest passenger ship at its time
+-   Largest passenger ship at its time
 -   Maiden voyage in 1912
 -   Hit an iceberg and sank
 -   Detailed information on all passengers
@@ -50,35 +79,75 @@ The Titanic was a large cruise ship, the biggest of its kind in 1912. It was tho
 ## First few rows of data
 
 ```{r}
-#| label: head
+#| label: 05-head
 
 f2 <- "../data/titanic.txt"
-ti0 <- 
+ti <- 
   data.frame(
     read_tsv(
       file=f2,
       col_types="ccncn"))
-names(ti0) <- tolower(names(ti0))
-head(ti0)
+
+names(ti) <- tolower(names(ti))
+
+ti |>
+  slice(1:5) |>
+  gt()
 ```
 
-## A few descriptive statistics
+## A few descriptive statistics, 1
 
 ```{r}
-#| label: count
+#| label: 05-descriptives-1
 
-summary(ti0$Age)
-count(ti0, pclass)
-count(ti0, sex)
-count(ti0, survived)
+ti |>
+  filter(!is.na(age)) |>
+  summarize(
+    age_mean=mean(age),
+    age_sd=sd(age),
+    age_min=min(age),
+    age_max=max(age),
+    n=n()) |>
+  gt()
 ```
+
+## A few descriptive statistics, 2
+
+```{r}
+#| label: 05-descriptives-2
+
+ti |> 
+  count(pclass) |>
+  gt()
+```
+
+## A few descriptive statistics, 3
+
+```{r}
+#| label: 05-descriptives-3
+
+ti |> 
+  count(sex) |>
+  gt()
+```
+
+## A few descriptive statistics, 4
+
+```{r}
+#| label: 05-descriptives-4
+
+ti |> 
+  count(survived) |>
+  gt()
+```
+
 
 ## Boxplots
 
 ```{r}
 #| label: 05-box
 
-ggplot(data=ti0, aes(factor(survived), age)) + 
+ggplot(data=ti, aes(factor(survived), age)) + 
   geom_boxplot()
 ```
 
@@ -93,12 +162,13 @@ The boxplots reveal little differences between the ages of survivors and deaths.
 ```{r}
 #| label: linear
 
-ti1 <- filter(ti0, !is.na(age))
+ti1 <- filter(ti, !is.na(age))
 linear_fit <- glm(
   survived ~ age,
   family=binomial,
   data=ti1)
-tidy(linear_fit)
+tidy(linear_fit) |>
+  gt()
 ```
 
 ::: notes
@@ -106,37 +176,6 @@ tidy(linear_fit)
 There may be a downward trend in the odds of survival over time, but it is not statistically significant.
 
 :::
-
-## Plot the predicted values.
-
-```{r}
-#| label: 05-response
-
-age_sequence <- data.frame(
-  age = seq(min(ti1$age), max(ti1$age), length=100))
-age_sequence$prediction <- 
-  predict(linear_fit, newdata=age_sequence, type="response")
-ggplot(data=ti1, aes(age, survived)) +
-  geom_point(pch=1) +
-  geom_line(
-    data=age_sequence,
-    aes(age, prediction))
-```
-
-::: notes
-
-The plot is linear, but you should really look at it on the log odds scale because the logistic regression model is linear in the log odds. You need to change the predict function from type="response" to type="link" to get predictions on a log odds scale.
-
-:::
-
-## Predicted values on the log odds scale
-
-```{r titanic-spline-07}
-age_sequence$prediction <- 
-  predict(linear_fit, newdata=age_sequence, type="link")
-ggplot(data=age_sequence, aes(age, prediction)) +
-  geom_line()
-```
 
 ## Now fit a spline function.
 
@@ -147,7 +186,8 @@ spline_fit <- glm(
   survived ~ rcs(age),
   family=binomial,
   data=ti1)
-tidy(spline_fit)
+tidy(spline_fit) |>
+  gt()
 ```
 
 ::: notes
@@ -161,11 +201,22 @@ The coefficients from the restricted cubic spline are pretty much uninterpretabl
 ```{r}
 #| label: 05-plot-log-odds
 
+age_sequence <- data.frame(
+  age = seq(min(ti1$age), max(ti1$age), length=100))
+
 age_sequence$prediction <- 
   predict(spline_fit, newdata=age_sequence, type="link")
 ggplot(data=age_sequence, aes(age, prediction)) +
   geom_line()
 ```
+
+::: notes
+
+It looks like a definite departure from linearity. The log odds for survival are best for very young children. They decline in older children and are at their worst for young adults. The log odds rise again starting at age 30 but this is a smaller and less dramatic change than you see in the children versus young adults.
+
+The final dip for very old passengers, starting around 45, might be real and could reflect their relative frailty. But be careful about interpreting results in the tails.
+
+:::
 
 ## Predictions on the probability scale
 
@@ -174,13 +225,15 @@ ggplot(data=age_sequence, aes(age, prediction)) +
 age_sequence$prediction <- 
   predict(spline_fit, newdata=age_sequence, type="response")
 ggplot(data=ti1, aes(age, survived)) +
-  geom_point(pch=1) +
+  geom_jitter(pch=1, width=0.5, height=0) +
   geom_line(
     data=age_sequence,
     aes(age, prediction))
 ```
 
 ::: notes
+
+The ages fall on whole number boundaries and in order to see things clearly, I jittered the data.
 
 It looks like "women and children" first might actually be "women, children, and old people first".
 
