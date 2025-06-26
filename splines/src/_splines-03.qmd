@@ -4,6 +4,15 @@ format: pptx
 editor: source
 ---
 
+```{r}
+#| label: 03-setup
+#| message: false
+#| warning: false
+
+library(splines)
+library(tidyverse)
+```
+
 ## B-splines
 
 -   Mathematically equivalent form
@@ -18,21 +27,23 @@ B-splines provide a solution with less issues of multi-collinearity.
 ```{r}
 #| label: 03-b-splines
 
-cubic_spline <- bs(xm$c2, knots=c(5, 10, 15), degree=3, intercept=TRUE)
+b_spline <- bs(xm$c2, knots=c(5, 10, 15), degree=3, intercept=TRUE)
 ```
 
 
 ```{r}
 #| label: 03-bplot
 
-n <- ncol(cubic_spline)
+n <- ncol(b_spline)
 bplot <- list(rep(NULL, n))
 for (j in 1:n) {
-  dat <- cbind(xm$c2, cubic_spline[ , j])
+  dat <- cbind(xm$c2, b_spline[ , j])
   display_curve(dat, "Cubic B-spline terms") |>
     display_dots(dat[1:21, ]) -> bplot[[j]]
 }
 ```
+
+## B-spline, 1
 
 ```{r}
 #| label: 03-bplot-1
@@ -48,17 +59,78 @@ The individual columns represent piecwise cubic polynomials. As I cycle through 
 
 :::
 
+## B-spline, 2
+
 ```{r}
 #| label: 03-bplot-2
 
 bplot[[2]]
 ```
 
+## B-spline, 3
+
+```{r}
+#| label: 03-bplot-3
+
+bplot[[3]]
+```
+
+## B-spline, 4
+
+```{r}
+#| label: 03-bplot-4
+
+bplot[[4]]
+```
+
+## B-spline, 5
+
+```{r}
+#| label: 03-bplot-5
+
+bplot[[5]]
+```
+
+## B-spline, 6
+
+```{r}
+#| label: 03-bplot-6
+
+bplot[[6]]
+```
+
+## B-spline, 7
+
+```{r}
+#| label: 03-bplot-7
+
+bplot[[7]]
+```
+
 ## B-splines have less issues with multicollinearity.
 
-```{r cubic-splines-15}
-round(cor(cubic_spline), 2)
+```{r}
+#| label: 03-cor
+
+b_spline |>
+  cor() |>
+  data.frame() |>
+  round(2) |>
+  gt()
 ```
+
+```{r cubic-splines-12}
+spline_columns <- names(xm)[c(2:4, 8, 12, 16)]
+xm |>
+  select(all_of(spline_columns)) |>
+  cor() |>
+  data.frame() |>
+  round(2) -> spline_correlations
+
+bind_cols(data.frame(` `=spline_columns), spline_correlations) |>
+  gt()
+```
+
 
 ::: notes
 
@@ -68,8 +140,10 @@ Although there is some correlation, this not nearly as bad as the piecewise appr
 
 ## B-spline fit to the artificial data
 
-```{r cubic-splines-16}
-lm(xm$y~cubic_spline) %>%
+```{r}
+#| label: 03-b-spline-fit
+
+lm(xm$y~b_spline) %>%
   augment(newdata=xm) %>%
   select(c2, .fitted) %>%
     display_curve("Cubic spline fit to the data") %>%
@@ -86,22 +160,89 @@ lm(xm$y~cubic_spline) %>%
 
 ::: notes
 
-A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first knot and to the right of the last knot. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
+A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first X value and to the right of the last X value. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
 
 You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
 
 :::
 
-```{r cubic-splines-25}
-natural_spline <- ns(xm$c2, knots=c(5, 10, 15), intercept=TRUE)
-extended_x <- seq(-5, 25, by=1/64)
-extended_y <- rep(NA, length(extended_x))
-extended_y[extended_x %in% 0:20] <- simulated_example$y
+```{r}
+#| label: 03-ns
+extra_x_values <- setdiff(seq(-5, 25, by=1/64), simulated_example$x)
+extended_x <- c(simulated_example$x, extra_x_values)
+extended_y <- c(simulated_example$y, rep(NA, length(extra_x_values)))
+natural_spline <- ns(
+  extended_x, 
+  knots=c(5, 10, 15), 
+  Boundary.knots=c(0, 20),
+  intercept=TRUE)
+```
 
-lm(xm$y~natural_spline) |>
+```{r}
+#| label: 03-nplot
+
+n <- ncol(natural_spline)
+nplot <- list(rep(NULL, n))
+for (j in 1:n) {
+  dat <- cbind(extended_x, natural_spline[ , j])
+  display_curve(dat, "Cubic B-spline terms") |>
+    display_dots(dat[1:21, ]) -> nplot[[j]]
+}
+```
+
+## Natural spline, 1
+
+```{r}
+#| label: 03-nplot-1
+
+nplot[[1]]
+```
+
+## Natural spline, 2
+
+```{r}
+#| label: 03-nplot-2
+
+nplot[[2]]
+```
+
+## Natural spline, 3
+
+```{r}
+#| label: 03-nplot-3
+
+nplot[[3]]
+```
+
+## Natural spline, 4
+
+```{r}
+#| label: 03-nplot-4
+
+nplot[[4]]
+```
+
+## Natural spline, 5
+
+```{r}
+#| label: 03-nplot-5
+
+nplot[[5]]
+```
+
+
+## Natural spline fit
+
+
+
+```{r}
+#| label: 03-natural-spline-fit
+
+lm(extended_y~natural_spline) |>
   augment(newdata=natural_spline) |>
-  data.frame(c2) |>
-  select(c2, .fitted) |>
+  data.frame() |>
+  bind_cols(data.frame(x=extended_x)) |>
+  select(x, .fitted) |>
     display_curve("Natural spline fit to the data") |>
     display_dots(simulated_example)
 ```

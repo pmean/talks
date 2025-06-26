@@ -61,7 +61,7 @@ for (k in 3:7) {
 
 ## Use inside knowlege to place the knots
 
--   Automatic trasmission locks in at 40 miles per hour
+-   Automatic transmission locks in at 40 miles per hour
 -   Kidney function is fine above 90, problematic below 30
 -   CD4 counts fine above 500, trouble below 200
 
@@ -72,6 +72,8 @@ I am not an expert on cars, but I have been told that many newer cars with autom
 I am also not an expert on kidneys, but I have been told that the Glomerural Filtration Rate is not too critical if the value is above 90, but becomes very serious when it is less than 30. So a model looking at health effects using GFR should probably have knots around 30 and 90.
 
 Similarly, CD4 cell counts above 500 are a good sign, but things turn rapidly worse if they dip below 200.
+
+:::
 
 ## Frank Harrell's suggestion for knot placement
 

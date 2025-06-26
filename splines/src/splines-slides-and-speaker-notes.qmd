@@ -104,5 +104,5 @@ library(tidyverse)
 --->
 
 ---
-title: "Put title here"
+title: "What are splines and how are they used?"
 ---

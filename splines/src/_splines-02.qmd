@@ -114,7 +114,7 @@ ggplot(simulated_example, aes(x, y)) +
 ## Components needed for a cubic spline, 1
 
 ```{r}
-#| Add intermediate x values
+#| label: 02-add-values
 
 x <- c(0:20, setdiff(seq(0, 20, by=1/64), 0:20))
 ```
@@ -195,7 +195,9 @@ xm |>
   gt()
 ```
 
-```{r cubic-splines-06}
+```{r}
+#| label: 02-functions
+
 display_curve <- function(dat, lb) {
   # Plot a line connecting the points in dat
   # Assume that column 1 is x and column 2 is y
@@ -352,7 +354,8 @@ i <- i+1
 
 ## Single cubic polynomial
 
-```{r cubic-splines-07}
+```{r}
+#| label: 02-single-cubic
 
 lm(y~c2+c3+c4, data=xm) %>%
   augment(newdata=xm) %>%
@@ -374,9 +377,11 @@ It doesn't fit the data very well.
 
 :::
 
-## Separate cubic polynomials
+## Discontinuous cubic polynomials
 
-```{r cubic-splines-08}
+```{r}
+#| label: 02-discontinuous
+
 lm(y~c2+c3+c4+c5+c6+c7+c8+c9+c10+c11+c12+c13+c14+c15+c16, data=xm)  %>%
   augment(newdata=xm) %>%
   select(c2, .fitted) %>%
@@ -396,7 +401,9 @@ This function is not continuous or smooth. To make the function continuous, drop
 
 ## Continuous splines
 
-```{r cubic-splines-09}
+```{r}
+#| label: 02-continuous
+
 lm(y~c2+c3+c4+c6+c7+c8+c10+c11+c12+c14+c15+c16, data=xm)  %>%
   augment(newdata=xm) %>%
   select(c2, .fitted) %>%
@@ -412,7 +419,9 @@ While this graph is continuous, it still takes some abrupt turns. What this curv
 
 ## Smooth splines
 
-```{r cubic-splines-10}
+```{r}
+#| label: smooth
+
 lm(y~c2+c3+c4+c7+c8+c11+c12+c15+c16, data=xm) %>%
   augment(newdata=xm) %>%
   select(c2, .fitted) %>%
@@ -428,7 +437,8 @@ Here is a function that has a continuous first derivative. You fit this model by
 
 ## Even smoother
 
-```{r cubic-splines-11}
+```{r}
+#| label: 02-even-smoother
 lm(y~c2+c3+c4+c8+c12+c16, data=xm) %>%
   augment(newdata=xm) %>%
   select(c2, .fitted) %>%
@@ -452,8 +462,18 @@ This approach is simple and easy to follow, but there is one catch. There is an 
 
 ## Multicollinearity
 
-```{r cubic-splines-12}
-round(cor(xm[c(2:4, 8, 12, 16)]), 2)
+```{r}
+#| label: 02-multicollinearity
+
+spline_columns <- names(xm)[c(2:4, 8, 12, 16)]
+xm |>
+  select(all_of(spline_columns)) |>
+  cor() |>
+  data.frame() |>
+  round(2) -> spline_correlations
+
+bind_cols(data.frame(`-`=spline_columns), spline_correlations) |>
+  gt()
 ```
 
 ::: notes

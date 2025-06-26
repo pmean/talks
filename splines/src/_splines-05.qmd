@@ -49,7 +49,9 @@ The Titanic was a large cruise ship, the biggest of its kind in 1912. It was tho
 
 ## First few rows of data
 
-```{r titanic-spline-02}
+```{r}
+#| label: head
+
 f2 <- "../data/titanic.txt"
 ti0 <- 
   data.frame(
@@ -62,7 +64,9 @@ head(ti0)
 
 ## A few descriptive statistics
 
-```{r titanic-spline-03}
+```{r}
+#| label: count
+
 summary(ti0$Age)
 count(ti0, pclass)
 count(ti0, sex)
@@ -71,7 +75,9 @@ count(ti0, survived)
 
 ## Boxplots
 
-```{r titanic-spline-04}
+```{r}
+#| label: 05-box
+
 ggplot(data=ti0, aes(factor(survived), age)) + 
   geom_boxplot()
 ```
@@ -84,7 +90,9 @@ The boxplots reveal little differences between the ages of survivors and deaths.
 
 ## Fit a linear model first.
 
-```{r titanic-spline-05}
+```{r}
+#| label: linear
+
 ti1 <- filter(ti0, !is.na(age))
 linear_fit <- glm(
   survived ~ age,
@@ -101,7 +109,9 @@ There may be a downward trend in the odds of survival over time, but it is not s
 
 ## Plot the predicted values.
 
-```{r titanic-spline-06}
+```{r}
+#| label: 05-response
+
 age_sequence <- data.frame(
   age = seq(min(ti1$age), max(ti1$age), length=100))
 age_sequence$prediction <- 
@@ -130,7 +140,9 @@ ggplot(data=age_sequence, aes(age, prediction)) +
 
 ## Now fit a spline function.
 
-```{r titanic-spline-08}
+```{r}
+#| label: 05-fit
+
 spline_fit <- glm(
   survived ~ rcs(age),
   family=binomial,
@@ -146,7 +158,9 @@ The coefficients from the restricted cubic spline are pretty much uninterpretabl
 
 ## Predictions on a log odds scale
 
-```{r titanic-spline-09}
+```{r}
+#| label: 05-plot-log-odds
+
 age_sequence$prediction <- 
   predict(spline_fit, newdata=age_sequence, type="link")
 ggplot(data=age_sequence, aes(age, prediction)) +
@@ -155,7 +169,8 @@ ggplot(data=age_sequence, aes(age, prediction)) +
 
 ## Predictions on the probability scale
 
-```{r titanic-spline-10}
+```{r}
+#| label:  05-plot-probabilities
 age_sequence$prediction <- 
   predict(spline_fit, newdata=age_sequence, type="response")
 ggplot(data=ti1, aes(age, survived)) +
