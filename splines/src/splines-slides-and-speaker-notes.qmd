@@ -39,6 +39,49 @@ library(tidyverse)
     -   `r params$topic_04`
     -   `r params$topic_05`
     -   `r params$topic_06`
+    
+::: notes
+
+"What are cubic splines and when do you need to use them?"
+
+Splines provide a useful way to model relationships that are more complex than a simple linear function. They work with a variety of regression models. They rely on some simple mathematical concepts: continuity and smoothness. You will see some simple applications where continuity and smoothness are important  and learn how to use splines for linear regression and the generalized linear model.
+
+
+Karen Grace-Martin
+
+Yes. I would just add images to really drive home the points on what is currently slide 87.
+
+And as Jeff suggested, add data to the section at the beginning.
+
+62 wait I missed what the B is
+
+And a natural spline
+
+83 what are outer knots?
+
+87 Split these up! These seem really really important and it would be great to emphasize them
+
+102 No SPSS? Oh. You answered
+
+General question: Just one X?
+
+
+Jeff Meyer
+
+Use this space to write down specific suggestions for each slide, including typos to fix, wording, visuals. Please be constructive. Use slide numbers. Add another page if needed.
+
+The beginning of the presentation was great. The graphs/cartoons had my attention. 
+
+Giving real life examples, as you mentioned in our discussion, after these first dozen slides, will be help engage the audience.
+
+When you got to slide 17?, when you mentioned thresholds, it became a bit confusing. I was focused on the data in the two columns on the left and trying to work them into the equations. Perhaps on the first slide with an equation you can show the work for solving for y given x.   That would help me to focus on your discussion rather than trying to solve the equation before you move onto the next slide.
+
+In your tables, I didn’t catch what each of the columns (C1, C2, etc) represented. I’m sure you mentioned it but I missed that. The same with regards to the rows.Perhaps a comment regarding what the values represent placed under the table would be helpful.
+
+Add scatter points in your graphs.
+
+
+:::
 
 {{< include _splines-01.qmd >}}
 
