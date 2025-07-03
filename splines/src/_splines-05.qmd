@@ -18,7 +18,7 @@ editor: source
 
 ::: notes
 
-Splines work with a variety of statistical models. They work very nicely with linear regresion and random effects regression models.
+Splines work with a variety of statistical models. They work very nicely with linear regression and random effects regression models.
 
 It takes a bit more work with the generalized linear model because of the nonlinear relationship with the outcome variable. With a bit of care, you will be fine.
 
@@ -58,6 +58,32 @@ But a simple graph revealed an obvious pattern. High values of a particular vari
 While you do want to look carefully at all the trends, be cautious about what happens at the tails, the very smallest values and the very largest values. There is less data to use for the splines at the tails and the standard errors will typically explode. Be especially cautious about outlier in the variable you are splining. A sharp bend in the spline might be driven by one or two data points.
 
 :::
+
+## Extensions
+
+-   Natural splines
+-   Penalized B-splines
+-   More than one independent variable
+-   Spline surfaces
+-   Generalized additive models
+
+## Natural splines
+
+-   B-spline restrictions
+    -   Continuity
+    -   Smoothness
+-   Natural spline additional restriction
+    -   Linear extrapolation beyond the outside knots
+
+::: notes
+
+A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first X value and to the right of the last X value. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
+
+You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
+
+:::
+
+
 
 ## About the Titanic
 

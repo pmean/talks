@@ -1,6 +1,8 @@
 ---
 title: "See bottom of file for title"
-format: pptx
+format:
+  pptx:
+    reference-doc: T#015 STSP-PPT-Wide-Template.pptx
 params:
   topic_01: "Variety of regressions"
   topic_02: "Building cubic splines from scratch"

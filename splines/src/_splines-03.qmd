@@ -15,7 +15,9 @@ library(tidyverse)
 
 ## B-splines
 
--   Mathematically equivalent form
+-   B-splines = Basis splines
+    -   Basis is a mathematical property of a set and a subset
+-   Mathematically equivalent to formulation shown earlier
 -   Much less collinearity
 
 ::: notes
@@ -29,7 +31,6 @@ B-splines provide a solution with less issues of multi-collinearity.
 
 b_spline <- bs(xm$c2, knots=c(5, 10, 15), degree=3, intercept=TRUE)
 ```
-
 
 ```{r}
 #| label: 03-bplot
@@ -107,16 +108,17 @@ bplot[[6]]
 bplot[[7]]
 ```
 
-## B-splines have less issues with multicollinearity.
+## Correlation of B-spline terms
 
 ```{r}
 #| label: 03-cor
 
 b_spline |>
-  cor() |>
   data.frame() |>
-  round(2) |>
-  gt()
+  set_names(paste0("S", 1:7)) |>
+  data.frame() |>
+  cor() |>
+  round(2)
 ```
 
 ::: notes
@@ -137,107 +139,3 @@ lm(xm$y~b_spline) %>%
     display_dots(simulated_example)
 ```
 
-## Natural splines
-
--   B-spline restrictions
-    -   Continuity
-    -   Smoothness
--   Natural spline additional restriction
-    -   Linear extrapolation beyond the outside knots
-
-::: notes
-
-A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first X value and to the right of the last X value. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
-
-You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
-
-:::
-
-```{r}
-#| label: 03-ns
-extra_x_values <- setdiff(seq(-5, 25, by=1/64), simulated_example$x)
-extended_x <- c(simulated_example$x, extra_x_values)
-extended_y <- c(simulated_example$y, rep(NA, length(extra_x_values)))
-natural_spline <- ns(
-  extended_x, 
-  knots=c(5, 10, 15), 
-  Boundary.knots=c(0, 20),
-  intercept=TRUE)
-```
-
-```{r}
-#| label: 03-nplot
-
-n <- ncol(natural_spline)
-nplot <- list(rep(NULL, n))
-for (j in 1:n) {
-  dat <- cbind(extended_x, natural_spline[ , j])
-  display_curve(dat, "Cubic B-spline terms") |>
-    display_dots(dat[1:21, ]) -> nplot[[j]]
-}
-```
-
-## Natural spline, 1
-
-```{r}
-#| label: 03-nplot-1
-
-nplot[[1]]
-```
-
-## Natural spline, 2
-
-```{r}
-#| label: 03-nplot-2
-
-nplot[[2]]
-```
-
-## Natural spline, 3
-
-```{r}
-#| label: 03-nplot-3
-
-nplot[[3]]
-```
-
-## Natural spline, 4
-
-```{r}
-#| label: 03-nplot-4
-
-nplot[[4]]
-```
-
-## Natural spline, 5
-
-```{r}
-#| label: 03-nplot-5
-
-nplot[[5]]
-```
-
-
-## Natural spline fit
-
-
-
-```{r}
-#| label: 03-natural-spline-fit
-
-lm(extended_y~natural_spline) |>
-  augment(newdata=natural_spline) |>
-  data.frame() |>
-  bind_cols(data.frame(x=extended_x)) |>
-  select(x, .fitted) |>
-    display_curve("Natural spline fit to the data") |>
-    display_dots(simulated_example)
-```
-
-::: notes
-
-Here is the natural spline fit to your simulated dataset.
-
-You can probably see the linearity at the extremes of the data.
-
-:::

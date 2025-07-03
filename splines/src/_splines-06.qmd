@@ -4,22 +4,55 @@ format: pptx
 editor: source
 ---
 
+## SPSS
+
+-   Nothing built in
+    -   User defined macro
+    -   Build splines by hand
+-   Use other smoothers? (loess)
+
+::: note
+
+https://community.ibm.com/community/user/blogs/archive-user/2013/06/06/restricted-cubic-splines-in-spss
+https://andrewpwheeler.com/2020/12/23/graphing-spline-predictions-in-spss/
+
+:::
+
 ## R
 
--   splines package
-    -   bs function
-    -   ns function
+-   splines2 package
 -   rms pckage
-    -   rcs function
+
+::: notes
+
+https://cran.r-project.org/web/packages/splines2/index.html
+https://cran.r-project.org/web/packages/rms/index.html
+
+:::
     
 ## SAS
 
 -   pbspline keyword
+-   proc transreg
+
+::: notes
+
+https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/grstatproc/n0r8r5cdax81q7n1t63rpk5rpqxx.htm
+https://stats.oarc.ucla.edu/sas/faq/how-can-i-use-proc-transreg-to-generate-splines-in-sas/
+
+:::
 
 ## Stata
 
 -   mkspline
 -   rc_spline
+
+::: notes
+
+https://www.stata.com/manuals14/rmkspline.pdf
+https://www.stata.com/meeting/4nasug/RCsplines.pdf
+
+:::
 
 ## References
 
