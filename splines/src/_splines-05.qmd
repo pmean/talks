@@ -4,86 +4,16 @@ format: pptx
 editor: source
 ---
 
-## Most models will accept splines
+```{r}
+#| label: 05-setup
+#| message: false
+#| warning: false
 
--   Easy
-    -   Linear regression
-    -   Random effects regression models
--   Harder but not too difficult
-    -   Generalized linear model
-    -   Cox regression
--   Not at all helpful for data science models
-    -   Random forests
-    -   Deep neural nets
-
-::: notes
-
-Splines work with a variety of statistical models. They work very nicely with linear regression and random effects regression models.
-
-It takes a bit more work with the generalized linear model because of the nonlinear relationship with the outcome variable. With a bit of care, you will be fine.
-
-Cox regression models also require a bit of care.
-
-Many of the recent data science models do not work well with splines. The random forest model and deep neural nets, to name two, have their own way of modeling non-linearity and the spline functions would just get in the way.
-
-Let me show how to use a spline in a logistic regression model with data from survival of passengers on the Titanic.
-
-:::
-
-## Some general points
-
--   Coefficients are uninterpretable
--   Splines are a package
-    -   But can test linear versus nonlinear
--   Graphs, graphs, graphs
--   Don't over-interpret the tails
--   
-
-::: notes
-
-Before I show some results using real data, let me make a few general points. The slope coefficient in a linear regression model without splines is easy to interpret. It is the estimated average change in Y when X increases by one unit, holding all the other independent variables constant.
-
-You will not find such an easy interpretation associated with the coefficients attached to the spline terms. In fact, there is not a difficult interpretation either. The coefficients that you see have no practical meaning. You can't say that a certain coefficient means that the relationship flattens out for large values of the independent variable. Just ignore the numbers altogether.
-
-The other thing you need to keep in mind is that the spline terms are a package deal. You can't zero out one of the five or seven spline terms because it is not statistically significant. You have to either include all of the spline terms in your final model or exclude all of the spline terms. There is no "in between" choice.
-
-The one thing you can do is to compare a linear model to a spline model. The linear model is implicitly nested within the spline model, even though none of the spline terms look at all linear. You look at how much the sums of squares for error decrease when you move from a linear model to a spline model and test using the standard F ratio that you use when comparing nested models.
-
-The other thing to note is that splines just scream out "Graph me!". The coefficients themselves may be uninterpretable, but the graphs usually illustrate an interesting pattern.
-
-I was helping someone with an analysis of nonlinearity in a logistic regression model. In this context, that means non-linear on a log odds scale. This person ran all sorts of tests and measures and couldn't make any sense of all the numbers they produced. These were really complex and detailed tests, and I had to run to Google more than once to figure out what these numbers were trying to measure.
-
-But a simple graph revealed an obvious pattern. High values of a particular variable showed a strong linear effect, but middling values and low values were all about the same. Kind of like that example I showed at the beginning of the talk.
-
-While you do want to look carefully at all the trends, be cautious about what happens at the tails, the very smallest values and the very largest values. There is less data to use for the splines at the tails and the standard errors will typically explode. Be especially cautious about outlier in the variable you are splining. A sharp bend in the spline might be driven by one or two data points.
-
-:::
-
-## Extensions
-
--   Natural splines
--   Penalized B-splines
--   More than one independent variable
--   Spline surfaces
--   Generalized additive models
-
-## Natural splines
-
--   B-spline restrictions
-    -   Continuity
-    -   Smoothness
--   Natural spline additional restriction
-    -   Linear extrapolation beyond the outside knots
-
-::: notes
-
-A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first X value and to the right of the last X value. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
-
-You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
-
-:::
-
-
+library(broom)
+library(gt)
+library(rms)
+library(tidyverse)
+```
 
 ## About the Titanic
 
@@ -117,7 +47,7 @@ ti <-
 names(ti) <- tolower(names(ti))
 
 ti |>
-  slice(1:5) |>
+  slice(1:3) |>
   gt()
 ```
 
@@ -264,3 +194,74 @@ The ages fall on whole number boundaries and in order to see things clearly, I j
 It looks like "women and children" first might actually be "women, children, and old people first".
 
 :::
+
+## Most models will accept splines
+
+-   Easy
+    -   Linear regression
+    -   Random effects regression models
+-   Harder but not too difficult
+    -   Generalized linear model
+    -   Cox regression
+-   Not at all helpful for data science models
+    -   Random forests
+    -   Deep neural nets
+
+::: notes
+
+Splines work with a variety of statistical models. They work very nicely with linear regression and random effects regression models.
+
+It takes a bit more work with the generalized linear model because of the nonlinear relationship with the outcome variable. With a bit of care, you will be fine.
+
+Cox regression models also require a bit of care.
+
+Many of the recent data science models do not work well with splines. The random forest model and deep neural nets, to name two, have their own way of modeling non-linearity and the spline functions would just get in the way.
+
+Let me show how to use a spline in a logistic regression model with data from survival of passengers on the Titanic.
+
+:::
+
+## Spline coefficients are uninterpretable
+
+```{r}
+tidy(spline_fit) |>
+  gt()
+```
+
+::: notes
+
+In the simple logistic regression model where age was treated linearly, you could exponentiate the coefficient to get an odds ratio. It turns out that the odds ratio for age is 0.99. Each additional year of age decreases the odds of survival by 1%. Not a lot, but it can add up across several decades of age.
+
+You really can't do anything with the spline coefficients. Go ahead and exponentiate them, but they won't represent any meaningful odds ratio.
+
+The ONLY way to interpret a spline model is through a graph.
+
+:::
+
+## Splines are a package deal
+
+```{r}
+tidy(spline_fit) |>
+  gt()
+```
+
+::: notes
+
+The other thing to keep in mind is that the spline terms have to stick together. You can't use stepwise regression to add or remove terms from the model and the individual p-values for the individual coefficients are misleading. You look at this output and you think to yourself that you can simplify the model by removing some of the spline terms with large p-values. You can't do it. The spline coefficients are either all in or all out.
+
+Now it is fairly easy to compare a spline model to a linear model. The linear model is implicitly nested within the spline model so you can just look at partial F tests, changes in R-squared, etc.
+
+:::
+
+## Don't over-interpret the tails
+
+![](../images/liu-2025a "A non-linear relationship between DI-GM and sleep duration")
+
+::: notes
+
+Standard errors are pretty easy to get with spline models. The mathematics behind this is tedious but not difficult. One thing that almost every spline exhibits is a fanning out of the standard errors at the extremes. This makes sense because there is less data to assess where the spline goes at the extremes.
+
+So don't get too worked up about unusual trends on the low end of the high end of the spline. It may be real or it may be sampling error.
+
+:::
+

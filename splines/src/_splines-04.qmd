@@ -4,6 +4,15 @@ format: pptx
 editor: source
 ---
 
+```{r}
+#| label: 04-setup
+#| message: false
+#| warning: false
+
+library(broom)
+library(tidyverse)
+```
+
 ## How many knots?
 
 -   Use AIC or BIC
@@ -126,13 +135,15 @@ Similarly, CD4 cell counts above 500 are a good sign, but things turn rapidly wo
 
 ## Frank Harrell's suggestion for knot placement
 
--   Simple choice
-    -   Outer knots at fifth smallest and fifth largest X
--   Alternative: Set outer knots at key quantiles
+-   Evenly spaced percentiles
+    -   More knots where there is more data
+-   Set boundary knots close to edge
     -   For 3 knots, use $q_{0.1}$ and $q_{0.9}$
     -   For 4-6 knots, use $q_{0.05}$ and $q_{0.95}$
     -   For 7 or more knots, use $q_{0.025}$ and $q_{0.975}$
--   Inner knots are evenly spaced quantiles between outer knots
+-   Example: 4 knots
+    -   Boundary knots at $q_{0.05}$ and $q_{0.95}$
+    -   Interior knots at $q_{0.35}$ and $q_{0.65}$
 
 ::: notes
 
@@ -152,6 +163,28 @@ If you pick this apart, you can deduce that 4 knots for a large dataset would be
 ::: notes
 
 Most references I have looked at state that it is the number of knots rather than the placement of the knots that is critical. 
+
+:::
+
+## Extensions
+
+-   Natural splines
+-   Penalized splines
+-   More than one spline variable
+    -   Spline surfaces
+    -   Generalized additive models
+
+::: notes
+
+A variant on B splines are natural splines (also called restricted cubic splines). These splines place an additional restriction to the left of the first X value and to the right of the last X value. The spline is constrained to be linear at both extremes. This makes practical sense, as there is less data at the extremes, making estimation of a complex cubic function here worrisome. This also makes extrapolation outside of the range of data less problematic. Cubic polynomials have the potential of extreme shifts and if these occur outside the range of the data, they could lead to some awful extrapolations.
+
+You should always be very careful, of course, as any effort to extrapolate beyond the range of data is [dangerous][sim3]. Nevertheless, restricting the extrapolation to a linear function is probably safer than letting the cubic polynomial wiggle around.
+
+Penalized splines offer a way out if you are not sure how many knots to use. In a penalized spline, you put in 20 to 40 knots. This is way too many and could lead to overfitting. But then you compute a penalty term for excessive "wiggling". It is effectively trying to minimize how much the spline coefficients change from one knot to the next.
+
+How do you handle more than one spline variable? There are spline surfaces. The mathematics is tricky, but not terribly so. The problem is that surfaces can bend in many more ways than a line can. You can end up burning way too many degrees of freedom.
+
+An alternative is to fit a spline for one variable and a spline for the other variables and just look at their additive effects. This is effectively the same as assuming that the splines do not interact with one another. This approach is called an additive spline model.
 
 :::
 

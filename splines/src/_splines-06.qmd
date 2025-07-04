@@ -11,7 +11,7 @@ editor: source
     -   Build splines by hand
 -   Use other smoothers? (loess)
 
-::: note
+::: notes
 
 https://community.ibm.com/community/user/blogs/archive-user/2013/06/06/restricted-cubic-splines-in-spss
 https://andrewpwheeler.com/2020/12/23/graphing-spline-predictions-in-spss/
@@ -27,6 +27,8 @@ https://andrewpwheeler.com/2020/12/23/graphing-spline-predictions-in-spss/
 
 https://cran.r-project.org/web/packages/splines2/index.html
 https://cran.r-project.org/web/packages/rms/index.html
+
+Aris Perperoglou, Willi Sauerbrei, Michal Abrahamowicz, Matthias Schmid. A review of spline function procedures in R. BMC Medical Research Methodology 19, 46 (2019). DOI: 10.1186/s12874-019-0666-3.
 
 :::
     
@@ -54,23 +56,3 @@ https://www.stata.com/meeting/4nasug/RCsplines.pdf
 
 :::
 
-## References
-
-Liu J, Huang S. Association between dietary index for gut microbiota and sleep duration in US adults: a cross-sectional study. Curr Res Microb Sci. 2025 May 27;9:100412. doi: 10.1016/j.crmicr.2025.100412. PMID: 40528895; PMCID: PMC12171763. https://pubmed.ncbi.nlm.nih.gov/40528895/
-
-Wang Y, Chang Y, Zhang P, Zheng Z, Ai X, Zhang S, Wu S. Association between triglycerides and remnant cholesterol levels and spine bone mineral density in Duchenne muscular dystrophy. Lipids Health Dis. 2025 Jun 9;24(1):209. doi: 10.1186/s12944-025-02628-0. Erratum in: Lipids Health Dis. 2025 Jun 27;24(1):222. doi: 10.1186/s12944-025-02646-y. PMID: 40490739; PMCID: PMC12147359. https://pubmed.ncbi.nlm.nih.gov/40490739/
-
-Hu C, Tang T. Association between niacin intake and chronic kidney disease in male participants-a cross-sectional study from the NHANES (2005-2018). Front Nutr. 2025 Jun 13;12:1578118. doi: 10.3389/fnut.2025.1578118. PMID: 40584108; PMCID: PMC12202428. https://pubmed.ncbi.nlm.nih.gov/40584108/
-
-Donald H. House. Chapter 14. Spline Curves. Available in [pdf format][hou1].
-
-Aris Perperoglou, Willi Sauerbrei, Michal Abrahamowicz, Matthias Schmid. A review of spline function procedures in R. BMC Medical Research Methodology 19, 46 (2019). DOI: 10.1186/s12874-019-0666-3. Available in [html format][per1] or [pdf format][per2]. 
-
-[har1]: https://search.r-project.org/CRAN/refmans/Hmisc/html/rcspline.eval.html
-
-[hou1]: https://people.cs.clemson.edu/~dhouse/courses/405/notes/splines.pdf
-
-[per1]: https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-019-0666-3
-[per2]: https://bmcmedresmethodol.biomedcentral.com/track/pdf/10.1186/s12874-019-0666-3.pdf
-
-[sim3]: http://new.pmean.com/extrapolation-joke/

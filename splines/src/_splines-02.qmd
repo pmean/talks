@@ -33,13 +33,13 @@ suppressMessages(suppressWarnings(library(tidyr)))
 ## Splines
 
 -   Piecewise cubic polynomial
-    -   Continuous
-    -   Smooth
+    -   Continuous (no jumps)
+    -   Smooth (no sharp turns)
 -   Transition points = knots
 
 ::: notes
 
-A spline is a piecewise cubic polynomial. It converts from one cubic polynomial to a different cubic polynomial at pre-defined transition points known as knots. The individual cubic polynomials are constrained to be continuous and smooth at the knots. Smooth means a continuous first and second derivative. In practical terms, smooth means "no elbows".
+A spline is a piecewise cubic polynomial. It converts from one cubic polynomial to a different cubic polynomial at pre-defined transition points known as knots. The individual cubic polynomials are constrained to be continuous and smooth at the knots. Continuous means no sudden jumps. Smooth means no sudden turns. You can also think of it as no elbows.  Mathematically, smooth means a continuous first and second derivative.
 
 :::
 

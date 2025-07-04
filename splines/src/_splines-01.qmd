@@ -161,6 +161,8 @@ This shows a scatter of data points with what looks like a B-spline. The caption
 
 Here's a peer-reviewed study of sleep duration and how it relates to your gut microbiota--all those tiny bugs living inside your intestines. The authors used a composite score called the dietary index for gut micrtobiota with the acronym DI-GM. This article is published under an open source license, like all the other papers you will see today.
 
+Liu J, Huang S. Association between dietary index for gut microbiota and sleep duration in US adults: a cross-sectional study. Curr Res Microb Sci. 2025 May 27;9:100412. doi: 10.1016/j.crmicr.2025.100412. PMID: 40528895; PMCID: PMC12171763.
+
 :::
 
 ## Examples of splines, 2
@@ -181,6 +183,8 @@ The cubic spline starts out flat for low values of DI-GM, then rises, dips, and 
 
 Here's another open source article, a  peer-reviewed study of patients with Duchene muscular dystrophy (DMD). The authors measured spine bone mineral density and sought to see how that related to various cholesterol measures, including triglycerides and remnant cholesterol both in patients with DMD and age-matched healthy controls. The authors controlled for a variety of factors including steroid use.
 
+Wang Y, Chang Y, Zhang P, Zheng Z, Ai X, Zhang S, Wu S. Association between triglycerides and remnant cholesterol levels and spine bone mineral density in Duchenne muscular dystrophy. Lipids Health Dis. 2025 Jun 9;24(1):209. doi: 10.1186/s12944-025-02628-0. Erratum in: Lipids Health Dis. 2025 Jun 27;24(1):222. doi: 10.1186/s12944-025-02646-y. PMID: 40490739; PMCID: PMC12147359.
+
 :::
 
 ## Examples of splines, 4
@@ -200,6 +204,8 @@ The box plot examines DMD patients without corticosteroid treatment (DMDWS) to t
 ::: notes
 
 Here's a peer-reviewed study of how nutrtion is associated with the risk of chronic kidney disease (CKD). The authors got their data from the National Health and Nutrition Examination Survey (NHANES) data, a large scale CDC survey that includes a medical exam and dietary history. They estimated niacin intake through a dietary recall and classified patients as having CKD based on their Albumin to creatinine ratio and the estimated glomerular filtration rate.
+
+Hu C, Tang T. Association between niacin intake and chronic kidney disease in male participants-a cross-sectional study from the NHANES (2005-2018). Front Nutr. 2025 Jun 13;12:1578118. doi: 10.3389/fnut.2025.1578118. PMID: 40584108; PMCID: PMC12202428.
 
 :::
 
@@ -420,6 +426,29 @@ Note the "elbow" at the threshold. This might be okay, but it might be better fo
 
 :::
 
+## Computational formula for elbow regression
+
+$X = \begin{bmatrix}
+ 1 & 0 \\     
+ 1 & 0 \\
+ 1 & 0 \\
+ 1 & 0 \\
+ 1 & 2 \\
+ 1 & 5 \\
+ 1 & 9
+\end{bmatrix}$
+
+$\ $
+
+$\hat\beta = (X'X)^{-1}X'Y$
+
+::: notes
+
+This is the matrix you would use if you wanted the elbow regression. The first column is all 1's and the second column is zero for X values of 9 or less and (x-9) for X values larger than 9. Again, it is important to subtract the 9 because you want the linear section to just start descending at when X reaches 9.
+
+Notice that the matrix formula still has not changed. Fitting an elbow regression is just as easy as a linear regression. You can do all the fun stuff and you can use the same software.
+
+:::
 
 ## Quadratic analog
 
@@ -437,16 +466,16 @@ Here is a functional form that avoid the elbow at the threshold value. It fits a
 
 :::
 
-## Computational formula for qudratic analog
+## Computational formula for quadratic analog
 
 $X = \begin{bmatrix}
  1 & 0 \\     
  1 & 0 \\
  1 & 0 \\
  1 & 0 \\
- 1 & 2 \\
- 1 & 5 \\
- 1 & 9
+ 1 & 4 \\
+ 1 & 25 \\
+ 1 & 81
 \end{bmatrix}$
 
 $\ $
