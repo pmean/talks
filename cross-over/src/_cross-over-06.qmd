@@ -1,0 +1,25 @@
+---
+title: "Splines, part 1"
+format: pptx
+editor: source
+---
+
+```{r}
+#| label: 06-setup
+#| message: false
+#| warning: false
+
+library(broom)
+library(tidyverse)
+```
+
+
+## Topic 6
+
+-   Bullet points
+
+::: notes
+
+Speaker notes
+:::
+
