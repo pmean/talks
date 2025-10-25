@@ -1,0 +1,14 @@
+id    order period1 period2
+ 1  for/sal     310     270
+ 4  for/sal     310     260
+ 6  for/sal     370     300
+ 7  for/sal     410     390
+10  for/sal     250     210
+11  for/sal     380     350
+14  for/sal     330     365
+ 2  sal/for     370     385
+ 3  sal/for     310     400
+ 5  sal/for     380     410
+ 9  sal/for     290     320
+12  sal/for     260     340
+13  sal/for      90     220

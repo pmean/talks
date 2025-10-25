@@ -16,10 +16,80 @@ library(tidyverse)
 
 ## Topic 1
 
--   Bullet points
+-   No person can cross the same river twice
+-   Run a true paired t-test
+-   Outline effects in crossover (Senn 37-41)
+    -   Period effects
+    -   Period by Treatment interaction
+    -   Carryover effect
+    -   Patient by Treatment interaction
+    -   Patient by Period interaction
 
 ::: notes
 
 Speaker notes
 :::
 
+## Nice reference
+
+Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of crossover trials. Trials 10, 27 (2009). DOI: [10.1186/1745-6215-10-27][ref-mills-2009] 
+
+[ref-mills-2009]: https://doi.org/10.1186/1745-6215-10-27
+
+## Read
+
+```{r}
+#| label: setup-01
+#| message: false
+#| warning: false
+
+library(broom)
+library(tidyverse)
+```
+
+```{r}
+#| label: read
+
+asthma1 <- read_table(
+  file="../data/asthma1.txt",
+  col_names=TRUE)
+
+asthma2 <- read_table(
+  file="../data/asthma2.txt",
+  col_names=TRUE)
+```
+
+## Means, 1
+
+```{r}
+#| label: means-1
+
+asthma1 |>
+  group_by(order) |>
+  summarize(
+    period1_mean=mean(period1),
+    period2_mean=mean(period2))
+```
+
+## Means, 2
+
+```{r}
+#| label: means-2
+
+asthma2 |>
+  group_by(order) |>
+  summarize(
+    formoterol_mean=mean(formoterol),
+    salbutamol_mean=mean(salbutamol))
+```
+
+## Paired t-test
+
+```{r}
+#| label: paired
+
+t.test(
+  asthma2$formoterol, 
+  asthma2$salbutamol,
+  paired=TRUE)
+```

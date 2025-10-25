@@ -1,0 +1,14 @@
+id    order  formoterol  salbutamol
+ 1  for/sal        310          270
+ 4  for/sal        310          260
+ 6  for/sal        370          300
+ 7  for/sal        410          390
+10  for/sal        250          210
+11  for/sal        380          350
+14  for/sal        330          365
+ 2  sal/for        385          370
+ 3  sal/for        400          310
+ 5  sal/for        410          380
+ 9  sal/for        320          290
+12  sal/for        340          260
+13  sal/for        220           90
