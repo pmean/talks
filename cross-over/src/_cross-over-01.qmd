@@ -1,8 +1,5 @@
 ---
-title: "Cross-over, part 1"
-format:
-  html:
-    embed-resources: true
+title: "The paired t-test"
 editor: source
 ---
 
@@ -12,6 +9,7 @@ editor: source
 #| warning: false
 
 library(broom)
+library(lme4)
 library(tidyverse)
 ```
 
@@ -46,30 +44,36 @@ Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of cros
 #| warning: false
 
 library(broom)
+library(lme4)
 library(tidyverse)
 ```
 
 ```{r}
-#| label: read
+#| label: 01-read
 
 couples <- read_tsv(
   file="../data/couples.txt",
+  na=c("*",""),
   col_names=TRUE,
   col_types="cnnnn")
-
-asthma1 <- read_table(
-  file="../data/asthma1.txt",
-  col_names=TRUE)
-
-asthma2 <- read_table(
-  file="../data/asthma2.txt",
-  col_names=TRUE)
 ```
 
 ## Descriptive statistics on age gap
 
 ```{r}
-#| label: age-difference
+#| label: 01-age-difference
+
+couples |>
+  summarize(
+    mean_h_age=mean(hAge, na.rm=TRUE),
+    sd_h_age=sd(hAge, na.rm=TRUE),
+    n=sum(!is.na(hAge)))
+
+couples |>
+  summarize(
+    mean_w_age=mean(wAge, na.rm=TRUE),
+    sd_w_age=sd(wAge, na.rm=TRUE),
+    n=sum(!is.na(wAge)))
 
 couples |>
   mutate(age_gap=hAge-wAge) |>
@@ -91,47 +95,17 @@ t.test(couples$hAge, couples$wAge, paired=TRUE)
 #| label: pivot_ages
 
 couples |>
+  mutate(pair=sprintf("c%03d", 1:nrow(couples))) |>
   filter(!is.na(wAge)) |>
   filter(!is.na(hAge)) |>
-  select(Names, wAge, hAge) |>
+  select(pair, wAge, hAge) |>
   pivot_longer(
     cols=c(wAge, hAge),
     names_to="spouse",
-    values_to="age") -> couples_1
-lm(age~spouse+Names, data=couples_1) |> tidy()
-```
+    values_to="age") |>
+  mutate(spouse=str_sub(spouse, 1, 1)) -> couples_1
 
-## Means, 1
-
-```{r}
-#| label: means-1
-
-asthma1 |>
-  group_by(order) |>
-  summarize(
-    period1_mean=mean(period1),
-    period2_mean=mean(period2))
-```
-
-## Means, 2
-
-```{r}
-#| label: means-2
-
-asthma2 |>
-  group_by(order) |>
-  summarize(
-    formoterol_mean=mean(formoterol),
-    salbutamol_mean=mean(salbutamol))
-```
-
-## Paired t-test
-
-```{r}
-#| label: paired
-
-t.test(
-  asthma2$formoterol, 
-  asthma2$salbutamol,
-  paired=TRUE)
+m2 <- lmer(age~spouse+(1|pair), data=couples_1) 
+fixef(m2)
+confint(m2, parm="spousew")
 ```

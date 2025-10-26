@@ -1,6 +1,5 @@
 ---
-title: "Splines, part 1"
-format: pptx
+title: "When should you use or not use a cross-over"
 editor: source
 ---
 

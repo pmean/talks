@@ -1,12 +1,12 @@
 ---
 title: "See bottom of file for title"
 format:
-  pptx:
-    reference-doc: T#015 STSP-PPT-Wide-Template.pptx
+  html:
+    embed-resources: true
 params:
-  topic_01: "topic 1"
-  topic_02: "topic 2"
-  topic_03: "topic 3"
+  topic_01: "The paired t-test"
+  topic_02: "The AB/BA cross-over"
+  topic_03: "When should you use or not use a cross-over"
   topic_04: "topic 4"
   topic_05: "topic 5"
   topic_06: "topic 6"
@@ -18,6 +18,13 @@ editor: source
 
 # Keep this chunk, even if no code, so that
 # params is populated from the yaml header.
+
+# Be sure to include the proper template
+#
+# format:
+#   pptx:
+#     reference-doc: T#015 STSP-PPT-Wide-Template.pptx
+
 ```
 
 ```{r}
@@ -114,6 +121,6 @@ Abstract: Efficient when you can use them. Lots of controversies over how to ana
 --->
 
 ---
-title: "Crossover trials"
+title: "Cross-over trials"
 author: "Steve Simon"
 ---

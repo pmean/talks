@@ -1,6 +1,5 @@
 ---
-title: "Splines, part 1"
-format: pptx
+title: "The AB/BA cross-over"
 editor: source
 ---
 
@@ -13,13 +12,67 @@ library(broom)
 library(tidyverse)
 ```
 
+## Read
 
-## Topic 2
+```{r}
+#| label: 02-read
 
--   Bullet points
+asthma1 <- read_table(
+  file="../data/asthma1.txt",
+  col_names=TRUE)
 
-::: notes
+asthma2 <- read_table(
+  file="../data/asthma2.txt",
+  col_names=TRUE)
+```
 
-Speaker notes
-:::
 
+## Means, 1
+
+```{r}
+#| label: 02-means-1
+
+asthma1 |>
+  group_by(order) |>
+  summarize(
+    period1_mean=mean(period1),
+    period2_mean=mean(period2)) -> means_1
+means_1
+```
+
+## Interaction, 1
+
+```{r}
+means_1 |>
+  pivot_longer(
+    starts_with("period"),
+    names_to="period",
+    values_to="mean_pef) |>
+  ggplot() +
+  aes(x=period, y=mean_pef, group=order) +
+  geom_line()
+```
+
+## Means, 2
+
+```{r}
+#| label: 02-means-2
+
+asthma2 |>
+  group_by(order) |>
+  summarize(
+    formoterol_mean=mean(formoterol),
+    salbutamol_mean=mean(salbutamol)) -> means_2
+means_2
+```
+
+## Paired t-test
+
+```{r}
+#| label: 02-paired
+
+t.test(
+  asthma2$formoterol, 
+  asthma2$salbutamol,
+  paired=TRUE)
+```

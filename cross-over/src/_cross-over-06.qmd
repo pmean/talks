@@ -1,6 +1,5 @@
 ---
-title: "Splines, part 1"
-format: pptx
+title: "Topic 6"
 editor: source
 ---
 
