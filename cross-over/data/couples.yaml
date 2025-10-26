@@ -1,0 +1,52 @@
+---
+data_dictionary: couples.txt
+
+description: >
+  This file was found on the Data and 
+  Story Library website, but no details
+  were provided. The file is largely
+  self-explanatory.
+
+source: > 
+  https://dasl.datadescription.com/download/data/3137
+  
+note: >
+  There are two slight variations of the 
+  format of this file: asthma2.txt and
+  asthma3.txt.
+  
+copyright:  
+  Unknown. Individual use of this file for
+  educational purposes is probably 
+  acceptable under the Fair Use provisions
+  of U.S. copyright law.
+
+format: 
+  tab-delimited text file
+  
+size:  
+  rows: 201
+  columns: 4
+  
+missing_value_code: 
+  "*"
+
+vars:
+  Names:
+    label: Names (husband, then wife)
+    
+  wAge:
+    label: Wife's age
+    unit: years
+    
+  hAge:
+    label: Husband's age
+    unit: years
+    
+  wHeight:
+    label: Wife's age
+    unit: millimeters
+    
+  hHeight:
+    label: Husband's height
+    unit: millimeters

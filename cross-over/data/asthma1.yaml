@@ -1,0 +1,53 @@
+---
+data_dictionary: asthma1.txt
+
+description: >
+  From the original source: Measures of 
+  peak expiratory flow made on children 
+  aged 7 to 14 with moderate to severe 
+  asthma in a two-treatmenttwo-period 
+  cross-over comparing the effects of a 
+  single inhaled dose of 200 ug 
+  salbutamol, a well-estblished 
+  bronchodilator and 12 ug formoterol, 
+  a more recently developed bronchodilator.
+  Patient 8 dropped out of the study after
+  the first measurement and is not 
+  included in this file.
+
+source: > 
+  Stephen Senn, Cross-over Trials in 
+  Clinical Research. 1991. John Wiley and
+  Sons. Page 32.
+  
+note: >
+  There are two slight variations of the 
+  format of this file: asthma2.txt and
+  asthma3.txt.
+  
+copyright:  
+  Unknown. Individual use of this file for
+  educational purposes is probably 
+  acceptable under the Fair Use provisions
+  of U.S. copyright law.
+
+format: 
+  text file with one or more blank delimiters
+  
+size:  
+  rows: 13
+  columns: 4
+
+vars:
+  id:
+    label: patient identification number
+    
+  order:
+    label: order of treatments
+    
+  period1:
+    label: Peak Expiratory Flow in period 1
+    
+  period2:
+    label: Peak Expiratory Flow in period 2
+---	  

@@ -1,6 +1,8 @@
 ---
-title: "Splines, part 1"
-format: pptx
+title: "Cross-over, part 1"
+format:
+  html:
+    embed-resources: true
 editor: source
 ---
 
@@ -50,6 +52,11 @@ library(tidyverse)
 ```{r}
 #| label: read
 
+couples <- read_tsv(
+  file="../data/couples.txt",
+  col_names=TRUE,
+  col_types="cnnnn")
+
 asthma1 <- read_table(
   file="../data/asthma1.txt",
   col_names=TRUE)
@@ -57,6 +64,41 @@ asthma1 <- read_table(
 asthma2 <- read_table(
   file="../data/asthma2.txt",
   col_names=TRUE)
+```
+
+## Descriptive statistics on age gap
+
+```{r}
+#| label: age-difference
+
+couples |>
+  mutate(age_gap=hAge-wAge) |>
+  summarize(
+    mean_age_gap=mean(age_gap, na.rm=TRUE),
+    sd_age_gap=sd(age_gap, na.rm=TRUE),
+    n=sum(!is.na(age_gap)))
+```
+
+## Paired t-test on couples ages
+
+```{r}
+t.test(couples$hAge, couples$wAge, paired=TRUE)
+```
+
+## Alternate way of testing
+
+```{r}
+#| label: pivot_ages
+
+couples |>
+  filter(!is.na(wAge)) |>
+  filter(!is.na(hAge)) |>
+  select(Names, wAge, hAge) |>
+  pivot_longer(
+    cols=c(wAge, hAge),
+    names_to="spouse",
+    values_to="age") -> couples_1
+lm(age~spouse+Names, data=couples_1) |> tidy()
 ```
 
 ## Means, 1
