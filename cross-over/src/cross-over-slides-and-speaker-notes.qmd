@@ -6,8 +6,8 @@ format:
 params:
   topic_01: "The paired t-test"
   topic_02: "The AB/BA cross-over"
-  topic_03: "When should you use or not use a cross-over"
-  topic_04: "topic 4"
+  topic_03: "Period effects and carry-over"
+  topic_04: "When should you use or not use a cross-over"
   topic_05: "topic 5"
   topic_06: "topic 6"
 editor: source

@@ -1,5 +1,5 @@
 ---
-title: "When should you use or not use a cross-over"
+title: "Period effects and carry-over"
 editor: source
 ---
 
@@ -13,12 +13,94 @@ library(tidyverse)
 ```
 
 
-## Topic 3
 
--   Bullet points
+## Read
 
-::: notes
+```{r}
+#| label: 03-read
 
-Speaker notes
-:::
+asthma_1 <- read_table(
+  file="../data/asthma_1.txt",
+  col_names=TRUE,
+  col_types="ncnn")
 
+asthma_2 <- read_table(
+  file="../data/asthma_2.txt",
+  col_names=TRUE,
+  col_types="ncnn")
+
+asthma_2 |>
+  pivot_longer(
+    cols=c(formoterol, salbutamol),
+    names_to="treatment",
+    values_to="pef") |>
+  mutate(period=case_when(
+    treatment=="formoterol" & order=="for/sal" ~ 1,
+    treatment=="formoterol" & order=="sal/for" ~ 2,
+    treatment=="salbutamol" & order=="for/sal" ~ 2,
+    treatment=="salbutamol" & order=="sal/for" ~ 1)) -> asthma_3
+asthma_3 |>
+  count(treatment, order, period)
+```
+
+## Means, 1
+
+```{r}
+#| label: 02-means-1
+
+asthma_1 |>
+  group_by(order) |>
+  summarize(
+    period1_mean=mean(period1),
+    period2_mean=mean(period2)) -> means_1
+means_1
+```
+
+## Interaction, 1
+
+```{r}
+means_1 |>
+  pivot_longer(
+    starts_with("period"),
+    names_to="period",
+    values_to="mean_pef") |>
+  ggplot() +
+  aes(x=period, y=mean_pef, group=order) +
+  geom_line()
+```
+
+## Means, 2
+
+```{r}
+#| label: 02-means-2
+
+asthma_2 |>
+  group_by(order) |>
+  summarize(
+    formoterol_mean=mean(formoterol),
+    salbutamol_mean=mean(salbutamol)) -> means_2
+means_2
+```
+
+## Interaction, 2
+
+```{r}
+means_2 |>
+  pivot_longer(
+    ends_with("mean"),
+    names_to="treatment",
+    values_to="mean_pef") |>
+  ggplot() +
+  aes(x=order, y=mean_pef, group=treatment) +
+  geom_line() +
+  geom_text(x=2.15, y=345.8, label="formoterol") +
+  geom_text(x=2.15, y=283.3, label="salbutamol")
+```
+
+## Accounting for period effects
+
+```{r}
+#| label: 03-period
+
+aov(pef ~ order + order/factor(id) + treatment + period, data=asthma_3)
+```

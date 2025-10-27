@@ -1,5 +1,5 @@
 ---
-data_dictionary: asthma1.txt
+data_dictionary: asthma_1.txt
 
 description: >
   From the original source: Measures of 
@@ -22,8 +22,8 @@ source: >
   
 note: >
   There are two slight variations of the 
-  format of this file: asthma2.txt and
-  asthma3.txt.
+  format of this file: asthma_2.txt and
+  asthma_3.txt.
   
 copyright:  
   Unknown. Individual use of this file for

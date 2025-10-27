@@ -9,6 +9,7 @@ editor: source
 #| warning: false
 
 library(broom)
+library(lme4)
 library(tidyverse)
 ```
 
@@ -17,54 +18,23 @@ library(tidyverse)
 ```{r}
 #| label: 02-read
 
-asthma1 <- read_table(
-  file="../data/asthma1.txt",
-  col_names=TRUE)
+asthma_1 <- read_table(
+  file="../data/asthma_1.txt",
+  col_names=TRUE,
+  col_types="ncnn")
 
-asthma2 <- read_table(
-  file="../data/asthma2.txt",
-  col_names=TRUE)
-```
+asthma_2 <- read_table(
+  file="../data/asthma_2.txt",
+  col_names=TRUE,
+  col_types="ncnn")
 
-
-## Means, 1
-
-```{r}
-#| label: 02-means-1
-
-asthma1 |>
-  group_by(order) |>
-  summarize(
-    period1_mean=mean(period1),
-    period2_mean=mean(period2)) -> means_1
-means_1
-```
-
-## Interaction, 1
-
-```{r}
-means_1 |>
+asthma_2 |>
   pivot_longer(
-    starts_with("period"),
-    names_to="period",
-    values_to="mean_pef) |>
-  ggplot() +
-  aes(x=period, y=mean_pef, group=order) +
-  geom_line()
+    cols=c(formoterol, salbutamol),
+    names_to="treatment",
+    values_to="pef") -> asthma_3
 ```
 
-## Means, 2
-
-```{r}
-#| label: 02-means-2
-
-asthma2 |>
-  group_by(order) |>
-  summarize(
-    formoterol_mean=mean(formoterol),
-    salbutamol_mean=mean(salbutamol)) -> means_2
-means_2
-```
 
 ## Paired t-test
 
@@ -72,7 +42,44 @@ means_2
 #| label: 02-paired
 
 t.test(
-  asthma2$formoterol, 
-  asthma2$salbutamol,
+  asthma_2$formoterol, 
+  asthma_2$salbutamol,
   paired=TRUE)
+```
+
+## Recalculate confidence interval with z instead of t
+
+```{r}
+#| label: 02-recalculate
+
+asthma_2 |>
+  mutate(treatment_difference=formoterol-salbutamol) |>
+  summarize(
+    difference_mean=mean(treatment_difference),
+    difference_stdev=sd(treatment_difference),
+    n=n()) |>
+  mutate(
+    lower=difference_mean-1.96*difference_stdev/sqrt(n),
+    upper=difference_mean+1.96*difference_stdev/sqrt(n))
+```
+
+## Alternate form of paired t-test
+
+```{r}
+#| label: 02-alternate-1
+
+m3 <- lm(pef ~ treatment + factor(id), data=asthma_3)
+confint(m3)[2, ]
+```
+
+## Second alternate form
+
+```{r}
+#| label: 02-alternative-paired
+
+m2 <- lmer(pef~treatment+(1|id), data=asthma_3) 
+summary(m2)
+fixef(m2)
+confint(m2, parm="treatmentsalbutamol", method="Wald")
+
 ```
