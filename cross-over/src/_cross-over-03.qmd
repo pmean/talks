@@ -34,6 +34,7 @@ asthma_2 |>
     cols=c(formoterol, salbutamol),
     names_to="treatment",
     values_to="pef") |>
+  mutate(id=factor(id)) |>
   mutate(period=case_when(
     treatment=="formoterol" & order=="for/sal" ~ 1,
     treatment=="formoterol" & order=="sal/for" ~ 2,
@@ -102,5 +103,5 @@ means_2 |>
 ```{r}
 #| label: 03-period
 
-aov(pef ~ order + order/factor(id) + treatment + period, data=asthma_3)
+aov(pef ~ order + id/order + period + treatment, data=asthma_3)
 ```
