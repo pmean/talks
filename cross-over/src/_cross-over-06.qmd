@@ -13,9 +13,34 @@ library(tidyverse)
 ```
 
 
-## Topic 6
+## Three treatment cross-over trial
 
--   Bullet points
+-   Show example data from page 124 of Senn
+
+## Possible sequences
+
+-   Three treatments
+    -   ABC, ACB, BAC, BCA, CAB, CBA
+-   Four treatments
+    -   ABCD, ACBD, BACD, BCAD, CABD, CBAD,
+    -   ABDC, ACDB, BADC, BCDA, CADB, CBAD,
+    -   ADBC, ADCB, BDAC, BDCA, CDAB, CDBA,
+    -   DABC, DACB, DBAC, DBCA, DCAB, DCBA
+    
+## Latin square design to reduce the number of sequences
+
+-   Three treatments
+    -   Sequence 1: A B C
+    -   Sequence 2: B C A
+    -   Sequence 3: C A B
+-   Four treatments
+    -   Sequence 1: A B C D
+    -   Sequence 2: B C D A
+    -   Sequence 3: C D A B
+    -   Sequence 4: D A B C
+    
+::: notes
+Other Latin square designs are possible
 
 ::: notes
 

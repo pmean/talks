@@ -13,13 +13,36 @@ library(tidyverse)
 ```
 
 
-## Topic 5
+## Example of a binary outcome
 
--   Bullet points
+![](../images/asthma_4.png)
 
 ::: notes
 Speaker notes
 
 Data is from page 104 of Senn.
 :::
+
+## Descriptive statistics
+
+```{r}
+
+mcnemar <- matrix(c(
+  "  ", "F-", "F+",
+  "S-", " 2", "15",
+  "S+", " 1", " 6"), 
+  nrow=3, byrow=TRUE) |>
+  data.frame() 
+mcnemar |> gt() |> tab_options(column_labels.hidden = TRUE)
+```
+
+## Analysis of binary cross-over data
+
+-   Ignoring period effects
+    -   McNemar's test
+-   Incorporating period effects
+    -   Mainland-Gart test (hard to find)
+    
+## Example of McNemar's test
+
 

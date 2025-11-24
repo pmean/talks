@@ -12,13 +12,58 @@ library(broom)
 library(tidyverse)
 ```
 
+## Systematic overview of parachute use
 
-## Topic 4
-
--   Bullet points
+![](../images/smith.png)
 
 ::: notes
-
 Speaker notes
+
+From the abstract: "As with many interventions intended to prevent ill health, the effectiveness of parachutes has not been subjected to rigorous evaluation by using randomised controlled trials. Advocates of evidence based medicine have criticised the adoption of interventions evaluated by using only observational data. We think that everyone might benefit if the most radical protagonists of evidence based medicine organised and participated in a double blind, randomised, placebo controlled, crossover trial of the parachute."
 :::
 
+## When you cannot use a cross-over trial
+
+-   Acute conditions
+-   Mortality/morbidity
+-   Training/education
+-   Irreversible treatments
+-   Persistent effects
+
+## When you can use a cross-over trial
+
+-   Chronic conditions
+-   Short-term benefits
+-   Adequate wash-out period
+    -   Drugs with a short half-life
+
+::: notes
+Speaker notes
+
+Recommendation is that the wash-out period be equal to five half lives. Note that 1/2 raisded to the 5th power is 1/32 or 0.03126. Also the washout period should be significantly longer than the amount of time under evaluation for either arm.
+
+## Ethical concerns
+
+-   Can you ask a patient to endure two treatments?
+-   Can you leave the patient untreated during the wash-out period
+
+## What is you have a carry-over effect?
+
+-   No easy answer
+    -   Adjustments have poor power
+    -   Between subject comparison
+-   Unclear where to make adjustments
+    -   Two active treatments: 
+        -   Split the difference
+    -   Active treatment versus placebo: 
+        -   Assign the carry-over to placebo
+    -   Carry-over could an interaction instead
+        
+## Change test if carry-over is detected
+
+-   Test hypothesis of no carry-over
+    -   If accept null, run the cross-over
+    -   If reject null, look at first period only
+-   Not recommended
+    -   Limited power to test carry-over
+    -   First period analysis loses to much power/precision
