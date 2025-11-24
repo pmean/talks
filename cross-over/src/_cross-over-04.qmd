@@ -41,6 +41,7 @@ From the abstract: "As with many interventions intended to prevent ill health, t
 Speaker notes
 
 Recommendation is that the wash-out period be equal to five half lives. Note that 1/2 raisded to the 5th power is 1/32 or 0.03126. Also the washout period should be significantly longer than the amount of time under evaluation for either arm.
+:::
 
 ## Ethical concerns
 

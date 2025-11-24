@@ -1,8 +1,6 @@
 ---
 title: "See bottom of file for title"
-format:
-  html:
-    embed-resources: true
+format: pptx
 params:
   topic_01: "The paired t-test"
   topic_02: "The AB/BA cross-over"
@@ -61,6 +59,36 @@ Cross-over trials require that the condition being studied is chronic in nature,
 In this talk, you will see a review of the paired t-test, followed by an analysis of the AB/BA crossover design as a paired t-test. Then you will see how to account for the order in which the treatments were given. 
 
 After discussing the classical AB/BA cross-over design, you will see how to extend the cross-over trial to a binary outcome measure and to more than two treatments.
+
+Feedback
+
+-   Mixed effects model
+-   Heading for 14 and 15
+-   Graphs 34 and earlier
+-   Lobotomy
+-   Don’t show code
+-   Simplify the R output
+-   No need for SAS
+-   Kim Love did classical experimental design webinar
+-   Have I defined a block?
+-   Introduce the cross-over using a diagram
+-   Why do we need to do both orders?
+-   Blog post using long and wide format, https://www.theanalysisfactor.com/wide-and-long-data/
+-   Fix tibble on slide 31
+-   Fix font sizes on plots 34 and others
+-   Put higher is better on every plot
+-   Define double blind, won’t know until they get out of the plane
+-   Define washout period.
+-   State versus trait, trait is immutable 
+-   Slide 40, what if adding treatments is the point. Physical therapy plus
+-   Introduce the concept of a parallel groups design
+-   Slide 41 what if
+-   Slide 46 maybe use some type of random effects logistic regression.
+-   Slide 50 CBAD in second row
+-   Why are there no interactions in slide on page 35.
+
+
+
 :::
 
 {{< include _cross-over-01.qmd >}}
