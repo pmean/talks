@@ -8,9 +8,11 @@ params:
   topic_02: "The AB/BA cross-over"
   topic_03: "Period effects and carry-over"
   topic_04: "When should you use or not use a cross-over"
-  topic_05: "topic 5"
-  topic_06: "topic 6"
+  topic_05: "Cross-over trials with a binary outcome"
+  topic_06: "Cross-over trials with more than two treatments"
 editor: source
+execute: 
+  echo: false
 ---
 
 ```{r}
@@ -50,11 +52,15 @@ library(tidyverse)
     -   `r params$topic_06`
     
 ::: notes
+Speaker notes
 
-"Cross-over trials"
+Cross-over trials provide a very powerful approach for comparing two treatment conditions. Research subjects get both treatment conditions, which we will label arbitrarily as A and B. A randomly selected half get A followed by B and the other half gets B followed by A. This is generally referred to as the AB/BA design. Because each subject serves as their own control, you remove a large amount of variation. Often a cross-over trial can produce good results, even with a few dozen patients.
 
-Abstract: Efficient when you can use them. Lots of controversies over how to analyze them.
+Cross-over trials require that the condition being studied is chronic in nature, and that the effect of the first treatment given does not carry over into the second treatment evaluation. There are important ethical and practical concerns about designing cross-over trials.
 
+In this talk, you will see a review of the paired t-test, followed by an analysis of the AB/BA crossover design as a paired t-test. Then you will see how to account for the order in which the treatments were given. 
+
+After discussing the classical AB/BA cross-over design, you will see how to extend the cross-over trial to a binary outcome measure and to more than two treatments.
 :::
 
 {{< include _cross-over-01.qmd >}}
@@ -103,6 +109,28 @@ Abstract: Efficient when you can use them. Lots of controversies over how to ana
     -   `r params$topic_06`
     
 {{< include _cross-over-06.qmd >}}
+
+```{r}
+#| label: save-everything
+
+save.image("cross-over.RData")
+```
+
+## The definitive guide
+
+![](../images/senn.png)
+
+## Nice reference
+
+![](../images/mills.png)
+
+::: notes
+Speaker notes
+
+Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of crossover trials. Trials 10, 27 (2009). DOI: [10.1186/1745-6215-10-27][ref-mills-2009] 
+
+[ref-mills-2009]: https://doi.org/10.1186/1745-6215-10-27
+
 
 ## Summary
 

@@ -1,0 +1,25 @@
+id    order  formoterol  salbutamol
+ 3  for/sal           +           +
+ 4  for/sal           -           -
+ 7  for/sal           +           -
+ 8  for/sal           +           -
+ 9  for/sal           +           +
+11  for/sal           +           -
+15  for/sal           +           -
+16  for/sal           +           -
+19  for/sal           +           -
+20  for/sal           +           -
+22  for/sal           +           -
+23  for/sal           +           -
+ 1  sal/for           +           -
+ 2  sal/for           +           -
+ 5  sal/for           +           +
+ 6  sal/for           +           +
+10  sal/for           +           +
+12  sal/for           +           +
+13  sal/for           +           +
+14  sal/for           -           +
+17  sal/for           +           -
+18  sal/for           +           -
+21  sal/for           +           -
+24  sal/for           +           -

@@ -14,29 +14,32 @@ library(tidyverse)
 ```
 
 
-## Topic 1
+## Quotations from two great philosophers
 
--   No person can cross the same river twice
--   Run a true paired t-test
--   Outline effects in crossover (Senn 37-41)
-    -   Period effects
-    -   Period by Treatment interaction
-    -   Carryover effect
-    -   Patient by Treatment interaction
-    -   Patient by Period interaction
+-   "A man cannot step into the same river twice, because it is not the same river, and he is not same man." - Heraclitus, 544 B.C.
+-   "You must unlearn what you have learned." Yoda, 1980 A.D.
 
 ::: notes
+Speaker notes.
 
-Speaker notes
+I want to start with quotes from two great philosophers. You know they are great philosophers because they are known by a single name.
+
+Heraclitus in 544 B.C. said "A man cannot step into the same river twice, because it is not the same river, and he is not same man."
+
+Yoda, the other great philosopher, said in 1980 A.D. "You must unlearn what you have learned."
 :::
+    
+## Paired t-test data
 
-## Nice reference
+![](../images/couples.png)
 
-Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of crossover trials. Trials 10, 27 (2009). DOI: [10.1186/1745-6215-10-27][ref-mills-2009] 
+::: notes
+Speaker notes
 
-[ref-mills-2009]: https://doi.org/10.1186/1745-6215-10-27
+Before talking about cross-over trials, you might find it helpful to review how the paired t-test works. Here is some data I found on the web with measurements on married couples. The data has the wife's age (wAge) and the husband's age (hAge). Do you think there is a tendency for older men to marry younger women?
 
-## Read
+There is also data on the wife's height (wHeight) and the husbands height (hHeight). We won't analyze this but there is probably something interesting about tall and short patterns.
+:::
 
 ```{r}
 #| label: setup-01
@@ -44,6 +47,7 @@ Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of cros
 #| warning: false
 
 library(broom)
+library(gt)
 library(lme4)
 library(tidyverse)
 ```
@@ -58,30 +62,65 @@ couples <- read_tsv(
   col_types="cnnnn")
 ```
 
+## Descriptive statistics on wife's age
+
+```{r}
+#| label: 01-age-wife
+
+calculate_descriptives <- function(d, v) {
+  d |>
+    summarize(
+      mean=mean(.data[[v]], na.rm=TRUE),
+      sd=sd(.data[[v]], na.rm=TRUE),
+      n=sum(!is.na(.data[[v]]))) |>
+    mutate(variable = v) |>
+    relocate(variable) |>
+    gt() |>
+    fmt_number(
+      columns=2:3,
+      decimals=1)
+}
+
+couples |>
+  calculate_descriptives("wAge")
+```
+
+::: notes
+Speaker notes
+
+The average woman is around 41 years old with a standard deviation a bit more than 11.
+:::
+
+## Descriptive statistics on husband's age
+
+```{r}
+#| label: 01-age-husband
+
+couples |>
+  calculate_descriptives("hAge")
+```
+
+::: notes
+Speaker notes
+
+The average husband is around 43 years old, just slightly older than the average wife. The standard deviation is about the same.
+:::
+
 ## Descriptive statistics on age gap
 
 ```{r}
-#| label: 01-age-difference
-
-couples |>
-  summarize(
-    mean_h_age=mean(hAge, na.rm=TRUE),
-    sd_h_age=sd(hAge, na.rm=TRUE),
-    n=sum(!is.na(hAge)))
-
-couples |>
-  summarize(
-    mean_w_age=mean(wAge, na.rm=TRUE),
-    sd_w_age=sd(wAge, na.rm=TRUE),
-    n=sum(!is.na(wAge)))
+#| label: 01-age-gap
 
 couples |>
   mutate(age_gap=hAge-wAge) |>
-  summarize(
-    mean_age_gap=mean(age_gap, na.rm=TRUE),
-    sd_age_gap=sd(age_gap, na.rm=TRUE),
-    n=sum(!is.na(age_gap)))
+  calculate_descriptives("age_gap")
 ```
+
+::: notes
+Speaker notes
+
+The average age gap is about 2 years. This average is not quite the same as the difference between the two averages, because there are some married couples with one age but not the other. These are not included in the computation of the age gap, leading to a slight discrepancy.
+:::
 
 ## Paired t-test on couples ages
 
@@ -89,7 +128,15 @@ couples |>
 t.test(couples$hAge, couples$wAge, paired=TRUE)
 ```
 
-## Alternate way of testing
+::: notes
+Speaker notes
+
+The paired t-test shows a statistically significant difference. The 95% confidence interval tells you that even after allowing for sampling error, the average husband's age is 1.6 years larger than the average wife's age.
+:::
+
+## Show the output using a different package
+
+## Analyze as completely randomized block design
 
 ```{r}
 #| label: pivot_ages
@@ -105,7 +152,22 @@ couples |>
     values_to="age") |>
   mutate(spouse=str_sub(spouse, 1, 1)) -> couples_1
 
-m2 <- lmer(age~spouse+(1|pair), data=couples_1) 
-fixef(m2)
-confint(m2, parm="spousew")
+write_tsv(couples_1, file="../data/couples_1.txt")
+
+m2 <- lm(age ~ spouse + pair, data=couples_1) 
+anova(m2)
 ```
+
+::: notes
+Speaker notes
+
+You could also analyze this as a completely randomized block design. It takes a bit of restructuring because this design expects to see all the ages in a single column.
+
+No one does a paired t-test this way, but if you wanted to handle more complex settings, such as risk adjustments on a paired t-test, you can do this fairly easily using a mixed model.
+:::
+
+## Restructured data for a completely randomized block design
+
+![](../images/couples_1.png)
+
+## Show the output using a different package

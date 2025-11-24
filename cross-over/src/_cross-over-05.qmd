@@ -18,7 +18,8 @@ library(tidyverse)
 -   Bullet points
 
 ::: notes
-
 Speaker notes
+
+Data is from page 104 of Senn.
 :::
 

@@ -67,7 +67,12 @@ means_1 |>
     values_to="mean_pef") |>
   ggplot() +
   aes(x=period, y=mean_pef, group=order) +
-  geom_line()
+  geom_line() +
+  geom_text(x=2.01, y=345.8, label="f") +
+  geom_text(x=0.99, y=283.3, label="s") +
+  geom_text(x=0.99, y=337.1, label="f") +
+  geom_text(x=2.01, y=306.4, label="s")
+
 ```
 
 ## Means, 2
@@ -94,8 +99,10 @@ means_2 |>
   ggplot() +
   aes(x=order, y=mean_pef, group=treatment) +
   geom_line() +
-  geom_text(x=2.15, y=345.8, label="formoterol") +
-  geom_text(x=2.15, y=283.3, label="salbutamol")
+  geom_text(x=2.01, y=345.8, label="f") +
+  geom_text(x=2.01, y=283.3, label="s") +
+  geom_text(x=0.99, y=337.1, label="f") +
+  geom_text(x=0.99, y=306.4, label="s")
 ```
 
 ## Accounting for period effects

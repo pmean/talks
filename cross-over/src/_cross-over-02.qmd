@@ -9,11 +9,11 @@ editor: source
 #| warning: false
 
 library(broom)
+library(gt)
 library(lme4)
 library(tidyverse)
 ```
 
-## Read
 
 ```{r}
 #| label: 02-read
@@ -32,9 +32,108 @@ asthma_2 |>
   pivot_longer(
     cols=c(formoterol, salbutamol),
     names_to="treatment",
-    values_to="pef") -> asthma_3
+    values_to="pef") |>
+  mutate(id=factor(id)) -> asthma_3
 ```
 
+## Data layout
+
+![](../images/asthma_1.png)
+
+## Alternate data layout
+
+![](../images/asthma_2.png)
+
+## Descriptive statistics, period 1
+
+```{r}
+#| label: 02-period-1
+
+asthma_1 |>
+  calculate_descriptives("period1")
+```
+
+## Descriptive statistics, period 2
+
+```{r}
+#| label: 02-period-2
+
+asthma_1 |>
+  summarize(
+    mean_period_2=mean(period2, na.rm=TRUE),
+    sd_period_2=sd(period2, na.rm=TRUE),
+    n=sum(!is.na(period2))) |>
+  gt() |>
+  fmt_number(
+    columns=1:2,
+    decimals=1)
+```
+
+## Descriptive statistics, period gap
+
+```{r}
+#| label: 02-period-gap
+
+asthma_1 |>
+  mutate(period_gap=period2-period1) |>
+  summarize(
+    mean_period_gap=mean(period_gap, na.rm=TRUE),
+    sd_period_gap=sd(period_gap, na.rm=TRUE),
+    n=sum(!is.na(period_gap))) |>
+  gt() |>
+  fmt_number(
+    columns=1:2,
+    decimals=1)
+```
+
+## Descriptive statistics, formoterol
+
+```{r}
+#| label: 02-formoterol
+
+asthma_2 |>
+  summarize(
+    mean_formoterol=mean(formoterol, na.rm=TRUE),
+    sd_formoterol=sd(formoterol, na.rm=TRUE),
+    n=sum(!is.na(formoterol))) |>
+  gt() |>
+  fmt_number(
+    columns=1:2,
+    decimals=1)
+```
+
+## Descriptive statistics, salbutamol
+
+```{r}
+#| label: 02-salbutamol
+
+asthma_2 |>
+  summarize(
+    mean_salbutamol=mean(salbutamol, na.rm=TRUE),
+    sd_salbutamol=sd(salbutamol, na.rm=TRUE),
+    n=sum(!is.na(salbutamol))) |>
+  gt() |>
+  fmt_number(
+    columns=1:2,
+    decimals=1)
+```
+
+## Descriptive statistics, drug gap
+
+```{r}
+#| label: 02-drug-gap
+
+asthma_2 |>
+  mutate(drug_gap=formoterol-salbutamol) |>
+  summarize(
+    mean_drug_gap=mean(drug_gap, na.rm=TRUE),
+    sd_drug_gap=sd(drug_gap, na.rm=TRUE),
+    n=sum(!is.na(drug_gap))) |>
+  gt() |>
+  fmt_number(
+    columns=1:2,
+    decimals=1)
+```
 
 ## Paired t-test
 
@@ -47,39 +146,15 @@ t.test(
   paired=TRUE)
 ```
 
-## Recalculate confidence interval with z instead of t
+## Recalculate paired t-test with different package
 
-```{r}
-#| label: 02-recalculate
-
-asthma_2 |>
-  mutate(treatment_difference=formoterol-salbutamol) |>
-  summarize(
-    difference_mean=mean(treatment_difference),
-    difference_stdev=sd(treatment_difference),
-    n=n()) |>
-  mutate(
-    lower=difference_mean-1.96*difference_stdev/sqrt(n),
-    upper=difference_mean+1.96*difference_stdev/sqrt(n))
-```
-
-## Alternate form of paired t-test
+## Analysis using a completely randomized block design
 
 ```{r}
 #| label: 02-alternate-1
 
-m3 <- lm(pef ~ treatment + factor(id), data=asthma_3)
-confint(m3)[2, ]
+m4 <- lm(pef ~ treatment + factor(id), data=asthma_3)
+anova(m4)
 ```
 
-## Second alternate form
-
-```{r}
-#| label: 02-alternative-paired
-
-m2 <- lmer(pef~treatment+(1|id), data=asthma_3) 
-summary(m2)
-fixef(m2)
-confint(m2, parm="treatmentsalbutamol", method="Wald")
-
-```
+## Alternate form with different package
