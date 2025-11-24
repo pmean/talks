@@ -33,7 +33,16 @@ asthma_2 |>
     cols=c(formoterol, salbutamol),
     names_to="treatment",
     values_to="pef") |>
-  mutate(id=factor(id)) -> asthma_3
+  mutate(id=factor(id)) |>
+  mutate(period=case_when(
+    treatment=="formoterol" & order=="for/sal" ~ 1,
+    treatment=="formoterol" & order=="sal/for" ~ 2,
+    treatment=="salbutamol" & order=="for/sal" ~ 2,
+    treatment=="salbutamol" & order=="sal/for" ~ 1)) |>
+  relocate(pef, .after=period) |>
+  relocate(order, .after=treatment) -> asthma_3
+
+write_tsv(asthma_3, "../data/asthma_3.txt")
 ```
 
 ## Data layout
@@ -59,14 +68,7 @@ asthma_1 |>
 #| label: 02-period-2
 
 asthma_1 |>
-  summarize(
-    mean_period_2=mean(period2, na.rm=TRUE),
-    sd_period_2=sd(period2, na.rm=TRUE),
-    n=sum(!is.na(period2))) |>
-  gt() |>
-  fmt_number(
-    columns=1:2,
-    decimals=1)
+  calculate_descriptives("period2")
 ```
 
 ## Descriptive statistics, period gap
@@ -76,14 +78,7 @@ asthma_1 |>
 
 asthma_1 |>
   mutate(period_gap=period2-period1) |>
-  summarize(
-    mean_period_gap=mean(period_gap, na.rm=TRUE),
-    sd_period_gap=sd(period_gap, na.rm=TRUE),
-    n=sum(!is.na(period_gap))) |>
-  gt() |>
-  fmt_number(
-    columns=1:2,
-    decimals=1)
+  calculate_descriptives("period_gap")
 ```
 
 ## Descriptive statistics, formoterol
@@ -92,14 +87,7 @@ asthma_1 |>
 #| label: 02-formoterol
 
 asthma_2 |>
-  summarize(
-    mean_formoterol=mean(formoterol, na.rm=TRUE),
-    sd_formoterol=sd(formoterol, na.rm=TRUE),
-    n=sum(!is.na(formoterol))) |>
-  gt() |>
-  fmt_number(
-    columns=1:2,
-    decimals=1)
+  calculate_descriptives("formoterol")
 ```
 
 ## Descriptive statistics, salbutamol
@@ -108,14 +96,7 @@ asthma_2 |>
 #| label: 02-salbutamol
 
 asthma_2 |>
-  summarize(
-    mean_salbutamol=mean(salbutamol, na.rm=TRUE),
-    sd_salbutamol=sd(salbutamol, na.rm=TRUE),
-    n=sum(!is.na(salbutamol))) |>
-  gt() |>
-  fmt_number(
-    columns=1:2,
-    decimals=1)
+  calculate_descriptives("salbutamol")
 ```
 
 ## Descriptive statistics, drug gap
@@ -125,14 +106,7 @@ asthma_2 |>
 
 asthma_2 |>
   mutate(drug_gap=formoterol-salbutamol) |>
-  summarize(
-    mean_drug_gap=mean(drug_gap, na.rm=TRUE),
-    sd_drug_gap=sd(drug_gap, na.rm=TRUE),
-    n=sum(!is.na(drug_gap))) |>
-  gt() |>
-  fmt_number(
-    columns=1:2,
-    decimals=1)
+  calculate_descriptives("drug_gap")
 ```
 
 ## Paired t-test

@@ -1,25 +1,27 @@
-id    order  formoterol  salbutamol
- 3  for/sal           +           +
- 4  for/sal           -           -
- 7  for/sal           +           -
- 8  for/sal           +           -
- 9  for/sal           +           +
-11  for/sal           +           -
-15  for/sal           +           -
-16  for/sal           +           -
-19  for/sal           +           -
-20  for/sal           +           -
-22  for/sal           +           -
-23  for/sal           +           -
- 1  sal/for           +           -
- 2  sal/for           +           -
- 5  sal/for           +           +
- 6  sal/for           +           +
-10  sal/for           +           +
-12  sal/for           +           +
-13  sal/for           +           +
-14  sal/for           -           +
-17  sal/for           +           -
-18  sal/for           +           -
-21  sal/for           +           -
-24  sal/for           +           -
+id	treatment	order	period	pef
+1	formoterol	for/sal	1	310
+1	salbutamol	for/sal	2	270
+4	formoterol	for/sal	1	310
+4	salbutamol	for/sal	2	260
+6	formoterol	for/sal	1	370
+6	salbutamol	for/sal	2	300
+7	formoterol	for/sal	1	410
+7	salbutamol	for/sal	2	390
+10	formoterol	for/sal	1	250
+10	salbutamol	for/sal	2	210
+11	formoterol	for/sal	1	380
+11	salbutamol	for/sal	2	350
+14	formoterol	for/sal	1	330
+14	salbutamol	for/sal	2	365
+2	formoterol	sal/for	2	385
+2	salbutamol	sal/for	1	370
+3	formoterol	sal/for	2	400
+3	salbutamol	sal/for	1	310
+5	formoterol	sal/for	2	410
+5	salbutamol	sal/for	1	380
+9	formoterol	sal/for	2	320
+9	salbutamol	sal/for	1	290
+12	formoterol	sal/for	2	340
+12	salbutamol	sal/for	1	260
+13	formoterol	sal/for	2	220
+13	salbutamol	sal/for	1	90

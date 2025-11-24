@@ -9,39 +9,33 @@ editor: source
 #| warning: false
 
 library(broom)
+library(gt)
 library(tidyverse)
 ```
 
+## Adjusting for period effects
 
+-   Improves precision
+-   Adjusts for imbalances
+-   Requires layout used for completely randomized block design
 
-## Read
+## Why might you see period effects
+
+-   Temporal trends
+-   Seasonal effects
+-   Carry-over
+    -   Persistence of a treatment applied in one period in a subsequent period of treatment
+
+## Layout for asthma data
+
+![](../images/asthma_3.png)
+
+## Counts for layout data
 
 ```{r}
-#| label: 03-read
-
-asthma_1 <- read_table(
-  file="../data/asthma_1.txt",
-  col_names=TRUE,
-  col_types="ncnn")
-
-asthma_2 <- read_table(
-  file="../data/asthma_2.txt",
-  col_names=TRUE,
-  col_types="ncnn")
-
-asthma_2 |>
-  pivot_longer(
-    cols=c(formoterol, salbutamol),
-    names_to="treatment",
-    values_to="pef") |>
-  mutate(id=factor(id)) |>
-  mutate(period=case_when(
-    treatment=="formoterol" & order=="for/sal" ~ 1,
-    treatment=="formoterol" & order=="sal/for" ~ 2,
-    treatment=="salbutamol" & order=="for/sal" ~ 2,
-    treatment=="salbutamol" & order=="sal/for" ~ 1)) -> asthma_3
 asthma_3 |>
-  count(treatment, order, period)
+  count(treatment, order, period) |>
+  gt()
 ```
 
 ## Means, 1
@@ -110,5 +104,6 @@ means_2 |>
 ```{r}
 #| label: 03-period
 
-aov(pef ~ order + id/order + period + treatment, data=asthma_3)
+m6 <- lm(pef ~ order + id + period + treatment, data=asthma_3)
+anova(m6)
 ```
