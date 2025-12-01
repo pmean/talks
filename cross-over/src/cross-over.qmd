@@ -21,7 +21,7 @@ execute:
 #| message: false
 #| warning: false
 
-# library(pspline)
+library(glue)
 library(readr)
 library(rms)
 library(tidyverse)

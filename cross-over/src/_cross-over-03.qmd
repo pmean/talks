@@ -26,15 +26,27 @@ Using a paired t-test to analyze the AB/BA cross-over design is a good approach.
 
 You may, however, elect to adjust your model for period effects. There are several reasons for this.
 
-First, 
+First, removing variation associated with the period effect will improve power and precision.
+
+If there are imbalances in period (one drug getting first perior more often and the other getting second period more often), then adjusting for period will remove a potential source of bias.
+
+Adjusting for period requires you to use the long format, where all the outcomes are stored in a single column. The layout, which you will see in a minute, is a bit tricky.
 :::
 
 ## Why might you see period effects
 
 -   Temporal trends
 -   Seasonal effects
--   Carry-over
-    -   Persistence of a treatment applied in one period in a subsequent period of treatment
+-   Carry-over: Persistence of a treatment applied in one period in a subsequent period of treatment
+    -   Physical persistence
+    -   Curative effect
+    
+    
+::: notes
+Speaker notes
+
+There are several possible explanations for a period effect
+:::
 
 ## Layout for asthma data
 
@@ -64,6 +76,8 @@ means_1
 ## Interaction, 1
 
 ```{r}
+sz <- 5
+
 means_1 |>
   pivot_longer(
     starts_with("period"),
@@ -72,12 +86,34 @@ means_1 |>
   ggplot() +
   aes(x=period, y=mean_pef, group=order) +
   geom_line() +
-  geom_text(x=2.01, y=345.8, label="f") +
-  geom_text(x=0.99, y=283.3, label="s") +
-  geom_text(x=0.99, y=337.1, label="f") +
-  geom_text(x=2.01, y=306.4, label="s")
+  geom_text(x=2.01, y=345.8, label="f", size=sz) +
+  geom_text(x=0.99, y=283.3, label="s", size=sz) +
+  geom_text(x=0.99, y=337.1, label="f", size=sz) +
+  geom_text(x=2.01, y=306.4, label="s", size=sz)
 
 ```
+
+
+
+## What this graph would look like without a period effect
+
+```{r}
+#| label: no-period-1
+
+data.frame(
+  period = glue("period{c(1,1,2,2)}_mean"),
+  order = rep(c("for/sal", "sal/for"), 2),
+  mean_pef = c(300, 340, 340, 300)) |>
+  ggplot() +
+  aes(x=period, y=mean_pef, group=order) +
+  geom_line() +
+  geom_text(x=2.01, y=340, label="f", size=sz) +
+  geom_text(x=0.99, y=300, label="s", size=sz) +
+  geom_text(x=0.99, y=340, label="f", size=sz) +
+  geom_text(x=2.01, y=300, label="s", size=sz) +
+  scale_y_continuous(breaks=10*(30:34), labels=rep(" ", 5))
+```
+
 
 ## Means, 2
 
@@ -103,10 +139,11 @@ means_2 |>
   ggplot() +
   aes(x=order, y=mean_pef, group=treatment) +
   geom_line() +
-  geom_text(x=2.01, y=345.8, label="f") +
-  geom_text(x=2.01, y=283.3, label="s") +
-  geom_text(x=0.99, y=337.1, label="f") +
-  geom_text(x=0.99, y=306.4, label="s")
+  geom_text(x=2.01, y=345.8, label="f", size=sz) +
+  geom_text(x=2.01, y=283.3, label="s", size=sz) +
+  geom_text(x=0.99, y=337.1, label="f", size=sz) +
+  geom_text(x=0.99, y=306.4, label="s", size=sz)
+
 ```
 
 ## Accounting for period effects
