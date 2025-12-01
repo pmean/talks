@@ -1,0 +1,47 @@
+---
+title: "Check fences"
+format: 
+  html:
+    embed-resources: true
+---
+
+This program detects fences in all quarto programs in your current directory. It is easy to adapt this program to look for other key markers in your quarto programs.
+
+## List files
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(glue)
+library(tidyverse)
+```
+
+```{r}
+#| label: list
+
+qpath <- "cross-over/src"
+# qpath <- ""
+
+qlist <- list.files(pattern="*.qmd")
+qlist
+```
+
+## Loop through files
+
+```{r}
+#| label: loop
+#| eval: true
+
+for (qfile in qlist) {
+  qtext <- read_lines(qfile)
+  fence_detect <- 
+    str_detect(qtext, fixed(":::")) |
+    str_detect(qtext, fixed("##"))
+  data.frame(file_row=1:length(qtext), qtext) |>
+    filter(fence_detect) -> fence_rows
+  print(qfile)
+  print(fence_rows)
+}
+```

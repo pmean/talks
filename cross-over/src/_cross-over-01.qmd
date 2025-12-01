@@ -9,6 +9,7 @@ editor: source
 #| warning: false
 
 library(broom)
+library(gt)
 library(lme4)
 library(tidyverse)
 ```
@@ -42,17 +43,6 @@ There is also data on the wife's height (wHeight) and the husbands height (hHeig
 :::
 
 ```{r}
-#| label: setup-01
-#| message: false
-#| warning: false
-
-library(broom)
-library(gt)
-library(lme4)
-library(tidyverse)
-```
-
-```{r}
 #| label: 01-read
 
 couples <- read_tsv(
@@ -67,7 +57,8 @@ couples <- read_tsv(
 ```{r}
 #| label: 01-age-wife
 
-calculate_descriptives <- function(d, v) {
+calculate_descriptives <- 
+  function(d, v, f_text="", t_pct=30) {
   d |>
     summarize(
       mean=mean(.data[[v]], na.rm=TRUE),
@@ -78,7 +69,13 @@ calculate_descriptives <- function(d, v) {
     gt() |>
     fmt_number(
       columns=2:3,
-      decimals=1)
+      decimals=1) |>
+    tab_options(table.width=pct(t_pct)) -> d_table
+  if (nchar(f_text) == 0) return(d_table)
+  d_table |>
+    tab_footnote(
+      footnote = f_text,
+      locations = cells_column_labels(columns = mean))
 }
 
 couples |>
@@ -112,7 +109,8 @@ The average husband is around 43 years old, just slightly older than the average
 #| label: 01-age-gap
 
 couples |>
-  mutate(age_gap=hAge-wAge) |>
+  mutate(age_gap=hAge-wAge) -> couples
+couples |>
   calculate_descriptives("age_gap")
 ```
 
@@ -125,16 +123,38 @@ The average age gap is about 2 years. This average is not quite the same as the 
 ## Paired t-test on couples ages
 
 ```{r}
-t.test(couples$hAge, couples$wAge, paired=TRUE)
+#| label: 01-paired
+
+pv <- function(test_list) {
+  test_list$p.value |>
+    signif(digits=2) -> p
+  ifelse(p < 0.001, "p<0.001", paste0("p=", p))
+}
+
+m1 <- t.test(couples$hAge, couples$wAge, paired=TRUE)
+
+d_mean <- mean(couples$age_gap, na.rm=TRUE)
+d_stdev <- sd(couples$age_gap, na.rm=TRUE)
+d_stderr <- d_stdev /sqrt(sum(!is.na(couples$age_gap)))
+
+d_mean <- round(d_mean, 1)
+d_stdev <- round(d_stdev, 1)
+d_stderr <- round(d_stderr, 1)
+t_value <- round(m1$statistic, 2)
+p_value <- pv(m1)
 ```
+
+-   Difference mean ($\bar{D}$) = `r d_mean`
+-   Difference standard deviation ($S_D$) = `r d_stdev`
+-   Difference standard error ($S_D / \sqrt{n}$) = `r d_stderr`
+-   Test statistic $\Big(\frac{\bar{D}}{S_D/\sqrt{n}}\Big)$ = `r t_value`
+-   `r pv(m1)`
 
 ::: notes
 Speaker notes
 
 The paired t-test shows a statistically significant difference. The 95% confidence interval tells you that even after allowing for sampling error, the average husband's age is 1.6 years larger than the average wife's age.
 :::
-
-## Show the output using a different package
 
 ## Analyze as completely randomized block design
 
@@ -170,4 +190,25 @@ No one does a paired t-test this way, but if you wanted to handle more complex s
 
 ![](../images/couples_1.png)
 
-## Show the output using a different package
+::: notes
+Speaker notes
+
+Here is what the data must look like if you want to analyze it using a completely randomized block design.
+:::
+
+## Mixed model/random coefficient analysis
+
+-   Uses long format
+-   Dependent variable: age
+-   Fixed effect: spouse
+-   Random intercept: pair
+
+::: notes
+Speaker notes
+
+You could also analyze the paired t-test using a mixed models or random coefficients approach. It would use the same long format that you use for the completely randomized block design. Specify age as the dependent variable, spouse as a fixed effect and specify a random intercept for each value of pair.
+
+This may seem like killing a fly with cannon. True enough, but when you start looking at more complex settings, you may find this approach to be useful.
+
+I'm not going to show any analyses using mixed models in this talk, but wanted to mention this in case you run into something later where this can help.
+:::

@@ -13,11 +13,21 @@ library(gt)
 library(tidyverse)
 ```
 
-## Adjusting for period effects
+## Accounting for period effects
 
 -   Improves precision
 -   Adjusts for imbalances
 -   Requires layout used for completely randomized block design
+
+::: notes
+Speaker notes
+
+Using a paired t-test to analyze the AB/BA cross-over design is a good approach. It may or may not pass muster with whoever is reviewing your work.
+
+You may, however, elect to adjust your model for period effects. There are several reasons for this.
+
+First, 
+:::
 
 ## Why might you see period effects
 

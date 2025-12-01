@@ -14,6 +14,21 @@ library(lme4)
 library(tidyverse)
 ```
 
+## Parallel groups versus the AB/BA cross-over
+
+![](../images/Crossover-trial.png)
+
+https://statistically-funny.blogspot.com/2021/03/in-clinical-trials-you-can-have-it-both.html
+
+::: notes
+Speaker notes
+
+This image illustrates the parallel group design and the crossover design. In the parallel groups design, you get a group of patients to volunteer to be in your study. You flip a coin. A random half of your patients get treatment A and the rest get treatment B.
+
+In a cross-over study, you also get a group of patients. You flip a coin. A random half of the patients get treatment A followed by treatment B and the rest get treatment B followed by treatment A.
+:::
+
+## Data layout
 
 ```{r}
 #| label: 02-read
@@ -45,22 +60,44 @@ asthma_2 |>
 write_tsv(asthma_3, "../data/asthma_3.txt")
 ```
 
-## Data layout
-
 ![](../images/asthma_1.png)
+
+::: notes
+Speaker notes
+
+Here is how the data might be laid out for a cross-over trial. This is for an actual clinical trial. Seven patients got formoterol followed by salbutamol. These are indicated by for/sal. Six salbutamol followed by formoterol. These are indicated by sal/for.
+
+Both drugs are intended to treat asthma. The outcome in this study is PEF, Peak Expiratory Flow. A large value means a better outcome.
+
+Period1 is the measurement taken at the first time point and period2 is the measurement taken at the second time point.
+:::
 
 ## Alternate data layout
 
 ![](../images/asthma_2.png)
+
+::: notes
+Speaker notes
+
+You might see the data laid out differently. In this layout, the column formoterol indicates the PEF measurement when the patient received formoterol. The column salbutamol indicates the PEF measurement when the patient received salbutamol.
+:::
 
 ## Descriptive statistics, period 1
 
 ```{r}
 #| label: 02-period-1
 
+l_text <- "Larger values imply better outcomes"
+
 asthma_1 |>
-  calculate_descriptives("period1")
+  calculate_descriptives("period1", l_text)
 ```
+
+::: notes
+Speaker notes
+
+The simple descriptive statistics that you get with an AB/BA cross-over design will depend on how your data is laid out. With the first layout, you get descriptive statistics on period1 ...
+:::
 
 ## Descriptive statistics, period 2
 
@@ -68,18 +105,32 @@ asthma_1 |>
 #| label: 02-period-2
 
 asthma_1 |>
-  calculate_descriptives("period2")
+  calculate_descriptives("period2", l_text)
 ```
+
+::: notes
+Speaker notes
+
+... and period2. Notice that the period2 values are slightly higher on average. Not by much, but you should probably consider how to account for this in the analysis of your cross-over design.
+:::
 
 ## Descriptive statistics, period gap
 
 ```{r}
 #| label: 02-period-gap
 
+d_text <- "Defined as period2 - period1"
+
 asthma_1 |>
   mutate(period_gap=period2-period1) |>
-  calculate_descriptives("period_gap")
+  calculate_descriptives("period_gap", d_text)
 ```
+
+::: notes
+Speaker notes
+
+Since the data is in a wide format with the period1 and period2 values side by side, you can easily compute the period gap. Notice that the standard deviation for the period gap is only slightly smaller than the standard deviations for period1 and period2. This is because a large effect due to the different drugs being administered has not yet been accounted for.
+:::
 
 ## Descriptive statistics, formoterol
 
@@ -87,8 +138,14 @@ asthma_1 |>
 #| label: 02-formoterol
 
 asthma_2 |>
-  calculate_descriptives("formoterol")
+  calculate_descriptives("formoterol", l_text)
 ```
+
+::: notes
+Speaker notes
+
+In the second layout, where the two variables are labeled by the drug names, you can get an average outcome for formoterol ...
+:::
 
 ## Descriptive statistics, salbutamol
 
@@ -96,39 +153,78 @@ asthma_2 |>
 #| label: 02-salbutamol
 
 asthma_2 |>
-  calculate_descriptives("salbutamol")
+  calculate_descriptives("salbutamol", l_text)
 ```
+
+::: notes
+Speaker notes
+
+... and salbutamol. Notice that the salbutamol average is lot lower, implying that formoterol is the better drug on average.
+:::
 
 ## Descriptive statistics, drug gap
 
 ```{r}
 #| label: 02-drug-gap
 
+d_text <- "Defined as formoterol - salbutamol"
+
 asthma_2 |>
-  mutate(drug_gap=formoterol-salbutamol) |>
-  calculate_descriptives("drug_gap")
+  mutate(drug_gap=formoterol-salbutamol) -> asthma_2 
+asthma_2 |>
+  calculate_descriptives("drug_gap", d_text)
 ```
 
-## Paired t-test
+::: notes
+Speaker notes
+
+Because the two drugs are listed side by side in the wide format, you can compute the average gap between the two drugs.
+:::
+
+## Paired t-test for the AB/BA cross-over data
 
 ```{r}
 #| label: 02-paired
 
 t.test(
-  asthma_2$formoterol, 
+  asthma_2$formoterol,
   asthma_2$salbutamol,
-  paired=TRUE)
+  paired=TRUE) -> m3
+
+d_mean <- mean(asthma_2$drug_gap, na.rm=TRUE)
+d_stdev <- sd(asthma_2$drug_gap, na.rm=TRUE)
+d_stderr <- d_stdev /sqrt(sum(!is.na(asthma_2$drug_gap)))
+
+d_mean <- round(d_mean, 1)
+d_stdev <- round(d_stdev, 1)
+d_stderr <- round(d_stderr, 1)
+t_value <- round(m3$statistic, 2)
+p_value <- pv(m3)
 ```
 
-## Recalculate paired t-test with different package
+-   Difference mean ($\bar{D}$) = `r d_mean`
+-   Difference standard deviation ($S_D$) = `r d_stdev`
+-   Difference standard error ($S_D/\sqrt{n}$) = `r d_stderr`
+-   Test statistic $\Big(\frac{\bar{D}}{S_D/\sqrt{n}}\Big)$ = `r t_value`
+-   `r pv(m1)`
+
+::: notes
+Speaker notes
+
+Just like with the couples data, you can run a paired t-test on this. It ignores the order in which the treatments were given, but this may not be such a terrible thing. It depends a lot on the context of the problem. You'll see some reasons for running a more complex model in just a little bit.
+:::
 
 ## Analysis using a completely randomized block design
 
 ```{r}
 #| label: 02-alternate-1
 
-m4 <- lm(pef ~ treatment + factor(id), data=asthma_3)
+m4 <- lm(pef ~ treatment + id, data=asthma_3)
 anova(m4)
 ```
 
-## Alternate form with different package
+::: notes
+Speaker notes
+
+If you arrange the data in the long format, with all of the PEF values in a single column, then you can also analyze this data as a completely randomized block design. The patient ids are the blocks in this design.
+:::

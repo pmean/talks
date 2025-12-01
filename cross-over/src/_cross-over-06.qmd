@@ -40,10 +40,8 @@ library(tidyverse)
     -   Sequence 4: D A B C
     
 ::: notes
-Other Latin square designs are possible
-
-::: notes
-
 Speaker notes
+
+Other Latin square designs are possible
 :::
 
