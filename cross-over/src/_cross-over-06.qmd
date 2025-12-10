@@ -15,7 +15,16 @@ library(tidyverse)
 
 ## Three treatment cross-over trial
 
--   Show example data from page 124 of Senn
+-   The statistical models do not change, except..
+    -   The number of sequences increases dramatically.
+
+::: notes
+Speaker notes
+
+All of the issues with an AB/BA cross-over trial are the same if you toss in a third treatment, C, or a fourth treatment, D. You have the same analysis: a completely randomized block design if you want to ignore the period effect and an analysis of variance table with factors for order, id, period, and treatment. You have the same concerns about carry-over effects.
+
+The only real change is that the number of possible sequences increases dramatically.
+:::
 
 ## Possible sequences
 
@@ -26,7 +35,25 @@ library(tidyverse)
     -   ABDC, ACDB, BADC, BCDA, CADB, CBAD,
     -   ADBC, ADCB, BDAC, BDCA, CDAB, CDBA,
     -   DABC, DACB, DBAC, DBCA, DCAB, DCBA
+-   Five treatments
+    -   How many possible treatment sequences?
     
+::: notes
+Speaker notes
+
+With three treatments, there are six possible sequences. With four treatments, there are 24 possible sequences.
+
+By the way, there is a typo in the list of possible sequences with four treatments. One sequence is actually listed twice. Can anyone spot it?
+
+The sequence CBAD appears at the end of the first row and also at the end of the second row. In the second row, if I had followed the pattern correctly, the letter D would always be in the third position. So change the second CBAD to CBDA.
+
+Karen Grace-Martin spotted this during a dry run of this talk, so if you spotted it also pat yourself on your back and tell yourself that you are just as smart as she is.
+
+Now here's a real challenge. Suppose you wanted to run a cross-over trial with five treatments. How many treatment sequences are there?
+
+The answer is 5! (five factorial) or 120.
+:::
+
 ## Latin square design to reduce the number of sequences
 
 -   Three treatments
@@ -42,6 +69,7 @@ library(tidyverse)
 ::: notes
 Speaker notes
 
-Other Latin square designs are possible
-:::
+You can reduce the number of sequences markedly by using a Latin square design. In this design, you have three sequences for testing among three different treatments and four sequences for testimg among four different treatments. The sequences are arranged so that every treatment appears once as the first treatment in exactly one sequence, every treatment appears once as the second treatment in exactly one sequence, and so forth.
 
+The Latin square designs shown here are not the only possible Latin square designs. Any Latin square design will work equally well.
+:::

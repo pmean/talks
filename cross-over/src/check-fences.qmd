@@ -37,11 +37,11 @@ qlist
 for (qfile in qlist) {
   qtext <- read_lines(qfile)
   fence_detect <- 
-    str_detect(qtext, fixed(":::")) |
-    str_detect(qtext, fixed("##"))
+    str_detect(qtext, fixed(":::")) 
   data.frame(file_row=1:length(qtext), qtext) |>
     filter(fence_detect) -> fence_rows
   print(qfile)
+  print(nrow(fence_rows))
   print(fence_rows)
 }
 ```

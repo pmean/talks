@@ -20,12 +20,51 @@ library(tidyverse)
 
 https://statistically-funny.blogspot.com/2021/03/in-clinical-trials-you-can-have-it-both.html
 
+Warning:
+
+-   Try to use the term "treatment" and not "drug".
+    -   Cross-over trians not limited to just drugs
+   
+
 ::: notes
 Speaker notes
 
 This image illustrates the parallel group design and the crossover design. In the parallel groups design, you get a group of patients to volunteer to be in your study. You flip a coin. A random half of your patients get treatment A and the rest get treatment B.
 
 In a cross-over study, you also get a group of patients. You flip a coin. A random half of the patients get treatment A followed by treatment B and the rest get treatment B followed by treatment A.
+
+I should warn you that I might slip and use the term "drug" instead of "treatment" at times during this talk. The vast majority of cross-over trials are trials involving drugs, but do not forget that cross-over trials are more general than that. Many non-drug treatments (surgery is one example) cannot be studied using a cross-over trial, but other can. Don't limit yourself to considering cross-trials for only drug interventions.
+:::
+
+## Why do you need both orders?
+
+-   Can you use just AB or BA?
+    -   Yes, but...
+    -   Important unanswered questions
+    -   "A man cannot step into the same river twice"
+
+::: notes
+Speaker notes
+
+Do you have to do both orders, AB and BA? Wouldn't it be simpler to always do A first and always do B second? Or vice versa?
+
+It is possible to do this. The analysis would be valid under some assumptions. The problem with using just AB or just BA is that is leaves some important questions unanswered. Remember the quote about stepping into the same river twice? If you do AB, you are always stepping into one river with A and stepping into a different river with B. Switching the order and randomly allocating which patients get which order insures that both A and B are tested in the first river and both A and B are tested in the second river.
+:::
+
+## Do I have to randomize?
+
+-   No.
+    -   Balanced allocation is an alternative
+    -   Advantages and disadvantages
+    
+::: notes
+Speaker notes
+
+Randomization is commonly done with treatment order. But you can simply insure balanced allocation by alternating AB and BA treatments. There are advantages to this. Perfect balance removes the problems with unbalanced data. Randomization will almost always lead to unblanced data. Not a large imbalance, but still a potential complication.
+
+Alternating AB and BA creates a predictable sequence and sometimes this can destroy blinding (if blinding is used) or lead to subversion of the study. Sometimes the systematic alternation can create statistical artefacts.
+
+In many studies the disadvantages of alternating assignments are small enough that you can ignore them.
 :::
 
 ## Data layout
