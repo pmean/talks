@@ -1,0 +1,33 @@
+---
+title: "Personalized medicine case study"
+format: 
+  revealjs:
+    slide-number: true
+    embed-resources: true
+editor: source
+---
+
+## How Bright Promise in Cancer Testing Fell Apart
+
+![Figure 12. First page of newspaper article](http://www.pmean.com/new-images/21/bright-promise-01.png)
+
+::: notes
+
+This will be your homework assignment.
+
+https://www.nytimes.com/2011/07/08/health/research/08genes.html
+
+:::
+
+## Questions to answer
+
+-   Who is the villain?
+-   Who is the victim?
+-   How was the victim harmed?
+-   What could have prevented this?
+-   Did anything surprise you?
+-   Did you disagree with anything in the article?
+-   Is there a single quote from the article that summarizes it well?
+
+Please work independently on this assignment.
+
