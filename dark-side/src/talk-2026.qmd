@@ -322,7 +322,7 @@ This is a great book with lots of interesting examples, but I want to discuss on
 
 :::
 
-## First villain
+## First villain, not a statistical villain
 
 -   Walter Quijano
     -   Provided testimony on recidivism rates at seven trials
@@ -335,7 +335,7 @@ The big data example in O'Neil's book starts with the story of a person, Walter 
 
 :::
   
-## Second villain  
+## Second villain, a statistical villain
   
 -   LSI-R questionnaire
     -   Given to thousands of inmates
@@ -390,6 +390,16 @@ That's a hallmark of big data models. They are expensive to build and very labor
 -   Test the model for bias
 -   Build the model with better objective
 
+::: notes
+
+A human witness like Walter Quijano can be cross-examined, but can you cross-examine a statistical model? Maybe not, but any model that makes important decisions in a court of law needs to provide information that a defendant can cite if they believe that the model is wrong. The companies that produce models like LSI-R have insisted on keeping the details of their models secret to avoid disclosing their innner workings to potential competitors. That is a legitimate concern, but there are ways to allow disclosure to a defense lawyer without compromising trade secrets.
+
+You can also feed the model test cases and see how they perform. There is plenty of data from previous defendants. Look to see if released prisoners who are black and who commit no further crimes score worse on the model than released prisoners who are white and who do commit additional crimes. 
+
+Also, these models are built to satisfy a single objective: minimize the overall classification error rate. But these models need to satisfy additional objectives associated with fairness. I'll talk more about this later.
+
+:::
+
 ## Did anything surprise you?
 
 -   Questionnaire includes questions that would be inadmissable if they were asked during a normal trial
@@ -423,6 +433,182 @@ But apparently, you can ask prejudicial questions outside of a courtroom in a qu
     -   Is there a single quote from the article that summarizes it well?
 
 https://www.nytimes.com/2006/08/09/technology/09aol.html
+
+:::
+
+## Background
+
+-   AOL search engine
+    -   Predated Google
+    -   Stored search queries in database
+    -   Made database available to researchers
+    -   Only after changing user names to numbers
+
+::: notes
+
+Before Google, there was search engines through providers like America Online. And America Online had a massive database of search queries of its users, with thousands of individuals users a total of over 20 million queries. It created a database from these queries, changed the user names to anonymous numbers and put it out on the web. Go at it, all you amateur researchers and see if you can find some interesting trends and patterns in all the search queries.
+
+## An example
+
+-   User 4417749
+    -   "numb fingers"
+    -   "60 single men"
+    -   "dog that urinates on everything"
+-   Quickly identified as Thelma Arnold
+    -   Queries that indicated where she lived
+    -   Queries that asked about close relatives
+-   Many other users just as easily identified
+
+::: notes
+
+As an example, a user listed only by a number, 4417749, made queries about numb fingers, single men, and dogs that misbehaved. With a little bit of detective work, the reporter for the New York Times identified that this person was Thelma Arnold of Lilburn Georgia. This was done by queries that asked for landscapers in Lilburn, GA, for home sales in her subdivision, and for various close relatives. The reporter contacted Ms. Arnold who was did verify that she made the queries listed for user 4417749. She was quite surprised to here about this, but did agree to be interviewed.
+
+Many other users were just as easily identified. Some did what I have done, and put their own names into a search engine. This is called ego surfing, and for the record, there is a Steve Simon who was Minnesota's 22nd Secretary of State, a Steve Simon who researches condensed matter theory at the University of Oxford, and a Steve Simon who manages real estate banking services for Transwestern in Dallas, Texas.
+
+:::
+
+## What about you?
+
+-   Answer the following questions (yes/no only please)
+    -   Have you searched for your own names?
+    -   Have do done other searches that might identify yourself?
+    -   Have you searched for something that you would not want others to know about?
+-   Most search engines store your searches.
+    -   Do they sell this information to outsiders?
+    -   Can your search history be hacked?
+    
+::: notes
+
+So what about you? Have you ever ego-surfed (checked for your own name)? Have you done other searches that might identify you? Have you searched for something that you might be embarrassed if it was revealed to others? Answer yes/no in the chat box. Type yes/yes/yes if your answer to all three questions is yes, but don't tell me about the embarrassing search you made for Mailbu Stacy doll collections. If your answers to all three questions are no/no/no, let me know that also, but I suspect no one listening today will say "no" to all three questions.
+
+Now most search engines will store your searches. Do they sell your search information to outsiders? Well that is an open question. Can someone hack your search history? Again that is an open question.
+
+:::
+
+## Who was the villain?
+
+-   America Online
+    -   Clumsy and inadequate attempt at anonymization
+    -   Did try to fix things
+        -   Withdrew data, but too late
+-   But we do this to ourselves
+    -   Thoughtlessly sacrifice our privacy
+    
+::: notes
+
+The villain here is America Online. Hey, I love research about as much as anyone, and if I had known about the 20 million queries that America Online released, I probably would have been doing all sorts of word frequency analyses. But just changing a person's name to a number was clumsy and inadequate. 
+
+To their credit, America Online did pull back the databases once it realized the problem, but the database had already been copied to dozens of other locations.
+
+But  we ourselves are not blameless. We don't read the privacy policies of Google or Bing. We join loyalty programs that track all of our purchases. In general, we thoughtlessly sacrifice our privacy.
+
+:::
+
+## Who is the victim?
+
+-   User 4417749 aka Thelma Arnold
+-   Many other users
+-   We ourselves might be current or future victims
+    -   Charles Duhigg. How Companies Learn Your Secrets. The New York Times, 2012-02-16.
+    -   Marshall Allen. Health Insurers Are Vacuuming Up Details About You — And It Could Raise Your Rates. Propublica, 2018-07-18.
+    -   Tracy Samilton. Being A Loyal Auto Insurance Customer Can Cost You. NPR, 2015-05-08.
+
+
+::: notes
+
+The victim was Thelma Arnold and many other users of America Online. But we ourselves might be current or future victims. The New York Times discussed a statistical model developed by Target using purchasing information in their databases to send targetted advertising. Here's a quote from that article.
+
+“My daughter got this in the mail!” he said. “She’s still in high school, and you’re sending her coupons for baby clothes and cribs? Are you trying to encourage her to get pregnant?”
+
+The manager didn’t have any idea what the man was talking about. He looked at the mailer. Sure enough, it was addressed to the man’s daughter and contained advertisements for maternity clothing, nursery furniture and pictures of smiling infants. The manager apologized and then called a few days later to apologize again.
+
+On the phone, though, the father was somewhat abashed. “I had a talk with my daughter,” he said. “It turns out there’s been some activities in my house I haven’t been completely aware of. She’s due in August. I owe you an apology.”
+
+So data scientists can figure out that a 16 year old is pregnant before her father can. Target is very interested in pregnancy, because it opens up a lot of new purchases that they would like to see flow into their store. Hence the targetted coupons.
+
+There is also a lot of discussion about how insurance companies are using data to identify good and bad prospects for insurance.
+
+The LexisNexis booth was emblazoned with the slogan “Data. Insight. Action.” The company said it uses 442 non-medical personal attributes to predict a person’s medical costs. Its cache includes more than 78 billion records from more than 10,000 public and proprietary sources, including people’s cellphone numbers, criminal records, bankruptcies, property records, neighborhood safety and more. The information is used to predict patients’ health risks and costs in eight areas, including how often they are likely to visit emergency rooms, their total cost, their pharmacy costs, their motivation to stay healthy and their stress levels.
+
+...and later in the same article...
+
+Kaufman said she had concerns about the accuracy of drawing inferences about an individual’s health from an analysis of a group of people with similar traits. Health scores generated from arrest records, home ownership and similar material may be wrong, she said.
+
+Pam Dixon, executive director of the World Privacy Forum, a nonprofit that advocates for privacy in the digital age, shares Kaufman’s concerns. She points to a study by the analytics company SAS, which worked in 2012 with an unnamed major health insurance company to predict a person’s health care costs using 1,500 data elements, including the investments and types of cars people owned. 
+
+The SAS study said higher health care costs could be predicted by looking at things like ethnicity, watching TV and mail order purchases.  
+
+Another article from NPR talks about the possibility of using information about price insensitivity. THere is data out there that can identify you as someone who quickly looks around if the price of your insurance changes or someone who would not be bothered to look for a better price. If you are the latter group, insurance companies have been alleged to increase your prices, capitalizing on the belief that they can do this without losing you as a customer.
+
+:::
+
+## How was the victim harmed?
+
+-   Thelma Arnold did a lot of health care queries
+    -   hand tremors
+    -   nicotine effects on the body
+    -   dry mouth
+    -   bipolar
+-   Not her health care
+    -   Inquiries for friends
+    
+::: notes
+
+Thelma Arnold did a lot of queries about health care and she might have been mistakenly labeled as having all of those conditions herself. Actually, she had a habit of doing searches when friends and family mentioned health care issues so she could provide some reassuring information.
+
+:::
+    
+## What could have prevented this
+
+-   For those who might share data
+    -   Careful filtering of additional details
+    -   Be careful of small subgroups
+    -   Think about combinations
+    -   Add small random perturbations
+    -   Get a signed agreement prior to data release
+-   For you if you want to control what is shared
+    -   Pick your software carefully
+    -   Refuse cookies
+    -   Read the privacy statements
+
+::: notes
+
+While the obvious answer, don't release sensitive information pops into mind, there are good reasons why we need to sometimes do this. During the COVID crisis, medical professionals had to share lots of data and they did it with great care. I'm glad that this type of data is being made available.
+
+When you do share do this, there are several steps that you can take. Look for anything other than just the person's name that might be revelatory. This might take a lot of time, but it has to be done. 
+
+If you are presenting aggregate statistics about subgroups, watch out for very small subgroups. A group of size 5 or less could end up revealing information not about the group as a whole, but about individuals within that group.
+
+Think about combinations. A five digit zip code might easily include tens of thousands of people. But if you combine a person's zip code with their birthdate, you could more often than not, reduce this from tens of thousands down to a single individual.
+
+In a lot of sensitive datasets, the researchers will include small random perturbations to help mask information. If a date for a medical procedure might be revelatory, you can randomly shift this data by 7 days or by 30 days. Do this carefully with all the dates for a single patient and you can still identify the hospital length of stay and the time until a patient is rehospitalized.
+
+You may find that obtaining sensitive data requires you to sign a statement saying that you promise to only use the data in various statistical models and that you will not to try to identify any individuals from the data itself.
+
+If some of this scares you as an average person, there are steps that you can take that can help, at least to some extent. First, be careful about what software you put on your computer. Some software can run roughshod over your privacy expectations. This is especially true for software that you might be directed to by ads on the internet.
+
+:::
+
+## Did anything surprise you?
+
+-   How many ways we can lose privacy
+    -   Ego-surfing
+    -   Asking about friends and relatives
+    -   Location specific queries
+
+::: notes
+
+I was suprised at how self-revelatory our searches can be. We leave lots of hints about ourselves when we search. We search about ourselves, about our friends and relatives, and about where we live.
+
+:::
+
+## Is there a single quote from the article that summarizes it well?
+
+-   Ms. Arnold says she loves online research, but the disclosure of her searches has left her disillusioned. In response, she plans to drop her AOL subscription. "We all have a right to privacy," she said. "Nobody should have found this all out."
+
+::: notes
+
+We have to be thankful to Thelma Arnold for agreeing to a further disclosure of privacy by agreeing to the interview with the New Yor Times. Apparently, she was willing to be placed out in the spotlight again because she wanted others to know about this. There is a nice quote from her at the end of this article.
 
 :::
 
