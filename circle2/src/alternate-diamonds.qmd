@@ -1,0 +1,123 @@
+---
+title: "diamond2"
+format: 
+  html:
+    embed-resources: true
+---
+
+This program was written by Steve Simon on 2026-04-29 and is placed in the public domain (CC0).
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(tidyverse)
+```
+
+
+
+```{r}
+n <- 21
+co <- c("white", "black")[1+(1:n)%%2]
+data.frame(
+  y1=seq(1, 0, length=n), 
+  x1=rep(0, n), 
+  y0=rep(0, n),
+  x0=seq(1, 0, length=n)^0.5) |>
+  ggplot() +
+  aes(x=x0, y=y0, xend=x1, yend=y1) |>
+  geom_segment(color=co) +
+  theme(aspect.ratio=1) + 
+  scale_x_continuous(breaks=(0:10)/10) +
+  scale_y_continuous(breaks=(0:10)/10) +
+  geom_text(y=0,                 x=sqrt(0.5), label=0.5) + 
+  geom_text(y=2*(1-sqrt(0.5))/5, x=sqrt(0.5), label=0.7) +
+  geom_text(y=4*(1-sqrt(0.5))/5, x=sqrt(0.5), label=0.9) +
+  geom_text(y=0,                 x=sqrt(0.3), label=0.3) + 
+  geom_text(y=2*(1-sqrt(0.3))/7, x=sqrt(0.3), label=0.5) +
+  geom_text(y=4*(1-sqrt(0.3))/7, x=sqrt(0.3), label=0.7) +
+  geom_text(y=6*(1-sqrt(0.3))/7, x=sqrt(0.3), label=0.9) +
+  geom_text(y=0,                 x=sqrt(0.1), label=0.1) + 
+  geom_text(y=2*(1-sqrt(0.1))/9, x=sqrt(0.1), label=0.3) +
+  geom_text(y=4*(1-sqrt(0.1))/9, x=sqrt(0.1), label=0.5) +
+  geom_text(y=6*(1-sqrt(0.1))/9, x=sqrt(0.1), label=0.7) +
+  geom_text(y=8*(1-sqrt(0.1))/9, x=sqrt(0.1), label=0.9)
+```
+
+$y=0.9-\sqrt{0.9}*x$
+
+$r=y+x/(1-y^2)$
+
+$y=\sqrt{x}-\sqrt{x}*x$
+
+$y=\sqrt{x}*(1-x)$
+
+
+```{r}
+#| fig.width: 2
+#| fig.height: 2
+
+n <- 1001
+a <- seq(-1, 1, length=n)
+d <- data.frame(
+  x=rep(a, n),
+  y=rep(a, each=n))
+
+w <- 1
+r <- 0
+n <- 3000
+for (i in 1:n) {
+  r <- r + (abs(d$y) + sqrt(i/n)*abs(d$x) < i/n)
+}
+co <- c("white", "black")[1 + r%%2]
+ggplot(d) +
+  aes(x, y) +
+  # theme_void() +
+  geom_raster(fill=co)
+```
+
+```{r}
+n <- 5
+
+bw <- c("black", "white")
+wb <- rev(bw)
+
+co <- wb[1+(1:n)%%2]
+data.frame(
+  x0=seq(0, 1, length=n)^0.5, 
+  y0=rep(0, n), 
+  x1=rep(0, n),
+  y1=seq(0, 1, length=n)) |>
+  ggplot() +
+  aes(x=x0, y=y0, xend=x1, yend=y1) |>
+  geom_segment(color=co) +
+  theme(aspect.ratio=1) + 
+  scale_x_continuous(breaks=(0:10)/10) +
+  scale_y_continuous(breaks=(0:10)/10)
+```
+$y=x-x^{0.5}*x$
+
+$y=x*(1-x^{0.5})$
+
+```{r}
+#| fig.width: 2
+#| fig.height: 2
+
+n <- 1001
+a <- seq(-1, 1, length=n)
+d <- data.frame(
+  x=rep(a, n),
+  y=rep(a, each=n))
+
+x <- d$x
+y <- d$y
+
+r <- abs(y)/abs(0.5 - sqrt(0.5)*abs(x))
+
+co <- c("white", "black")[1 + (r <= 1)]
+ggplot(d) +
+  aes(x, y) +
+#  theme_void() +
+  geom_raster(fill=co)
+```

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -2229,377 +2229,44 @@ vertical-align: -.125em;
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gifski)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n_images <span class="ot">&lt;-</span> <span class="dv">90</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>n_images <span class="ot">&lt;-</span> <span class="dv">900</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>step_size <span class="ot">&lt;-</span> <span class="fl">0.2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="circle2" class="level2">
-<h2 class="anchored" data-anchor-id="circle2">circle2</h2>
-<p>The circleFun function is found at Stack Overflow</p>
-<p>https://stackoverflow.com/questions/6862742/draw-a-circle-with-ggplot2</p>
-<p>Also see</p>
-<p>https://ggplot2.tidyverse.org/reference/geom_tile.html</p>
-<p>https://www.jstor.org/stable/24976032</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>circle_files <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;../images/circle%04d.png&quot;</span>, <span class="dv">1</span><span class="sc">:</span>n_images)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>draw_circles <span class="ot">&lt;-</span> <span class="cf">function</span>(w, k) {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">each=</span><span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> (r<span class="sc">*</span>w) <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  n_circles <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(r<span class="sc">*</span>w)<span class="sc">/</span><span class="dv">2</span><span class="fl">-0.2</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># max(floor(r*w)) %/% 2</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>)[z]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>n_images <span class="ot">&lt;-</span> <span class="dv">90</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>diamond_files <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;../images/diamond%04d.png&quot;</span>, <span class="dv">1</span><span class="sc">:</span>n_images)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>draw_diamonds <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">each=</span><span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n) {</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    r <span class="ot">&lt;-</span> r <span class="sc">+</span> (<span class="fu">abs</span>(y) <span class="sc">+</span> <span class="fu">sqrt</span>(i<span class="sc">/</span>n)<span class="sc">*</span><span class="fu">abs</span>(x) <span class="sc">&lt;</span> i<span class="sc">/</span>n)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(x, y, z) <span class="sc">|&gt;</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_raster</span>(<span class="at">fill=</span>z) <span class="sc">+</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span>n_circles) <span class="sc">+</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># geom_label(x=0, y=0, label=n) +</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>)[r <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span>]</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(x, y, z) <span class="sc">|&gt;</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y) <span class="sc">+</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_raster</span>(<span class="at">fill=</span>z) <span class="sc">+</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="ot">-&gt;</span> p</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  file_name <span class="ot">&lt;-</span> <span class="fu">paste0</span>(</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;../images/circle&quot;</span>, </span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_pad</span>(k, <span class="at">width=</span><span class="dv">4</span>, <span class="at">pad=</span><span class="st">&quot;0&quot;</span>),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;.png&quot;</span>)</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  file_name <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;../images/circle%04d.png&quot;</span>, k)</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(circle_files[k], <span class="at">width=</span><span class="dv">201</span>, <span class="at">height=</span><span class="dv">301</span>, <span class="at">unit=</span><span class="st">&quot;px&quot;</span>)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_images) {</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> (k<span class="dv">-1</span>)<span class="sc">*</span>step_size</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_circles</span>(w, k)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(k)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot; &quot;</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>1 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>2 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>3 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>4 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>5 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>6 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>7 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>8 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>9 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>10 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>11 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>12 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>13 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>14 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>15 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 8 rows containing missing values or values outside the scale range
-(`geom_raster()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>16 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>17 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>18 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>19 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>20 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>21 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>22 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>23 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>24 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>25 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>26 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>27 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>28 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>29 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>30 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>31 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>32 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>33 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>34 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>35 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>36 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>37 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>38 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>39 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>40 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>41 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>42 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>43 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>44 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>45 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 8 rows containing missing values or values outside the scale range
-(`geom_raster()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>46 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>47 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>48 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>49 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>50 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>51 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>52 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>53 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>54 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>55 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>56 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>57 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>58 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>59 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>60 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>61 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>62 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>63 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>64 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>65 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>66 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>67 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>68 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>69 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>70 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>71 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>72 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>73 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>74 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>75 </code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 8 rows containing missing values or values outside the scale range
-(`geom_raster()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>76 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>77 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>78 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>79 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>80 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>81 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>82 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>83 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>84 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>85 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>86 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>87 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>88 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>89 </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>90 </code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>gif_file <span class="ot">&lt;-</span> <span class="st">&quot;circle_animation.gif&quot;</span></span>
-<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gifski</span>(</span>
-<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a>  circle_files, </span>
-<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a>  gif_file,</span>
-<span id="cb96-5"><a href="#cb96-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">delay=</span><span class="fl">0.03</span>,</span>
-<span id="cb96-6"><a href="#cb96-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">loop=</span><span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;C:\\Users\\steve\\git\\talks\\circle2\\src\\circle_animation.gif&quot;</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utils::browseURL(gif_file)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    diamond_files[k], </span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">width=</span><span class="dv">201</span>, </span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">height=</span><span class="dv">301</span>, </span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">unit=</span><span class="st">&quot;px&quot;</span>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a>diamond_files <span class="ot">&lt;-</span> <span class="fu">sprintf</span>(<span class="st">&quot;../images/diamond%04d.png&quot;</span>, <span class="dv">1</span><span class="sc">:</span>n_images)</span>
-<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>draw_diamonds <span class="ot">&lt;-</span> <span class="cf">function</span>(w, k) {</span>
-<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="sc">-</span><span class="dv">100</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">each=</span><span class="dv">201</span>) <span class="sc">/</span> <span class="dv">100</span></span>
-<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>  r <span class="ot">&lt;-</span> <span class="fu">abs</span>(x)<span class="sc">*</span>w <span class="sc">+</span> <span class="fu">abs</span>(y)<span class="sc">*</span>w</span>
-<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> r<span class="sc">^</span><span class="dv">2</span> <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a>  n_diamonds <span class="ot">&lt;-</span> <span class="fu">ceiling</span>(<span class="fu">max</span>(r<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="dv">2</span><span class="fl">-0.2</span>)</span>
-<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>  z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;black&quot;</span>, <span class="st">&quot;white&quot;</span>)[z]</span>
-<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-12"><a href="#cb99-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(x, y, z) <span class="sc">|&gt;</span></span>
-<span id="cb99-13"><a href="#cb99-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb99-14"><a href="#cb99-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x=</span>x, <span class="at">y=</span>y) <span class="sc">+</span></span>
-<span id="cb99-15"><a href="#cb99-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_raster</span>(<span class="at">fill=</span>z) <span class="sc">+</span></span>
-<span id="cb99-16"><a href="#cb99-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title=</span>n_diamonds) <span class="sc">+</span></span>
-<span id="cb99-17"><a href="#cb99-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># geom_label(x=0, y=0, label=n) +</span></span>
-<span id="cb99-18"><a href="#cb99-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_void</span>() <span class="ot">-&gt;</span> p</span>
-<span id="cb99-19"><a href="#cb99-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb99-20"><a href="#cb99-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggsave</span>(</span>
-<span id="cb99-21"><a href="#cb99-21" aria-hidden="true" tabindex="-1"></a>    diamond_files[k], </span>
-<span id="cb99-22"><a href="#cb99-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">width=</span><span class="dv">201</span>, </span>
-<span id="cb99-23"><a href="#cb99-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">height=</span><span class="dv">301</span>, </span>
-<span id="cb99-24"><a href="#cb99-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">unit=</span><span class="st">&quot;px&quot;</span>)</span>
-<span id="cb99-25"><a href="#cb99-25" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb99-26"><a href="#cb99-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb99-27"><a href="#cb99-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_images) {</span>
-<span id="cb99-28"><a href="#cb99-28" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">9</span><span class="sc">*</span>(k<span class="dv">-1</span>)<span class="sc">/</span>(n_images<span class="dv">-1</span>)</span>
-<span id="cb99-29"><a href="#cb99-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_diamonds</span>(w, k)</span>
-<span id="cb99-30"><a href="#cb99-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(k)</span>
-<span id="cb99-31"><a href="#cb99-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot; &quot;</span>)</span>
-<span id="cb99-32"><a href="#cb99-32" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_images) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  w <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">+</span> <span class="dv">9</span><span class="sc">*</span>(k<span class="dv">-1</span>)<span class="sc">/</span>(n_images<span class="dv">-1</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw_diamonds</span>(k)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(k)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot; &quot;</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 </code></pre>
 </div>
@@ -2870,18 +2537,16 @@ vertical-align: -.125em;
 <div class="cell-output cell-output-stdout">
 <pre><code>90 </code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb190"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a>gif_file <span class="ot">&lt;-</span> <span class="st">&quot;diamond_animation.gif&quot;</span></span>
-<span id="cb190-2"><a href="#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gifski</span>(</span>
-<span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a>  diamond_files, </span>
-<span id="cb190-4"><a href="#cb190-4" aria-hidden="true" tabindex="-1"></a>  gif_file,</span>
-<span id="cb190-5"><a href="#cb190-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">delay=</span><span class="fl">0.03</span>,</span>
-<span id="cb190-6"><a href="#cb190-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">loop=</span><span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>gif_file <span class="ot">&lt;-</span> <span class="st">&quot;diamond_animation.gif&quot;</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gifski</span>(</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a>  diamond_files, </span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a>  gif_file,</span>
+<span id="cb94-5"><a href="#cb94-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">delay=</span><span class="fl">0.03</span>,</span>
+<span id="cb94-6"><a href="#cb94-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">loop=</span><span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;C:\\Users\\steve\\git\\talks\\circle2\\src\\diamond_animation.gif&quot;</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb192"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># utils::browseURL(gif_file)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section>
 
 </main>
 <!-- /main column -->
