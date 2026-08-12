@@ -1,0 +1,67 @@
+---
+title: "circle2 and friends"
+format: 
+  html:
+    embed-resources: true
+---
+
+This program was written by Steve Simon on 2026-04-29 and is placed in the public domain (CC0).
+
+```{r}
+#| label: setup
+#| message: false
+#| warning: false
+
+library(gifski)
+library(tidyverse)
+
+n_images <- 900
+```
+
+
+```{r}
+draw_diamonds <- function(n) {
+  x <- rep(-100:100, 201) / 100
+  y <- rep(-100:100, each=201) / 100
+  
+  r <- 0
+  for (i in 1:n) {
+    r <- r + (abs(y) + sqrt(i/n)*abs(x) < i/n)
+  }
+
+  z <- c("black", "white")[r %% 2 + 1]
+
+  data.frame(x, y, z) |>
+    ggplot() +
+    aes(x=x, y=y) +
+    geom_raster(fill=z) +
+    theme_void() -> p
+  
+  ggsave(
+    diamond_files[k], 
+    width=201, 
+    height=201, 
+    unit="px")
+}
+```
+
+```{r}
+#| fig.width: 7
+#| fig.height: 7
+
+n_images <- 9000
+diamond_files <- sprintf("../images/diamond%04d.png", 1:n_images)
+
+for (k in 901:n_images) {
+  draw_diamonds(k)
+  cat(k)
+  cat(" ")
+}
+
+gif_file <- "diamond_animation.gif"
+gifski(
+  diamond_files, 
+  gif_file,
+  delay=0.03,
+  loop=FALSE)
+```

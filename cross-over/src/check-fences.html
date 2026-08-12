@@ -2221,124 +2221,145 @@ vertical-align: -.125em;
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (qfile <span class="cf">in</span> qlist) {</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  qtext <span class="ot">&lt;-</span> <span class="fu">read_lines</span>(qfile)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  fence_detect <span class="ot">&lt;-</span> </span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(qtext, <span class="fu">fixed</span>(<span class="st">&quot;:::&quot;</span>)) <span class="sc">|</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(qtext, <span class="fu">fixed</span>(<span class="st">&quot;##&quot;</span>))</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">file_row=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(qtext), qtext) <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(fence_detect) <span class="ot">-&gt;</span> fence_rows</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(qfile)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">str_detect</span>(qtext, <span class="fu">fixed</span>(<span class="st">&quot;:::&quot;</span>)) </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">file_row=</span><span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(qtext), qtext) <span class="sc">|&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(fence_detect) <span class="ot">-&gt;</span> fence_rows</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(qfile)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">nrow</span>(fence_rows))</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(fence_rows)</span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] &quot;_cross-over-01.qmd&quot;
-   file_row                                                         qtext
-1        18                     ## Quotations from two great philosophers
-2        23                                                     ::: notes
-3        31                                                           :::
-4        33                                         ## Paired t-test data
-5        37                                                     ::: notes
-6        43                                                           :::
-7        55                       ## Descriptive statistics on wife&#39;s age
-8        79                                                     ::: notes
-9        83                                                           :::
-10       85                    ## Descriptive statistics on husband&#39;s age
-11       94                                                     ::: notes
-12       98                                                           :::
-13      100                          ## Descriptive statistics on age gap
-14      111                                                     ::: notes
-15      115                                                           :::
-16      117                              ## Paired t-test on couples ages
-17      147                                                     ::: notes
-18      151                                                           :::
-19      153              ## Analyze as completely randomized block design
-20      175                                                     ::: notes
-21      181                                                           :::
-22      183 ## Restructured data for a completely randomized block design
-23      187                                                     ::: notes
-24      191                                                           :::
-25      193                    ## Mixed model/random coefficient analysis
-26      200                                                     ::: notes
-27      208                                                           :::
+[1] 18
+   file_row     qtext
+1        23 ::: notes
+2        31       :::
+3        37 ::: notes
+4        43       :::
+5        85 ::: notes
+6        89       :::
+7       100 ::: notes
+8       104       :::
+9       117 ::: notes
+10      121       :::
+11      153 ::: notes
+12      157       :::
+13      181 ::: notes
+14      189       :::
+15      195 ::: notes
+16      199       :::
+17      208 ::: notes
+18      216       :::
 [1] &quot;_cross-over-02.qmd&quot;
-   file_row                                                  qtext
-1        17         ## Parallel groups versus the AB/BA cross-over
-2        23                                              ::: notes
-3        29                                                    :::
-4        31                                   ## Cross-over design
-5        63                                         ## Data layout
-6        67                                              ::: notes
-7        75                                                    :::
-8        77                               ## Alternate data layout
-9        81                                              ::: notes
-10       85                                                    :::
-11       87                    ## Descriptive statistics, period 1
-12       96                    ## Descriptive statistics, period 2
-13      105                  ## Descriptive statistics, period gap
-14      115                  ## Descriptive statistics, formoterol
-15      124                  ## Descriptive statistics, salbutamol
-16      133                    ## Descriptive statistics, drug gap
-17      144         ## Paired t-test for the AB/BA cross-over data
-18      171 ## Analysis using a completely randomized block design
+[1] 26
+   file_row     qtext
+1        29 ::: notes
+2        37       :::
+3        46 ::: notes
+4        52       :::
+5        60 ::: notes
+6        68       :::
+7       104 ::: notes
+8       112       :::
+9       118 ::: notes
+10      122       :::
+11      135 ::: notes
+12      139       :::
+13      150 ::: notes
+14      154       :::
+15      168 ::: notes
+16      172       :::
+17      183 ::: notes
+18      187       :::
+19      198 ::: notes
+20      202       :::
+21      217 ::: notes
+22      221       :::
+23      250 ::: notes
+24      254       :::
+25      265 ::: notes
+26      269       :::
 [1] &quot;_cross-over-03.qmd&quot;
-  file_row                               qtext
-1       16     ## Adjusting for period effects
-2       22 ## Why might you see period effects
-3       29           ## Layout for asthma data
-4       33           ## Counts for layout data
-5       41                         ## Means, 1
-6       54                   ## Interaction, 1
-7       72                         ## Means, 2
-8       85                   ## Interaction, 2
-9      102    ## Accounting for period effects
+[1] 24
+   file_row     qtext
+1        22 ::: notes
+2        34       :::
+3        47 ::: notes
+4        77       :::
+5        83 ::: notes
+6        89       :::
+7        99 ::: notes
+8       105       :::
+9       122 ::: notes
+10      126       :::
+11      149 ::: notes
+12      159       :::
+13      181 ::: notes
+14      185       :::
+15      202 ::: notes
+16      206       :::
+17      228 ::: notes
+18      232       :::
+19      256 ::: notes
+20      260       :::
+21      271 ::: notes
+22      275       :::
+23      284 ::: notes
+24      292       :::
 [1] &quot;_cross-over-04.qmd&quot;
-   file_row                                     qtext
-1        15   ## Systematic overview of parachute use
-2        19                                 ::: notes
-3        23                                       :::
-4        25 ## When you cannot use a cross-over trial
-5        33    ## When you can use a cross-over trial
-6        40                                 ::: notes
-7        44                                       :::
-8        46                       ## Ethical concerns
-9        51  ## What is you have a carry-over effect?
-10       63  ## Change test if carry-over is detected
+[1] 14
+   file_row     qtext
+1        19 ::: notes
+2        23       :::
+3        33 ::: notes
+4        45       :::
+5        54 ::: notes
+6        60       :::
+7        68 ::: notes
+8        76       :::
+9        90 ::: notes
+10      102       :::
+11      113 ::: notes
+12      119       :::
+13      126 ::: notes
+14      138       :::
 [1] &quot;_cross-over-05.qmd&quot;
-  file_row                                 qtext
-1       16        ## Example of a binary outcome
-2       20                             ::: notes
-3       24                                   :::
-4       26             ## Descriptive statistics
-5       39 ## Analysis of binary cross-over data
-6       46          ## Example of McNemar&#39;s test
+[1] 6
+  file_row     qtext
+1       21 ::: notes
+2       27       :::
+3       33 ::: notes
+4       37       :::
+5       87 ::: notes
+6       93       :::
 [1] &quot;_cross-over-06.qmd&quot;
-  file_row                                                    qtext
-1       16                      ## Three treatment cross-over trial
-2       20                                    ## Possible sequences
-3       30 ## Latin square design to reduce the number of sequences
-4       42                                                ::: notes
-5       46                                                      :::
+[1] 6
+  file_row     qtext
+1       21 ::: notes
+2       27       :::
+3       40 ::: notes
+4       54       :::
+5       68 ::: notes
+6       74       :::
 [1] &quot;check-fences.qmd&quot;
-  file_row                                 qtext
-1       10                         ## List files
-2       31                 ## Loop through files
-3       40     str_detect(qtext, fixed(&quot;:::&quot;)) |
-4       41        str_detect(qtext, fixed(&quot;##&quot;))
+[1] 1
+  file_row                                qtext
+1       40     str_detect(qtext, fixed(&quot;:::&quot;)) 
 [1] &quot;cross-over.qmd&quot;
-   file_row                   qtext
-1        62 ## Topics to be covered
-2        72               ::: notes
-3       112                     :::
-4       116             ## Break #1
-5       125             ## Break #2
-6       134             ## Break #3
-7       143             ## Break #4
-8       152             ## Break #5
-9       167 ## The definitive guide
-10      171       ## Nice reference
-11      175               ::: notes
-12      181                     :::
-13      183              ## Summary
-14      193               ::: notes
-15      197                     :::</code></pre>
+[1] 12
+   file_row     qtext
+1        72 ::: notes
+2       110       :::
+3       124 ::: notes
+4       128       :::
+5       191 ::: notes
+6       197       :::
+7       204 ::: notes
+8       208       :::
+9       222 ::: notes
+10      226       :::
+11      239 ::: notes
+12      243       :::</code></pre>
 </div>
 </div>
 </section>

@@ -4,3 +4,6 @@
 *.Rproj
 ~*.*
 .positai
+/.quarto/
+**/*.quarto_ipynb
+circle2/images/*.*

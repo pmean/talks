@@ -183,7 +183,9 @@ Speaker notes
 
 You could also analyze this as a completely randomized block design. It takes a bit of restructuring because this design expects to see all the ages in a single column.
 
-No one does a paired t-test this way, but if you wanted to handle more complex settings, such as risk adjustments on a paired t-test, you can do this fairly easily using a mixed model.
+A block represents a nuisance factor that you have to account for. Blocks could represent individual patients, different clinics, separate treatment days, among other things. You control for the nuisance factors by assigning each level of a treatment to each block. Often this level of control can greatly improve the precision and power of your research study.
+
+No one does a paired t-test this way, but if you wanted to handle more complex settings, such as risk adjustments on a paired t-test, you can do this fairly easily using simple extensions of the completely randomized block design.
 :::
 
 ## Restructured data for a completely randomized block design

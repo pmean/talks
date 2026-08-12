@@ -1,0 +1,377 @@
+---
+title: "Problems with generative AI"
+author: Steve Simon
+format: pptx
+---
+
+## The new kid on the block: generative AI
+
+-   Over-hyped
+-   Not all that new
+-   Major problems
+-   Can still be useful
+
+::: notes
+
+I'd like to turn my attention to a relatively new application of data science, generative AI. I've always felt that generative AI is over-hyped and not all that new. To be honest, I'm worried about the many problems associated with generative AI than with what it can offer, but I do have to admit that there are some pretty interesting things that you can do with generative AI.
+
+Let me vent about about the hype and the problems, and in return, I will show a few very simple applications that you can use.
+
+:::
+    
+## Alternative terms for generative AI
+
+-   Large language models (LLM)
+-   Artificial neural networks (ANN)
+
+::: notes
+
+The langauge and terminology for generative AI is a bit ambiguous. You will often see these systems described as large language models. Large language models though is a bit restrictive in my mind because it implies that the only output from these models is language. There's a lot that you can do with generative AI that involves more than just words: images, music, video. But from a statistics perspective, the output of language, and in particular, the output of statistical programs (programs are a type of language) is what may end up changing how many of us do our jobs.
+
+There are a variety of statistical models used in generative AI, but most of them are based on artificial neural networks. The name "neural" comes from the inspiration for this methodology. A neural network tries to mimic the wiring that exists inside our brains. That was the hope early on. But over time, researchers came to realize that an artificial neural network is, at best, a crude approximation of how our brains work.
+
+There are many other technical terms and acronyms associated with generative AI. See PYMNTS (2023) for a nice explanation of LLMs, ANNs, and may other generative AI acronyms.
+
+PYMNTS. There Are a Lot of Generative AI Acronyms — Here’s What They All Mean. Blog post, 2023-10-17. Available in [html format][ref-pymnts-2023]
+
+[ref-pymnts-2023]: https://www.pymnts.com/artificial-intelligence-2/2023/a-primer-on-generative-ais-alphabet-soup-of-acronyms/
+
+:::
+
+## How generative AI works
+
+-   Embeddings (encoder)
+    -   Numeric vector representation of words
+    -   Example: king, queen, man, woman
+-   Images
+    -   Diffusion
+    -   Adversarial networks
+-   Language
+    -   Similar to autocorrect, autosuggest
+    -   Most probable continuation
+    
+::: notes
+
+A key feature for generative AI is to represent the text in a prompt that you give in a numeric form that can be manipulated. This is facilitated in part by embeddings. An embedding is transformation of a workd into a numeric vector in such a way that a similar text strings produce vector that are close to one another. Where the text strings differ on a common factor, the vectors (hopefully) will reflect this in a consistent way. So the difference in vectors between "man" and "woman" will match the difference in vectors between "king" and "queen". The difference in vectors between "man" and "king" will match the difference in vectors between "woman" and "queen" but in a different way. Encoding attempts to assign meaning to words. The encodings are then matched with images so that a text prompt using the word "king" will produce image features associated with maleness and royalty.
+
+There are at least two approaches for generating images: diffusion and generative adversarial networks (University of Toronto, nodate).
+
+With diffusion, you train a deep neural network to convert a group of images into static, or random featureless images. Then if you reverse the deep neural network and feed it other random featureless images, it will produce (if all works well) images that are similar to the group of images that was used to trained the deep neural network.
+
+A generative adversarial network develops two deep neural nets, a generator and a discriminator. The generator develops images that it hopes are similar to real images. Then the real images and the generator images are fed into the discriminator, which tries to identify which images are real and which are not. Information that the discriminator uses to determine realness then helps the generator develop images that are harder to discern from real images. The discriminator then tries to develop a system that is better and still able to identify which images are real. This goes back and forth, but the generator eventually wins and is able to produce images that look so real that the discriminator can't tell the difference. 
+
+Generating realistic looking images is not enough. You need to select images that are responsive to a text prompt. This requires developing an encoder
+
+Some of the concepts behind these text models have been around for a long time. Autocorrect looks at a word that is not in your dictionary and finds a word that is reasonably close. Autocomplete will look at string of letters that you type and try to predict the word that you might use. 
+
+Generative AI models for text, also known as large language models, take this concept further by predicting words and phrases that fit well with the previous words and phrases. They rely on encoders to match the probabilities to some of the same approaches described above for images.
+
+These models can also generate music and videos. More importantly from the perspective of Statistics, Generative AI models can produce computer programs. This was an unexpected benefit of these models. They were trained on vast amounts of information found on the Internet, and that included vast amounts of computer code. 
+
+So when people asked programming questions, these Generative AI models could spit out some pretty good code.
+
+Now there are Generative AI models that specialize in programming. They can produce programs based on text prompts that actually work well enough that some teachers are using them in their Statistics classes. I have not had much experience yet with this, but it appears to be a promising area.
+
+:::
+
+## A very simplistic visualization of embeddings
+
+![Figure 13. A quantitative representation of geek versus nerd](../images/geek-vs-nerd.png)
+
+
+::: notes
+
+A simple statistical exercise comparing words associated with "geek" or "nerd" (Settles 2013) produced a simple graph that could be thought of as a two dimensional encoding. The words are a bit too small to read, but to summarize, the geek words in the upper left corner seem to emphasize cultural aspects (such as cosplay) and the nerd words in the lower right corner represent intellectual aspects (such as physics). Words on the diagonal have aspects of both geekiness and nerdiness.
+
+The encodings used in Generative AI require hundreds of dimensions, but it is difficult to display a one hundred dimensional vector on a computer screen.
+
+Burr Settles. On “Geek” Versus “Nerd”. Slackpropogation blog, 2013-06-03. Available in [html format][settles-2013]. 
+
+[settles-2013]: https://slackprop.wordpress.com/2013/06/03/on-geek-versus-nerd/
+
+:::
+
+## A very simplistic look at probable word sequences
+
+![Figure 14. Most probable two letter combinations](../images/letter-pairs.png)
+
+::: notes
+
+A very simple, though not too effective, approach to probable word sequences is to look at all two letter combinations. This table is impossible to read, but imagine picking a letter at random, like "e". Just about any letter can follow "e" except "z" it seems, but the lettters r, d, s, n, and a are the most frequent followers. If you picked "d" randomly from this list, your most common next choices would be e, t, a, o, and s. In the end you would build a sequence that didn't include oddball combinations like tqoz. It still would not look too normal, but you could do better with a 26 by 26 by 26 table of three letter combinations. the letter 
+
+:::
+
+## Major players, OpenAI
+
+![](http://www.pmean.com/new-images/25/generative-ai-10.png "Image from the main page of ChatGPT")
+
+::: notes
+
+Open AI was co-founded by by Sam Altman and Elon Musk in 2015. Sam Altman was briefly fired in November 2023 and then quickly reinstated. The primary product line for Open AI is ChatGPT, with the first version being released in December 2022.
+
+:::
+
+## Major players, xAI
+
+![](http://www.pmean.com/new-images/25/generative-ai-11.png "Image from the main page of Grok")
+
+::: notes
+
+xAI was founded by Elon Musk, a co-founder of OpenAI. Musk split off from OpenAI in 2018 and had several very public spats with that company before and after starting up his new company. The primary product line of xAI is Grok with the first major release in November 2023.
+
+:::
+
+## Major players, Anthropic
+
+![](http://www.pmean.com/new-images/25/generative-ai-13.png "Image from the main page of Claude")
+
+::: notes
+
+Anthropic is another company that sprang from the roots of OpenAI. It was founded in 2021 by former members of OpenAI, led by Daniela Amodei and Dario Amodei. Their primary product line is Claude, originally released in March 2023.
+
+:::
+
+## Major players, Google
+
+![](http://www.pmean.com/new-images/25/generative-ai-12.png "Image from the main page of Gemini")
+
+::: notes
+
+Google was originally founded as an Internet search engine in in 1998 by Larry Page and Sergey Brin. It has since branched out into many different areas. The company was restructured as Alphabet in 2015. The primary product line is Gemini, originally released in February 2023.
+
+:::
+
+## Is generative AI over-hyped? 1
+
+![Figure 14. First panel from existential comics](../images/existential-comics-01.png)
+
+::: notes
+
+I have not been thrilled with all of the hype and hoopla about generative artificial intelligence (generative AI) that is in the press and everywhere. My thoughts about this are similar to those of Corey Mohler in [this particular comic strip][mohler-no-date]. 
+
+Corey Mohler. AI and the Meaning of Life. Existential Comics. No date. Available in [html format][mohler-no-date].
+
+[mohler-no-date]: https://existentialcomics.com/comic/557
+
+:::
+
+## Is generative AI over-hyped? 2
+
+![Figure 15. Second panel from existential comics](../images/existential-comics-02.png)
+
+## Is generative AI over-hyped? 3
+
+![Figure 16. Third panel from existential comics](../images/existential-comics-03.png)
+
+## Is generative AI over-hyped? 4
+
+![Figure 17. Fourth panel from existential comics](../images/existential-comics-04.png)
+
+## Is generative AI over-hyped? 5
+
+![Figure 18. Fifth panel from existential comics](../images/existential-comics-05.png)
+
+## Is generative AI over-hyped? 6
+
+![Figure 14. Sixth panel from existential comics](../images/existential-comics-06.png)
+
+## Is generative AI over-hyped? 7
+
+![Figure 19. Seventh panel from existential comics](../images/existential-comics-07.png)
+
+::: notes
+
+Note the comment that appears when you hover over the comic strip image (AI is cool because they just renamed "intelligence" to "predicted what other people might say without really understanding any of it.").
+
+:::
+
+## The Turing Test
+
+![](../images/turing-test.png)
+
+::: notes
+
+As early as 1949, scientists were speculating about "intelligent computers". Alan Turing proposed a hypothetical test, now called the Turing test. The test claimed that a computer could think if an evaluator could not tell the difference between their dialog with a computer and their dialog with another human. 
+
+:::
+
+## An example from 1966
+
+-   Sample conversation from Eliza
+    -   Men are all alike.
+    -   IN WHAT WAY
+    -   They’re always bugging us about something or other.
+    -   CAN YOU THINK OF A SPECIFIC EXAMPLE
+    -   Well, my boyfriend made me come here.
+    -   YOUR BOYFRTEND MADE YOU COME HERE
+    -   He says I’m depressed much of the time.
+    -   I AM SORRY TO HEAR YOU ARE DEPRESSED
+    
+::: notes
+
+It didn't take long for real programs to try to pass the Turing test. One of the more famous early efforts was a program developed in the 1960s, ELIZA, that mimics the interactions between a patient and their therapist.
+
+The system behind ELIZA, described in Weizenbaum 1966, was crude but effective. Over time, computers have mastered many other intelligent tasks, such as playing chess and translation one human language into another human language. There are still tasks, however, like the CAPTCHA tests, that can still effectively distinguish between robotic and human users of a website.
+
+One reason that everyone and their dog is talking about generative AI is that they produce text, images, videos, and music that cannot be easily distinguished from human products. There appears to be a lot of attention given to how natural the responses seem with these generative AI models. They have passed the Turing test. 
+
+Joseph Weizenbaum. ELIZA. A Computer Program For the Study of Natural Language Communication Between Man And Machine, Communications of the ACM 1966, 9(1), 36-45, doi: [10.1145/365153.365168][ref-weizenbaum-1966].
+
+[ref-weizenbaum-1966]: https://dl.acm.org/doi/epdf/10.1145/365153.365168
+
+https://en.wikipedia.org/wiki/Turing_test
+
+:::
+
+## Problems with generative AI
+
+-   Built on a massive theft of intellectual property
+-   Often create questionable results (hallucinations)
+-   Reinforce existing prejudices and stereotypes
+-   Excessive consumption of resources (energy, water)
+
+## Theft of intellectual property
+
+![](../images/creative-commons.png)
+
+::: notes
+
+Just because something is published on the Internet does not mean that you can use it any way you please. In fact, there is an open source license that appears to explicitly forbid the use of this material in generative AI.
+
+The "ND" in this license means "No derivatives or adaptations of your work are permitted."
+
+:::
+
+## Copyright violations, 1
+
+![](../images/ghibli-01.png)
+
+::: notes
+
+This is Hayao Miyazaki, a famous animator and movie producer with a very distinctive artistic style. He co-founded Ghibli Studio.
+
+
+:::
+
+## Copyright violations
+
+![](../images/ghibli-02.png)
+
+::: note
+
+You should recognize the Ghibli style from movies like "Spirited Away".
+
+:::
+
+## Copyright violations
+
+![](../images/ghibli-03.png)
+
+::: notes
+
+Generative AI allows you to take a photograph and turn it into a drawing with the same style.
+
+:::
+
+## Copyright violations
+
+![](../images/ghibli-04.png)
+
+::: notes
+
+Here is another image. The open mouthed laugh is so very much characteristic of Studio Ghibli's style.
+
+:::
+
+
+## Often create questionable results (hallucinations)
+
+![](../images/hhs-report.png)
+
+::: notes
+
+You can conceive of these generative AI models as producing a sequence of words where each word in the sequence seems to be a likely choice given the previous words. This can lead to responses where one sentence ends up contradicting the previous sentence, where the sequence wanders off from the original request, or where the sequence states a fact that sounds bold and confident, but which is just plain wrong.
+
+"A U.S. lawyer used ChatGPT to help draft court filings and ended up citing entirely fake legal cases. When the opposing side challenged the citations, the lawyer claimed not to realize that ChatGPT was a generative language tool rather than a reliable legal database. A federal judge responded with a standing order obliging anyone appearing before the court to attest that AI was not used to draft court filings or flag any language drafted by AI to be checked for accuracy."
+
+There is a methodology, Retrieval-Augmented Generation (RAG), that tries to fight hallucinations. It aguments the user query with a smaller generative AI model built using only trustworthy sources and then feeds that query into the larger generative AI built on everything--the good, the bad, and the in between. This approach is only partially successful, by most evaluations, but partial is better than nothing.
+
+Nishisako S, Higashi T, Wakao F. Reducing Hallucinations and Trade-Offs in Responses in Generative AI Chatbots for Cancer Information: Development and Evaluation Study. JMIR Cancer. 2025 Sep 11;11:e70176. doi: [10.2196/70176][ref-nishisako-2025].
+
+Iris Zarecki. RAG hallucination: What is it and how to avoid it. K2view blog, 2025-11-23. Available in [html format][ref-zarecki-2025].
+
+United States Artificial Intelligence Institute. Understanding AI Hallucinations: Exploring Causes and Preventive Solutions, 2024-10-12. Available in [html format][ref-usaii-2024].
+
+[ref-nishisako-2025]: https://doi.org/10.2196/70176
+
+[ref-usaii-2024]: https://www.usaii.org/ai-insights/understanding-ai-hallucinations-exploring-causes-and-preventive-solutions
+
+[ref-zarecki-2025]: https://www.k2view.com/blog/rag-hallucination/
+
+https://www.science.org/content/article/trump-officials-downplay-fake-citations-high-profile-report-children-s-health
+
+:::
+
+
+## Reinforce existing prejudices and stereotypes, 1
+
+![](../images/stereotypes-01.png)
+
+## Reinforce existing prejudices and stereotypes, 2
+
+![](../images/stereotypes-02.png)
+
+## Reinforce existing prejudices and stereotypes, 3
+
+![](../images/stereotypes-03.png)
+
+
+## Resource utilization
+
+-   Energy
+-   Water
+-   GPU chips
+
+::: notes
+
+The generative AI models are built on server farms, large buildings with thousands of computers. The energy demands of these computers can tax local resources.
+
+The generative AI models run fastest on GPUs, Graphical Processing Units. Originally developed for compauter gaming, the GPUs use simple calculations to coordinate a large number of moving images. The same technology in these GPUs can greatly speed up the model building calculations of generative AI models. They easily outperform Central Processing Units (CPUs), the heart of most personal computers. While CPUs can run more complex calculations, they can only run a small number of calculations in parallel. The companies that build generative AI models require thousands of these chips, making companies that produce GPUs like Nvidia and others are struggling to keep up with demand, causing shortages that affect everyone including the rabid fans of Call of Duty.
+
+Doug Getty. Why AI Is Driving Semiconductor Shortages — and How to Prepare. Rand Technology blog, 2025-09-10. Available in [html format][ref-rand-2025].
+
+[ref-rand-2025]: https://randtech.com/why-ai-is-driving-semiconductor-shortages-and-how-to-prepare/
+
+:::
+
+## Pushback against use of generative AI
+
+-   Academicians
+    -   Read the syllabus!
+-   Peer-reviewed journal
+    -   Editorial clean-up okay
+    -   AI-generated images not okay
+    -   Cite the use of generative AI
+-   Grants
+    -   No "substantial" use in grant writing
+    -   No use for reviewers
+
+::: notes
+
+There are many groups that are trying to restrict or control the use of generative AI in their realms. In academia, there are as many different approaches to restricting generative AI use as there are people teaching. If you are a student, read the syllabus for any course that you take and see if there is an explicit statement about the use of generative AI. Even if there is no statement, tread cautiously. It costs nothing to ask your instructor and it can save you a lot of hassle.
+
+Peer-reviewed journals have concerns about the use of Generative AI. The [Elsevier policy][ref-elsevier-nodate] states that generative AI must not be used to produce figures, images, or artwork. They allow the use for generative AI to improve an existing manuscript, but that the human authors must review and verify their analyses and interpretation. There are similar restrictions placed on the reviewers of submitted manuscripts. The Elsevier guidelines also caution against any actions that might violate confidentiality.
+
+https://grants.nih.gov/grants/guide/notice-files/NOT-OD-25-132.html
+
+[ref-elsevier-nodate]: https://www.elsevier.com/about/policies-and-standards/generative-ai-policies-for-journals
+
+:::
+
+## Solutions to the problems associated with generative AI
+
+-   Licensing agreements
+    -   YouTube example
+-   Restrictions on what end users can produce
+-   Work with communities about resource issues
+-   Final warning: check your sources!

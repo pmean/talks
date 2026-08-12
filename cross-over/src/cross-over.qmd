@@ -1,9 +1,8 @@
 ---
 title: "See bottom of file for title"
-format: 
-  revealjs:
+format:
+  pptx:
     slide-number: true
-    embed-resources: true
 params:
   topic_01: "The paired t-test"
   topic_02: "The AB/BA cross-over"
@@ -80,35 +79,24 @@ In this talk, you will see a review of the paired t-test, followed by an analysi
 
 After discussing the classical AB/BA cross-over design, you will see how to extend the cross-over trial to a binary outcome measure and to more than two treatments.
 
-Feedback
+:::
 
--   Mixed effects model
--   Heading for 14 and 15
--   Graphs 34 and earlier
--   Lobotomy
--   Don’t show code
--   Simplify the R output
--   No need for SAS
--   Kim Love did classical experimental design webinar
--   Have I defined a block?
--   Introduce the cross-over using a diagram
--   Why do we need to do both orders?
--   Blog post using long and wide format, https://www.theanalysisfactor.com/wide-and-long-data/
--   Fix tibble on slide 31
--   Fix font sizes on plots 34 and others
--   Put higher is better on every plot
--   Define double blind, won’t know until they get out of the plane
--   Define washout period.
--   State versus trait, trait is immutable 
--   Slide 40, what if adding treatments is the point. Physical therapy plus
--   Introduce the concept of a parallel groups design
--   Slide 41 what if
--   Slide 46 maybe use some type of random effects logistic regression.
--   Slide 50 CBAD in second row
--   Why are there no interactions in slide on page 35.
+## Pop quiz, true or false
 
+1. Cross-over trials can only be used if the two treatments are drugs.
 
+2. A paired t-test is a simple way to analyze a basic cross-over design.
 
+3. A carry-over effect is easily accounted for and adjustments are relatively simple.
+
+4. Cross-over trials should only be used if the disease being treated is acute, meaning that it does not persist over long periods of time.
+
+Put your answers in the chat box as a sequence of T's and F's (e.g., TFFT).
+
+::: notes
+Speaker notes
+
+Try these true/false questions. Put your answers in the chat box.
 :::
 
 {{< include _cross-over-01.qmd >}}
@@ -179,6 +167,36 @@ Mills, E.J., Chan, AW., Wu, P. et al. Design, analysis, and presentation of cros
 
 [ref-mills-2009]: https://doi.org/10.1186/1745-6215-10-27
 :::
+
+## Analysis Factor resources
+
+-   Kim Love webinar on classical experimental designs
+-   Karen Grace-Martin write-ups on long versus wide formats
+
+::: notes
+Speaker notes
+
+There are several resources on the Analysis Factor website that you might find helpful.
+:::
+
+## Repeat of true/false pop quiz
+
+1. Cross-over trials can only be used if the two treatments are drugs.
+
+2. A paired t-test is a simple way to analyze a basic cross-over design.
+
+3. A carry-over effect is easily accounted for and adjustments are relatively simple.
+
+4. Cross-over trials should only be used if the disease being treated is acute, meaning that it does not persist over long periods of time.
+
+Put your answers in the chat box as a sequence of T's and F's (e.g., TFFT).
+
+::: notes
+Speaker notes
+
+Try these true/false questions again. Put your answers in the chat box.
+:::
+
 
 ## Summary
 
