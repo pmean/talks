@@ -5,6 +5,8 @@ date: "Created 2021-04-14"
 output: powerpoint_presentation
 ---
 
+<!---Part of a panel presentation for the Nebraska Chapter of ASA--->
+
 ### My resume will introduce myself.
 
 ![Resume, found at https://github.com/pmean/resume](resume-title.png)
